@@ -7,7 +7,7 @@ use yii\web\Controller;
 use common\models\LoginForm;
 use yii\filters\VerbFilter;
 
-use backend\components\x12\x12test\CfTest; //debug
+use backend\components\x12\x12test\ContextTest; //debug
 
 /**
  * Site controller
@@ -85,7 +85,7 @@ class SiteController extends Controller
     }
 
     public function actionTest() {
-        $cfTest = new CfTest();
-        var_dump($cfTest->testToString());exit();
+        $ctTest = new ContextTest();
+        var_dump($ctTest->testToString());exit();
     }
 }
