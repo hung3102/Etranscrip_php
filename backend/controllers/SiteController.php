@@ -7,6 +7,8 @@ use yii\web\Controller;
 use common\models\LoginForm;
 use yii\filters\VerbFilter;
 
+use backend\components\x12\x12test\CfTest; //debug
+
 /**
  * Site controller
  */
@@ -80,5 +82,10 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionTest() {
+        $cfTest = new CfTest();
+        var_dump($cfTest->testToString());exit();
     }
 }

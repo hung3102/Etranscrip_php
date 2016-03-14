@@ -83,7 +83,7 @@
 
 namespace backend\components\x12;
 
-public class Cf {
+class Cf {
 	private $name, $segment; // String type
 	private $segmentQuals = []; // array string type
 	private $segmentQualPos; // int type
@@ -112,7 +112,7 @@ public class Cf {
 	private function init4($name, $segment, $segmentQual, $segmentQualPos) {
 		$this->name = $name;
 		$this->segment = $segment;
-		array_merge($this->segmentQuals, explode(",", $segmentQual));
+		$this->segmentQuals = explode(",", $segmentQual);
 		$this->segmentQualPos = $segmentQualPos;
 	}
 
@@ -188,7 +188,7 @@ public class Cf {
 	}
 
 	public function setChildren($cfList) {
-		array_merge($this->children, $cfList);
+		$this->children = $cfList;
 		foreach ($cfList as $cf) {
 			$cf->depth = $this->depth + 1;
 			$cf->setParent($this);
@@ -204,7 +204,7 @@ public class Cf {
 	}
 
 	public function setSegmentQuals($segmentQuals) {
-		array_merge($this->segmentQuals, $segmentQuals);
+		$this->segmentQuals = $segmentQuals;
 	}
 
 	public function setSegmentQualPos($segmentQualPos) {
