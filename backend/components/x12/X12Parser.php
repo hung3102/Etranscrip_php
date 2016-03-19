@@ -77,25 +77,15 @@ class X12Parser extends FormatException implements Parser {
 		$this->loopMarker = $x12;
 		$loop = $x12;
 
-		$count1 = 0;$count2 = 0;$count3 = 0;
 		foreach ($segments_array as $line) {
 			$tokens = explode($context->getElementSeparator(), $line);
 			if($this->doesChildLoopMatch($this->cfMarker, $tokens)) {
-				echo "<pre>";
-				print_r("C".++$count1.": ".$line);
-				echo "</pre>";
 				$loop = $loop->addChild($this->cfMarker->getName());
 				$loop->addSegment($line);
 			} else if($this->doesParentLoopMatch($this->cfMarker, $tokens, $loop)) {
-				echo "<pre>";
-				print_r("P".++$count2.": ".$line);
-				echo "</pre>";
 				$loop = $this->loopMarker->addChild($this->cfMarker->getName());
 				$loop->addSegment($line);
 			} else {
-				echo "<pre>";
-				print_r("O".++$count3.": ".$line);
-				echo "</pre>";
 				$loop->addSegment($line);
 			}
 		}
