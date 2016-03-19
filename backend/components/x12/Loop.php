@@ -1,5 +1,6 @@
 <?php
 namespace backend\components\x12;
+use backend\components\x12\Segment;
 
 /**
  * The Loop class is the representation of an Loop in a ANSI X12
@@ -8,12 +9,12 @@ namespace backend\components\x12;
  * Segments are grouped as loops. And a set of loops form an X12 transaction.
  */
 
-class Loop implements IteratorAggregate {
+class Loop {
 	private static $serialVersionUID; // long type
 	private $context; // context type
 	private $name; // string type
-	private $segments[]; // segment array type
-	private $loops[]; // loop array type
+	private $segments = []; // segment array type
+	private $loops = []; // loop array type
 	private $parent; // loop type
 	private $depth; // used to debug
 
@@ -44,17 +45,21 @@ class Loop implements IteratorAggregate {
 				if( $arg_nums == 1) {
 					return call_user_func_array(array($this, 'addChild1'), $arguments);
 				} else if($arg_nums == 2) {
-					return call_user_func_array(array($this, 'addChild2'), $arguments);
+					if($arguments[1] instanceof Loop) {
+						return call_user_func_array(array($this, 'addChild2Loop'), $arguments);
+					} else if(is_string($arguments[1])) {
+						return call_user_func_array(array($this, 'addChild2Name'), $arguments);
+					}
 				}	
 				break;
 		
 			case 'addSegment':
 				if( $arg_nums == 0) {
-					return call_user_func_array(array($this, 'addSegment0'));
+					return call_user_func_array(array($this, 'addSegment0'), $arguments);
 				} else if($arg_nums == 1) {
 					if(is_string($arguments[0])) {
 						return call_user_func_array(array($this, 'addSegment1String'), $arguments);
-					} else if(is_a($arguments[0], 'Segment')) {
+					} else if($arguments[0] instanceof Segment) {
 						return call_user_func_array(array($this, 'addSegment1Segment'), $arguments);
 					} else if(is_int($arguments[0])) {
 						return call_user_func_array(array($this, 'addSegment1Index'), $arguments);
@@ -62,8 +67,8 @@ class Loop implements IteratorAggregate {
 				} else if($arg_nums == 2) {
 					if(is_string($arguments[1])) {
 						return call_user_func_array(array($this, 'addSegment2String'), $arguments);
-					} else if(is_a($arguments[1], 'Segment')) {
-						return call_user_func_array(array($this, 'addSegmentSegment'), $arguments);
+					} else if($arguments[1] instanceof Segment) {
+						return call_user_func_array(array($this, 'addSegment2Segment'), $arguments);
 					}
 				}
 				break;
@@ -71,7 +76,7 @@ class Loop implements IteratorAggregate {
 			case 'setChild':
 				if(is_string($arguments[1])) {
 					return call_user_func_array(array($this, 'setChildName'), $arguments);
-				} else if(is_a($arguments[1], 'Loop')) {
+				} else if($arguments[1] instanceof Loop) {
 					return call_user_func_array(array($this, 'setChildLoop'), $arguments);
 				}
 				break;
@@ -82,7 +87,7 @@ class Loop implements IteratorAggregate {
 				} else if($arg_nums == 2) {
 					if(is_string($arguments[1])) {
 						return call_user_func_array(array($this, 'setSegmentString'), $arguments);
-					} else if(is_a($arguments[1], 'Segment')) {
+					} else if($arguments[1] instanceof Segment) {
 						return call_user_func_array(array($this, 'setSegmentSegment'), $arguments);
 					}
 				}
@@ -90,7 +95,7 @@ class Loop implements IteratorAggregate {
 
 			case 'toString':
 				if($arg_nums == 0) {
-					return call_user_func_array(array($this, 'toString0'));
+					return call_user_func_array(array($this, 'toString0'), $arguments);
 				} else if($arg_nums == 1) {
 					return call_user_func_array(array($this, 'toString1'), $arguments);
 				}
@@ -98,7 +103,7 @@ class Loop implements IteratorAggregate {
 
 			case 'toXML':
 				if($arg_nums == 0) {
-					return call_user_func_array(array($this, 'toXML0'));
+					return call_user_func_array(array($this, 'toXML0'), $arguments);
 				} else if($arg_nums == 1) {
 					return call_user_func_array(array($this, 'toXML1'), $arguments);
 				}
@@ -122,7 +127,7 @@ class Loop implements IteratorAggregate {
 		$l = new Loop($this->context, $name);
 		$l->setParent($this);
 		$l->depth = $this->depth + 1; // debug
-		$loops[] = $l;
+		$this->loops[] = $l;
 		return $l;
 	}
 
@@ -132,10 +137,29 @@ class Loop implements IteratorAggregate {
 	 * @param index
 	 *            position at which to add the $loop->
 	 */
-	public function addChild2($index, $loop) {
+	public function addChild2Loop($index, $loop) {
 		$loop->setParent($this);
 		$loop->depth = $this->depth + 1; // debug
-		$loops[$index] = $loop;
+		array_splice($this->loops, $index, 0, array($loop));
+	}
+
+	/**
+	 * Creates an empty instance of <code>Loop</code> and inserts the loop as a
+	 * child loop at the specified position. The returned instance can be used
+	 * to add segments to the child $loop->
+	 * 
+	 * @param index
+	 *            position at which to add the loop
+	 * @param name
+	 *            name of the loop
+	 * @return a new child Loop object
+	 */
+	public function addChild2Name($index, $name) {
+		$l = new Loop($this->context, $name);
+		$l->setParent($this);
+		$l->depth = $this->depth + 1; // debug
+		array_splice($this->loops, $index, 0, array($l));
+		return $l;
 	}
 
 	/**
@@ -161,7 +185,7 @@ class Loop implements IteratorAggregate {
 	 */
 	public function addSegment1String($segment) {
 		$s = new Segment($this->context);
-		$elements = explode("\\" . $this->context->getElementSeparator(), $segment);
+		$elements = explode($this->context->getElementSeparator(), $segment);
 		$s->addElements($elements);
 		$this->segments[] = $s;
 		return $s;
@@ -188,7 +212,7 @@ class Loop implements IteratorAggregate {
 	 */
 	public function addSegment1Index($index) {
 		$s = new Segment($this->context);
-		$this->segments[$index] = $s;
+		array_splice($this->segments, $index, 0, array($s));
 		return $s;
 	}
 
@@ -205,9 +229,9 @@ class Loop implements IteratorAggregate {
 	 */
 	public function addSegment2String($index, $segment) { //segment is string type
 		$s = new Segment($this->context);
-		$elements = explode("\\" . $this->context->getElementSeparator(), $segment);
+		$elements = explode($this->context->getElementSeparator(), $segment);
 		$s->addElements($elements);
-		$this->segments[$index] = $s;
+		array_splice($this->segments, $index, 0, array($s));
 		return $s;
 	}
 
@@ -220,26 +244,7 @@ class Loop implements IteratorAggregate {
 	 *            <code>String</code> representation of the segment.
 	 */
 	public function addSegment2Segment($index, $segment) { // segment is segment type
-		$this->segments[$index] = $segment;
-	}
-
-	/**
-	 * Creates an empty instance of <code>Loop</code> and inserts the loop as a
-	 * child loop at the specified position. The returned instance can be used
-	 * to add segments to the child $loop->
-	 * 
-	 * @param index
-	 *            position at which to add the loop
-	 * @param name
-	 *            name of the loop
-	 * @return a new child Loop object
-	 */
-	public function addChild($index, $name) {
-		$l = new Loop($this->context, $name);
-		$l->setParent($this);
-		$l->depth = $this->depth + 1; // debug
-		$loops[$index] = $l;
-		return $l;
+		array_splice($this->segments, $index, 0, array($segment));
 	}
 
 	/**
@@ -296,14 +301,14 @@ class Loop implements IteratorAggregate {
 	public function findSegment($name) {
 		$foundSegments = [];
 		foreach ($this->segments as $s) {
-			if ($name === $s->getElement(0))) {
+			if ($name === $s->getElement(0)) {
 				$foundSegments[] = $s;
 			}
 		}
 		foreach ($this->childList() as $l) {
 			$moreSegments = $l->findSegment($name);
 			if (sizeof($moreSegments) > 0) {
-				array_merge($foundSegments, $moreSegments);
+				$foundSegments = array_merge($foundSegments, $moreSegments);
 			}
 		}
 		
@@ -480,8 +485,8 @@ class Loop implements IteratorAggregate {
 	 * 
 	 * @param parent
 	 */
-	public function setParent(Loop parent) {
-		$this->parent = parent;
+	public function setParent($parent) {
+		$this->parent = $parent;
 	}
 		
 	/**
@@ -512,7 +517,7 @@ class Loop implements IteratorAggregate {
 	 */
 	public function setSegmentString($index, $segment) {
 		$s = new Segment($this->context);
-		$elements = explode("\\" + $this->context->getElementSeparator(), $segment);
+		$elements = explode($this->context->getElementSeparator(), $segment);
 		
 		$s->addElements($elements);
 		$this->segments[$index] = $s;
@@ -562,11 +567,11 @@ class Loop implements IteratorAggregate {
 	public function toString1($bRemoveTrailingEmptyElements) {
 		$dump = "";
 		foreach ($this->segments as $s) {
-			$dump .= $s->toString($bRemoveTrailingEmptyElements)
+			$dump .= $s->toString($bRemoveTrailingEmptyElements);
 			$dump .= $this->context->getSegmentSeparator();
 		}
 		foreach ($this->childList() as $l) {
-			$dump .= $l->toString($bRemoveTrailingEmptyElements)
+			$dump .= $l->toString($bRemoveTrailingEmptyElements);
 		}
 		
 		return $dump;
@@ -591,15 +596,15 @@ class Loop implements IteratorAggregate {
 	 */
 	public function toXML1($bRemoveTrailingEmptyElements) {
 		$dump = "";
-		$dump .= "<LOOP NAME=\"" . $this->name . "\">";
+		$dump .= "<LOOP NAME=\"" . $this->name . "\">";  // carefully here
 		foreach ($this->segments as $s) {
 			$dump .= $s->toXML($bRemoveTrailingEmptyElements);
 		}
 		foreach ($this->childList() as $l) {
 			$dump .= $l->toXML($bRemoveTrailingEmptyElements);
 		}
-		$dump .= "</LOOP>"
-		
+		$dump .= "</LOOP>";
+
 		return $dump;
 	}
 
