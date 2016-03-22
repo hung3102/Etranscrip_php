@@ -8,6 +8,7 @@ use common\models\LoginForm;
 use yii\filters\VerbFilter;
 
 use backend\components\x12\x12test\X12ParserTest; //debug
+use backend\components\fakedata\FakeData; //debug
 
 /**
  * Site controller
@@ -87,5 +88,10 @@ class SiteController extends Controller
     public function actionTest() {
         $x12ParserTest = new X12ParserTest();
         var_dump($x12ParserTest->testParseFile());exit();
+    }
+
+    public function actionFake() {
+        $datafake = new FakeData();
+        $datafake->fakeAddress();
     }
 }
