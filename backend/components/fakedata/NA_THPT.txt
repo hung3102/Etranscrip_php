@@ -1,0 +1,110 @@
+THPT Huỳnh Thúc Kháng : Phường Trung Đô, Thành phố Vinh.
+THPT Hà Huy Tập : Phường Lê Lợi, Thành phố Vinh.
+THPT Lê Viết Thuật : Phường Trường Thi, Thành phố Vinh.
+THPT DL Nguyễn Trường Tộ : Phường Hà Huy Tập, Thành phố Vinh.
+THPT Chuyên Phan Bội Châu : Phường Hưng Bình, Thành phố Vinh.
+Chuyên Toán ĐH Vinh : Phường Trung Đô, Thành phố Vinh.
+THPT DTNT Tỉnh : Phường Hưng Bình, Thành phố Vinh.
+THPT DL Lê Quí Đôn : Phường Quang Trung, Thành phố Vinh.
+THPT DL Nguyễn Huệ : Phường Trung Đô, Thành phố Vinh.
+THPT DL Her Man : Phường Hưng Phúc, Thành phố Vinh.
+THPT DL Hữu Nghị : Phường Quang Trung, Thành phố Vinh.
+THPT TX Cửa lò : Phường Nghi Thu, Thị xã Cửa Lò.
+THPT Quỳ Châu : Thị trấn Tân Lạc, Huyện Quỳ Châu.
+THPT Quỳ Hợp 2 : Xã Tam Hợp, Huyện Quỳ Hợp.
+THPT Quỳ Hợp 1 : Thị trấn Quỳ Hợp, Huyện Quỳ Hợp.
+THPT DL Sông Hiếu : Xã Nghĩa Hiếu, Huyện Nghĩa Đàn.
+THPT Đông Hiếu : Xã Nghĩa Thuận, Thị xã Thái Hòa.
+THPT Thái Hoà : Xã Nghĩa Trung, Huyện Nghĩa Đàn.
+THPT 1/5 : Xã Nghĩa Bình, Huyện Nghĩa Đàn.
+THPT Tây Hiếu : Xã Tây Hiếu, Thị xã Thái Hòa.
+THPT Cờ Đỏ : Xã Nghĩa Hồng, Huyện Nghĩa Đàn.
+THPT DL Bắc Quỳnh Lưu : Phường Quỳnh Xuân, Thị xã Hoàng Mai.
+THPT Quỳnh Lưu 1 : Thị trấn Cầu Giát, Huyện Quỳnh Lưu.
+THPT Quỳnh Lưu 2 : Xã Quỳnh Văn, Huyện Quỳnh Lưu.
+THPT Quỳnh Lưu 3 : Xã Quỳnh Lương, Huyện Quỳnh Lưu.
+THPT Quỳnh Lưu 4 : Xã Quỳnh Châu, Huyện Quỳnh Lưu.
+THPT Nguyễn Đức Mậu : Xã Sơn Hải, Huyện Quỳnh Lưu.
+THPT Hoàng Mai : Phường Quỳnh Thiện, Thị xã Hoàng Mai.
+THPT DL Cù Chính Lan : Xã Quỳnh Bá, Huyện Quỳnh Lưu.
+THPT Kỳ Sơn : Thị trấn Mường Xén, Huyện Kỳ Sơn.
+THPT Tương Dương 1 : Thị trấn Hòa Bình, Huyện Tương Dương.
+THPT Tương Dương 2 : Xã Tam Quang, Huyện Tương Dương.
+THPT Con Cuông : Thị trấn Con Cuông, Huyện Con Cuông.
+THPT Mường Quạ : Xã Môn Sơn, Huyện Con Cuông.
+THPT Tân Kỳ : Thị trấn Tân Kỳ, Huyện Tân Kỳ.
+THPT DTNT Tân Kỳ : Xã Nghĩa Thái, Huyện Tân Kỳ.
+THPT Tân Kỳ 3 : Xã Tân An, Huyện Tân Kỳ.
+THPT Yên Thành 2 : Xã Bắc Thành, Huyện Yên Thành.
+THPT Phan Thúc Trực : Xã Công Thành, Huyện Yên Thành.
+THPT Bắc Yên Thành : Xã Lăng Thành, Huyện Yên Thành.
+THPT DL Lê Doãn Nhã : Thị trấn Yên Thành, Huyện Yên Thành.
+THPT Yên Thành 3 : Xã Quang Thành, Huyện Yên Thành.
+THPT Phan Đăng Lưu : Thị trấn Yên Thành, Huyện Yên Thành.
+THPT Diễn Châu 2 : Xã Diễn Hồng, Huyện Diễn Châu.
+THPT Diễn Châu 3 : Xã Diễn Xuân, Huyện Diễn Châu.
+THPT Diễn Châu 4 : Xã Diễn Mỹ, Huyện Diễn Châu.
+THPT DL Nguyễn Văn Tố : Xã Diễn Phong, Huyện Diễn Châu.
+THPT DL Ngô Trí Hoà : Thị trấn Diễn Châu, Huyện Diễn Châu.
+THPT Nguyễn Xuân Ôn : Thị trấn Diễn Châu, Huyện Diễn Châu.
+THPT Diễn Châu 5 : Xã Diễn Thọ, Huyện Diễn Châu.
+THPT Anh Sơn 3 : Xã Đỉnh Sơn, Huyện Anh Sơn.
+THPT Anh Sơn 1 : Xã Thạch Sơn, Huyện Anh Sơn.
+THPT Anh Sơn 2 : Xã Lĩnh Sơn , Huyện Anh Sơn.
+THPT Đô Lương 3 : Xã Quang Sơn, Huyện Đô Lương.
+THPT Đô Lương 1 : Xã Đà Sơn, Huyện Đô Lương.
+THPT Đô Lương 2 : Xã Lam Sơn, Huyện Đô Lương.
+THPT DL Đô Lương 1 : Xã Văn Sơn, Huyện Đô Lương.
+THPT DL Đô Lương 2 : Xã Tân Sơn, Huyện Đô Lương.
+THPT Thanh Chương 3 : Xã Phong Thịnh, Huyện Thanh Chương.
+THPT Nguyễn Sỹ Sách : Xã Thanh Dương, Huyện Thanh Chương.
+THPT Đặng Thúc Hứa : Xã Võ Liệt, Huyện Thanh Chương.
+THPT BC Thanh Chương + TTGDTX Thanh Chương : Thị trấn Thanh Chương, Huyện Thanh Chương.
+THPT Thanh Chương 1 : Thị trấn Thanh Chương, Huyện Thanh Chương.
+THPT Đặng Thai Mai : Xã Thanh Giang, Huyện Thanh Chương.
+THPT Nghi Lộc 3 : Xã Nghi Xuân, Huyện Nghi Lộc.
+THPT Nghi Lộc 1 : Thị trấn Quán Hành, Huyện Nghi Lộc.
+THPT Nghi Lộc 2 : Xã Nghi Mỹ, Huyện Nghi Lộc.
+THPT Nguyễn Thức Tự : Thị trấn Quán Hành, Huyện Nghi Lộc.
+THPT Nghi Lộc 4 : Xã Nghi Xá, Huyện Nghi Lộc.
+THPT Nam Đàn 1 : Thị trấn Nam Đàn, Huyện Nam Đàn.
+THPT Nam Đàn 2 : Xã Nam Trung, Huyện Nam Đàn.
+THPT Kim Liên : Xã Kim Liên, Huyện Nam Đàn.
+THPT DL Sào Nam : Xã Xuân Hòa, Huyện Nam Đàn.
+THPT Lê Hồng Phong : Xã Hưng Thông, Huyện Hưng Nguyên.
+THPT Phạm Hồng Thái : Xã Hưng Châu, Huyện Hưng Nguyên.
+THPT Thái Lão : Thị trấn Hưng Nguyên, Huyện Hưng Nguyên.
+THPT Đinh Bạt Tụy : Xã Hưng Tân, Huyện Hưng Nguyên.
+THPT Quế Phong : Thị trấn Kim Sơn, Huyện Quế Phong.
+THPT DL Nguyễn Trãi : Phường Quán Bàu , Thành phố Vinh.
+THPT BC Cửa Lò : Phường Nghi Thu, Thị xã Cửa Lò.
+THPT DL Trần Đình Phong : Xã Thọ Thành, Huyện Yên Thành.
+THPT DTNT Quỳ Hợp : Xã Châu Quang, Huyện Quỳ Hợp.
+THPT DL Lý Tự Trọng : Thị trấn Cầu Giát, Huyện Quỳnh Lưu.
+THPT DL Quang Trung : Xã Diễn Kỷ, Huyện Diễn Châu.
+TTGDTX Vinh : Phường Lê Mao, Thành phố Vinh.
+TTGDTX Cửa Lò : Phường Nghi Hương, Thị xã Cửa Lò.
+TTGDTX Quỳ Châu : Thị trấn Tân Lạc, Huyện Quỳ Châu.
+TTGDTX Quỳ Hợp : Thị trấn Quỳ Hợp, Huyện Quỳ Hợp.
+TTGDTX Nghĩa Đàn : Xã Nghĩa An, Huyện Nghĩa Đàn.
+TTGDTX Quỳnh Lưu : Thị trấn Cầu Giát, Huyện Quỳnh Lưu.
+TTGDTX Kỳ Sơn : Thị trấn Mường Xén, Huyện Kỳ Sơn.
+TTGDTX Tương Dương : Thị trấn Hòa Bình, Huyện Tương Dương.
+TTGDTX Con Cuông : Thị trấn Con Cuông, Huyện Con Cuông.
+TTGDTX Tân Kỳ : Xã Kỳ Sơn, Huyện Tân Kỳ.
+TTGDTX Yên Thành : Thị trấn Yên Thành, Huyện Yên Thành.
+TTGDTX Diễn Châu : Thị trấn Diễn Châu, Huyện Diễn Châu.
+TTGDTX Anh Sơn : Thị trấn Anh Sơn, Huyện Anh Sơn.
+TTGDTX Đô Lương : Xã Đà Sơn, Huyện Đô Lương.
+TTGDTX Thanh Chương : Thị trấn Thanh Chương, Huyện Thanh Chương.
+TTGDTX Nghi Lộc : Thị trấn Quán Hành, Huyện Nghi Lộc.
+TTGDTX Nam đàn : Thị trấn Nam Đàn, Huyện Nam Đàn.
+TTGDTX Hưng Nguyên : Thị trấn Hưng Nguyên, Huyện Hưng Nguyên.
+TTGDTX Quế Phong : Thị trấn Kim Sơn, Huyện Quế Phong.
+THPT BC Cát Ngạn : Xã Thanh Liên, Huyện Thanh Chương.
+THPT Tư thục Mai Hắc Đế : Xã Hùng Tiến, Huyện Nam Đàn.
+THPT Nguyễn Trường Tộ : Xã Hưng Trung, Huyện Hưng Nguyên.
+THPT Nghi Lộc 5 : Xã Nghi Lâm, Huyện Nghi Lộc.
+THPT Nam Yên Thành : Xã Bảo Thành, Huyện Yên Thành.
+THPT Đô Lương 4 : Xã Hiến Sơn, Huyện Đô Lương.
+THPT Tư Thục Nguyễn Du : Xã Diễn Yên, Huyện Diễn Châu.
