@@ -92,6 +92,6 @@ class SiteController extends Controller
 
     public function actionFake() {
         $datafake = new FakeData();
-        $datafake->fakeAddress();
+        $datafake->fakeRelationStudentObject();
     }
 }
