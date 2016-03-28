@@ -3,17 +3,9 @@
 namespace common\models;
 
 use Yii;
+use yii\base\Exception;
 use common\models\bmodels\BaseDistrict;
 
-/**
- * This is the model class for table "{{%district}}".
- *
- * @property integer $id
- * @property string $name
- * @property integer $provinceID
- * @property string $created_time
- * @property string $updated_time
- */
 class District extends BaseDistrict
 {
 
@@ -42,5 +34,16 @@ class District extends BaseDistrict
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
         ];
+    }
+
+    public function getProvince() {
+        return $this->hasOne(Province::className(), ['id' => 'provinceID']);
+    }
+
+    public function getProvinceName() {
+        if($this->province == null) {
+            throw new Exception("Province not found with id ".$this->provinceID, 1);
+        }
+        return $this->province->name;
     }
 }

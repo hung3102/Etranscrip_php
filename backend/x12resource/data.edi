@@ -1,0 +1,145 @@
+ISA*00*          *00*          *ZZ*SENDERID      *12*RECEIVERID    *20160328*1813*U*00401*000000001*0*T*:~
+GS*1212*SENDERID*RECEIVERID*20160328*1813*000000001*X*00401~
+ST*835*000000001~
+SR*SRN*1/2016*SRD*2016-03-21~
+STD*STDN*Nguyễn Văn Khôi*G*Nam*BD*1990-08-13*ETH*Kinh*REL*Không*FN*Nguyễn Văn Đức*FJ*Bảo mẫu*MN*Lê Thị Nhiên*MJ*Công chứng viên*TN**TJ*~
+CA*CDA*Xóm 2*CCM*Xã Nghĩa Hồng*CDT*Huyện Nghĩa Đàn*CP*tỉnh Nghệ An~
+NA*NDA*Xóm 2*NCM*Xã Nghĩa Hồng*NDT*Huyện Nghĩa Đàn*NP*tỉnh Nghệ An~
+SP*1*SPFY*2013*SPTY*2014*SPC*10E*SN*THPT Huỳnh Thúc Kháng*SPPN*Lại Thế Quang~
+SP*2*SPFY*2014*SPTY*2015*SPC*11E*SN*THPT Huỳnh Thúc Kháng*SPPN*Lại Thế Quang~
+SP*3*SPFY*2015*SPTY*2016*SPC*12E*SN*THPT Huỳnh Thúc Kháng*SPPN*Lại Thế Quang~
+YE*1*YEC*10E*YEFY*2013*YETY*2014*SD*KHTN*ACV*học sinh giỏi cấp huyện môn toán*YEN*Trong bảng này không sửa chữa ở chỗ nào*TCN*TCN*Nguyễn Văn Thịnh*ML*0*UT*Được lên lớp thẳng*VC**VCL**TC*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*PA*Đồng ý với đánh giá của giáo viên chủ nhiệm*YEPN*Lại Thế Quang*YED*2014-05-30~
+TE*1*T*0*LC*Trung bình*C*Tốt~
+SS*1SBN*Ngữ văn*S*7.9*STN*Nguyễn Lan Lan~
+SS*2SBN*Toán*S*9*STN*Nguyễn Phúc Minh~
+SS*3SBN*Vật lý*S*9.3*STN*Mai Hải Đức~
+SS*4SBN*Hóa học*S*7.7*STN*Nguyễn Thị Hà~
+SS*5SBN*Sinh học*S*6.9*STN*Nguyễn Thị Đoan~
+SS*6SBN*Lịch sử*S*8.3*STN*Nguyễn Văn Tùng~
+SS*7SBN*Địa lý*S*9*STN*Phạm Văn An~
+SS*8SBN*Công nghệ*S*6*STN*Nguyễn Lan Chi~
+SS*9SBN*Thể dục*S*8.1*STN*Lê Thị Hạnh~
+SS*10SBN*Ngoại ngữ*S*8.3*STN*Nguyễn Bá Sơn~
+SS*11SBN*Tin học*S*6.8*STN*Hoàng Xuân Hiếu~
+SS*12SBN*Giáo dục công dân*S*8.8*STN*Lê Văn Thành~
+SS*13SBN*Giáo dục quốc phòng và an ninh*S*7.7*STN*Khuất Lan Uyên~
+TE*2*T*1*LC*Trung bình*C*Tốt~
+SS*1SBN*Ngữ văn*S*8*STN*Nguyễn Thị Khuê~
+SS*2SBN*Toán*S*7.2*STN*Nguyễn Xuân Hải~
+SS*3SBN*Vật lý*S*8.2*STN*Nguyễn Văn Nam~
+SS*4SBN*Hóa học*S*6.2*STN*Lê Thị Yên~
+SS*5SBN*Sinh học*S*9.2*STN*Trần Văn Phúc~
+SS*6SBN*Lịch sử*S*7.2*STN*Hoàng Xuân Anh~
+SS*7SBN*Địa lý*S*8.6*STN*Phạm Văn Nghĩa~
+SS*8SBN*Công nghệ*S*9.4*STN*Phạm Văn Thành~
+SS*9SBN*Thể dục*S*9*STN*Vương Xuân Minh~
+SS*10SBN*Ngoại ngữ*S*7.6*STN*Nguyễn Văn Quân~
+SS*11SBN*Tin học*S*6.7*STN*Nguyễn Thị Yên~
+SS*12SBN*Giáo dục công dân*S*8.9*STN*Nguyễn Thị Nhi~
+SS*13SBN*Giáo dục quốc phòng và an ninh*S*6.5*STN*Phan Văn Dương~
+TE*3*T*2*LC*Trung bình*C*Tốt~
+SS*1SBN*Ngữ văn*S*7*STN*Lê Thị Thủy~
+SS*2SBN*Toán*S*7.1*STN*Lê Xuân Yên~
+SS*3SBN*Vật lý*S*6*STN*Nguyễn Thị Quyên~
+SS*4SBN*Hóa học*S*9.4*STN*Lê Văn Bảo~
+SS*5SBN*Sinh học*S*7.9*STN*Nguyễn Thị Linh~
+SS*6SBN*Lịch sử*S*8.1*STN*Phạm Lan Nhiên~
+SS*7SBN*Địa lý*S*8.8*STN*Nguyễn Thị Nghi~
+SS*8SBN*Công nghệ*S*6.3*STN*Nguyễn Thị Thư~
+SS*9SBN*Thể dục*S*6.8*STN*Trần Thị Vân~
+SS*10SBN*Ngoại ngữ*S*6.4*STN*Trần Văn Lộc~
+SS*11SBN*Tin học*S*7.5*STN*Trần Văn Tuấn~
+SS*12SBN*Giáo dục công dân*S*8.9*STN*Phan Phúc Khang~
+SS*13SBN*Giáo dục quốc phòng và an ninh*S*7.1*STN*Nguyễn Hải Long~
+YE*2*YEC*11E*YEFY*2014*YETY*2015*SD*KHTN*ACV*học sinh giỏi cấp tỉnh môn tin học*YEN*Trong bảng này không sửa chữa ở chỗ nào*TCN*TCN*Phạm Thị Thư*ML*0*UT*Được lên lớp thẳng*VC*Tin văn phòng*VCL*Khá*TC*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*PA*Đồng ý với đánh giá của giáo viên chủ nhiệm*YEPN*Lại Thế Quang*YED*2015-05-30~
+TE*1*T*0*LC*Trung bình*C*Khá~
+SS*1SBN*Ngữ văn*S*8.7*STN*Vũ Thu Anh~
+SS*2SBN*Toán*S*7.2*STN*Trần Thị Quyên~
+SS*3SBN*Vật lý*S*7.3*STN*Nguyễn Văn Minh~
+SS*4SBN*Hóa học*S*6.9*STN*Nguyễn Thị Như~
+SS*5SBN*Sinh học*S*7.1*STN*Phạm Thị Sương~
+SS*6SBN*Lịch sử*S*8.3*STN*Ngô Văn Khôi~
+SS*7SBN*Địa lý*S*8*STN*Nguyễn Thị Xuân~
+SS*8SBN*Công nghệ*S*6.9*STN*Phạm Thị Khánh~
+SS*9SBN*Thể dục*S*6.9*STN*Trần Văn Minh~
+SS*10SBN*Ngoại ngữ*S*9.3*STN*Nguyễn Thị Thủy~
+SS*11SBN*Tin học*S*8.5*STN*Trần Hải Thái~
+SS*12SBN*Giáo dục công dân*S*6.8*STN*Nguyễn Thị Bích~
+SS*13SBN*Giáo dục quốc phòng và an ninh*S*8.5*STN*Phí Thị An~
+TE*2*T*1*LC*Khá*C*Khá~
+SS*1SBN*Ngữ văn*S*9.5*STN*Hoàng Văn Đức~
+SS*2SBN*Toán*S*8.6*STN*Nguyễn Thị Giang~
+SS*3SBN*Vật lý*S*7.3*STN*Nguyễn Thị Yên~
+SS*4SBN*Hóa học*S*6.5*STN*Nguyễn Thị Điệp~
+SS*5SBN*Sinh học*S*7.8*STN*Nguyễn Thị Thảo~
+SS*6SBN*Lịch sử*S*6.3*STN*Phan Thị Quyên~
+SS*7SBN*Địa lý*S*8.1*STN*Đặng Văn Đức~
+SS*8SBN*Công nghệ*S*9.3*STN*Vũ Phúc Hiếu~
+SS*9SBN*Thể dục*S*9.4*STN*Nguyễn Văn Thái~
+SS*10SBN*Ngoại ngữ*S*6.6*STN*Trần Phúc Cường~
+SS*11SBN*Tin học*S*8*STN*Phan Thị An~
+SS*12SBN*Giáo dục công dân*S*7.5*STN*Lê Thị Anh~
+SS*13SBN*Giáo dục quốc phòng và an ninh*S*6.8*STN*Nguyễn Lan Anh~
+TE*3*T*2*LC*Khá*C*Tốt~
+SS*1SBN*Ngữ văn*S*6.9*STN*Nguyễn Lan Yên~
+SS*2SBN*Toán*S*7.1*STN*Nguyễn Lan Dung~
+SS*3SBN*Vật lý*S*6.5*STN*Lê Thị Điệp~
+SS*4SBN*Hóa học*S*8.2*STN*Nguyễn Trường Uy~
+SS*5SBN*Sinh học*S*6.2*STN*Đinh Thị Vân~
+SS*6SBN*Lịch sử*S*9.4*STN*Hoàng Thị Vy~
+SS*7SBN*Địa lý*S*8.5*STN*Đào Văn Khang~
+SS*8SBN*Công nghệ*S*9*STN*Nguyễn Bá Ngọc~
+SS*9SBN*Thể dục*S*7.8*STN*Nguyễn Phúc Vinh~
+SS*10SBN*Ngoại ngữ*S*7.4*STN*Nguyễn Thị Xuân~
+SS*11SBN*Tin học*S*6.3*STN*Phan Thu Hà~
+SS*12SBN*Giáo dục công dân*S*8.2*STN*Nguyễn Thị Châu~
+SS*13SBN*Giáo dục quốc phòng và an ninh*S*6.1*STN*Trần Thị Thảo~
+YE*3*YEC*12E*YEFY*2015*YETY*2016*SD*KHTN*ACV**YEN*Trong bảng này không sửa chữa ở chỗ nào*TCN*TCN*Tô Thị Hương*ML*3*UT*Được lên lớp thẳng*VC**VCL**TC*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*PA*Đồng ý với đánh giá của giáo viên chủ nhiệm*YEPN*Lại Thế Quang*YED*2016-05-30~
+TE*1*T*0*LC*Khá*C*Khá~
+SS*1SBN*Ngữ văn*S*6.3*STN*Khuất Thu Yến~
+SS*2SBN*Toán*S*6.6*STN*Trần Thị Anh~
+SS*3SBN*Vật lý*S*6.1*STN*Lâm Thị Bích~
+SS*4SBN*Hóa học*S*9*STN*Nguyễn Văn Lộc~
+SS*5SBN*Sinh học*S*9.2*STN*Lê Văn Vinh~
+SS*6SBN*Lịch sử*S*8.4*STN*Nguyễn Thị Diệp~
+SS*7SBN*Địa lý*S*9.2*STN*Đinh Văn Công~
+SS*8SBN*Công nghệ*S*9.2*STN*Vũ Văn Long~
+SS*9SBN*Thể dục*S*8.9*STN*Nguyễn Văn Lâm~
+SS*10SBN*Ngoại ngữ*S*6.1*STN*Đỗ Thị Nga~
+SS*11SBN*Tin học*S*7.1*STN*Dương Văn Minh~
+SS*12SBN*Giáo dục công dân*S*8.9*STN*Nguyễn Thị Như~
+SS*13SBN*Giáo dục quốc phòng và an ninh*S*6.7*STN*Vũ Văn Tùng~
+TE*2*T*1*LC*Giỏi*C*Khá~
+SS*1SBN*Ngữ văn*S*8.9*STN*Phan Phúc Trung~
+SS*2SBN*Toán*S*6.1*STN*Trịnh Lan Hạnh~
+SS*3SBN*Vật lý*S*7.5*STN*Nguyễn Văn Khánh~
+SS*4SBN*Hóa học*S*9.2*STN*Phan Văn Ngọc~
+SS*5SBN*Sinh học*S*7.9*STN*Lê Thu Như~
+SS*6SBN*Lịch sử*S*8.2*STN*Nguyễn Thị Nga~
+SS*7SBN*Địa lý*S*6.9*STN*Hoàng Văn Quang~
+SS*8SBN*Công nghệ*S*7.9*STN*Trần Văn Khôi~
+SS*9SBN*Thể dục*S*8.4*STN*Đặng Thị Mi~
+SS*10SBN*Ngoại ngữ*S*6.6*STN*Phan Thu Xuân~
+SS*11SBN*Tin học*S*7.2*STN*Trần Xuân Hiếu~
+SS*12SBN*Giáo dục công dân*S*6.3*STN*Bùi Thị An~
+SS*13SBN*Giáo dục quốc phòng và an ninh*S*7*STN*Nguyễn Thị Như~
+TE*3*T*2*LC*Giỏi*C*Khá~
+SS*1SBN*Ngữ văn*S*6.1*STN*Phạm Thị Yến~
+SS*2SBN*Toán*S*6.1*STN*Đào Văn Sơn~
+SS*3SBN*Vật lý*S*7.2*STN*Phạm Văn Sơn~
+SS*4SBN*Hóa học*S*7.9*STN*Trần Trường Hùng~
+SS*5SBN*Sinh học*S*8.3*STN*Ngô Văn Lâm~
+SS*6SBN*Lịch sử*S*9*STN*Nguyễn Thị Thu~
+SS*7SBN*Địa lý*S*8.5*STN*Nguyễn Phúc Phúc~
+SS*8SBN*Công nghệ*S*7*STN*Hồ Văn Đạt~
+SS*9SBN*Thể dục*S*8.7*STN*Nguyễn Văn Nghĩa~
+SS*10SBN*Ngoại ngữ*S*6.4*STN*Tạ Thu Vân~
+SS*11SBN*Tin học*S*7.1*STN*Nguyễn Văn Phong~
+SS*12SBN*Giáo dục công dân*S*7.7*STN*Trần Văn Dương~
+SS*13SBN*Giáo dục quốc phòng và an ninh*S*6.8*STN*Trần Văn Nhân~
+SE*24*000000001~
+GE*1*000000001~
+IEA*1*000000001~

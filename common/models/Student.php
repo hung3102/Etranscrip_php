@@ -7,7 +7,14 @@ use common\models\bmodels\BaseStudent;
 
 class Student extends BaseStudent
 {
-    
+    const MALE = 1;
+    const FEMALE = 2;
+
+    static $gender = [
+        self::MALE => 'Nam',
+        self::FEMALE => 'Nữ',
+    ];
+
     public static function tableName()
     {
         return '{{%student}}';
@@ -47,5 +54,25 @@ class Student extends BaseStudent
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
         ];
+    }
+
+    public function getEthnic() {
+        return $this->hasOne(Ethnic::className(), ['id' => 'ethnicID']);
+    }
+
+    public function getReligion() {
+        return $this->hasOne(Religion::className(), ['id' => 'religionID']);
+    }
+
+    public function getCurrentAddress() {
+        return $this->hasOne(Address::className(), ['id' => 'currentAddressID']);
+    }
+
+    public function getNativeAddress() {
+        return $this->hasOne(Address::className(), ['id' => 'nativeAddressID']);
+    }
+
+    public function getGenderText() {
+        return self::$gender[$this->gender];
     }
 }
