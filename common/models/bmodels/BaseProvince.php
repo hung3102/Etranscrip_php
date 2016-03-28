@@ -5,22 +5,21 @@ namespace common\models\bmodels;
 use Yii;
 
 /**
- * This is the model class for table "{{%district}}".
+ * This is the model class for table "{{%province}}".
  *
  * @property integer $id
  * @property string $name
- * @property integer $provinceID
  * @property string $created_time
  * @property string $updated_time
  */
-class BaseDistrict extends \yii\db\ActiveRecord
+class BaseProvince extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%district}}';
+        return '{{%province}}';
     }
 
     /**
@@ -29,11 +28,10 @@ class BaseDistrict extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'provinceID', 'created_time', 'updated_time'], 'required'],
-            [['provinceID'], 'integer'],
+            [['name', 'created_time', 'updated_time'], 'required'],
             [['created_time', 'updated_time'], 'safe'],
             [['name'], 'string', 'max' => 100],
-            [['name', 'provinceID'], 'unique', 'targetAttribute' => ['name', 'provinceID'], 'message' => 'The combination of Name and Province ID has already been taken.'],
+            [['name'], 'unique'],
         ];
     }
 
@@ -45,7 +43,6 @@ class BaseDistrict extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'provinceID' => 'Province ID',
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
         ];

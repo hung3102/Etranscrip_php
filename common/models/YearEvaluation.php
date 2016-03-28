@@ -51,4 +51,20 @@ class YearEvaluation extends BaseYearEvaluation
             'updated_time' => 'Updated Time',
         ];
     }
+
+    public function getAchievements() {
+        return $this->hasMany(Achievement::className(), ['yearEvaluationID' => 'id']);
+    }
+
+    public function getAchievementString() {
+        $achievements = $this->achievements;
+        if($achievements == null) {
+            return null;
+        }
+        $return = "";
+        foreach ($achievements as $achievement) {
+            $return .= $achievement->name . ", ";
+        }
+        return substr($return, 0, -2);
+    }
 }

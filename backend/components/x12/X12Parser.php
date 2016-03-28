@@ -46,7 +46,7 @@ class X12Parser extends FormatException implements Parser {
 		fclose($f);
 		$line = trim($line, "\n\r\n");
 		if(strlen($line) != self::SIZE) {
-			throw new FormatException("Error: Size of ST segment line in the file is not right!", 1);
+			throw new FormatException("Error: Size of ISA segment line in the file is not right!", 1);
 		}
 		$context = new Context();
 		$context->setSegmentSeparator($line[self::POS_SEGMENT]);

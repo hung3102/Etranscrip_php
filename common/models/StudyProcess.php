@@ -37,4 +37,8 @@ class StudyProcess extends BaseStudyProcess
             'updated_time' => 'Updated Time',
         ];
     }
+
+    public function getSchool() {
+        return $this->hasOne(School::className(), ['id' => 'schoolID']);
+    }
 }
