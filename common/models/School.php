@@ -4,6 +4,8 @@ namespace common\models;
 
 use Yii;
 use common\models\bmodels\BaseSchool;
+use yii\behaviors\TimestampBehavior;
+use common\models\Address;
 
 class School extends BaseSchool
 {
@@ -24,6 +26,19 @@ class School extends BaseSchool
         ];
     }
 
+    public function behaviors()
+    {
+        date_default_timezone_set('Asia/Saigon');
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'value' => date('Y:m:d h:i:s'),
+                'createdAtAttribute' => 'created_time',
+                'updatedAtAttribute' => 'updated_time',
+            ],
+        ];
+    }
+    
     public function attributeLabels()
     {
         return [
@@ -33,5 +48,9 @@ class School extends BaseSchool
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
         ];
+    }
+
+    public function getAddress() {
+        return $this->hasOne(Address::className(), ['id' => 'addressID']);
     }
 }

@@ -3,25 +3,24 @@
 namespace common\models;
 
 use Yii;
-use common\models\bmodels\BaseProvince;
+use common\models\bmodels\BaseObject;
 use yii\behaviors\TimestampBehavior;
-use common\models\District;
+use common\models\Student;
 
-class Province extends BaseProvince
+class Object extends BaseObject
 {
-    
+
     public static function tableName()
     {
-        return '{{%province}}';
+        return '{{%object}}';
     }
 
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['name', 'created_time', 'updated_time'], 'safe'],
-            [['name'], 'string', 'max' => 100],
-            [['name'], 'unique'],
+            [['content'], 'string'],
+            [['content'], 'required'],
+            [['content', 'created_time', 'updated_time'], 'safe'],
         ];
     }
 
@@ -37,18 +36,20 @@ class Province extends BaseProvince
             ],
         ];
     }
-    
+
     public function attributeLabels()
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'content' => 'Content',
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
         ];
     }
 
-    public function getDistricts() {
-        return $this->hasMany(District::className(), ['provinceID' => 'id']);
+    public function getStudents() {
+        return $this->hasMany(Student::className(), ['id' => 'studentID'])
+            ->viaTable('tbl_relation_student_object', ['objectID' => 'id']);
     }
+
 }

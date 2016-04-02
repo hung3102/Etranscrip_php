@@ -13,7 +13,7 @@ use Yii;
  * @property string $toYear
  * @property string $class
  * @property integer $schoolID
- * @property string $principleName
+ * @property string $principalName
  * @property string $created_time
  * @property string $updated_time
  */
@@ -36,7 +36,7 @@ class BaseStudyProcess extends \yii\db\ActiveRecord
             [['schoolReportID', 'fromYear', 'toYear', 'class', 'schoolID', 'created_time', 'updated_time'], 'required'],
             [['schoolReportID', 'schoolID'], 'integer'],
             [['fromYear', 'toYear', 'created_time', 'updated_time'], 'safe'],
-            [['class', 'principleName'], 'string', 'max' => 50],
+            [['class', 'principalName'], 'string', 'max' => 50],
         ];
     }
 
@@ -52,7 +52,7 @@ class BaseStudyProcess extends \yii\db\ActiveRecord
             'toYear' => 'To Year',
             'class' => 'Class',
             'schoolID' => 'School ID',
-            'principleName' => 'Principle Name',
+            'principalName' => 'Principle Name',
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
         ];

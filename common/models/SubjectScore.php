@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use common\models\bmodels\BaseSubjectScore;
+use yii\behaviors\TimestampBehavior;
 
 class SubjectScore extends BaseSubjectScore
 {
@@ -24,6 +25,19 @@ class SubjectScore extends BaseSubjectScore
         ];
     }
 
+    public function behaviors()
+    {
+        date_default_timezone_set('Asia/Saigon');
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'value' => date('Y:m:d h:i:s'),
+                'createdAtAttribute' => 'created_time',
+                'updatedAtAttribute' => 'updated_time',
+            ],
+        ];
+    }
+    
     public function attributeLabels()
     {
         return [

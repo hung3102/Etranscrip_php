@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use common\models\bmodels\BaseAchievement;
+use yii\behaviors\TimestampBehavior;
 
 class Achievement extends BaseAchievement
 {
@@ -31,6 +32,19 @@ class Achievement extends BaseAchievement
             'yearEvaluationID' => 'Year Evaluation ID',
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
+        ];
+    }
+
+    public function behaviors()
+    {
+        date_default_timezone_set('Asia/Saigon');
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'value' => date('Y:m:d h:i:s'),
+                'createdAtAttribute' => 'created_time',
+                'updatedAtAttribute' => 'updated_time',
+            ],
         ];
     }
 }

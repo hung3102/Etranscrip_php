@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use common\models\bmodels\BaseAddress;
+use yii\behaviors\TimestampBehavior;
 
 class Address extends BaseAddress
 {
@@ -21,6 +22,19 @@ class Address extends BaseAddress
             [['detailAddress', 'districtID', 'created_time', 'updated_time'], 'safe'],
             [['detailAddress'], 'string', 'max' => 255],
             [['detailAddress', 'communeID', 'districtID'], 'unique', 'targetAttribute' => ['detailAddress', 'communeID', 'districtID'], 'message' => 'The combination of Detail Address, Commune ID and District ID has already been taken.'],
+        ];
+    }
+
+    public function behaviors()
+    {
+        date_default_timezone_set('Asia/Saigon');
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'value' => date('Y:m:d h:i:s'),
+                'createdAtAttribute' => 'created_time',
+                'updatedAtAttribute' => 'updated_time',
+            ],
         ];
     }
 

@@ -4,15 +4,8 @@ namespace common\models;
 
 use Yii;
 use common\models\bmodels\BaseReligion;
+use yii\behaviors\TimestampBehavior;
 
-/**
- * This is the model class for table "{{%religion}}".
- *
- * @property integer $id
- * @property string $name
- * @property string $created_time
- * @property string $updated_time
- */
 class Religion extends BaseReligion
 {
     
@@ -31,9 +24,19 @@ class Religion extends BaseReligion
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
+    public function behaviors()
+    {
+        date_default_timezone_set('Asia/Saigon');
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'value' => date('Y:m:d h:i:s'),
+                'createdAtAttribute' => 'created_time',
+                'updatedAtAttribute' => 'updated_time',
+            ],
+        ];
+    }
+    
     public function attributeLabels()
     {
         return [

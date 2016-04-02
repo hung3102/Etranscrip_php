@@ -5,6 +5,9 @@ namespace common\models;
 use Yii;
 use yii\base\Exception;
 use common\models\bmodels\BaseDistrict;
+use yii\behaviors\TimestampBehavior;
+use common\models\Commune;
+use common\models\Province;
 
 class District extends BaseDistrict
 {
@@ -25,6 +28,19 @@ class District extends BaseDistrict
         ];
     }
 
+    public function behaviors()
+    {
+        date_default_timezone_set('Asia/Saigon');
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'value' => date('Y:m:d h:i:s'),
+                'createdAtAttribute' => 'created_time',
+                'updatedAtAttribute' => 'updated_time',
+            ],
+        ];
+    }
+    
     public function attributeLabels()
     {
         return [
@@ -45,5 +61,9 @@ class District extends BaseDistrict
             throw new Exception("Province not found with id ".$this->provinceID, 1);
         }
         return $this->province->name;
+    }
+
+    public function getCommunes() {
+        return $this->hasMany(Commune::className(), ['districtID' => 'id']);
     }
 }

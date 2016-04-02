@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use common\models\bmodels\BaseStudyProcess;
+use yii\behaviors\TimestampBehavior;
 
 class StudyProcess extends BaseStudyProcess
 {
@@ -19,10 +20,23 @@ class StudyProcess extends BaseStudyProcess
             [['schoolReportID', 'fromYear', 'toYear', 'class', 'schoolID'], 'required'],
             [['schoolReportID', 'schoolID'], 'integer'],
             [['schoolReportID', 'fromYear', 'toYear', 'class', 'schoolID', 'created_time', 'updated_time'], 'safe'],
-            [['class', 'principleName'], 'string', 'max' => 50],
+            [['class', 'principalName'], 'string', 'max' => 50],
         ];
     }
 
+    public function behaviors()
+    {
+        date_default_timezone_set('Asia/Saigon');
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'value' => date('Y:m:d h:i:s'),
+                'createdAtAttribute' => 'created_time',
+                'updatedAtAttribute' => 'updated_time',
+            ],
+        ];
+    }
+    
     public function attributeLabels()
     {
         return [
@@ -32,7 +46,7 @@ class StudyProcess extends BaseStudyProcess
             'toYear' => 'To Year',
             'class' => 'Class',
             'schoolID' => 'School ID',
-            'principleName' => 'Principle Name',
+            'principalName' => 'Principle Name',
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
         ];

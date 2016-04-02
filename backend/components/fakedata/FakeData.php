@@ -547,7 +547,7 @@ class FakeData {
 			'toTime' => function() use (&$year) {
 				return ++$year;
 			},
-			'schoolID' => function() use (&$i) {
+			'schoolID' => function() use (&$i) { // warning: Table RelationSchoolStudent is removed
 				return RelationSchoolStudent::find()->where('studentID = :sID', ['sID' => $i])->one()->id;
 			},
 			'class' => function() use ($className, &$class, &$name, &$year, &$i) {

@@ -4,6 +4,8 @@ namespace common\models;
 
 use Yii;
 use common\models\bmodels\BaseStudent;
+use yii\behaviors\TimestampBehavior;
+use common\models\Object;
 
 class Student extends BaseStudent
 {
@@ -33,6 +35,19 @@ class Student extends BaseStudent
         ];
     }
 
+    public function behaviors()
+    {
+        date_default_timezone_set('Asia/Saigon');
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'value' => date('Y:m:d h:i:s'),
+                'createdAtAttribute' => 'created_time',
+                'updatedAtAttribute' => 'updated_time',
+            ],
+        ];
+    }
+    
     public function attributeLabels()
     {
         return [
@@ -75,4 +90,10 @@ class Student extends BaseStudent
     public function getGenderText() {
         return self::$gender[$this->gender];
     }
+
+    public function getObjects() {
+        return $this->hasMany(Object::className(), ['id' => 'objectID'])
+            ->viaTable('tbl_relation_student_object', ['studentID' => 'id']);
+    }
+
 }

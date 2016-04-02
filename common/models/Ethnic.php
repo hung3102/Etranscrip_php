@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use common\models\bmodels\BaseEthnic;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%ethnic}}".
@@ -31,6 +32,19 @@ class Ethnic extends BaseEthnic
         ];
     }
 
+    public function behaviors()
+    {
+        date_default_timezone_set('Asia/Saigon');
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'value' => date('Y:m:d h:i:s'),
+                'createdAtAttribute' => 'created_time',
+                'updatedAtAttribute' => 'updated_time',
+            ],
+        ];
+    }
+    
     public function attributeLabels()
     {
         return [

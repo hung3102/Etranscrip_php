@@ -283,7 +283,7 @@ class Loop {
 			}
 			$moreLoops = $l->findLoop($name);
 			if (sizeof($moreLoops) > 0) {
-				array_merge($foundLoops, $moreLoops);
+				$foundLoops = array_merge($foundLoops, $moreLoops);
 			}
 		}
 		
