@@ -7,6 +7,9 @@ use yii\web\Controller;
 use backend\components\x12\X12Creator;
 use backend\components\x12\X12Parser;
 use backend\components\x12\Cf;
+use common\models\SchoolReport;
+use yii\base\Exception;
+use common\models\X12Integration;
 
 class X12Controller extends Controller
 {
@@ -37,74 +40,29 @@ class X12Controller extends Controller
     }
 
     public function actionCreate() {
-        $x12 = new X12Creator();
         $file = Yii::$app->basePath . '/x12resource/data.edi';
-        file_put_contents($file, $x12->create(1));
+        $action=Yii::$app->request->post('action');
+        $schoolReportIDs=(array)Yii::$app->request->post('selection');
+        if($schoolReportIDs == null) {
+            Yii::$app->session->setFlash('error', 'Error: No checkbox was checked!');
+            return $this->redirect(['school-report/index']);
+        }
+        $x12 = new X12Creator();
+        if(file_put_contents($file, $x12->create($schoolReportIDs))) {
+            Yii::$app->session->setFlash('success', 'x12 file was created successfully');
+            return $this->redirect(['school-report/index']);
+        }
     }
 
     public function actionParse() {
-        $xml = "<LOOP NAME=\"X12\">" .
-            "<LOOP NAME=\"ISA\">" .
-                "<ISA><ISA01><![CDATA[00]]></ISA01><ISA02><![CDATA[          ]]></ISA02><ISA03><![CDATA[00]]></ISA03><ISA04><![CDATA[          ]]></ISA04><ISA05><![CDATA[ZZ]]></ISA05><ISA06><![CDATA[SENDERID       ]]></ISA06><ISA07><![CDATA[ZZ]]></ISA07><ISA08><![CDATA[RECEIVERID    ]]></ISA08><ISA09><![CDATA[030409]]></ISA09><ISA10><![CDATA[0701]]></ISA10><ISA11><![CDATA[U]]></ISA11><ISA12><![CDATA[00401]]></ISA12><ISA13><![CDATA[0000000001]]></ISA13><ISA14><![CDATA[0]]></ISA14><ISA15><![CDATA[T]]></ISA15><ISA16><![CDATA[:]]></ISA16></ISA>" .
-                "<LOOP NAME=\"GS\">" .
-                    "<GS><GS01><![CDATA[1212]]></GS01><GS02><![CDATA[SENDERID]]></GS02><GS03><![CDATA[RECEIVERID]]></GS03><GS04><![CDATA[0701]]></GS04><GS05><![CDATA[000000001]]></GS05><GS06><![CDATA[X]]></GS06><GS07><![CDATA[00401]]></GS07></GS>" .
-                    "<LOOP NAME=\"ST\">" .
-                        "<ST><ST01><![CDATA[835]]></ST01><ST02><![CDATA[000000001]]></ST02></ST>" .
-                        "<BPR><BPR01><![CDATA[DATA]]></BPR01><BPR02><![CDATA[NOT]]></BPR02><BPR03><![CDATA[VALID]]></BPR03><BPR04><![CDATA[RANDOM]]></BPR04><BPR05><![CDATA[TEXT]]></BPR05></BPR>" .
-                        "<TRN><TRN01><![CDATA[1]]></TRN01><TRN02><![CDATA[0000000000]]></TRN02><TRN03><![CDATA[1999999999]]></TRN03></TRN>" .
-                        "<DTM><DTM01><![CDATA[111]]></DTM01><DTM02><![CDATA[20090915]]></DTM02></DTM>" .
-                        "<LOOP NAME=\"1000A\">" .
-                            "<N1><N101><![CDATA[PR]]></N101><N102><![CDATA[ALWAYS INSURANCE COMPANY]]></N102></N1>" .
-                            "<N7><N701><![CDATA[AROUND THE CORNER]]></N701></N7>" .
-                            "<N4><N401><![CDATA[SHINE CITY]]></N401><N402><![CDATA[GREEN STATE]]></N402><N403><![CDATA[ZIP]]></N403></N4>" .
-                            "<REF><REF01><![CDATA[DT]]></REF01><REF02><![CDATA[435864864]]></REF02></REF></LOOP>" .
-                        "<LOOP NAME=\"1000B\">" .
-                            "<N1><N101><![CDATA[PE]]></N101><N102><![CDATA[FI]]></N102><N103><![CDATA[888888888]]></N103><N104><![CDATA[P.O.BOX 456]]></N104><N105><![CDATA[SHINE CITY]]></N105><N106><![CDATA[GREEN STATE]]></N106><N107><![CDATA[ZIP]]></N107><N108><![CDATA[EARTH]]></N108></N1>" .
-                        "</LOOP>" .
-                        "<LOOP NAME=\"2000\">" .
-                            "<LX><LX01><![CDATA[1]]></LX01></LX>" .
-                            "<LOOP NAME=\"2100\">" .
-                                "<CLP><CLP01><![CDATA[PCN123456789]]></CLP01><CLP02><![CDATA[]]></CLP02><CLP03><![CDATA[5555.55]]></CLP03><CLP04><![CDATA[]]></CLP04><CLP05><![CDATA[CCN987654321]]></CLP05></CLP>" .
-                                "<CAS><CAS01><![CDATA[PR]]></CAS01><CAS02><![CDATA[909099]]></CAS02><CAS03><![CDATA[100.00]]></CAS03></CAS>" .
-                                "<NM1><NM101><![CDATA[QC]]></NM101><NM102><![CDATA[1]]></NM102><NM103><![CDATA[PATIENT]]></NM103><NM104><![CDATA[TREATED]]></NM104><NM105><![CDATA[ONE]]></NM105><NM106><![CDATA[]]></NM106><NM107><![CDATA[]]></NM107><NM108><![CDATA[34]]></NM108><NM109><![CDATA[333333333]]></NM109></NM1>" .
-                                "<DTM><DTM01><![CDATA[273]]></DTM01><DTM02><![CDATA[20020824]]></DTM02></DTM>" .
-                                "<AMT><AMT01><![CDATA[A1]]></AMT01><AMT02><![CDATA[10.10]]></AMT02></AMT>" .
-                                "<AMT><AMT01><![CDATA[A2]]></AMT01><AMT02><![CDATA[20.20]]></AMT02></AMT></LOOP>" .
-                            "</LOOP>" .
-                        "<LOOP NAME=\"2000\">" .
-                            "<LX><LX01><![CDATA[2]]></LX01></LX>" .
-                            "<LOOP NAME=\"2100\">" .
-                                "<CLP><CLP01><![CDATA[PCN123456789]]></CLP01><CLP02><![CDATA[]]></CLP02><CLP03><![CDATA[4444.44]]></CLP03><CLP04><![CDATA[]]></CLP04><CLP05><![CDATA[CCN987654321]]></CLP05></CLP>" .
-                                "<CAS><CAS01><![CDATA[PR]]></CAS01><CAS02><![CDATA[909099]]></CAS02><CAS03><![CDATA[200.00]]></CAS03></CAS>" .
-                                "<NM1><NM101><![CDATA[QC]]></NM101><NM102><![CDATA[1]]></NM102><NM103><![CDATA[PATIENT]]></NM103><NM104><![CDATA[TREATED]]></NM104><NM105><![CDATA[TWO]]></NM105><NM106><![CDATA[]]></NM106><NM107><![CDATA[]]></NM107><NM108><![CDATA[34]]></NM108><NM109><![CDATA[444444444]]></NM109></NM1>" .
-                                "<DTM><DTM01><![CDATA[273]]></DTM01><DTM02><![CDATA[20020824]]></DTM02></DTM>" .
-                                "<AMT><AMT01><![CDATA[A1]]></AMT01><AMT02><![CDATA[30.30]]></AMT02></AMT>" .
-                                "<AMT><AMT01><![CDATA[A2]]></AMT01><AMT02><![CDATA[40.40]]></AMT02></AMT>" .
-                            "</LOOP>" .
-                        "</LOOP>" .
-                    "</LOOP>" .
-                    "<LOOP NAME=\"SE\">" .
-                        "<SE><SE01><![CDATA[24]]></SE01><SE02><![CDATA[000000001]]></SE02></SE>" .
-                    "</LOOP>" .
-                "</LOOP>" .
-                "<LOOP NAME=\"GE\">" .
-                    "<GE><GE01><![CDATA[1]]></GE01><GE02><![CDATA[000000001]]></GE02></GE>" .
-                "</LOOP>" .
-            "</LOOP>" .
-            "<LOOP NAME=\"IEA\">" .
-                "<IEA><IEA01><![CDATA[1]]></IEA01><IEA02><![CDATA[000000001]]></IEA02></IEA>" .
-            "</LOOP>" .
-        "</LOOP>";
-        // echo "<pre>";
-        // var_dump(htmlspecialchars($xml));
-        // echo "</pre>";
-        // exit();
         $parser = new X12Parser($this->cf());
         $f1 = Yii::$app->basePath.'/x12resource/data.edi';
         $x12 = $parser->parse($f1);
-        // return self::EXPECTED_X12_TOSTRING === $x12->toString() ? "right" : "wrong";
-        // return $x12->toXML() === self::EXPECTED_X12_TOXML ? "right" : "wrong";
-        return htmlspecialchars($x12->toXML());
+        $x12Integration = new X12Integration();
+        if($x12Integration->integrate($x12)) {
+            Yii::$app->session->setFlash('success', 'Success : Save school reports from x12 file successfully');
+            return $this->redirect(['school-report/index']);
+        }
     }
 
     private function cf() {
@@ -116,8 +74,11 @@ class X12Controller extends Controller
         $cfSTD = $cfSR->addChild("STD", "STD");
         $cfSTD->addChild("CA", "CA");
         $cfSTD->addChild("NA", "NA");
-        $cfSR->addChild("SP", "SP");
+        $cfSTD->addChild("OJ", "OJ");
+        $cfSP = $cfSR->addChild("SP", "SP");
+        $cfSP->addChild("SCH", "SCH");
         $cfYE = $cfSR->addChild("YE", "YE");
+        $cfYE->addChild("ACV", "ACV");
         $cfTE = $cfYE->addChild("TE", "TE");
         $cfTE->addChild("SS", "SS");
         $cfGS->addChild("SE", "SE");
@@ -125,4 +86,5 @@ class X12Controller extends Controller
         $cfX12->addChild("IEA", "IEA");
         return $cfX12;  
     }
+
 }

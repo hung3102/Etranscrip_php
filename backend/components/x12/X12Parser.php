@@ -92,59 +92,6 @@ class X12Parser extends FormatException implements Parser {
 		
 		return $x12;
 	}
-	
-	/**
-	 * The method takes a InputStream and converts it into a X12 object. The X12
-	 * class has methods to convert it into XML format as well as methods to
-	 * modify the contents.
-	 * 
-	 * @param source
-	 *            InputStream
-	 * @return the X12 object
-	 * @throws FormatException
-	 * @throws IOException
-	 */
-
-	// public EDI parse(InputStream source) throws FormatException, IOException {
-	// 	StringBuilder strBuffer = new StringBuilder();
-	// 	char[] cbuf = new char[1024];
-	// 	int length = -1;
-
-	// 	Reader reader = new BufferedReader(new InputStreamReader(source));
-
-	// 	while ((length = reader.read(cbuf)) != -1) {
-	// 		strBuffer.append(cbuf, 0, length);
-	// 	}
-
-	// 	String strSource = strBuffer.toString();
-	// 	return parse(strSource);
-	// }
-		
-	/**
-	 * The method takes a X12 string and converts it into a X2 object. The X12
-	 * class has methods to convert it into XML format as well as methods to
-	 * modify the contents.
-	 * 
-	 * @param source
-	 *            String
-	 * @return the X12 object
-	 * @throws FormatException
-	 * @throws IOException
-	 */
-	// public EDI parse(String source) throws FormatException {
-	// 	if (source.length() < SIZE) {
-	// 		throw new FormatException();
-	// 	}
-	// 	$context = new Context();
-	// 	$context->setSegmentSeparator(source.charAt(POS_SEGMENT));
-	// 	$context->setElementSeparator(source.charAt(POS_ELEMENT));
-	// 	$context->setCompositeElementSeparator(source.charAt(POS_COMPOSITE_ELEMENT));
-
-	// 	$scanner = new Scanner(source);
-	// 	$x12 = scanSource(scanner, context);
-	// 	scanner.close();
-	// 	return x12;
-	// }
  
 	/**
 	 * Checks if the segment (or line read) matches to current loop

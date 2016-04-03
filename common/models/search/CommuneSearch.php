@@ -5,12 +5,12 @@ namespace common\models\search;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\SchoolReport;
+use common\models\Commune;
 
 /**
- * SchoolReportSearch represents the model behind the search form about `common\models\SchoolReport`.
+ * CommuneSearch represents the model behind the search form about `common\models\Commune`.
  */
-class SchoolReportSearch extends SchoolReport
+class CommuneSearch extends Commune
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class SchoolReportSearch extends SchoolReport
     public function rules()
     {
         return [
-            [['id', 'studentID'], 'integer'],
-            [['number', 'date', 'created_time', 'updated_time'], 'safe'],
+            [['id', 'districtID'], 'integer'],
+            [['name', 'created_time', 'updated_time'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class SchoolReportSearch extends SchoolReport
      */
     public function search($params)
     {
-        $query = SchoolReport::find();
+        $query = Commune::find();
 
         // add conditions that should always apply here
 
@@ -60,13 +60,12 @@ class SchoolReportSearch extends SchoolReport
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'studentID' => $this->studentID,
-            'date' => $this->date,
+            'districtID' => $this->districtID,
             'created_time' => $this->created_time,
             'updated_time' => $this->updated_time,
         ]);
 
-        $query->andFilterWhere(['like', 'number', $this->number]);
+        $query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }
