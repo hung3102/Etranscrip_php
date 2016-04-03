@@ -50,7 +50,7 @@ class SchoolReport extends BaseSchoolReport
         ];
     }
 
-    public function getStudents() {
+    public function getStudent() {
         return $this->hasOne(Student::className(), ['id' => 'studentID']);
     }
 

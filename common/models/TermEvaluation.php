@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Exception;
 use common\models\bmodels\BaseTermEvaluation;
 use yii\behaviors\TimestampBehavior;
+use common\models\SubjectScore;
 
 class TermEvaluation extends BaseTermEvaluation
 {
@@ -77,5 +78,9 @@ class TermEvaluation extends BaseTermEvaluation
         } else {
             throw new Exception("Error : Doesn't know term name ".$termText, 1);
         }
+    }
+
+    public function getSubjectScores() {
+        return $this->hasMany(SubjectScore::className(), ['termEvaluationID' => 'id']);
     }
 }

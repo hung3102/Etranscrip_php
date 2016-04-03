@@ -59,9 +59,10 @@ class X12Controller extends Controller
         $f1 = Yii::$app->basePath.'/x12resource/data.edi';
         $x12 = $parser->parse($f1);
         $x12Integration = new X12Integration();
-        $x12Integration->integrate($x12);
-        // $this->execute($x12);
-        // return htmlspecialchars($x12->toXML());
+        if($x12Integration->integrate($x12)) {
+            Yii::$app->session->setFlash('success', 'Success : Save school reports from x12 file successfully');
+            return $this->redirect(['school-report/index']);
+        }
     }
 
     private function cf() {
@@ -84,22 +85,6 @@ class X12Controller extends Controller
         $cfISA->addChild("GE", "GE");
         $cfX12->addChild("IEA", "IEA");
         return $cfX12;  
-    }
-
-    private function execute($x12) {
-        $srLoops = $x12->findLoop("SR");
-        if($srLoops == null) {
-            throw new Exception("Not found SchoolReport in x12 file", 1);
-        }
-        foreach ($srLoops as $srLoop) {
-            $yeLoop = $srLoop->findLoop("YE");
-            
-            echo "<pre>";
-            var_dump($yeLoop[0]->getSegment(0));
-            echo "</pre>";
-            echo "\n=============\n";
-        }
-        exit();
     }
 
 }

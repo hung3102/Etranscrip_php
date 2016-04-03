@@ -22,6 +22,7 @@ class X12Integration {
 
 	public function integrate($x12) {
 		$this->createSchoolReportModel($x12);
+		return true;
 	}
 
 	private function createSchoolReportModel($x12) {
@@ -41,11 +42,13 @@ class X12Integration {
 	        		$schoolReport->save();
 	        		$this->createStudyProcessModel($srLoop, $schoolReport);
 	        		$this->createYearEvaluationModel($srLoop, $schoolReport);
+	        	} else {
+	        		$schoolReport->date = $srLoop->getSegment(0)->getElement(4);
+	        		$schoolReport->studentID = $this->createStudentModel($srLoop, $schoolReport, true)->id;
+	        		$schoolReport->save();
+	        		$this->createStudyProcessModel($srLoop, $schoolReport, true);
+	        		$this->createYearEvaluationModel($srLoop, $schoolReport, true);
 	        	}
-	        	// echo "<pre>";
-		        // var_dump($schoolReport);
-		        // echo "</pre>";
-		        // exit();
 	        }
 	        $transaction->commit();
 		} catch (Exception $e) {
@@ -55,7 +58,7 @@ class X12Integration {
         return true;
 	}
 
-	private function createStudentModel($srLoop) {
+	private function createStudentModel($srLoop, $schoolReport = null, $SR_EXIST = false) {
 		$stdLoops = $srLoop->findLoop("STD");
         if($stdLoops == null) {
         	throw new Exception("Error: Student is must exist in School Report", 1);	
@@ -78,17 +81,27 @@ class X12Integration {
 			'ethnicID' => $this->getEthnic($stdLoop->getSegment(0)->getElement(8))->id,
 			'religionID' => $this->getReligion($stdLoop->getSegment(0)->getElement(10))->id,
 		];
-		$student = Student::findOne($attributes);
-		if($student == null) {
-			$student = new Student($attributes);
+		if($SR_EXIST == false) {
+			$student = Student::findOne($attributes);
+			if($student == null) {
+				$student = new Student($attributes);
+				$student->save();
+			}
+		} else {
+			$student = $schoolReport->student;
+			$student->attributes = $attributes;
 			$student->save();
 		}
-		$this->createObjectModel($stdLoop, $student);
-
+		$this->createObjectModel($stdLoop, $student, $SR_EXIST);
 		return $student;
 	}
 
-	private function createObjectModel($stdLoop, $student) {
+	private function createObjectModel($stdLoop, $student, $SR_EXIST = false) {
+		if($SR_EXIST == true && $student->objects != null) {
+			foreach ($student->objects as $object) {
+				$student->unlink('objects', $object, true);	
+			}
+		}
 		$ojLoops = $stdLoop->findLoop("OJ");
 		if($ojLoops != null) {
 			foreach ($ojLoops as $ojLoop) {
@@ -98,7 +111,11 @@ class X12Integration {
 						"Error : Not found object ". $ojLoop->getSegment(0)->getElement(1), 1
 					);
 				}
-				$student->link('objects', $object);
+				date_default_timezone_set('Asia/Saigon');
+				$student->link('objects', $object, [
+					'created_time' => date('Y:m:d h:i:s'),
+					'updated_time' => date('Y:m:d h:i:s'),
+				]);
 			}
 		}
 		return true;
@@ -115,12 +132,11 @@ class X12Integration {
         $province = $this->getProvince($caLoop->getSegment(0)->getElement(8));
         $district = $this->getDistrict($caLoop->getSegment(0)->getElement(6), $province);
         $commune = $this->getCommune($caLoop->getSegment(0)->getElement(4), $district);
-        $attributes = [
+		$address = Address::findOne([
 			'detailAddress' => $caLoop->getSegment(0)->getElement(2),
 			'communeID' => $commune->id,
 			'districtID' => $district->id,
-		];
-		$address = Address::findOne($attributes);
+		]);
 		if($address == null) {
 			throw new Exception("Error : Not found address", 1);
 		}
@@ -138,12 +154,11 @@ class X12Integration {
         $province = $this->getProvince($naLoop->getSegment(0)->getElement(8));
         $district = $this->getDistrict($naLoop->getSegment(0)->getElement(6), $province);
         $commune = $this->getCommune($naLoop->getSegment(0)->getElement(4), $district);
-        $attributes = [
+		$address = Address::findOne([
 			'detailAddress' => $naLoop->getSegment(0)->getElement(2),
 			'communeID' => $commune->id,
 			'districtID' => $district->id,
-		];
-		$address = Address::findOne($attributes);
+		]);
 		if($address == null) {
 			throw new Exception("Error : Not found address", 1);
 		}
@@ -206,7 +221,12 @@ class X12Integration {
 		return $religion;
 	}
 
-	private function createStudyProcessModel($srLoop, $schoolReport) {
+	private function createStudyProcessModel($srLoop, $schoolReport, $SR_EXIST = false) {
+		if($SR_EXIST == true && $schoolReport->studyProcesses != null) {
+			foreach ($schoolReport->studyProcesses as $studyProcess) {
+				$schoolReport->unlink('studyProcesses', $studyProcess, true);
+			}
+		}
 		$spLoops = $srLoop->findLoop("SP");
 		if($spLoops == null) {
 			throw new Exception("Error: Study Process must exist in School Report", 1);
@@ -224,6 +244,8 @@ class X12Integration {
 			if($studyProcess == null) {
 				$studyProcess = new studyProcess($attributes);
 				$studyProcess->save();
+			} else {
+				throw new Exception("Error : Detect Study Process duplicated in DB!", 1);
 			}
 		}
 		return true;
@@ -252,12 +274,11 @@ class X12Integration {
         $province = $this->getProvince($schLoop->getSegment(0)->getElement(10));
         $district = $this->getDistrict($schLoop->getSegment(0)->getElement(8), $province);
         $commune = $this->getCommune($schLoop->getSegment(0)->getElement(6), $district);
-        $attributes = [
+		$address = Address::findOne([
 			'detailAddress' => $schLoop->getSegment(0)->getElement(4),
 			'communeID' => $commune->id,
 			'districtID' => $district->id,
-		];
-		$address = Address::findOne($attributes);
+		]);
 		if($address == null) {
 			throw new Exception(
 				"Error : Not found address of school ".$schLoop->getSegment(0)->getElement(2), 1
@@ -266,7 +287,10 @@ class X12Integration {
 		return $address;				
 	}
 
-	private function createYearEvaluationModel($srLoop, $schoolReport) {
+	private function createYearEvaluationModel($srLoop, $schoolReport, $SR_EXIST = false) {
+		if($SR_EXIST == true) {
+			$this->removeRelatedYearEvaluation($schoolReport);
+		}
 		$yeLoops = $srLoop->findLoop("YE");
 		if($yeLoops == null) {
 			throw new Exception("Error : Year Evaluation must be exist in School Report", 1);
@@ -293,6 +317,8 @@ class X12Integration {
 			if($yearEvaluation == null) {
 				$yearEvaluation = new YearEvaluation($attributes);
 				$yearEvaluation->save();
+			} else {
+				throw new Exception("Error : Detect Year Evaluation duplicated in DB!", 1);
 			}
 			$this->createAchievementModel($yeLoop, $yearEvaluation);
 			$this->createTermEvaluation($yeLoop, $yearEvaluation);
@@ -312,6 +338,8 @@ class X12Integration {
 				if($achievement == null) {
 					$achievement = new Achievement($attributes);
 					$achievement->save();
+				} else {
+					throw new Exception("Error : Detect achievement duplicated in DB!", 1);
 				}
 			}
 		}
@@ -334,6 +362,8 @@ class X12Integration {
 			if($termEvaluation == null) {
 				$termEvaluation = new TermEvaluation($attributes);
 				$termEvaluation->save();
+			} else {
+				throw new Exception("Error : Detect Term Evaluation duplicated in DB!", 1);
 			}
 			$this->createSubjectScoreModel($teLoop, $termEvaluation);
 		}
@@ -356,6 +386,8 @@ class X12Integration {
 			if($subjectScore == null) {
 				$subjectScore = new SubjectScore($attributes);
 				$subjectScore->save();
+			} else {
+				throw new Exception("Error : Detect Subject Score duplicated in DB!", 1);
 			}
 		}
 		return true;
@@ -367,5 +399,45 @@ class X12Integration {
 			throw new Exception("Error : Not found subject ".$ssLoop->getSegment(0)->getElement(3), 1);
 		}
 		return $subject;
+	}
+
+	//========= if schoolreport exist =============//
+	private function removeRelatedYearEvaluation($schoolReport) {
+		if($schoolReport->yearEvaluations != null) {
+			foreach ($schoolReport->yearEvaluations as $yearEvaluation) {
+				$this->removeRelatedAchievement($yearEvaluation);
+				$this->removeRelatedTermEvaluation($yearEvaluation);
+				$schoolReport->unlink('yearEvaluations', $yearEvaluation, true);
+			}
+		}
+		return true;
+	}
+
+	private function removeRelatedAchievement($yearEvaluation) {
+		if($yearEvaluation->achievements != null) {
+			foreach ($yearEvaluation->achievements as $achievement) {
+				$yearEvaluation->unlink('achievements', $achievement, true);
+			}
+		}
+		return true;
+	}
+
+	private function removeRelatedTermEvaluation($yearEvaluation) {
+		if($yearEvaluation->termEvaluations != null) {
+			foreach ($yearEvaluation->termEvaluations as $termEvaluation) {
+				$this->removeRelatedSubjectScore($termEvaluation);
+				$yearEvaluation->unlink('termEvaluations', $termEvaluation, true);
+			}
+		}
+		return true;
+	}
+
+	private function removeRelatedSubjectScore($termEvaluation) {
+		if($termEvaluation->subjectScores != null) {
+			foreach ($termEvaluation->subjectScores as $subjectScore) {
+				$termEvaluation->unlink('subjectScores', $subjectScore, true);
+			}
+		}
+		return true;
 	}
 }

@@ -5,6 +5,8 @@ namespace common\models;
 use Yii;
 use common\models\bmodels\BaseYearEvaluation;
 use yii\behaviors\TimestampBehavior;
+use common\models\Achievement;
+use common\models\TermEvaluation;
 
 class YearEvaluation extends BaseYearEvaluation
 {
@@ -68,6 +70,10 @@ class YearEvaluation extends BaseYearEvaluation
 
     public function getAchievements() {
         return $this->hasMany(Achievement::className(), ['yearEvaluationID' => 'id']);
+    }
+
+    public function getTermEvaluations() {
+        return $this->hasMany(TermEvaluation::className(), ['yearEvaluationID' => 'id']);
     }
 
     public function getAchievementString() {

@@ -2,7 +2,7 @@ ISA*00*          *00*          *ZZ*SENDERID      *12*RECEIVERID    *20160402*230
 GS*1212*SENDERID*RECEIVERID*20160402*2307*000000001*X*00401~
 ST*835*000000001~
 SR*SRN*1/2016*SRD*2016-03-21~
-STD*STDN*Nguyễn Văn Khôi*G*Nam*BD*1990-08-13*ETH*Kinh*REL*Không*FN*Nguyễn Văn Đức*FJ*Bảo mẫu*MN*Lê Thị Nhiên*MJ*Công chứng viên*TN**TJ*~
+STD*STDN*Nguyễn Văn Khải*G*Nam*BD*1990-08-13*ETH*Kinh*REL*Không*FN*Nguyễn Văn Đức*FJ*Bảo mẫu*MN*Lê Thị Nhiên*MJ*Công chứng viên*TN**TJ*~
 OJ*Con liệt sỹ, thương binh, gia đình có công với cách mạng~
 CA*CDA*Xóm 2*CCM*Xã Nghĩa Hồng*CDT*Huyện Nghĩa Đàn*CP*tỉnh Nghệ An~
 NA*NDA*Xóm 2*NCM*Xã Nghĩa Hồng*NDT*Huyện Nghĩa Đàn*NP*tỉnh Nghệ An~
@@ -16,7 +16,7 @@ YE*1*YEC*10E*YEFY*2013*YETY*2014*SD*KHTN*YEN*Trong bảng này không sửa ch�
  Nhiệt tình trong công việc của lớp*PA*Đồng ý với đánh giá của giáo viên chủ nhiệm*YEPN*Lại Thế Quang*YED*2014-05-30~
 ACV*học sinh giỏi cấp huyện môn toán~
 TE*1*T*Cả năm*LC*Trung bình*C*Tốt~
-SS*1*SBN*Ngữ văn*S*7.9*STN*Nguyễn Lan Lan~
+SS*1*SBN*Ngữ văn*S*7.2*STN*Nguyễn Lan Lan~
 SS*2*SBN*Toán*S*9*STN*Nguyễn Phúc Minh~
 SS*3*SBN*Vật lý*S*9.3*STN*Mai Hải Đức~
 SS*4*SBN*Hóa học*S*7.7*STN*Nguyễn Thị Hà~

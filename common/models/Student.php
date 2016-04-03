@@ -88,7 +88,20 @@ class Student extends BaseStudent
     }
 
     public function getGenderText() {
-        return self::$gender[$this->gender];
+        if(isset(self::$gender[$this->gender])) {
+            return self::$gender[$this->gender];
+        } else {
+            throw new Exception("Error : Unknow genderText with genderType ".$this->gender, 1);
+        }
+    }
+
+    public function getGenderIndex($genderText) {
+        $key = array_search($genderText, self::$gender);
+        if($key != false) {
+            return $key;
+        } else {
+            throw new Exception("Error : Unknow gender ".$genderText, 1);
+        }
     }
 
     public function getObjects() {
