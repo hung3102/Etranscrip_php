@@ -76,8 +76,8 @@ class X12Integration {
 			'motherJob' => $stdLoop->getSegment(0)->getElement(18),
 			'tutorName' => $stdLoop->getSegment(0)->getElement(20),
 			'tutorJob' => $stdLoop->getSegment(0)->getElement(22),
-			'currentAddressID' => $this->getCurrentAddress($stdLoop)->id,
-			'nativeAddressID' => $this->getNativeAddress($stdLoop)->id,
+			'currentAddressID' => $this->createCurrentAddressModel($stdLoop)->id,
+			'nativeAddressID' => $this->createNativeAddressModel($stdLoop)->id,
 			'ethnicID' => $this->getEthnic($stdLoop->getSegment(0)->getElement(8))->id,
 			'religionID' => $this->getReligion($stdLoop->getSegment(0)->getElement(10))->id,
 		];
@@ -121,7 +121,7 @@ class X12Integration {
 		return true;
 	}
 
-	private function getCurrentAddress($stdLoop) {
+	private function createCurrentAddressModel($stdLoop) {
 		$caLoops = $stdLoop->findLoop("CA");
 		if($caLoops == null) {
         	throw new Exception("Error: Current Address is must exist in Student", 1);	
@@ -132,18 +132,20 @@ class X12Integration {
         $province = $this->getProvince($caLoop->getSegment(0)->getElement(8));
         $district = $this->getDistrict($caLoop->getSegment(0)->getElement(6), $province);
         $commune = $this->getCommune($caLoop->getSegment(0)->getElement(4), $district);
-		$address = Address::findOne([
+        $attributes = [
 			'detailAddress' => $caLoop->getSegment(0)->getElement(2),
 			'communeID' => $commune->id,
 			'districtID' => $district->id,
-		]);
+		];
+		$address = Address::findOne($attributes);
 		if($address == null) {
-			throw new Exception("Error : Not found address", 1);
+			$address = new Address($attributes);
+			$address->save();
 		}
 		return $address;
 	}
 
-	private function getNativeAddress($stdLoop) {
+	private function createNativeAddressModel($stdLoop) {
 		$naLoops = $stdLoop->findLoop("NA");
 		if($naLoops == null) {
         	throw new Exception("Error: Native Address is must exist in Student", 1);	
@@ -154,13 +156,15 @@ class X12Integration {
         $province = $this->getProvince($naLoop->getSegment(0)->getElement(8));
         $district = $this->getDistrict($naLoop->getSegment(0)->getElement(6), $province);
         $commune = $this->getCommune($naLoop->getSegment(0)->getElement(4), $district);
-		$address = Address::findOne([
+        $attributes = [
 			'detailAddress' => $naLoop->getSegment(0)->getElement(2),
 			'communeID' => $commune->id,
 			'districtID' => $district->id,
-		]);
+		];
+		$address = Address::findOne($attributes);
 		if($address == null) {
-			throw new Exception("Error : Not found address", 1);
+			$address = new Address($attributes);
+			$address->save();
 		}
 		return $address;
 	}
@@ -259,30 +263,32 @@ class X12Integration {
 			throw new Exception("Error : School must be exist only one in Study Process", 1);
 		}
 		$schLoop = $schLoops[0];
+		$address = $this->createSchoolAddressModel($schLoop);
 		$attributes = [
 			'name' => $schLoop->getSegment(0)->getElement(2),
-			'addressID' => $this->getSchoolAddress($schLoop)->id,
+			'addressID' => $address->id,
 		];
 		$school = School::findOne($attributes);
 		if($school == null) {
-			throw new Exception("Error : Not found school ".$attributes['name'], 1);
+			throw new Exception("Error : Not found school ".$attributes['name']." at "
+				.$address->getFullAddress(), 1);
 		}
 		return $school;
 	}
 
-	private function getSchoolAddress($schLoop) {
+	private function createSchoolAddressModel($schLoop) {
         $province = $this->getProvince($schLoop->getSegment(0)->getElement(10));
         $district = $this->getDistrict($schLoop->getSegment(0)->getElement(8), $province);
         $commune = $this->getCommune($schLoop->getSegment(0)->getElement(6), $district);
-		$address = Address::findOne([
+        $attributes = [
 			'detailAddress' => $schLoop->getSegment(0)->getElement(4),
 			'communeID' => $commune->id,
 			'districtID' => $district->id,
-		]);
+		];
+		$address = Address::findOne($attributes);
 		if($address == null) {
-			throw new Exception(
-				"Error : Not found address of school ".$schLoop->getSegment(0)->getElement(2), 1
-			);
+			$address = new Address($attributes);
+			$address->save();
 		}
 		return $address;				
 	}
