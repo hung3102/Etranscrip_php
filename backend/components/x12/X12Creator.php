@@ -68,7 +68,8 @@ class X12Creator {
 		}
 		$eSeparator = $context->getElementSeparator();
 		$this->transactionCount++;
-		return "SR" . $eSeparator . "SRN" . $eSeparator . $schoolReport->number . $eSeparator . "SRD". $eSeparator . $schoolReport->date . $context->getSegmentSeparator() . "\n" 
+		return "SR" . $eSeparator . $schoolReport->number . $eSeparator . $schoolReport->date 
+			. $context->getSegmentSeparator() . "\n" 
 			. $this->createStudent($context, $schoolReport->studentID) . "\n"
 			. $this->createStudyProcess($context, $schoolReportID)
 			. $this->createYearEvaluation($context, $schoolReportID);
@@ -82,15 +83,13 @@ class X12Creator {
 		$gender = $student->getGenderText();
 		$eSeparator = $context->getElementSeparator();
 		$this->transactionCount++;
-		return "STD" . $eSeparator . "STDN" . $eSeparator . $student->name . $eSeparator . "G" 
-			. $eSeparator . $gender . $eSeparator . "BD" . $eSeparator . $student->birthday 
-			. $eSeparator . "ETH" . $eSeparator . $student->ethnic->name . $eSeparator . "REL" 
-			. $eSeparator . $student->religion->name . $eSeparator . "FN" . $eSeparator 
-			. $student->fatherName . $eSeparator . "FJ" . $eSeparator . $student->fatherJob
-			. $eSeparator . "MN" . $eSeparator . $student->motherName . $eSeparator. "MJ"
-			. $eSeparator . $student->motherJob . $eSeparator . "TN" . $eSeparator
-			. $student->tutorName . $eSeparator . "TJ" . $eSeparator . $student->tutorJob
-			. $context->getSegmentSeparator() . "\n" . $this->createObjects($context, $student)
+		return "STD" . $eSeparator . $student->name . $eSeparator . $gender . $eSeparator 
+			. $student->birthday . $eSeparator . $student->ethnic->name . $eSeparator 
+			. $student->religion->name . $eSeparator . $student->fatherName . $eSeparator 
+			. $student->fatherJob . $eSeparator . $student->motherName . $eSeparator 
+			. $student->motherJob . $eSeparator . $student->tutorName . $eSeparator 
+			. $student->tutorJob . $context->getSegmentSeparator() . "\n" 
+			. $this->createObjects($context, $student)
 			. $this->createCurrentAddress($context, $student->currentAddressID) . "\n"
 			. $this->createNativeAddress($context, $student->nativeAddressID);
 	}
@@ -116,9 +115,8 @@ class X12Creator {
 		}
 		$eSeparator = $context->getElementSeparator();
 		$this->transactionCount++;
-		return "CA" . $eSeparator . "CDA" . $eSeparator . $currentAddress->detailAddress 
-			. $eSeparator . "CCM" . $eSeparator . $currentAddress->getCommuneName() . $eSeparator 
-			. "CDT" . $eSeparator . $currentAddress->getDistrictName() . $eSeparator . "CP" 
+		return "CA" . $eSeparator . $currentAddress->detailAddress . $eSeparator 
+			. $currentAddress->getCommuneName() . $eSeparator . $currentAddress->getDistrictName() 
 			. $eSeparator . $currentAddress->district->getProvinceName() 
 			. $context->getSegmentSeparator();
 	}
@@ -130,9 +128,8 @@ class X12Creator {
 		}
 		$eSeparator = $context->getElementSeparator();
 		$this->transactionCount++;
-		return "NA" . $eSeparator . "NDA" . $eSeparator . $nativeAddress->detailAddress
-			. $eSeparator . "NCM" . $eSeparator . $nativeAddress->getCommuneName() . $eSeparator
-			. "NDT" . $eSeparator . $nativeAddress->getDistrictName() . $eSeparator . "NP"
+		return "NA" . $eSeparator . $nativeAddress->detailAddress . $eSeparator 
+			. $nativeAddress->getCommuneName() . $eSeparator . $nativeAddress->getDistrictName() 
 			. $eSeparator . $nativeAddress->district->getProvinceName() 
 			. $context->getSegmentSeparator();
 	}
@@ -146,11 +143,10 @@ class X12Creator {
 		$return = "";
 		for ($i=0; $i < count($studyProcesses); $i++) {
 			$this->transactionCount++;
-			$return .= "SP" . $eSeparator . ($i+1) . $eSeparator . "SPFY" . $eSeparator 
-				. $studyProcesses[$i]->fromYear . $eSeparator . "SPTY" . $eSeparator
-				. $studyProcesses[$i]->toYear . $eSeparator . "SPC" . $eSeparator
-				. $studyProcesses[$i]->class . $eSeparator . "SPPN" . $eSeparator
-				. $studyProcesses[$i]->principalName . $context->getSegmentSeparator() . "\n"
+			$return .= "SP" . $eSeparator . ($i+1) . $eSeparator  . $studyProcesses[$i]->fromYear 
+				. $eSeparator . $studyProcesses[$i]->toYear . $eSeparator
+				. $studyProcesses[$i]->class . $eSeparator . $studyProcesses[$i]->principalName 
+				. $context->getSegmentSeparator() . "\n"
 				. $this->createSchool($context, $studyProcesses[$i]->schoolID);
 		}
 		return $return;
@@ -163,10 +159,9 @@ class X12Creator {
 		}
 		$eSeparator = $context->getElementSeparator();
 		$this->transactionCount++;
-		return "SCH" . $eSeparator . "SN" . $eSeparator . $school->name . $eSeparator . "SCHDA" 
-			. $eSeparator . $school->address->detailAddress . $eSeparator . "SCHC" . $eSeparator
-			. $school->address->getCommuneName() . $eSeparator . "SCHD" . $eSeparator
-			. $school->address->getDistrictName() . $eSeparator . "SCHP" . $eSeparator
+		return "SCH" . $eSeparator . $school->name . $eSeparator . $school->address->detailAddress 
+			. $eSeparator . $school->address->getCommuneName() . $eSeparator
+			. $school->address->getDistrictName() . $eSeparator
 			. $school->address->district->getProvinceName() . $context->getSegmentSeparator() . "\n";
 	}
 
@@ -179,21 +174,18 @@ class X12Creator {
 		$return = "";
 		for ($i=0; $i < count($yearEvaluations); $i++) {
 			$this->transactionCount++;
-			$return .= "YE" . $eSeparator . ($i+1) . $eSeparator . "YEC" . $eSeparator 
-				. $yearEvaluations[$i]->class . $eSeparator . "YEFY" . $eSeparator
-				. $yearEvaluations[$i]->fromYear . $eSeparator . "YETY" . $eSeparator
-				. $yearEvaluations[$i]->toYear . $eSeparator . "SD" . $eSeparator
-				. $yearEvaluations[$i]->studyDepartment . $eSeparator . "YEN" . $eSeparator
-				. $yearEvaluations[$i]->note . $eSeparator . "TCN" . $eSeparator 
-				. $yearEvaluations[$i]->teacherName . $eSeparator . "ML" . $eSeparator
-				. $yearEvaluations[$i]->missedLesson . $eSeparator . "UT" . $eSeparator
-				. $yearEvaluations[$i]->upGradeType . $eSeparator . "VC" . $eSeparator
-				. $yearEvaluations[$i]->vocationalCertificate . $eSeparator . "VCL" . $eSeparator
-				. $yearEvaluations[$i]->vocationalCertificateLevel . $eSeparator . "TC" 
-				. $eSeparator . $yearEvaluations[$i]->teacherComment . $eSeparator . "PA" 
-				. $eSeparator . $yearEvaluations[$i]->principalApproval . $eSeparator . "YEPN"
-				. $eSeparator . $yearEvaluations[$i]->principalName . $eSeparator . "YED" 
-				. $eSeparator . $yearEvaluations[$i]->date . $context->getSegmentSeparator() . "\n" 
+			$return .= "YE" . $eSeparator . ($i+1) . $eSeparator . $yearEvaluations[$i]->class 
+				. $eSeparator . $yearEvaluations[$i]->fromYear . $eSeparator
+				. $yearEvaluations[$i]->toYear . $eSeparator . $yearEvaluations[$i]->studyDepartment 
+				. $eSeparator . $yearEvaluations[$i]->note . $eSeparator 
+				. $yearEvaluations[$i]->teacherName . $eSeparator . $yearEvaluations[$i]->missedLesson 
+				. $eSeparator . $yearEvaluations[$i]->upGradeType . $eSeparator
+				. $yearEvaluations[$i]->vocationalCertificate . $eSeparator
+				. $yearEvaluations[$i]->vocationalCertificateLevel . $eSeparator 
+				. $yearEvaluations[$i]->teacherComment . $eSeparator 
+				. $yearEvaluations[$i]->principalApproval . $eSeparator 
+				. $yearEvaluations[$i]->principalName . $eSeparator . $yearEvaluations[$i]->date 
+				. $context->getSegmentSeparator() . "\n" 
 				. $this->createAchievement($context, $yearEvaluations[$i]->id)
 				. $this->createTermEvaluation($context, $yearEvaluations[$i]->id);
 		}
@@ -225,9 +217,8 @@ class X12Creator {
 		$i = 1;
 		foreach ($termEvaluations as $termEvaluation) {
 			$this->transactionCount++;
-			$return .= "TE" . $eSeparator . $i++ . $eSeparator . "T" . $eSeparator 
-			. $termEvaluation->getTermText() . $eSeparator . "LC" . $eSeparator 
-			. $termEvaluation->learnCapacity . $eSeparator . "C" . $eSeparator 
+			$return .= "TE" . $eSeparator . $i++ . $eSeparator . $termEvaluation->getTermText() 
+			. $eSeparator . $termEvaluation->learnCapacity . $eSeparator
 			. $termEvaluation->conduct . $context->getSegmentSeparator() . "\n"
 			. $this->createSubjectScore($context, $termEvaluation->id);
 		}
@@ -244,9 +235,8 @@ class X12Creator {
 		$i = 1;
 		foreach ($subjectScores as $subjectScore) {
 			$this->transactionCount++;
-			$return .= "SS" . $eSeparator . $i++ . $eSeparator . "SBN" . $eSeparator 
-				. $subjectScore->subject->name . $eSeparator . "S" . $eSeparator 
-				. $subjectScore->score . $eSeparator . "STN" . $eSeparator 
+			$return .= "SS" . $eSeparator . $i++ . $eSeparator . $subjectScore->subject->name 
+				. $eSeparator . $subjectScore->score . $eSeparator 
 				. $subjectScore->teacherName . $context->getSegmentSeparator() . "\n";
 		}
 		return $return;

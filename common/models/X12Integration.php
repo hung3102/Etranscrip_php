@@ -33,17 +33,17 @@ class X12Integration {
 	            throw new Exception("Error: School Report must exist in x12 file", 1);
 	        }
 	        foreach ($srLoops as $srLoop) {
-	        	$schoolReport = SchoolReport::findOne(['number' => $srLoop->getSegment(0)->getElement(2)]);
+	        	$schoolReport = SchoolReport::findOne(['number' => $srLoop->getSegment(0)->getElement(1)]);
 	    		if($schoolReport == null) {
 	        		$schoolReport = new SchoolReport();
-	        		$schoolReport->number = $srLoop->getSegment(0)->getElement(2);
-	        		$schoolReport->date = $srLoop->getSegment(0)->getElement(4);
+	        		$schoolReport->number = $srLoop->getSegment(0)->getElement(1);
+	        		$schoolReport->date = $srLoop->getSegment(0)->getElement(2);
 	        		$schoolReport->studentID = $this->createStudentModel($srLoop)->id;
 	        		$schoolReport->save();
 	        		$this->createStudyProcessModel($srLoop, $schoolReport);
 	        		$this->createYearEvaluationModel($srLoop, $schoolReport);
 	        	} else {
-	        		$schoolReport->date = $srLoop->getSegment(0)->getElement(4);
+	        		$schoolReport->date = $srLoop->getSegment(0)->getElement(2);
 	        		$schoolReport->studentID = $this->createStudentModel($srLoop, $schoolReport, true)->id;
 	        		$schoolReport->save();
 	        		$this->createStudyProcessModel($srLoop, $schoolReport, true);
@@ -67,19 +67,19 @@ class X12Integration {
         }
         $stdLoop = $stdLoops[0];
 		$attributes = [
-			'name' => $stdLoop->getSegment(0)->getElement(2),
-			'gender' => array_search($stdLoop->getSegment(0)->getElement(4), Student::$gender),
-			'birthday' => $stdLoop->getSegment(0)->getElement(6),
-			'fatherName' => $stdLoop->getSegment(0)->getElement(12),
-			'fatherJob' => $stdLoop->getSegment(0)->getElement(14),
-			'motherName' => $stdLoop->getSegment(0)->getElement(16),
-			'motherJob' => $stdLoop->getSegment(0)->getElement(18),
-			'tutorName' => $stdLoop->getSegment(0)->getElement(20),
-			'tutorJob' => $stdLoop->getSegment(0)->getElement(22),
+			'name' => $stdLoop->getSegment(0)->getElement(1),
+			'gender' => array_search($stdLoop->getSegment(0)->getElement(2), Student::$gender),
+			'birthday' => $stdLoop->getSegment(0)->getElement(3),
+			'fatherName' => $stdLoop->getSegment(0)->getElement(6),
+			'fatherJob' => $stdLoop->getSegment(0)->getElement(7),
+			'motherName' => $stdLoop->getSegment(0)->getElement(8),
+			'motherJob' => $stdLoop->getSegment(0)->getElement(9),
+			'tutorName' => $stdLoop->getSegment(0)->getElement(10),
+			'tutorJob' => $stdLoop->getSegment(0)->getElement(11),
 			'currentAddressID' => $this->createCurrentAddressModel($stdLoop)->id,
 			'nativeAddressID' => $this->createNativeAddressModel($stdLoop)->id,
-			'ethnicID' => $this->getEthnic($stdLoop->getSegment(0)->getElement(8))->id,
-			'religionID' => $this->getReligion($stdLoop->getSegment(0)->getElement(10))->id,
+			'ethnicID' => $this->getEthnic($stdLoop->getSegment(0)->getElement(4))->id,
+			'religionID' => $this->getReligion($stdLoop->getSegment(0)->getElement(5))->id,
 		];
 		if($SR_EXIST == false) {
 			$student = Student::findOne($attributes);
@@ -129,11 +129,11 @@ class X12Integration {
         	throw new Exception("Error: Current Address is must exist only one in Student", 1);
         }
         $caLoop = $caLoops[0];
-        $province = $this->getProvince($caLoop->getSegment(0)->getElement(8));
-        $district = $this->getDistrict($caLoop->getSegment(0)->getElement(6), $province);
-        $commune = $this->getCommune($caLoop->getSegment(0)->getElement(4), $district);
+        $province = $this->getProvince($caLoop->getSegment(0)->getElement(4));
+        $district = $this->getDistrict($caLoop->getSegment(0)->getElement(3), $province);
+        $commune = $this->getCommune($caLoop->getSegment(0)->getElement(2), $district);
         $attributes = [
-			'detailAddress' => $caLoop->getSegment(0)->getElement(2),
+			'detailAddress' => $caLoop->getSegment(0)->getElement(1),
 			'communeID' => $commune->id,
 			'districtID' => $district->id,
 		];
@@ -153,11 +153,11 @@ class X12Integration {
         	throw new Exception("Error: Native Address is must exist only one in Student", 1);
         }
         $naLoop = $naLoops[0];
-        $province = $this->getProvince($naLoop->getSegment(0)->getElement(8));
-        $district = $this->getDistrict($naLoop->getSegment(0)->getElement(6), $province);
-        $commune = $this->getCommune($naLoop->getSegment(0)->getElement(4), $district);
+        $province = $this->getProvince($naLoop->getSegment(0)->getElement(4));
+        $district = $this->getDistrict($naLoop->getSegment(0)->getElement(3), $province);
+        $commune = $this->getCommune($naLoop->getSegment(0)->getElement(2), $district);
         $attributes = [
-			'detailAddress' => $naLoop->getSegment(0)->getElement(2),
+			'detailAddress' => $naLoop->getSegment(0)->getElement(1),
 			'communeID' => $commune->id,
 			'districtID' => $district->id,
 		];
@@ -237,11 +237,11 @@ class X12Integration {
 		}
 		foreach ($spLoops as $spLoop) {
 			$attributes = [
-				'fromYear' => $spLoop->getSegment(0)->getElement(3),
-				'toYear' => $spLoop->getSegment(0)->getElement(5),
-				'class' => $spLoop->getSegment(0)->getElement(7),
+				'fromYear' => $spLoop->getSegment(0)->getElement(2),
+				'toYear' => $spLoop->getSegment(0)->getElement(3),
+				'class' => $spLoop->getSegment(0)->getElement(4),
 				'schoolID' => $this->getSchool($spLoop)->id,
-				'principalName' => $spLoop->getSegment(0)->getElement(9),
+				'principalName' => $spLoop->getSegment(0)->getElement(5),
 				'schoolReportID' => $schoolReport->id,
 			];
 			$studyProcess = studyProcess::findOne($attributes);
@@ -265,7 +265,7 @@ class X12Integration {
 		$schLoop = $schLoops[0];
 		$address = $this->createSchoolAddressModel($schLoop);
 		$attributes = [
-			'name' => $schLoop->getSegment(0)->getElement(2),
+			'name' => $schLoop->getSegment(0)->getElement(1),
 			'addressID' => $address->id,
 		];
 		$school = School::findOne($attributes);
@@ -277,11 +277,11 @@ class X12Integration {
 	}
 
 	private function createSchoolAddressModel($schLoop) {
-        $province = $this->getProvince($schLoop->getSegment(0)->getElement(10));
-        $district = $this->getDistrict($schLoop->getSegment(0)->getElement(8), $province);
-        $commune = $this->getCommune($schLoop->getSegment(0)->getElement(6), $district);
+        $province = $this->getProvince($schLoop->getSegment(0)->getElement(5));
+        $district = $this->getDistrict($schLoop->getSegment(0)->getElement(4), $province);
+        $commune = $this->getCommune($schLoop->getSegment(0)->getElement(3), $district);
         $attributes = [
-			'detailAddress' => $schLoop->getSegment(0)->getElement(4),
+			'detailAddress' => $schLoop->getSegment(0)->getElement(2),
 			'communeID' => $commune->id,
 			'districtID' => $district->id,
 		];
@@ -304,20 +304,20 @@ class X12Integration {
 		foreach ($yeLoops as $yeLoop) {
 			$attributes = [
 				'schoolReportID' => $schoolReport->id,
-				'class' => $yeLoop->getSegment(0)->getElement(3),
-				'fromYear' => $yeLoop->getSegment(0)->getElement(5),
-				'toYear' => $yeLoop->getSegment(0)->getElement(7),
-				'studyDepartment' => $yeLoop->getSegment(0)->getElement(9),
-				'note' => $yeLoop->getSegment(0)->getElement(11),
-				'teacherName' => $yeLoop->getSegment(0)->getElement(13),
-				'missedLesson' => $yeLoop->getSegment(0)->getElement(15),
-				'upGradeType' => $yeLoop->getSegment(0)->getElement(17),
-				'vocationalCertificate' => $yeLoop->getSegment(0)->getElement(19),
-				'vocationalCertificateLevel' => $yeLoop->getSegment(0)->getElement(21),
-				'teacherComment' => $yeLoop->getSegment(0)->getElement(23),
-				'principalApproval' => $yeLoop->getSegment(0)->getElement(25),
-				'principalName' => $yeLoop->getSegment(0)->getElement(27),
-				'date' => $yeLoop->getSegment(0)->getElement(29),
+				'class' => $yeLoop->getSegment(0)->getElement(2),
+				'fromYear' => $yeLoop->getSegment(0)->getElement(3),
+				'toYear' => $yeLoop->getSegment(0)->getElement(4),
+				'studyDepartment' => $yeLoop->getSegment(0)->getElement(5),
+				'note' => $yeLoop->getSegment(0)->getElement(6),
+				'teacherName' => $yeLoop->getSegment(0)->getElement(7),
+				'missedLesson' => $yeLoop->getSegment(0)->getElement(8),
+				'upGradeType' => $yeLoop->getSegment(0)->getElement(9),
+				'vocationalCertificate' => $yeLoop->getSegment(0)->getElement(10),
+				'vocationalCertificateLevel' => $yeLoop->getSegment(0)->getElement(11),
+				'teacherComment' => $yeLoop->getSegment(0)->getElement(12),
+				'principalApproval' => $yeLoop->getSegment(0)->getElement(13),
+				'principalName' => $yeLoop->getSegment(0)->getElement(14),
+				'date' => $yeLoop->getSegment(0)->getElement(15),
 			];
 			$yearEvaluation = YearEvaluation::findOne($attributes);
 			if($yearEvaluation == null) {
@@ -360,9 +360,9 @@ class X12Integration {
 		foreach ($teLoops as $teLoop) {
 			$attributes = [
 				'yearEvaluationID' => $yearEvaluation->id,
-				'term' => TermEvaluation::getTermIndex($teLoop->getSegment(0)->getElement(3)),
-				'learnCapacity' => $teLoop->getSegment(0)->getElement(5),
-				'conduct' => $teLoop->getSegment(0)->getElement(7),
+				'term' => TermEvaluation::getTermIndex($teLoop->getSegment(0)->getElement(2)),
+				'learnCapacity' => $teLoop->getSegment(0)->getElement(3),
+				'conduct' => $teLoop->getSegment(0)->getElement(4),
 			];
 			$termEvaluation = TermEvaluation::findOne($attributes);
 			if($termEvaluation == null) {
@@ -385,8 +385,8 @@ class X12Integration {
 			$attributes = [
 				'termEvaluationID' => $termEvaluation->id,
 				'subjectID' => $this->getSubject($ssLoop)->id,
-				'score' => $ssLoop->getSegment(0)->getElement(5),
-				'teacherName' => $ssLoop->getSegment(0)->getElement(7),
+				'score' => $ssLoop->getSegment(0)->getElement(3),
+				'teacherName' => $ssLoop->getSegment(0)->getElement(4),
 			];
 			$subjectScore = SubjectScore::findOne($attributes);
 			if($subjectScore == null) {
@@ -400,9 +400,9 @@ class X12Integration {
 	}
 
 	private function getSubject($ssLoop) {
-		$subject = Subject::findOne(['name' => $ssLoop->getSegment(0)->getElement(3)]);
+		$subject = Subject::findOne(['name' => $ssLoop->getSegment(0)->getElement(2)]);
 		if($subject == null) {
-			throw new Exception("Error : Not found subject ".$ssLoop->getSegment(0)->getElement(3), 1);
+			throw new Exception("Error : Not found subject ".$ssLoop->getSegment(0)->getElement(2), 1);
 		}
 		return $subject;
 	}
