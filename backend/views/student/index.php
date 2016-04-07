@@ -43,9 +43,10 @@ $this->params['breadcrumbs'][] = $this->title;
             // ],
             [  
                 'label' => 'Native Address',
+                'attribute' => 'nativeAddressID',
                 'value' => function($data) {
                     return $data->nativeAddress->getFullAddress();
-                }
+                },
             ],
             // 'ethnicID',
             // 'religionID',

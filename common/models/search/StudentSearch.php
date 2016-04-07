@@ -5,12 +5,12 @@ namespace common\models\search;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Student as StudentModel;
+use common\models\Student;
 
 /**
- * Student represents the model behind the search form about `common\models\Student`.
+ * StudentSearch represents the model behind the search form about `common\models\Student`.
  */
-class Student extends StudentModel
+class StudentSearch extends Student
 {
     /**
      * @inheritdoc
@@ -41,7 +41,16 @@ class Student extends StudentModel
      */
     public function search($params)
     {
-        $query = StudentModel::find();
+        public $currentAddress;
+        public $nativeAddress;
+
+        public function rules() {
+            return [
+                [['currentAddress', 'nativeAddress'], 'safe'],
+            ];
+        }
+        
+        $query = Student::find();
 
         // add conditions that should always apply here
 
@@ -62,7 +71,7 @@ class Student extends StudentModel
             'id' => $this->id,
             'gender' => $this->gender,
             'birthday' => $this->birthday,
-            'currentAddressID' => $this->currentAddressID,
+            // 'currentAddressID' => $this->currentAddressID,
             'nativeAddressID' => $this->nativeAddressID,
             'ethnicID' => $this->ethnicID,
             'religionID' => $this->religionID,
@@ -78,6 +87,8 @@ class Student extends StudentModel
             ->andFilterWhere(['like', 'motherJob', $this->motherJob])
             ->andFilterWhere(['like', 'tutorName', $this->tutorName])
             ->andFilterWhere(['like', 'tutorJob', $this->tutorJob]);
+
+        $query->andFilterWhere(['like', 'currentAddressID', $this->currentAddress->getFullAddress()]);
 
         return $dataProvider;
     }
