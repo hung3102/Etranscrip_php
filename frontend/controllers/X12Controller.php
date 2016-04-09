@@ -1,0 +1,75 @@
+<?php
+namespace frontend\controllers;
+
+use Yii;
+use yii\filters\AccessControl;
+use yii\web\Controller;
+use backend\components\x12\X12Creator;
+use backend\components\x12\X12Parser;
+use backend\components\x12\Cf;
+use common\models\SchoolReport;
+use yii\base\Exception;
+use common\models\X12Integration;
+
+class X12Controller extends Controller
+{
+
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create'],
+                'rules' => [
+                    [
+                        'actions' => ['create', 'error'],
+                        'allow' => true,
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
+    }
+
+    public function actionParse() {
+        $parser = new X12Parser($this->cf());
+        $f1 = Yii::$app->basePath.'/x12resource/data.edi';
+        $x12 = $parser->parse($f1);
+        $x12Integration = new X12Integration();
+        if($x12Integration->integrate($x12)) {
+            Yii::$app->session->setFlash('success', 'Success : Synchronise school reports from x12 file successfully');
+            return $this->redirect(['student/index']);
+        }
+    }
+
+    private function cf() {
+        $cfX12 = new Cf("X12");
+        $cfISA = $cfX12->addChild("ISA", "ISA");
+        $cfGS = $cfISA->addChild("GS", "GS");
+        $cfST = $cfGS->addChild("ST", "ST");
+        $cfSR = $cfST->addChild("SR", "SR");
+        $cfSTD = $cfSR->addChild("STD", "STD");
+        $cfSTD->addChild("CA", "CA");
+        $cfSTD->addChild("NA", "NA");
+        $cfSTD->addChild("OJ", "OJ");
+        $cfSP = $cfSR->addChild("SP", "SP");
+        $cfSP->addChild("SCH", "SCH");
+        $cfYE = $cfSR->addChild("YE", "YE");
+        $cfYE->addChild("ACV", "ACV");
+        $cfTE = $cfYE->addChild("TE", "TE");
+        $cfTE->addChild("SS", "SS");
+        $cfGS->addChild("SE", "SE");
+        $cfISA->addChild("GE", "GE");
+        $cfX12->addChild("IEA", "IEA");
+        return $cfX12;  
+    }
+
+}
