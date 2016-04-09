@@ -19,15 +19,15 @@ class X12Creator {
 
 	private $transactionCount = 0;
 
-	public function create($schoolReportIDs) {
+	public function create($schoolReportNumbers) {
 		$contents = "";
 		$context = new Context('~', '*', ':');
 		$contents .= $this->createISA($context) . "\n";
 		$contents .= $this->createGS($context) . "\n";
 		$contents .= $this->createST($context) . "\n";
 
-		foreach ($schoolReportIDs as $schoolReportID) {
-			$contents .= $this->createSchoolReport($context, $schoolReportID);	
+		foreach ($schoolReportNumbers as $schoolReportNumber) {
+			$contents .= $this->createSchoolReport($context, $schoolReportNumber);	
 		}
 
 		$contents .= $this->createSE($context) . "\n";
@@ -61,18 +61,18 @@ class X12Creator {
 		return "ST" . $context->getElementSeparator() . "835" . $context->getElementSeparator() ."000000001" . $context->getSegmentSeparator();
 	}
 
-	private function createSchoolReport($context, $schoolReportID) {
-		$schoolReport = SchoolReport::findOne($schoolReportID);
+	private function createSchoolReport($context, $schoolReportNumber) {
+		$schoolReport = SchoolReport::findOne(['number' => $schoolReportNumber]);
 		if($schoolReport == null) {
-			throw new Exception("SchoolReport not found with id ".$schoolReportID, 1);
+			throw new Exception("SchoolReport not found with number ".$schoolReportNumber, 1);
 		}
 		$eSeparator = $context->getElementSeparator();
 		$this->transactionCount++;
 		return "SR" . $eSeparator . $schoolReport->number . $eSeparator . $schoolReport->date 
 			. $context->getSegmentSeparator() . "\n" 
 			. $this->createStudent($context, $schoolReport->studentID) . "\n"
-			. $this->createStudyProcess($context, $schoolReportID)
-			. $this->createYearEvaluation($context, $schoolReportID);
+			. $this->createStudyProcess($context, $schoolReport->id)
+			. $this->createYearEvaluation($context, $schoolReport->id);
 	}
 
 	private function createStudent($context, $studentID) {

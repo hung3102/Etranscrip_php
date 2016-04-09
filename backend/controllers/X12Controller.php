@@ -10,6 +10,10 @@ use backend\components\x12\Cf;
 use common\models\SchoolReport;
 use yii\base\Exception;
 use common\models\X12Integration;
+use yii\base\DynamicModel;
+use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
+use common\models\Student;
 
 class X12Controller extends Controller
 {
@@ -39,52 +43,90 @@ class X12Controller extends Controller
         ];
     }
 
-    public function actionCreate() {
-        $file = Yii::$app->basePath . '/x12resource/data.edi';
-        $action=Yii::$app->request->post('action');
-        $schoolReportIDs=(array)Yii::$app->request->post('selection');
-        if($schoolReportIDs == null) {
-            Yii::$app->session->setFlash('error', 'Error: No checkbox was checked!');
-            return $this->redirect(['school-report/index']);
+    public function actionCheckSr() {
+        $data = Yii::$app->request->post();
+        if(!isset($data['studentIDs'])) {
+            Yii::$app->session->setFlash('error', 'Error: Choose at least one student!');
+            return $this->redirect(['student/index']);
         }
-        $x12 = new X12Creator();
-        if(file_put_contents($file, $x12->create($schoolReportIDs))) {
-            Yii::$app->session->setFlash('success', 'x12 file was created successfully');
-            return $this->redirect(['school-report/index']);
+        $schoolReportNumbers = [];
+        $nonSR = [];
+        foreach ($data['studentIDs'] as $studentID) {
+            $student = Student::findOne($studentID);
+            if($student->schoolReport == null) {
+                $nonSR[] = $student;
+            } else {
+                $schoolReportNumbers[] = Student::findOne($studentID)->schoolReport->number;
+            }
+        }
+        if($nonSR != null) {
+            $err_messages = "Error : The following students do not have school report: \n";
+            foreach ($nonSR as $student) {
+                $err_messages .= $student->name.', ';
+            }
+            $err_messages = substr($err_messages, 0, -2);
+            Yii::$app->session->setFlash('error', $err_messages);
+            return $this->redirect(['student/index']);
+        }
+        
+        $x12Model = new DynamicModel(['fileName', 'serverUrl', 'schoolReportNumbers']);
+        $x12Model->addRule(['fileName', 'serverUrl'], 'string', ['max'=> 255])
+            ->addRule(['fileName', 'serverUrl'], 'required')
+            ->addRule('serverUrl', 'url', ['defaultScheme' => 'http']);
+        $x12Model->schoolReportNumbers = $schoolReportNumbers;
+        return $this->renderAjax('renderModal', ['x12Model' => $x12Model]);
+    }
+
+    public function actionSendData() {
+        $x12Model = new DynamicModel(['fileName', 'serverUrl', 'schoolReportNumbers']);
+        $x12Model->addRule(['fileName', 'serverUrl'], 'string', ['max'=> 255])
+            ->addRule(['fileName', 'serverUrl'], 'required')
+            ->addRule('serverUrl', 'url', ['defaultScheme' => 'http']);
+
+        $post = Yii::$app->request->post('DynamicModel');
+        if ($post['fileName']!=null && $post['serverUrl']!=null) {
+            $x12Model->fileName = $post['fileName'];
+            $x12Model->serverUrl = $post['serverUrl'];
+            $x12Model->schoolReportNumbers = unserialize($post['schoolReportNumbers']);
+            $x12Model->validate();
+            $file = fopen(Yii::$app->basePath.'/x12resource/'.$x12Model->fileName, "w");
+            fclose($file);
+            $x12File = Yii::$app->basePath.'/x12resource/'.$x12Model->fileName;
+            $x12Creator = new X12Creator();
+            $data = $x12Creator->create($x12Model->schoolReportNumbers);
+            if(file_put_contents($x12File, $data) && $this->sendFile($x12File, $x12Model->serverUrl) ) {
+                Yii::$app->session->setFlash('success', 'Send file successfully.');
+                return $this->redirect(['student/index']);
+            }
+        } else {
+            return $this->renderAjax('renderModal', ['x12Model' => $x12Model]);
         }
     }
 
-    public function actionParse() {
-        $parser = new X12Parser($this->cf());
-        $f1 = Yii::$app->basePath.'/x12resource/data.edi';
-        $x12 = $parser->parse($f1);
-        $x12Integration = new X12Integration();
-        if($x12Integration->integrate($x12)) {
-            Yii::$app->session->setFlash('success', 'Success : Save school reports from x12 file successfully');
-            return $this->redirect(['school-report/index']);
-        }
-    }
+    protected function sendFile($filePath, $serverUrl) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_VERBOSE, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible;)");
+        curl_setopt($ch, CURLOPT_URL, $serverUrl);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
-    private function cf() {
-        $cfX12 = new Cf("X12");
-        $cfISA = $cfX12->addChild("ISA", "ISA");
-        $cfGS = $cfISA->addChild("GS", "GS");
-        $cfST = $cfGS->addChild("ST", "ST");
-        $cfSR = $cfST->addChild("SR", "SR");
-        $cfSTD = $cfSR->addChild("STD", "STD");
-        $cfSTD->addChild("CA", "CA");
-        $cfSTD->addChild("NA", "NA");
-        $cfSTD->addChild("OJ", "OJ");
-        $cfSP = $cfSR->addChild("SP", "SP");
-        $cfSP->addChild("SCH", "SCH");
-        $cfYE = $cfSR->addChild("YE", "YE");
-        $cfYE->addChild("ACV", "ACV");
-        $cfTE = $cfYE->addChild("TE", "TE");
-        $cfTE->addChild("SS", "SS");
-        $cfGS->addChild("SE", "SE");
-        $cfISA->addChild("GE", "GE");
-        $cfX12->addChild("IEA", "IEA");
-        return $cfX12;  
+        $post = ["file_box" => $filePath];
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post); 
+        $response = curl_exec($ch);
+        $curl_error = curl_errno($ch);
+        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if(!$curl_error) {
+            if($status_code == 200) {
+                return true;
+            } else {
+                print_r($response);
+            }
+        }
+        return false;
     }
 
 }

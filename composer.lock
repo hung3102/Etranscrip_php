@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3e531aacba44c82f59b26c0e9c91b04e",
-    "content-hash": "4e70a9e41750f573d8f7c2484fc0edc0",
+    "hash": "7b228a7df55bae1f7f536fe2b391e8fd",
+    "content-hash": "228324f043ecd81fa7636457f845ae29",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -350,6 +350,48 @@
                 "fixtures"
             ],
             "time": "2015-05-29 06:29:14"
+        },
+        {
+            "name": "linslin/yii2-curl",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/linslin/Yii2-Curl.git",
+                "reference": "a2933730e422599aa06b2749f2638c87ded522c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/linslin/Yii2-Curl/zipball/a2933730e422599aa06b2749f2638c87ded522c1",
+                "reference": "a2933730e422599aa06b2749f2638c87ded522c1",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "linslin\\yii2\\curl\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Gajsek",
+                    "email": "info@linslin.org"
+                }
+            ],
+            "description": "Cool working cURL extension with RESTful support for Yii",
+            "keywords": [
+                " curl",
+                "extension",
+                "restful",
+                "yii2"
+            ],
+            "time": "2015-02-09 18:06:12"
         },
         {
             "name": "swiftmailer/swiftmailer",
