@@ -29,7 +29,7 @@ class X12Creator {
 		foreach ($schoolReportNumbers as $schoolReportNumber) {
 			$contents .= $this->createSchoolReport($context, $schoolReportNumber);	
 		}
-
+		
 		$contents .= $this->createSE($context) . "\n";
 		$contents .= $this->createGE($context) . "\n";
 		$contents .= $this->createIEA($context) . "\n";

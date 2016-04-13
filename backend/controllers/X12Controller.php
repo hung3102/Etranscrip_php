@@ -14,6 +14,7 @@ use yii\base\DynamicModel;
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use common\models\Student;
+use backend\components\FileSecure;
 
 class X12Controller extends Controller
 {
@@ -89,12 +90,11 @@ class X12Controller extends Controller
             $x12Model->serverUrl = $post['serverUrl'];
             $x12Model->schoolReportNumbers = unserialize($post['schoolReportNumbers']);
             $x12Model->validate();
-            $file = fopen(Yii::$app->basePath.'/x12resource/'.$x12Model->fileName, "w");
-            fclose($file);
-            $x12File = Yii::$app->basePath.'/x12resource/'.$x12Model->fileName;
             $x12Creator = new X12Creator();
             $data = $x12Creator->create($x12Model->schoolReportNumbers);
-            if(file_put_contents($x12File, $data) && $this->sendFile($x12File, $x12Model->serverUrl) ) {
+            file_put_contents(Yii::$app->basePath.'/x12resource/x12/'.$x12Model->fileName, $data);
+            $x12File = Yii::$app->basePath.'/x12resource/x12/'.$x12Model->fileName;
+            if($this->sendFile($x12File, $x12Model->fileName, $x12Model->serverUrl)) {
                 Yii::$app->session->setFlash('success', 'Send file successfully.');
                 return $this->redirect(['student/index']);
             }
@@ -103,7 +103,7 @@ class X12Controller extends Controller
         }
     }
 
-    protected function sendFile($filePath, $serverUrl) {
+    protected function sendFile($filePath, $encryptedFileName, $serverUrl) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_VERBOSE, 0);
@@ -113,7 +113,12 @@ class X12Controller extends Controller
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
-        $post = ["file_box" => $filePath];
+        $fileSecure = new FileSecure();
+        $securedData = $fileSecure->createSecuredData($filePath);
+        file_put_contents(Yii::$app->basePath.'/x12resource/encryptedX12/'.$encryptedFileName, 
+            $securedData);
+        $sendFile = Yii::$app->basePath.'/x12resource/encryptedX12/'.$encryptedFileName;
+        $post = ["file_box" => $sendFile];
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post); 
         $response = curl_exec($ch);
         $curl_error = curl_errno($ch);
@@ -121,6 +126,7 @@ class X12Controller extends Controller
         curl_close($ch);
         if(!$curl_error) {
             if($status_code == 200) {
+                // print_r($response);
                 return true;
             } else {
                 print_r($response);

@@ -8,6 +8,8 @@ use common\models\search\StudentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\base\DynamicModel;
+use backend\components\FileSecure;
 
 class StudentController extends Controller
 {
@@ -37,10 +39,14 @@ class StudentController extends Controller
     {
         $searchModel = new StudentSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $x12Model = new DynamicModel(['fileName']);
+        $x12Model->addRule(['fileName'], 'file')
+            ->addRule(['fileName'], 'required');
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'x12Model' => $x12Model,
         ]);
     }
 
@@ -108,13 +114,9 @@ class StudentController extends Controller
 
     public function actionReceiveFile() {
         $receivedFile = Yii::$app->request->post('file_box');
-        $content = file_get_contents($receivedFile);
-        fopen(Yii::$app->basePath.'/x12resource/'.basename($receivedFile), 'w');
-        $saveFile = Yii::$app->basePath.'/x12resource/'.basename($receivedFile);
-        file_put_contents($saveFile, $content);
-        echo file_get_contents($saveFile);
-        exit();
-        
+        $fileSecure = new FileSecure();
+        $decryptData = $fileSecure->decryptSecuredFile($receivedFile);
+        file_put_contents(Yii::$app->basePath.'/x12resource/x12/'.basename($receivedFile), $decryptData);
     }
 
     /**

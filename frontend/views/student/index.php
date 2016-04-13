@@ -4,6 +4,10 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use common\models\Student;
 use common\widgets\Alert;
+use kartik\file\FileInput;
+use yii\bootstrap\Modal;
+use yii\widgets\ActiveForm;
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\Student */
@@ -23,9 +27,40 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Create Student', ['create'], ['class' => 'btn btn-success']) ?>
-        <?=Html::beginForm(['x12/parse'],'get');?>
-        <?=Html::submitButton('Synchronise data', ['class' => 'btn btn-info',]);?>
+        <!-- <?= Html::beginForm(['x12/parse'],'get');?> -->
+        <?php Modal::begin([
+            'header'=>'<h3>Choose x12 file to synchronise data</h3>',
+            'toggleButton' => [
+                'label'=>'Synchronise data', 
+                'class'=>'btn btn-info'
+            ],
+        ]);
+        $form1 = ActiveForm::begin([
+            'action' => ['x12/parse'],
+            'options'=>['enctype'=>'multipart/form-data'] // important
+        ]);
+        echo $form1->field($x12Model, 'fileName')->widget(FileInput::className(), [
+            'pluginOptions' => [
+                'showUpload' => false,
+            ]
+        ]); 
+        echo '<br />'.Html::submitButton('Synchronise', ['class' => 'btn btn-primary',]);
+        ActiveForm::end();
+        Modal::end(); ?>
     </p>
+    <?php
+    // echo FileInput::widget([
+    //     'name' => 'attachment_30',
+    //     'pluginOptions' => [
+    //         'showPreview' => false,
+    //         'showCaption' => false,
+    //         // 'elCaptionText' => '#customCaption',
+    //         'showUpload' => false,
+    //         'browseLabel' => 'Synchronise data',
+    //         'removeLabel' => '',
+    //     ]
+    // ]);
+    ?>
     
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -79,4 +114,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+
 </div>
