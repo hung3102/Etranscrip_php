@@ -70,18 +70,18 @@ class X12Controller extends Controller
             return $this->redirect(['student/index']);
         }
         
-        $x12Model = new DynamicModel(['fileName', 'serverUrl', 'schoolReportNumbers']);
+        $x12Model = new DynamicModel(['fileName', 'serverUrl', 'schoolReportNumbers', 'encryptType']);
         $x12Model->addRule(['fileName', 'serverUrl'], 'string', ['max'=> 255])
-            ->addRule(['fileName', 'serverUrl'], 'required')
+            ->addRule(['fileName', 'serverUrl', 'encryptType'], 'required')
             ->addRule('serverUrl', 'url', ['defaultScheme' => 'http']);
         $x12Model->schoolReportNumbers = $schoolReportNumbers;
         return $this->renderAjax('renderModal', ['x12Model' => $x12Model]);
     }
 
     public function actionSendData() {
-        $x12Model = new DynamicModel(['fileName', 'serverUrl', 'schoolReportNumbers']);
+        $x12Model = new DynamicModel(['fileName', 'serverUrl', 'schoolReportNumbers', 'encryptType']);
         $x12Model->addRule(['fileName', 'serverUrl'], 'string', ['max'=> 255])
-            ->addRule(['fileName', 'serverUrl'], 'required')
+            ->addRule(['fileName', 'serverUrl', 'encryptType'], 'required')
             ->addRule('serverUrl', 'url', ['defaultScheme' => 'http']);
 
         $post = Yii::$app->request->post('DynamicModel');
@@ -89,12 +89,14 @@ class X12Controller extends Controller
             $x12Model->fileName = $post['fileName'];
             $x12Model->serverUrl = $post['serverUrl'];
             $x12Model->schoolReportNumbers = unserialize($post['schoolReportNumbers']);
+            $x12Model->encryptType = $post['encryptType'];
             $x12Model->validate();
             $x12Creator = new X12Creator();
             $data = $x12Creator->create($x12Model->schoolReportNumbers);
             file_put_contents(Yii::$app->basePath.'/x12resource/x12/'.$x12Model->fileName, $data);
             $x12File = Yii::$app->basePath.'/x12resource/x12/'.$x12Model->fileName;
-            if($this->sendFile($x12File, $x12Model->fileName, $x12Model->serverUrl)) {
+            if($this->sendFile($x12File, $x12Model->fileName, $x12Model->serverUrl, 
+            $x12Model->encryptType)) {
                 Yii::$app->session->setFlash('success', 'Send file successfully.');
                 return $this->redirect(['student/index']);
             }
@@ -103,7 +105,7 @@ class X12Controller extends Controller
         }
     }
 
-    protected function sendFile($filePath, $encryptedFileName, $serverUrl) {
+    protected function sendFile($filePath, $encryptedFileName, $serverUrl, $encryptType) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_VERBOSE, 0);
@@ -114,7 +116,8 @@ class X12Controller extends Controller
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
         $fileSecure = new FileSecure();
-        $securedData = $fileSecure->createSecuredData($filePath);
+        $securedData = $fileSecure->createSecuredData($filePath, $encryptType);
+        print_r($securedData);exit();
         file_put_contents(Yii::$app->basePath.'/x12resource/encryptedX12/'.$encryptedFileName, 
             $securedData);
         $sendFile = Yii::$app->basePath.'/x12resource/encryptedX12/'.$encryptedFileName;
@@ -126,7 +129,6 @@ class X12Controller extends Controller
         curl_close($ch);
         if(!$curl_error) {
             if($status_code == 200) {
-                // print_r($response);
                 return true;
             } else {
                 print_r($response);
