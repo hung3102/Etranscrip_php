@@ -15,6 +15,7 @@ use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use common\models\Student;
 use backend\components\FileSecure;
+use common\models\Modal;
 
 class X12Controller extends Controller
 {
@@ -44,7 +45,21 @@ class X12Controller extends Controller
         ];
     }
 
-    public function actionCheckSr() {
+    public function actionRenderModal() {
+        $schoolReportNumbers = $this->checkSr();
+        $x12Model = new Modal();
+        $x12Model->schoolReportNumbers = $schoolReportNumbers;
+        return $this->renderAjax('renderModal', ['x12Model' => $x12Model]);
+    }
+
+    public function actionRenderModalAuto() {
+        $schoolReportNumbers = $this->checkSr();
+        $x12Model = new Modal(['scenario' => 'autoSyn']);
+        $x12Model->schoolReportNumbers = $schoolReportNumbers;
+        return $this->renderAjax('renderModal', ['x12Model' => $x12Model]);
+    }
+
+    private function checkSr() {
         $data = Yii::$app->request->post();
         if(!isset($data['studentIDs'])) {
             Yii::$app->session->setFlash('error', 'Error: Choose at least one student!');
@@ -69,39 +84,37 @@ class X12Controller extends Controller
             Yii::$app->session->setFlash('error', $err_messages);
             return $this->redirect(['student/index']);
         }
-        
-        $x12Model = new DynamicModel(['fileName', 'serverUrl', 'schoolReportNumbers', 'encryptType']);
-        $x12Model->addRule(['fileName', 'serverUrl'], 'string', ['max'=> 255])
-            ->addRule(['fileName', 'serverUrl', 'encryptType'], 'required')
-            ->addRule('serverUrl', 'url', ['defaultScheme' => 'http']);
-        $x12Model->schoolReportNumbers = $schoolReportNumbers;
-        return $this->renderAjax('renderModal', ['x12Model' => $x12Model]);
+        return $schoolReportNumbers;
     }
 
     public function actionSendData() {
-        $x12Model = new DynamicModel(['fileName', 'serverUrl', 'schoolReportNumbers', 'encryptType']);
-        $x12Model->addRule(['fileName', 'serverUrl'], 'string', ['max'=> 255])
-            ->addRule(['fileName', 'serverUrl', 'encryptType'], 'required')
-            ->addRule('serverUrl', 'url', ['defaultScheme' => 'http']);
-
-        $post = Yii::$app->request->post('DynamicModel');
-        if ($post['fileName']!=null && $post['serverUrl']!=null) {
+        $post = Yii::$app->request->post('Modal');
+        if (isset($post['fileName']) && isset($post['serverUrl'])) {
+            $x12Model = new Modal();
             $x12Model->fileName = $post['fileName'];
             $x12Model->serverUrl = $post['serverUrl'];
-            $x12Model->schoolReportNumbers = unserialize($post['schoolReportNumbers']);
-            $x12Model->encryptType = $post['encryptType'];
-            $x12Model->validate();
-            $x12Creator = new X12Creator();
-            $data = $x12Creator->create($x12Model->schoolReportNumbers);
+        } else {
+            $x12Model = new Modal(['scenario' => 'autoSyn']);
+        }
+        $x12Model->schoolReportNumbers = unserialize($post['schoolReportNumbers']);
+        $x12Model->encryptType = $post['encryptType'];
+        $x12Model->validate();
+        $x12Creator = new X12Creator();
+        $data = $x12Creator->create($x12Model->schoolReportNumbers);
+        if(isset($post['fileName']) && isset($post['serverUrl'])) {
             file_put_contents(Yii::$app->basePath.'/x12resource/x12/'.$x12Model->fileName, $data);
             $x12File = Yii::$app->basePath.'/x12resource/x12/'.$x12Model->fileName;
-            if($this->sendFile($x12File, $x12Model->fileName, $x12Model->serverUrl, 
-            $x12Model->encryptType)) {
-                Yii::$app->session->setFlash('success', 'Send file successfully.');
-                return $this->redirect(['student/index']);
-            }
+            $serverUrl = $x12Model->serverUrl;
+            $fileName = $post['fileName'];
         } else {
-            return $this->renderAjax('renderModal', ['x12Model' => $x12Model]);
+            file_put_contents(Yii::$app->basePath.'/x12resource/x12/data.edi', $data);
+            $x12File = Yii::$app->basePath.'/x12resource/x12/data.edi';
+            $serverUrl = 'http://172.17.0.2/Etranscript/frontend/web/student/receive-file';
+            $fileName = 'data.edi';
+        }
+        if($this->sendFile($x12File, $fileName, $serverUrl, $x12Model->encryptType)) {
+            Yii::$app->session->setFlash('success', 'Send file successfully.');
+            return $this->redirect(['student/index']);
         }
     }
 
@@ -117,7 +130,6 @@ class X12Controller extends Controller
 
         $fileSecure = new FileSecure();
         $securedData = $fileSecure->createSecuredData($filePath, $encryptType);
-        print_r($securedData);exit();
         file_put_contents(Yii::$app->basePath.'/x12resource/encryptedX12/'.$encryptedFileName, 
             $securedData);
         $sendFile = Yii::$app->basePath.'/x12resource/encryptedX12/'.$encryptedFileName;

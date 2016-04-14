@@ -19,6 +19,21 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
     
     <?= 'With selected:'?>
+    <?=Html::button('Auto send x12 file to server', 
+        [
+            'id' => 'autoModalButton', 
+            'class' => 'btn btn-primary',
+        ]
+    );?>
+    <?php 
+        Modal::begin([
+            'header' => '<h3>Choose server url and encrypt type to send</h3>',
+            'id' => 'autoSendModal',
+        ]);
+        echo '<div id="autoModalContent"></div>';
+        Modal::end();
+    ?>
+    
     <?=Html::button('Send x12 file to server', 
         [
             'id' => 'modalButton', 
@@ -27,12 +42,13 @@ $this->params['breadcrumbs'][] = $this->title;
     );?>
     <?php 
         Modal::begin([
-            'header' => '<h3>Choose file name and server url to send</h3>',
+            'header' => '<h3>Choose file name, server url and encrypt type to send</h3>',
             'id' => 'sendModal',
         ]);
         echo '<div id="modalContent"></div>';
         Modal::end();
     ?>
+
     <?php Pjax::begin(); ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

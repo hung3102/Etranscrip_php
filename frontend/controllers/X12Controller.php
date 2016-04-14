@@ -58,6 +58,17 @@ class X12Controller extends Controller
         }
     }
 
+    public function actionAutoSyn() {
+        $filePath = Yii::$app->basePath.'/x12resource/x12/data.edi';
+        $parser = new X12Parser($this->cf());
+        $x12 = $parser->parse($filePath);
+        $x12Integration = new X12Integration();
+        if($x12Integration->integrate($x12)) {
+            Yii::$app->session->setFlash('success', 'Success : Synchronise school reports from x12 file successfully');
+            return $this->redirect(['student/index']);
+        }
+    }
+
     private function cf() {
         $cfX12 = new Cf("X12");
         $cfISA = $cfX12->addChild("ISA", "ISA");

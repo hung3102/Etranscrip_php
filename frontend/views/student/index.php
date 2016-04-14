@@ -27,6 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Create Student', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Auto Synchronise', ['x12/auto-syn'], ['class' => 'btn btn-info']) ?>
         <!-- <?= Html::beginForm(['x12/parse'],'get');?> -->
         <?php Modal::begin([
             'header'=>'<h3>Choose x12 file to synchronise data</h3>',
