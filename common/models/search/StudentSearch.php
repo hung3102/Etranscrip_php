@@ -5,21 +5,16 @@ namespace common\models\search;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Student as StudentModel;
+use common\models\Student;
 
-/**
- * Student represents the model behind the search form about `common\models\Student`.
- */
-class Student extends StudentModel
+class StudentSearch extends Student
 {
-    /**
-     * @inheritdoc
-     */
+    public $schoolReport;
     public function rules()
     {
         return [
             [['id', 'gender', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'religionID'], 'integer'],
-            [['name', 'imageURL', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time'], 'safe'],
+            [['name', 'imageURL', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time', 'schoolReport'], 'safe'],
         ];
     }
 
@@ -41,13 +36,19 @@ class Student extends StudentModel
      */
     public function search($params)
     {
-        $query = StudentModel::find();
+        $query = Student::find();
 
         // add conditions that should always apply here
+        $query->joinWith(['schoolReport']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['schoolReport'] = [
+            'asc' => ['tbl_school_report.number' => SORT_ASC],
+            'desc' => ['tbl_school_report.number' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -61,7 +62,7 @@ class Student extends StudentModel
         $query->andFilterWhere([
             'id' => $this->id,
             'gender' => $this->gender,
-            'birthday' => $this->birthday,
+            // 'birthday' => $this->birthday,
             'currentAddressID' => $this->currentAddressID,
             'nativeAddressID' => $this->nativeAddressID,
             'ethnicID' => $this->ethnicID,
@@ -77,7 +78,9 @@ class Student extends StudentModel
             ->andFilterWhere(['like', 'motherName', $this->motherName])
             ->andFilterWhere(['like', 'motherJob', $this->motherJob])
             ->andFilterWhere(['like', 'tutorName', $this->tutorName])
-            ->andFilterWhere(['like', 'tutorJob', $this->tutorJob]);
+            ->andFilterWhere(['like', 'tutorJob', $this->tutorJob])
+            ->andFilterWhere(['like', 'birthday', $this->birthday])
+            ->andFilterWhere(['like', 'tbl_school_report.number', $this->schoolReport]);
 
         return $dataProvider;
     }

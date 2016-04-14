@@ -9,14 +9,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * SchoolReportController implements the CRUD actions for SchoolReport model.
- */
 class SchoolReportController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
+
     public function behaviors()
     {
         return [
@@ -29,10 +24,6 @@ class SchoolReportController extends Controller
         ];
     }
 
-    /**
-     * Lists all SchoolReport models.
-     * @return mixed
-     */
     public function actionIndex()
     {
         $searchModel = new SchoolReportSearch();
@@ -44,11 +35,6 @@ class SchoolReportController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single SchoolReport model.
-     * @param integer $id
-     * @return mixed
-     */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -56,11 +42,6 @@ class SchoolReportController extends Controller
         ]);
     }
 
-    /**
-     * Creates a new SchoolReport model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
     public function actionCreate()
     {
         $model = new SchoolReport();
@@ -74,12 +55,6 @@ class SchoolReportController extends Controller
         }
     }
 
-    /**
-     * Updates an existing SchoolReport model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
