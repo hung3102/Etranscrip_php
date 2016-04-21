@@ -7,19 +7,17 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\Student;
 
-/**
- * StudentSearch represents the model behind the search form about `common\models\Student`.
- */
 class StudentSearch extends Student
 {
-    /**
-     * @inheritdoc
-     */
+    public $schoolReport;
+    public $currentAddress;
+    public $nativeAddress;
+
     public function rules()
     {
         return [
             [['id', 'gender', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'religionID'], 'integer'],
-            [['name', 'imageURL', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time'], 'safe'],
+            [['name', 'imageURL', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time', 'schoolReport', 'currentAddress', 'nativeAddress'], 'safe'],
         ];
     }
 
@@ -40,23 +38,20 @@ class StudentSearch extends Student
      * @return ActiveDataProvider
      */
     public function search($params)
-    {
-        public $currentAddress;
-        public $nativeAddress;
-
-        public function rules() {
-            return [
-                [['currentAddress', 'nativeAddress'], 'safe'],
-            ];
-        }
-        
+    {   
         $query = Student::find();
 
         // add conditions that should always apply here
+        $query->joinWith(['schoolReport']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['schoolReport'] = [
+            'asc' => ['tbl_school_report.number' => SORT_ASC],
+            'desc' => ['tbl_school_report.number' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -70,8 +65,8 @@ class StudentSearch extends Student
         $query->andFilterWhere([
             'id' => $this->id,
             'gender' => $this->gender,
-            'birthday' => $this->birthday,
-            // 'currentAddressID' => $this->currentAddressID,
+            // 'birthday' => $this->birthday,
+            'currentAddressID' => $this->currentAddressID,
             'nativeAddressID' => $this->nativeAddressID,
             'ethnicID' => $this->ethnicID,
             'religionID' => $this->religionID,
@@ -86,9 +81,11 @@ class StudentSearch extends Student
             ->andFilterWhere(['like', 'motherName', $this->motherName])
             ->andFilterWhere(['like', 'motherJob', $this->motherJob])
             ->andFilterWhere(['like', 'tutorName', $this->tutorName])
-            ->andFilterWhere(['like', 'tutorJob', $this->tutorJob]);
+            ->andFilterWhere(['like', 'tutorJob', $this->tutorJob])
+            ->andFilterWhere(['like', 'birthday', $this->birthday])
+            ->andFilterWhere(['like', 'tbl_school_report.number', $this->schoolReport]);
 
-        $query->andFilterWhere(['like', 'currentAddressID', $this->currentAddress->getFullAddress()]);
+        // $query->andFilterWhere(['like', 'currentAddressID', $this->currentAddress->getFullAddress()]);
 
         return $dataProvider;
     }

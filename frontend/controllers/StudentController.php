@@ -1,18 +1,19 @@
 <?php
 
-namespace backend\controllers;
+namespace frontend\controllers;
 
 use Yii;
-use common\models\SchoolReport;
-use common\models\search\SchoolReportSearch;
+use common\models\Student;
+use common\models\search\StudentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use kartik\mpdf\Pdf;
+use yii\base\DynamicModel;
+use backend\components\FileSecure;
 
-class SchoolReportController extends Controller
+class StudentController extends Controller
 {
-
+    
     public function behaviors()
     {
         return [
@@ -25,17 +26,35 @@ class SchoolReportController extends Controller
         ];
     }
 
+    public function beforeAction($action)
+    {            
+        if ($action->id == 'receive-file') {
+            $this->enableCsrfValidation = false;
+        }
+
+        return parent::beforeAction($action);
+    }
+
     public function actionIndex()
     {
-        $searchModel = new SchoolReportSearch();
+        $searchModel = new StudentSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $x12Model = new DynamicModel(['fileName']);
+        $x12Model->addRule(['fileName'], 'file')
+            ->addRule(['fileName'], 'required');
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'x12Model' => $x12Model,
         ]);
     }
 
+    /**
+     * Displays a single Student model.
+     * @param integer $id
+     * @return mixed
+     */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -43,51 +62,15 @@ class SchoolReportController extends Controller
         ]);
     }
 
-    public function actionViewPdf($id)
-    {
-        $model = $this->findModel($id);
-        $content = $this->renderPartial('viewPdf', [
-            'model' => $model,
-        ]);
- 
-        // setup kartik\mpdf\Pdf component
-        $pdf = new Pdf([
-            // set to use core fonts only
-            'mode' => Pdf::MODE_UTF8, 
-            // A4 paper format
-            'format' => Pdf::FORMAT_A4, 
-            // portrait orientation
-            'orientation' => Pdf::ORIENT_PORTRAIT, 
-            // stream to browser inline
-            'destination' => Pdf::DEST_BROWSER, 
-            // your html content input
-            'content' => $content,  
-            // format content from your own css file if needed or use the
-            // enhanced bootstrap css built by Krajee for mPDF formatting 
-            'cssFile' => 'css/school-report.css',
-            // any css to be embedded if required
-            // 'cssInline' => '.kv-heading-1{font-size:18px}', 
-             // set mPDF properties on the fly
-            'options' => ['title' => $model->student->name],
-             // call mPDF methods on the fly
-            'methods' => [ 
-                // 'SetHeader'=>['Krajee Report Header'], 
-                'SetFooter'=>['{PAGENO}'],
-            ]
-        ]);
-     
-        // return the pdf output as per the destination setting
-        return $pdf->render(); 
-    }
-
-    public function actionTest($id) {
-        return $this->render('viewPdf', ['model' => $this->findModel($id)]);
-    }
-
+    /**
+     * Creates a new Student model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
     public function actionCreate()
     {
-        $model = new SchoolReport();
-
+        $model = new Student();
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -97,6 +80,12 @@ class SchoolReportController extends Controller
         }
     }
 
+    /**
+     * Updates an existing Student model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -111,7 +100,7 @@ class SchoolReportController extends Controller
     }
 
     /**
-     * Deletes an existing SchoolReport model.
+     * Deletes an existing Student model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -123,16 +112,23 @@ class SchoolReportController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionReceiveFile() {
+        $receivedFile = Yii::$app->request->post('file_box');
+        $fileSecure = new FileSecure();
+        $decryptData = $fileSecure->decryptSecuredFile($receivedFile);
+        file_put_contents(Yii::$app->basePath.'/x12resource/x12/'.basename($receivedFile), $decryptData);
+    }
+
     /**
-     * Finds the SchoolReport model based on its primary key value.
+     * Finds the Student model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return SchoolReport the loaded model
+     * @return Student the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = SchoolReport::findOne($id)) !== null) {
+        if (($model = Student::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

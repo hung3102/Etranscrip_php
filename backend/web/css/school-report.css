@@ -1,0 +1,218 @@
+#SR {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*======================cover page======================*/
+#SR #cover {
+	border: double 4px black;
+	outline: solid 2px black;
+}
+
+#SR #cover .caption1 {
+	text-align: center;
+	margin-top: 16px;
+}
+
+#SR #cover .caption1 .text {
+	font-size: 16px;
+    font-weight: bold;
+    word-spacing: 4px;
+}
+
+#SR #cover .caption1 .horizon {
+	border-bottom: 1px solid;
+    margin-left: 42%;
+    width: 100px;
+}
+
+#SR #cover .caption2 {
+	margin-top: 200px;
+    text-align: center;
+}
+
+#SR #cover .caption2 h1 {
+	font-size: 70px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    margin: 0;
+}
+
+#SR #cover .caption2 h3 {
+	font-weight: bold;
+    margin: 0;
+}
+
+#SR #cover .std_name {
+	margin-top: 200px;
+    text-align: center;
+}
+
+#SR #cover .std_name h5 {
+	font-size: 18px;
+	font-weight: normal;
+    word-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+#SR #cover .std_name .name {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#SR #cover .sr_number {
+	font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 200px;
+    text-align: center;
+}
+
+#SR #cover .sr_number .text {
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+/*======================page 1======================*/
+#SR #page1 {
+	margin-top: 100px;
+}
+
+#SR #page1 #caption .caption1 .caption1-1 {
+	text-align: center;
+	font-size: 17px;
+}
+
+#SR #page1 #caption .caption1 .caption1-2 {
+	text-align: center;
+}
+
+#SR #page1 #caption .caption1 .star_line {
+	text-align: center;
+    letter-spacing: 5px;
+}
+
+#SR #page1 #caption .caption2 .caption2-1 {
+	font-size: 42px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+
+#SR #page1 #caption .caption2 .caption2-2 {
+	text-align: center;
+    font-weight: bold;
+}
+
+#SR #page1 #std_info {
+	position: relative;
+	margin-top: 35px;
+	font-size: 20px;
+}
+
+#SR #page1 #std_info .name {
+	width: 400px;
+}
+
+/*#SR #page1 #std_info table, tr, td {
+	border: 0px;
+}*/
+
+#SR #page1 #std_info table td {
+	font-size: 18px;
+}
+
+#SR #page1 #std_info .gender {
+
+}
+
+#SR #page1 #std_info .text-bold {
+	font-weight: bold;
+}
+
+#SR #page1 #std_info .father .name {
+	width: 350px;
+}
+
+#SR #page1 #std_info .father .job {
+    width: 350px;
+}
+
+#SR #page1 #std_info .mother .name {
+    width: 350px;
+}
+
+#SR #page1 #std_info .mother .job {
+    width: 350px;
+}
+
+#SR #page1 #std_info .tutor .name {
+    width: 350px;
+}
+
+#SR #page1 #std_info .tutor .job {
+    width: 350px;
+}
+
+#SR #page1 #date {
+    text-align: right;
+    margin-top: 30px;
+}
+
+#SR #page1 #principal {
+	text-align: right;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+#SR #page1 #principal .constant {
+	font-weight: bold;
+}
+
+#SR #page1 #principal .name {
+	margin-right: 5px;
+}
+
+#SR #page1 #study_process {
+	margin-top: 150px;
+}
+
+#SR #page1 #study_process .table_name {
+	text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#SR #page1 #study_process table tr td {
+	border: 1px solid;
+}
+
+#SR #page1 #study_process table {
+	border-collapse: collapse;
+}
+
+#SR #page1 #study_process .title .year, .class , .school_address, .principal_confirm {
+	font-weight: bold;
+	text-align: center;
+}
+
+#SR #page1 #study_process .each .year_content, .class_content, .confirm_content {
+	text-align: center;
+}
+
+#SR #page1 #study_process .title .year {
+	width: 13%;
+}
+
+#SR #page1 #study_process .title .class {
+	width: 8%;
+}
+
+#SR #page1 #study_process .title .school_address {
+	width: 55%;
+}
+
+#SR #page1 #study_process .title .principal_confirm {
+	width: 25%;
+}

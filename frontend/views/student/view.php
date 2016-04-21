@@ -4,18 +4,17 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\SchoolReport */
+/* @var $model common\models\Student */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'School Reports', 'url' => ['index']];
+$this->title = $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Students', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="school-report-view">
+<div class="student-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('View as pdf', ['view-pdf', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
@@ -30,9 +29,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'number',
-            'studentID',
-            'date',
+            'name',
+            'imageURL:url',
+            'gender',
+            'birthday',
+            'currentAddressID',
+            'nativeAddressID',
+            'ethnicID',
+            'religionID',
+            'fatherName',
+            'fatherJob',
+            'motherName',
+            'motherJob',
+            'tutorName',
+            'tutorJob',
             'created_time',
             'updated_time',
         ],
