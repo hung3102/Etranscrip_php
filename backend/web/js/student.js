@@ -3,7 +3,7 @@ $(function() {
 	    e.preventDefault();
 	    $.ajax({
 	        type: "POST",
-	        url: '../x12/render-modal',
+	        url: ['x12/render-modal'],
 	        data: {
 	        	studentIDs : $("#std_grid").yiiGridView("getSelectedRows")
 	        },
@@ -18,7 +18,7 @@ $(function() {
 	    e.preventDefault();
 	    $.ajax({
 	        type: "POST",
-	        url: '../x12/render-modal-auto',
+	        url: ['x12/render-modal-auto'],
 	        data: {
 	        	studentIDs : $("#std_grid").yiiGridView("getSelectedRows")
 	        },
