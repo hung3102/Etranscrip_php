@@ -310,36 +310,46 @@ use common\models\Subject;
 			<tr id="teacher_comment">
 				<td colspan="7" class="title1">NHẬN XÉT CỦA GIÁO VIÊN CHỦ NHIỆM</td>
 			</tr>
-			<tr id="teacher_comment" class="title2">
-				<td colspan="7">(Ký và ghi rõ họ tên)</td>
+			<tr id="teacher_comment">
+				<td colspan="7" class="title2">(Ký và ghi rõ họ tên)</td>
 			</tr>
-			<tr id="teacher_comment" class="content">
-				<td colspan="7"><?= $model->yearEvaluations[$i]->teacherComment ?></td>
+			<tr id="teacher_comment">
+				<td colspan="7" class="content">
+					<?= nl2br($model->yearEvaluations[$i]->teacherComment) ?>
+				</td>
 			</tr>		
-			<tr id="teacher_comment" class="teacher_name">
-				<td colspan="7"><?= $model->yearEvaluations[$i]->teacherName ?></td>
+			<tr id="teacher_comment">
+				<td colspan="7" class="teacher_name"><?= $model->yearEvaluations[$i]->teacherName ?></td>
 			</tr>	
 
-			<tr id="principal_approval" class="title1">
-				<td colspan="7">PHÊ DUYỆT CỦA HIỆU TRƯỞNG</td>
+			<tr id="principal_approval">
+				<td colspan="7" class="title1">PHÊ DUYỆT CỦA HIỆU TRƯỞNG</td>
 			</tr>
-			<tr id="principal_approval" class="content">
-				<td colspan="7"><?= $model->yearEvaluations[$i]->principalApproval ?></td>
-			</tr>
-			<tr id="principal_approval" class="date">
-				<td colspan="7">
-				<?php $timestamp = strtotime($model->yearEvaluations[$i]->date);
-						echo $model->studyProcesses[$i]->school->address->district->name.', ngày '.date('d', $timestamp).' tháng '.date('m', $timestamp).' năm '.date('y', $timestamp); ?>
+			<tr id="principal_approval">
+				<td colspan="7" class="content">
+					<?= nl2br($model->yearEvaluations[$i]->principalApproval) ?>
 				</td>
 			</tr>
-			<tr id="principal_approval" class="title2">
-				<td colspan="7">Hiệu trưởng</td>
+			<tr id="principal_approval">
+				<td colspan="4" class="empty"></td>
+				<td colspan="3" class="date" style="height: 10px;">
+				<?php $timestamp = strtotime($model->yearEvaluations[$i]->date);
+						echo $model->studyProcesses[$i]->school->address->district->name.', ngày '.date('d', $timestamp).' tháng '.date('m', $timestamp).' năm '.date('Y', $timestamp); ?>
+				</td>
 			</tr>
-			<tr id="principal_approval" class="title3">
-				<td colspan="7">(Phê duyệt, ký, ghi rõ họ tên và đóng dấu)</td>
+			<tr id="principal_approval">
+				<td colspan="4" class="empty"></td>
+				<td colspan="3" class="title2">Hiệu trưởng </td>
 			</tr>
-			<tr id="principal_approval" class="principal_name">
-				<td colspan="7"><?= $model->yearEvaluations[$i]->principalName ?></td>
+			<tr id="principal_approval">
+				<td colspan="4" class="empty"></td>
+				<td colspan="3" class="title3">(Phê duyệt, ký, ghi rõ họ tên và đóng dấu)</td>
+			</tr>
+			<tr id="principal_approval">
+				<td colspan="4" class="last_empty"></td>
+				<td colspan="3" class="principal_name">
+					<?= $model->yearEvaluations[$i]->principalName ?>
+				</td>
 			</tr>
 			
 		</table>
