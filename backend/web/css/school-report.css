@@ -115,10 +115,6 @@
 	width: 400px;
 }
 
-/*#SR #page1 #std_info table, tr, td {
-	border: 0px;
-}*/
-
 #SR #page1 #std_info table td {
 	font-size: 18px;
 }
@@ -175,7 +171,7 @@
 }
 
 #SR #page1 #study_process {
-	margin-top: 150px;
+	margin-top: 130px;
 }
 
 #SR #page1 #study_process .table_name {
@@ -184,8 +180,13 @@
     font-size: 18px;
 }
 
+#SR #page1 #study_process #process_table {
+	margin-top: 10px;
+}
+
 #SR #page1 #study_process table tr td {
 	border: 1px solid;
+	font-size: 20px;
 }
 
 #SR #page1 #study_process table {
@@ -215,4 +216,136 @@
 
 #SR #page1 #study_process .title .principal_confirm {
 	width: 25%;
+}
+
+/*====================================================*/
+#SR #year_evaluation #part1 {
+	font-size: 18px;
+}
+
+#SR #year_evaluation #part1 #info table tr td {
+	font-size: 18px;
+}
+
+#SR #year_evaluation #part1 #info table .class {
+	font-weight: normal;
+}
+
+#SR #year_evaluation #part1 #info table .year {
+	text-align: right;
+	width: 45%;
+}
+
+#SR #year_evaluation #part1 #year_table tr td, tr th {
+	border: 1px solid;
+	font-size: 18px;
+}
+
+#SR #year_evaluation #part1 #year_table tbody tr td {
+	height: 40px;
+	text-align: center;
+}
+
+#SR #year_evaluation #part1 #year_table { 
+	margin-top: 10px;
+	border-collapse: collapse;
+}
+
+#SR #year_evaluation #part1 #year_table .subject_name {
+	width: 150px;
+}
+
+#SR #year_evaluation #part1 #year_table .comment {
+	border-left: 1px solid;
+    border-right: 1px solid;
+}
+
+#SR #year_evaluation #part1 #year_table .comment td {
+	border: 0;
+	text-align: left;
+}
+
+#SR #year_evaluation #part1 #year_table .confirm {
+	border: 1px solid;
+    border-top: 0;
+}
+
+#SR #year_evaluation #part1 #year_table .confirm td {
+	border: 0;
+	padding: 10px 0 100px 0;
+}
+
+#SR #year_evaluation #part1 #year_table .confirm .teacher_confirm .text2 {
+	padding-top: 10px;
+}
+
+#SR #year_evaluation #part1 #year_table .confirm .teacher_confirm .name {
+	padding-top: 20px;
+} 
+
+#SR #year_evaluation #part1 #year_table .confirm .principal_confirm .text2 {
+	font-weight: normal;
+}
+
+#SR #year_evaluation #part1 #info table .advantage_subjects {
+	text-align: right;
+}
+
+/*===============conduct and capacity page ========================*/
+#SR #conduct_capacity table {
+	border-collapse: collapse;
+    border: 1px solid;
+}
+
+#SR #conduct_capacity table tr td {
+	border: 1px solid;
+	text-align: center;
+	font-size: 18px;
+	height: 40px;
+}
+#SR #conduct_capacity table .bold td {
+	font-weight: bold;
+}
+
+#SR #conduct_capacity table .upgrade {
+	font-weight: normal;
+	width: 200px;
+}
+
+#SR #conduct_capacity table .term1 {
+	width: 100px;
+}
+
+#SR #conduct_capacity table .miss_content {
+	width: 70px;
+}
+
+#SR #conduct_capacity table .order_after {
+	width: 150px;
+}
+
+#SR #conduct_capacity table #certificate td {
+	padding-top: 20px;
+}
+
+#SR #conduct_capacity table #achievement td {
+	padding: 20px 0;
+}
+
+#SR #conduct_capacity table #certificate td ,#SR #conduct_capacity table #achievement td {
+	text-align: left;
+}
+
+#SR #conduct_capacity table #certificate .vocational_certificate {
+	border-right-style: hidden;
+}
+
+#SR #conduct_capacity table #certificate td {
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #teacher_comment .title1{
+	padding-top: 20px;
+	font-weight: bold;
+	border-bottom-style: hidden;
 }
