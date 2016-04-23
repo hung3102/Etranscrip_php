@@ -19,7 +19,7 @@ class StudyProcess extends BaseStudyProcess
         return [
             [['schoolReportID', 'fromYear', 'toYear', 'class', 'schoolID'], 'required'],
             [['schoolReportID', 'schoolID'], 'integer'],
-            [['schoolReportID', 'fromYear', 'toYear', 'class', 'schoolID', 'created_time', 'updated_time'], 'safe'],
+            [['schoolReportID', 'fromYear', 'toYear', 'class', 'schoolID', 'principalName', 'created_time', 'updated_time'], 'safe'],
             [['class', 'principalName'], 'string', 'max' => 50],
         ];
     }

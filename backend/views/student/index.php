@@ -87,9 +87,10 @@ $this->params['breadcrumbs'][] = $this->title;
             // ],
             [  
                 'label' => 'Native Address',
+                'attribute' => 'nativeAddressID',
                 'value' => function($data) {
                     return $data->nativeAddress->getFullAddress();
-                }
+                },
             ],
             // 'ethnicID',
             // 'religionID',
@@ -102,7 +103,22 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'created_time',
             // 'updated_time',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view} {update} {delete}',
+                'buttons' => [
+                    'view' => function($url, $model) {
+                        return Html::a(
+                            '<span class="glyphicon glyphicon-eye-open"></span>',
+                            ['school-report/view', 'id' => $model->schoolReport->id],
+                            [
+                                'title' => 'View school report',
+                                'data-pjax' => '0',
+                            ]
+                        );
+                    }
+                ],
+            ],
         ],
     ]); ?>
     <?php Pjax::end(); ?>

@@ -7,6 +7,8 @@ use yii\base\Exception;
 use common\models\bmodels\BaseTermEvaluation;
 use yii\behaviors\TimestampBehavior;
 use common\models\SubjectScore;
+use common\models\Subject;
+use common\models\YearEvaluation;
 
 class TermEvaluation extends BaseTermEvaluation
 {
@@ -82,5 +84,46 @@ class TermEvaluation extends BaseTermEvaluation
 
     public function getSubjectScores() {
         return $this->hasMany(SubjectScore::className(), ['termEvaluationID' => 'id']);
+    }
+
+    public function getYearEvaluation() {
+        return $this->hasOne(YearEvaluation::className(), ['id' => 'yearEvaluationID']);
+    }
+
+    public function getSubjectScore($subjectName) {
+        $subject = Subject::findOne(['name' => $subjectName]);
+        if($subject == null) {
+            throw new Exception("Error: Unknow subject ".$subjectName, 1);
+        }
+        if($this->subjectScores == null) {
+            throw new Exception("Has not any subject score of this term evaluation", 1);
+        }
+        foreach ($this->subjectScores as $subjectScore) {
+            if($subjectScore->subject->name == $subjectName) {
+                return $subjectScore;
+            }
+        }
+        return false;
+    }
+
+    public function getAverageScore() {
+        $advantageSubjects = [];
+        if($this->yearEvaluation == 'KHTN') {
+            $advantageSubjects = ['Toán', 'Vật lý', 'Hóa học', 'Sinh học'];
+        } else if($this->yearEvaluation == 'KHXH & NV') {
+            $advantageSubjects = ['Ngữ văn', 'Địa lý', 'Lịch sử', 'Ngoại ngữ'];
+        }
+        $total = 0;
+        $count = 0;
+        foreach ($this->subjectScores as $subjectScore) {
+            if(in_array($subjectScore->subject->name, $advantageSubjects)) {
+                $total += ($subjectScore->score * 2);
+                $count += 2;
+            } else {
+                $total += $subjectScore->score;
+                $count += 1;
+            }
+        }
+        return round($total/$count, 1);
     }
 }

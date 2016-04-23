@@ -109,6 +109,18 @@ class Student extends BaseStudent
             ->viaTable('tbl_relation_student_object', ['studentID' => 'id']);
     }
 
+    public function getObjectsText() {
+        if($this->objects == null) {
+            return null;
+        } else {
+            $return = "";
+            foreach ($this->objects as $object) {
+                $return .= $object->content . ", ";
+            }
+            return substr($return, 0, -2);
+        }
+    }
+
     public function getSchoolReport() {
         return $this->hasOne(SchoolReport::className(), ['studentID' => 'id']);
     }

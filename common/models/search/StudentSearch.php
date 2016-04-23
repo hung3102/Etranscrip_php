@@ -10,11 +10,14 @@ use common\models\Student;
 class StudentSearch extends Student
 {
     public $schoolReport;
+    public $currentAddress;
+    public $nativeAddress;
+
     public function rules()
     {
         return [
             [['id', 'gender', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'religionID'], 'integer'],
-            [['name', 'imageURL', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time', 'schoolReport'], 'safe'],
+            [['name', 'imageURL', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time', 'schoolReport', 'currentAddress', 'nativeAddress'], 'safe'],
         ];
     }
 
@@ -35,7 +38,7 @@ class StudentSearch extends Student
      * @return ActiveDataProvider
      */
     public function search($params)
-    {
+    {   
         $query = Student::find();
 
         // add conditions that should always apply here
@@ -81,6 +84,8 @@ class StudentSearch extends Student
             ->andFilterWhere(['like', 'tutorJob', $this->tutorJob])
             ->andFilterWhere(['like', 'birthday', $this->birthday])
             ->andFilterWhere(['like', 'tbl_school_report.number', $this->schoolReport]);
+
+        // $query->andFilterWhere(['like', 'currentAddressID', $this->currentAddress->getFullAddress()]);
 
         return $dataProvider;
     }

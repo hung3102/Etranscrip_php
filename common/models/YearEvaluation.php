@@ -87,4 +87,56 @@ class YearEvaluation extends BaseYearEvaluation
         }
         return substr($return, 0, -2);
     }
+
+    public function getAdvantageSubjects() {
+        if($this->studyDepartment == 'KHTN') {
+            return 'Toán, Lý, Hóa, Sinh';
+        } else if($this->studyDepartment == 'Cơ bản') {
+            return 'Văn, Sử, Địa, Ngoại ngữ';
+        } else if($this->studyDepartment == 'KHXH & NV') {
+            return null;
+        } else {
+            throw new Exception("Error: Unknow study department ".$this->studyDepartment, 1);
+        }
+    }
+
+    public function checkTermExist($term_value) {
+        if($this->termEvaluations == null) {
+            return false;
+        }
+        foreach ($this->termEvaluations as $termEvaluation) {
+            if($termEvaluation->term == $term_value) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function getTerm($term_value) {
+        if($this->termEvaluations == null) {
+            throw new Exception("Has not term evaluation in this year Evaluation", 1);
+        }
+        foreach ($this->termEvaluations as $termEvaluation) {
+            if($termEvaluation->term == $term_value) {
+                return $termEvaluation;
+            }
+        }
+        return null;
+    }
+
+    public function getConduct($term_value) {
+        if($this->getTerm($term_value) != null) {
+            return $this->getTerm($term_value)->conduct;
+        } else {
+            return null;
+        }
+    }
+
+    public function getLearnCapacity($term_value) {
+        if($this->getTerm($term_value) != null) {
+            return $this->getTerm($term_value)->learnCapacity;
+        } else {
+            return null;
+        }
+    }
 }
