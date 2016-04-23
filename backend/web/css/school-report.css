@@ -119,54 +119,37 @@
 	font-size: 18px;
 }
 
-#SR #page1 #std_info .gender {
-
-}
-
 #SR #page1 #std_info .text-bold {
 	font-weight: bold;
 }
 
-#SR #page1 #std_info .father .name {
+#SR #page1 #std_info .father td, #SR #page1 #std_info .mother td, #SR #page1 #std_info .tutor td {
+	font-size: 20px;
+}
+#SR #page1 #std_info tr .name {
 	width: 350px;
 }
 
-#SR #page1 #std_info .father .job {
-    width: 350px;
-}
-
-#SR #page1 #std_info .mother .name {
-    width: 350px;
-}
-
-#SR #page1 #std_info .mother .job {
-    width: 350px;
-}
-
-#SR #page1 #std_info .tutor .name {
-    width: 350px;
-}
-
-#SR #page1 #std_info .tutor .job {
+#SR #page1 #std_info tr .job {
     width: 350px;
 }
 
 #SR #page1 #date {
     text-align: right;
     margin-top: 30px;
+    font-size: 15px;
 }
 
 #SR #page1 #principal {
 	text-align: right;
     margin-right: 30px;
     margin-top: 10px;
-}
-
-#SR #page1 #principal .constant {
-	font-weight: bold;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #SR #page1 #principal .name {
+	margin-top: 5px;
 	margin-right: 5px;
 }
 
@@ -347,5 +330,65 @@
 #SR #conduct_capacity table #teacher_comment .title1{
 	padding-top: 20px;
 	font-weight: bold;
+	font-size: 15px;
 	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #teacher_comment .title2 {
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #teacher_comment .content {
+	padding-left: 200px;
+	text-align: left;
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #teacher_comment .teacher_name {
+	text-align: right;
+	padding-bottom: 50px;
+	padding-right: 30px;
+	font-weight: bold;
+}
+
+#SR #conduct_capacity table #principal_approval .title1 {
+	border-bottom-style: hidden;
+	font-size: 15px;
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+#SR #conduct_capacity table #principal_approval .content {
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #principal_approval .date {
+	font-size: 15px;
+	border-bottom-style: hidden;
+	padding-top: 20px;
+}
+
+#SR #conduct_capacity table #principal_approval .title2 {
+	font-weight: bold;
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #principal_approval .title3 {
+	border-bottom-style: hidden;
+	font-size: 15px;
+	padding-bottom: 19px;
+}
+
+#SR #conduct_capacity table #principal_approval .principal_name {
+	padding-bottom: 200px;
+	font-weight: bold;
+}
+
+#SR #conduct_capacity table #principal_approval .empty {
+	border-right-style: hidden;
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #principal_approval .last_empty {
+	border-right-style: hidden;
 }
