@@ -107,12 +107,22 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} {update} {delete}',
                 'buttons' => [
-                    'view' => function($url, $model) {
+                    // 'view' => function($url, $model) {
+                    //     return Html::a(
+                    //         '<span class="glyphicon glyphicon-eye-open"></span>',
+                    //         ['school-report/view', 'id' => $model->schoolReport->id],
+                    //         [
+                    //             'title' => 'View School Report',
+                    //             'data-pjax' => '0',
+                    //         ]
+                    //     );
+                    // },
+                    'update' => function($url, $model) {
                         return Html::a(
-                            '<span class="glyphicon glyphicon-eye-open"></span>',
-                            ['school-report/view', 'id' => $model->schoolReport->id],
+                            '<span class="glyphicon glyphicon-pencil"></span>',
+                            ['school-report/update', 'id' => $model->schoolReport->id],
                             [
-                                'title' => 'View school report',
+                                'title' => 'Update School Report',
                                 'data-pjax' => '0',
                             ]
                         );

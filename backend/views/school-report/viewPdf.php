@@ -85,7 +85,7 @@ use common\models\Subject;
 		</div>
 		<div id="principal">
 			<div class="constant">HIỆU TRƯỞNG</div>
-			<div class="name"><?= $model->yearEvaluations[0]->principalName ?></div>
+			<div class="name"><?= $model->principalName ?></div>
 		</div>
 
 		<div id="study_process">

@@ -1,0 +1,210 @@
+#SR_form #page1 #std_info .required.has-error {
+	width: 25%;
+}
+
+#SR_form .col-sm-offset-1.col-sm-11 {
+	margin: 0;
+}
+
+#SR_form .fLabel {
+	font-weight: bold;
+	position: relative;
+    top: 6px;
+}
+
+#SR_form .field {
+	margin-bottom: 10px;
+}
+
+#SR_form .title_bold {
+	font-weight: bold;
+}
+
+#SR_form #std_info .object .field-student-objects {
+	width: 800px;
+}
+
+#SR_form #std_info .current_address .detailAddress {
+	margin-left: 10%;
+}
+
+#SR_form #std_info .current_address .detailAddress .title {
+	position: relative;
+    top: 7px;
+}
+
+#SR_form #std_info .current_address .detailAddress #detailAddress {
+	width: 700px;
+}
+
+#SR_form #study_process {
+	margin-top: 100px;
+}
+
+#SR_form #study_process .table_name {
+	font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center
+}
+
+#SR_form #study_process #process_table {
+	border: 1px solid;
+	border-collapse: collapse;
+}
+
+#SR_form #study_process #process_table tr, td {
+	border: 1px solid;
+}
+
+#SR_form #study_process #process_table .title {
+	height: 50px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#SR_form hr {
+	border: 1px solid;
+}
+
+#SR_form #page1 {
+	margin-bottom: 100px;
+}
+
+#SR_form .year_evaluation .title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#SR_form .year_evaluation .info .class {
+	margin-left: 50px;
+}
+
+#SR_form .year_evaluation .year_table th {
+	text-align: center;
+}
+
+#SR_form .year_evaluation .year_table .subject_row .required.has-error {
+	width: 100%;
+}
+
+#SR_form .year_evaluation .year_table .input {
+	margin-top: 10px;
+}
+
+#SR_form .year_evaluation .year_table .comment .label1 {
+	font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    top: 10px;
+}
+
+#SR_form #page1 .year_evaluation .year_table .comment .required.has-error {
+	width: 25%;
+}
+
+#SR_form .year_evaluation .year_table .comment .teacher_comment .input {
+	height: 100px;
+    width: 1000px;
+}
+
+#SR_form .year_evaluation .year_table .comment .label2 {
+	font-weight: bold;
+    position: relative;
+    top: 15px;
+}
+
+#SR_form .year_evaluation .year_table .comment .label3 {
+	font-weight: bold;
+    position: relative;
+    top: 15px;
+}
+
+#SR_form .conduct_capacity {
+	margin-top: 50px;
+}
+
+#SR_form .conduct_capacity .name1, .name2, .name3 {
+	text-align: center;
+}
+
+#SR_form .conduct_capacity .title_row,  #SR_form .conduct_capacity .sub_title {
+	text-align: center;
+	font-weight: bold;
+}
+
+#SR_form .conduct_capacity .title_row .upgrade_input {
+	width: 200px;
+}
+
+#SR_form .conduct_capacity .title_row .title1 {
+	width: 10%;
+}
+
+#SR_form .conduct_capacity .sub_title td {
+	height: 30px;
+}
+
+#SR_form .conduct_capacity .title_row .order_after {
+	width: 20%;
+}
+
+#SR_form .conduct_capacity .term1 .input, #SR_form .conduct_capacity .term2 .input, #SR_form .conduct_capacity .whole_year .input {
+	width: 100px;
+	margin-top: 10px;
+}
+
+#SR_form .conduct_capacity .add_info .certificate {
+	margin-top: 10px;
+}
+
+#SR_form .conduct_capacity .add_info .certificate .title1, #SR_form .conduct_capacity .add_info .certificate .title2 {
+	position: relative;
+    top: 5px;
+}
+
+#SR_form .conduct_capacity .add_info .certificate .content_input {
+	width: 300px;
+}
+
+#SR_form .conduct_capacity .add_info .achivement .title {
+	position: relative;
+    top: 5px;
+}
+
+#SR_form .conduct_capacity .add_info .achivement .input {
+	width: 600px;
+}
+
+#SR_form .conduct_capacity .comment .teacher_comment {
+	margin-top: 10px;
+}
+
+#SR_form .conduct_capacity .comment .teacher_comment .title1 {
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+#SR_form .conduct_capacity .comment .teacher_comment .content {
+	height: 100px;
+    width: 900px;
+}
+
+#SR_form .conduct_capacity .comment .principal_approval .title2 {
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+#SR_form .conduct_capacity .comment .principal_approval .content {
+	height: 100px;
+    width: 900px;
+}
+
+#SR_form .conduct_capacity {
+	margin-bottom: 100px;
+}
+
+#SR_form .addYear_button {
+	margin-bottom: 10px
+}

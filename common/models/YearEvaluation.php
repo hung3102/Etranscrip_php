@@ -10,6 +10,7 @@ use common\models\TermEvaluation;
 
 class YearEvaluation extends BaseYearEvaluation
 {
+    public static $department = ['KHTN', 'KHXH & NV', 'Cơ bản'];
 
     public static function tableName()
     {
@@ -19,7 +20,7 @@ class YearEvaluation extends BaseYearEvaluation
     public function rules()
     {
         return [
-            [['schoolReportID', 'class', 'fromYear', 'toYear', 'studyDepartment', 'note', 'teacherName', 'missedLesson', 'upGradeType', 'principalApproval', 'principalName', 'date'], 'required'],
+            [['schoolReportID', 'class', 'fromYear', 'toYear', 'studyDepartment', 'note', 'teacherName', 'missedLesson', 'upGradeType', 'teacherComment', 'principalApproval', 'principalName', 'date'], 'required'],
             [['schoolReportID', 'missedLesson'], 'integer'],
             [['schoolReportID', 'class', 'fromYear', 'toYear', 'studyDepartment', 'note', 'teacherName', 'missedLesson', 'principalApproval', 'principalName', 'date', 'created_time', 'updated_time'], 'safe'],
             [['note', 'teacherComment', 'principalApproval'], 'string'],
@@ -92,9 +93,9 @@ class YearEvaluation extends BaseYearEvaluation
         if($this->studyDepartment == 'KHTN') {
             return 'Toán, Lý, Hóa, Sinh';
         } else if($this->studyDepartment == 'Cơ bản') {
-            return 'Văn, Sử, Địa, Ngoại ngữ';
-        } else if($this->studyDepartment == 'KHXH & NV') {
             return null;
+        } else if($this->studyDepartment == 'KHXH & NV') {
+            return 'Văn, Sử, Địa, Ngoại ngữ';
         } else {
             throw new Exception("Error: Unknow study department ".$this->studyDepartment, 1);
         }

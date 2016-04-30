@@ -176,7 +176,7 @@
 	border-collapse: collapse;
 }
 
-#SR #page1 #study_process .title .year, .class , .school_address, .principal_confirm {
+#SR #page1 #study_process .title .year, #SR #page1 #study_process .title .class , #SR #page1 #study_process .title .school_address, #SR #page1 #study_process .title .principal_confirm {
 	font-weight: bold;
 	text-align: center;
 }

@@ -4,18 +4,17 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Student */
+/* @var $model common\models\Province */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Students', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Provinces', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="student-view">
+<div class="province-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('View as pdf', ['school-report/view-pdf', 'id' => $model->schoolReport->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
@@ -31,19 +30,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'imageURL:url',
-            'gender',
-            'birthday',
-            'currentAddressID',
-            'nativeAddressID',
-            'ethnicID',
-            'religionID',
-            'fatherName',
-            'fatherJob',
-            'motherName',
-            'motherJob',
-            'tutorName',
-            'tutorJob',
             'created_time',
             'updated_time',
         ],

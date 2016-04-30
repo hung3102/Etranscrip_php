@@ -17,10 +17,11 @@ class SchoolReport extends BaseSchoolReport
     public function rules()
     {
         return [
-            [['number', 'studentID', 'date'], 'required'],
+            [['number', 'studentID', 'date', 'principalName'], 'required'],
+            [['number'], 'unique'],
             [['studentID'], 'integer'],
-            [['number', 'studentID', 'date', 'created_time', 'updated_time'], 'safe'],
-            [['number'], 'string', 'max' => 50],
+            [['number', 'studentID', 'date', 'principalName', 'created_time', 'updated_time'], 'safe'],
+            [['number', 'principalName'], 'string', 'max' => 50],
             [['studentID'], 'unique'],
         ];
     }
@@ -32,6 +33,7 @@ class SchoolReport extends BaseSchoolReport
             'number' => 'Number',
             'studentID' => 'Student ID',
             'date' => 'Date',
+            'principalName' => 'Principal Name',
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
         ];

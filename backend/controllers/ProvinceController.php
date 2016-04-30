@@ -3,19 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Address;
-use common\models\search\AddressSearch;
+use common\models\Province;
+use common\models\search\ProvinceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use common\models\District;
-use common\models\Commune;
-use yii\helpers\Json;
 
 /**
- * AddressController implements the CRUD actions for Address model.
+ * ProvinceController implements the CRUD actions for Province model.
  */
-class AddressController extends Controller
+class ProvinceController extends Controller
 {
     /**
      * @inheritdoc
@@ -33,12 +30,12 @@ class AddressController extends Controller
     }
 
     /**
-     * Lists all Address models.
+     * Lists all Province models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new AddressSearch();
+        $searchModel = new ProvinceSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +45,7 @@ class AddressController extends Controller
     }
 
     /**
-     * Displays a single Address model.
+     * Displays a single Province model.
      * @param integer $id
      * @return mixed
      */
@@ -60,13 +57,13 @@ class AddressController extends Controller
     }
 
     /**
-     * Creates a new Address model.
+     * Creates a new Province model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Address();
+        $model = new Province();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -78,7 +75,7 @@ class AddressController extends Controller
     }
 
     /**
-     * Updates an existing Address model.
+     * Updates an existing Province model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -97,7 +94,7 @@ class AddressController extends Controller
     }
 
     /**
-     * Deletes an existing Address model.
+     * Deletes an existing Province model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,48 +107,19 @@ class AddressController extends Controller
     }
 
     /**
-     * Finds the Address model based on its primary key value.
+     * Finds the Province model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Address the loaded model
+     * @return Province the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Address::findOne($id)) !== null) {
+        if (($model = Province::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
 
-    public function actionLoadDistricts() {
-        $provinceID = Yii::$app->request->post('provinceID');
-        $districts = District::findAll(['provinceID' => $provinceID]);
-        $data = [];
-        $district_data = "<option value=''>Select district</option>";
-        if($districts != null) {
-            foreach ($districts as $district) {
-                $district_data .= '<option value=' . $district->id . '>' . $district->name . '</option>';
-            }
-        }
-        $data['districts'] = $district_data;
-        $data['communes'] = $this->actionLoadCommunes();
-        return Json::encode($data);
-    }
-
-    public function actionLoadCommunes() {
-        $districtID = Yii::$app->request->post('districtID');
-        $commune_data = "<option value=''>Select commune</option>";
-        if($districtID != null) {
-            $communes = Commune::findAll(['districtID' => $districtID]);
-            if($communes != null) {
-                foreach ($communes as $commune) {
-                    $commune_data .= '<option value="' . $commune->id . '">' 
-                        . $commune->name . '</option>';
-                }
-            }
-        }
-        return $commune_data;
-    }
 }

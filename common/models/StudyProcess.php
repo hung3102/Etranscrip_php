@@ -17,11 +17,61 @@ class StudyProcess extends BaseStudyProcess
     public function rules()
     {
         return [
-            [['schoolReportID', 'fromYear', 'toYear', 'class', 'schoolID'], 'required'],
-            [['schoolReportID', 'schoolID'], 'integer'],
+            [['schoolReportID', 'fromYear', 'toYear', 'principalName', 'class', 'schoolID'], 'required'],
+            [['schoolReportID', 'schoolID', 'fromYear', 'toYear'], 'integer'],
+            [['fromYear', 'toYear'], 'in', 'range' => range(1900, 2200)],
             [['schoolReportID', 'fromYear', 'toYear', 'class', 'schoolID', 'principalName', 'created_time', 'updated_time'], 'safe'],
             [['class', 'principalName'], 'string', 'max' => 50],
+            // [['fromYear', 'toYear', 'principalName', 'class', 'schoolID', 'principalName'], 
+            // 'myRequired'],
+            // [['fromYear', 'toYear', 'class', 'schoolID', 'principalName'], 'required', 
+            // 'when' => function($model) {
+            //     if($model->toYear != null || $model->fromYear != null || $model->class != null || $model->schoolID != null || $model->principalName != null) {
+            //         return true;
+            //     } else {
+            //         return false;
+            //     }
+            // }]
         ];
+    }
+
+    public function checkClientSide() {
+        return 'function() {
+            var fromYear = $(".fromYear .input").val();
+            var toYear = $(".toYear .input").val();
+            var className = $(".class_content .input").val();
+            var schoolID = $(".school .input").val();
+            var principalName = $(".confirm_content .input").val();
+            if(fromYear != "" || toYear != "" || className != "" || schoolID != "" || principalName != "") 
+            {
+                return true;
+            } else {
+                return false;
+            }
+        }';
+    }
+
+    public function myRequired($attribute, $params) {
+        // if($this->fromYear != null || $this->toYear != null || $this->class != null || $this->schoolID != null || $this->principalName != null) {
+        //     if($this->fromYear == null) {
+        //         $this->addError($attribute, 'From year can not be blank');
+        //     }
+        //     if($this->toYear == null) {
+        //         $this->addError($attribute, 'To year can not be blank');
+        //     }
+        //     if($this->class == null) {
+        //         $this->addError($attribute, 'Class can not be blank');
+        //     }
+        //     if($this->schoolID == null) {
+        //         $this->addError($attribute, 'School can not be blank');
+        //     }
+        //     if($this->principalName == null) {
+        //         $this->addError($attribute, 'Principal Name can not be blank');
+        //     }
+        // }
+        if($this->fromYear != null) {
+            $this->addError($attribute, 'From year can not be blank');
+        }
     }
 
     public function behaviors()

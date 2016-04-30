@@ -11,6 +11,7 @@ class Student extends BaseStudent
 {
     const MALE = 1;
     const FEMALE = 2;
+    // public $objects;
 
     static $gender = [
         self::MALE => 'Nam',
@@ -28,7 +29,7 @@ class Student extends BaseStudent
         return [
             [['name', 'gender', 'birthday', 'currentAddressID', 'nativeAddressID', 'ethnicID'], 'required'],
             [['gender', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'religionID'], 'integer'],
-            [['name', 'gender', 'birthday', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'created_time', 'updated_time'], 'safe'],
+            [['name', 'gender', 'birthday', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time'], 'safe'],
             [['name'], 'string', 'max' => 200],
             [['imageURL'], 'string', 'max' => 255],
             [['fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob'], 'string', 'max' => 100],
