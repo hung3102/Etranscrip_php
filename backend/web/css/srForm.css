@@ -205,6 +205,11 @@
 	margin-bottom: 100px;
 }
 
-#SR_form .addYear_button {
-	margin-bottom: 10px
+#SR_form #addYear_button {
+	position: relative;
+	bottom: 65px;
+}
+
+#SR_form .add_button {
+	text-align: center;
 }

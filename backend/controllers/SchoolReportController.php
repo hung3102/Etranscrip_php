@@ -18,6 +18,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use kartik\mpdf\Pdf;
+use kartik\form\ActiveForm;
 
 class SchoolReportController extends Controller
 {
@@ -126,7 +127,7 @@ class SchoolReportController extends Controller
         $post = Yii::$app->request->post();
         if ($model->load($post) && $model->student->load($post)) {
             echo "<pre>";
-            var_dump($studyProcesses);exit();
+            var_dump($studyProcess_model);exit();
             echo "</pre>";
             exit();
             $model->student->birthday = \DateTime::createFromFormat('d/m/Y', $post['Student']['birthday'])->format('Y-m-d');
@@ -230,6 +231,7 @@ class SchoolReportController extends Controller
     public function actionCreateYearForm() {
         $index = Yii::$app->request->post('index');
         $id = Yii::$app->request->post('id');
+        $initForm = Yii::$app->request->post('initForm');
         $model = $this->findModel($id);
         $studyProcess_model = new StudyProcess();
         $yearEvaluation = new YearEvaluation();
@@ -238,6 +240,7 @@ class SchoolReportController extends Controller
             'i' => $index,
             'studyProcess_model' => $studyProcess_model,
             'yearEvaluation' => $yearEvaluation,
+            'initForm' => $initForm,
         ]);
     }
     

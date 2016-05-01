@@ -1,6 +1,5 @@
 <?php
 use yii\helpers\Html;
-// use yii\widgets\ActiveForm;
 use common\models\Subject;
 use common\models\Student;
 use common\models\Province;
@@ -12,19 +11,21 @@ use common\models\School;
 use common\models\YearEvaluation;
 use common\models\SubjectScore;
 use common\models\Achivement;
+use common\models\TermEvaluation;
+use common\models\Achievement;
 use kartik\date\DatePicker;
 use yii\helpers\ArrayHelper;
 use kartik\select2\Select2;
 use kartik\form\ActiveForm;
-// use kartik\depdrop\DepDrop;
-// use yii\helpers\Url;
+// use yii\widgets\ActiveForm;
 ?>
 
 <div id="SR_form">
     <?php $form = ActiveForm::begin([
         'type' => ActiveForm::TYPE_INLINE,
         'formConfig' => ['labelSpan' => 1, 'deviceSize' => ActiveForm::SIZE_SMALL, 'showErrors' => true]
-    ]); ?>
+    ]); 
+    ?>
     <div class=" sr_number">
         <span class="fLabel">Số học bạ: </span> 
         <?= $form->field($model, 'number')->textInput(['maxlength' => true, 'class' => 'input']) ?> 
@@ -223,7 +224,6 @@ use kartik\form\ActiveForm;
 <!-- year evaluation here -->
     <hr class="horizon_line" />
     <?php 
-    // Yii::$app->view->registerJs('var form = '. json_encode($form),  \yii\web\View::POS_HEAD);
     if($model->yearEvaluations != null) {
         for($i = 0; $i < sizeof($model->yearEvaluations); $i++) {  
             echo Yii::$app->view->render('_yearForm', [
@@ -231,13 +231,11 @@ use kartik\form\ActiveForm;
                 'i' => $i, 
                 'studyProcess_model' => $studyProcess_model,
                 'yearEvaluation' => $yearEvaluation,
+                'form' => $form,
             ]);
+        }
+    }
     ?>
-    
-
-      
-    <?php } 
-    } ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
