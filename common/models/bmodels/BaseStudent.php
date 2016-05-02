@@ -15,7 +15,6 @@ use Yii;
  * @property integer $currentAddressID
  * @property integer $nativeAddressID
  * @property integer $ethnicID
- * @property integer $religionID
  * @property string $fatherName
  * @property string $fatherJob
  * @property string $motherName
@@ -42,7 +41,7 @@ class BaseStudent extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'gender', 'birthday', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'created_time', 'updated_time'], 'required'],
-            [['gender', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'religionID'], 'integer'],
+            [['gender', 'currentAddressID', 'nativeAddressID', 'ethnicID'], 'integer'],
             [['birthday', 'created_time', 'updated_time'], 'safe'],
             [['name'], 'string', 'max' => 200],
             [['imageURL'], 'string', 'max' => 255],
@@ -64,7 +63,6 @@ class BaseStudent extends \yii\db\ActiveRecord
             'currentAddressID' => 'Current Address ID',
             'nativeAddressID' => 'Native Address ID',
             'ethnicID' => 'Ethnic ID',
-            'religionID' => 'Religion ID',
             'fatherName' => 'Father Name',
             'fatherJob' => 'Father Job',
             'motherName' => 'Mother Name',

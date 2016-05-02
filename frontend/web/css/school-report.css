@@ -1,0 +1,394 @@
+#SR {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*======================cover page======================*/
+#SR #cover {
+	border: double 4px black;
+	outline: solid 2px black;
+}
+
+#SR #cover .caption1 {
+	text-align: center;
+	margin-top: 16px;
+}
+
+#SR #cover .caption1 .text {
+	font-size: 16px;
+    font-weight: bold;
+    word-spacing: 4px;
+}
+
+#SR #cover .caption1 .horizon {
+	border-bottom: 1px solid;
+    margin-left: 42%;
+    width: 100px;
+}
+
+#SR #cover .caption2 {
+	margin-top: 200px;
+    text-align: center;
+}
+
+#SR #cover .caption2 h1 {
+	font-size: 70px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    margin: 0;
+}
+
+#SR #cover .caption2 h3 {
+	font-weight: bold;
+    margin: 0;
+}
+
+#SR #cover .std_name {
+	margin-top: 200px;
+    text-align: center;
+}
+
+#SR #cover .std_name h5 {
+	font-size: 18px;
+	font-weight: normal;
+    word-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+#SR #cover .std_name .name {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#SR #cover .sr_number {
+	font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 200px;
+    text-align: center;
+}
+
+#SR #cover .sr_number .text {
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+/*======================page 1======================*/
+#SR #page1 {
+	margin-top: 100px;
+}
+
+#SR #page1 #caption .caption1 .caption1-1 {
+	text-align: center;
+	font-size: 17px;
+}
+
+#SR #page1 #caption .caption1 .caption1-2 {
+	text-align: center;
+}
+
+#SR #page1 #caption .caption1 .star_line {
+	text-align: center;
+    letter-spacing: 5px;
+}
+
+#SR #page1 #caption .caption2 .caption2-1 {
+	font-size: 42px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+
+#SR #page1 #caption .caption2 .caption2-2 {
+	text-align: center;
+    font-weight: bold;
+}
+
+#SR #page1 #std_info {
+	position: relative;
+	margin-top: 35px;
+	font-size: 20px;
+}
+
+#SR #page1 #std_info .name {
+	width: 400px;
+}
+
+#SR #page1 #std_info table td {
+	font-size: 18px;
+}
+
+#SR #page1 #std_info .text-bold {
+	font-weight: bold;
+}
+
+#SR #page1 #std_info .father td, #SR #page1 #std_info .mother td, #SR #page1 #std_info .tutor td {
+	font-size: 20px;
+}
+#SR #page1 #std_info tr .name {
+	width: 350px;
+}
+
+#SR #page1 #std_info tr .job {
+    width: 350px;
+}
+
+#SR #page1 #date {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+#SR #page1 #principal {
+	text-align: right;
+    margin-right: 30px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#SR #page1 #principal .name {
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+#SR #page1 #study_process {
+	margin-top: 130px;
+}
+
+#SR #page1 #study_process .table_name {
+	text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#SR #page1 #study_process #process_table {
+	margin-top: 10px;
+}
+
+#SR #page1 #study_process table tr td {
+	border: 1px solid;
+	font-size: 20px;
+}
+
+#SR #page1 #study_process table {
+	border-collapse: collapse;
+}
+
+#SR #page1 #study_process .title .year, #SR #page1 #study_process .title .class , #SR #page1 #study_process .title .school_address, #SR #page1 #study_process .title .principal_confirm {
+	font-weight: bold;
+	text-align: center;
+}
+
+#SR #page1 #study_process .each .year_content, #SR #page1 #study_process .each .class_content, #SR #page1 #study_process .each .confirm_content {
+	text-align: center;
+}
+
+#SR #page1 #study_process .title .year {
+	width: 13%;
+}
+
+#SR #page1 #study_process .title .class {
+	width: 8%;
+}
+
+#SR #page1 #study_process .title .school_address {
+	width: 55%;
+}
+
+#SR #page1 #study_process .title .principal_confirm {
+	width: 25%;
+}
+
+/*====================================================*/
+#SR #year_evaluation #part1 {
+	font-size: 18px;
+}
+
+#SR #year_evaluation #part1 #info table tr td {
+	font-size: 18px;
+}
+
+#SR #year_evaluation #part1 #info table .class {
+	font-weight: normal;
+}
+
+#SR #year_evaluation #part1 #info table .year {
+	text-align: right;
+	width: 45%;
+}
+
+#SR #year_evaluation #part1 #year_table tr td, #SR #year_evaluation #part1 #year_table tr th {
+	border: 1px solid;
+	font-size: 18px;
+}
+
+#SR #year_evaluation #part1 #year_table tbody tr td {
+	height: 40px;
+	text-align: center;
+}
+
+#SR #year_evaluation #part1 #year_table { 
+	margin-top: 10px;
+	border-collapse: collapse;
+}
+
+#SR #year_evaluation #part1 #year_table .subject_name {
+	width: 150px;
+}
+
+#SR #year_evaluation #part1 #year_table .comment {
+	border-left: 1px solid;
+    border-right: 1px solid;
+}
+
+#SR #year_evaluation #part1 #year_table .comment td {
+	border: 0;
+	text-align: left;
+}
+
+#SR #year_evaluation #part1 #year_table .confirm {
+	border: 1px solid;
+    border-top: 0;
+}
+
+#SR #year_evaluation #part1 #year_table .confirm td {
+	border: 0;
+	padding: 10px 0 100px 0;
+}
+
+#SR #year_evaluation #part1 #year_table .confirm .teacher_confirm .text2 {
+	padding-top: 10px;
+}
+
+#SR #year_evaluation #part1 #year_table .confirm .teacher_confirm .name {
+	padding-top: 20px;
+} 
+
+#SR #year_evaluation #part1 #year_table .confirm .principal_confirm .text2 {
+	font-weight: normal;
+}
+
+#SR #year_evaluation #part1 #info table .advantage_subjects {
+	text-align: right;
+}
+
+/*===============conduct and capacity page ========================*/
+#SR #conduct_capacity table {
+	border-collapse: collapse;
+    border: 1px solid;
+}
+
+#SR #conduct_capacity table tr td {
+	border: 1px solid;
+	text-align: center;
+	font-size: 18px;
+	height: 40px;
+}
+#SR #conduct_capacity table .bold td {
+	font-weight: bold;
+}
+
+#SR #conduct_capacity table .upgrade {
+	font-weight: normal;
+	width: 200px;
+}
+
+#SR #conduct_capacity table .term1 {
+	width: 100px;
+}
+
+#SR #conduct_capacity table .miss_content {
+	width: 70px;
+}
+
+#SR #conduct_capacity table .order_after {
+	width: 150px;
+}
+
+#SR #conduct_capacity table #certificate td {
+	padding-top: 20px;
+}
+
+#SR #conduct_capacity table #achievement td {
+	padding: 20px 0;
+}
+
+#SR #conduct_capacity table #certificate td ,#SR #conduct_capacity table #achievement td {
+	text-align: left;
+}
+
+#SR #conduct_capacity table #certificate .vocational_certificate {
+	border-right-style: hidden;
+}
+
+#SR #conduct_capacity table #certificate td {
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #teacher_comment .title1{
+	padding-top: 20px;
+	font-weight: bold;
+	font-size: 15px;
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #teacher_comment .title2 {
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #teacher_comment .content {
+	padding-left: 200px;
+	text-align: left;
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #teacher_comment .teacher_name {
+	text-align: right;
+	padding-bottom: 50px;
+	padding-right: 30px;
+	font-weight: bold;
+}
+
+#SR #conduct_capacity table #principal_approval .title1 {
+	border-bottom-style: hidden;
+	font-size: 15px;
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+#SR #conduct_capacity table #principal_approval .content {
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #principal_approval .date {
+	font-size: 15px;
+	border-bottom-style: hidden;
+	padding-top: 20px;
+}
+
+#SR #conduct_capacity table #principal_approval .title2 {
+	font-weight: bold;
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #principal_approval .title3 {
+	border-bottom-style: hidden;
+	font-size: 15px;
+	padding-bottom: 19px;
+}
+
+#SR #conduct_capacity table #principal_approval .principal_name {
+	padding-bottom: 150px;
+	font-weight: bold;
+}
+
+#SR #conduct_capacity table #principal_approval .empty {
+	border-right-style: hidden;
+	border-bottom-style: hidden;
+}
+
+#SR #conduct_capacity table #principal_approval .last_empty {
+	border-right-style: hidden;
+}

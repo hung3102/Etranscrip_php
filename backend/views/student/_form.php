@@ -26,8 +26,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ethnicID')->textInput() ?>
 
-    <?= $form->field($model, 'religionID')->textInput() ?>
-
     <?= $form->field($model, 'fatherName')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'fatherJob')->textInput(['maxlength' => true]) ?>

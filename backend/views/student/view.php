@@ -37,7 +37,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'currentAddressID',
             'nativeAddressID',
             'ethnicID',
-            'religionID',
             'fatherName',
             'fatherJob',
             'motherName',

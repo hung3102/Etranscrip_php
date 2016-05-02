@@ -93,7 +93,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             // 'ethnicID',
-            // 'religionID',
             // 'fatherName',
             // 'fatherJob',
             // 'motherName',
