@@ -40,14 +40,12 @@ class X12Integration {
 	        		$schoolReport->principalName = $srLoop->getSegment(0)->getElement(3);
 	        		$schoolReport->studentID = $this->createStudentModel($srLoop)->id;
 	        		$schoolReport->save();
-	        		// $this->createStudyProcessModel($srLoop, $schoolReport);
 	        		$this->createYearEvaluationModel($srLoop, $schoolReport);
 	        	} else {
 	        		$schoolReport->date = $srLoop->getSegment(0)->getElement(2);
 	        		$schoolReport->principalName = $srLoop->getSegment(0)->getElement(3);
 	        		$schoolReport->studentID = $this->createStudentModel($srLoop, $schoolReport, true)->id;
 	        		$schoolReport->save();
-	        		// $this->createStudyProcessModel($srLoop, $schoolReport, true);
 	        		$this->createYearEvaluationModel($srLoop, $schoolReport, true);
 	        	}
 	        }
@@ -216,44 +214,6 @@ class X12Integration {
 		}
 		return $ethnic;
 	}
-
-	// private function getReligion($name) {
-	// 	$religion = Religion::findOne(['name' => $name]);
-	// 	if($religion == null) {
-	// 		throw new Exception("Error : Not found religion ".$name, 1);
-	// 	}
-	// 	return $religion;
-	// }
-
-	// private function createStudyProcessModel($srLoop, $schoolReport, $SR_EXIST = false) {
-	// 	if($SR_EXIST == true && $schoolReport->studyProcesses != null) {
-	// 		foreach ($schoolReport->studyProcesses as $studyProcess) {
-	// 			$schoolReport->unlink('studyProcesses', $studyProcess, true);
-	// 		}
-	// 	}
-	// 	$spLoops = $srLoop->findLoop("SP");
-	// 	if($spLoops == null) {
-	// 		throw new Exception("Error: Study Process must exist in School Report", 1);
-	// 	}
-	// 	foreach ($spLoops as $spLoop) {
-	// 		$attributes = [
-	// 			'fromYear' => $spLoop->getSegment(0)->getElement(2),
-	// 			'toYear' => $spLoop->getSegment(0)->getElement(3),
-	// 			'class' => $spLoop->getSegment(0)->getElement(4),
-	// 			'schoolID' => $this->getSchool($spLoop)->id,
-	// 			'principalName' => $spLoop->getSegment(0)->getElement(5),
-	// 			'schoolReportID' => $schoolReport->id,
-	// 		];
-	// 		$studyProcess = studyProcess::findOne($attributes);
-	// 		if($studyProcess == null) {
-	// 			$studyProcess = new studyProcess($attributes);
-	// 			$studyProcess->save();
-	// 		} else {
-	// 			throw new Exception("Error : Detect Study Process duplicated in DB!", 1);
-	// 		}
-	// 	}
-	// 	return true;
-	// }
 
 	private function createYearEvaluationModel($srLoop, $schoolReport, $SR_EXIST = false) {
 		if($SR_EXIST == true) {
