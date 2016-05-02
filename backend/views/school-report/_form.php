@@ -17,7 +17,6 @@ use kartik\date\DatePicker;
 use yii\helpers\ArrayHelper;
 use kartik\select2\Select2;
 use kartik\form\ActiveForm;
-// use yii\widgets\ActiveForm;
 ?>
 
 <div id="SR_form">

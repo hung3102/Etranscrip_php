@@ -126,10 +126,10 @@ class SchoolReportController extends Controller
         $yearEvaluation = new YearEvaluation();
         $post = Yii::$app->request->post();
         if ($model->load($post) && $model->student->load($post)) {
-            echo "<pre>";
-            var_dump($studyProcess_model);exit();
-            echo "</pre>";
-            exit();
+            // echo "<pre>";
+            // var_dump($post['StudyProcess']);exit();
+            // echo "</pre>";
+            // exit();
             $model->student->birthday = \DateTime::createFromFormat('d/m/Y', $post['Student']['birthday'])->format('Y-m-d');
             $model->date = \DateTime::createFromFormat('d/m/Y', $post['SchoolReport']['date'])
                 ->format('Y-m-d');
@@ -137,7 +137,12 @@ class SchoolReportController extends Controller
             $this->saveNativeAddres($model, $post);
             $this->saveObject($model, $post);
             $this->saveStudyProcess($model, $post);
+            $this->saveYearEvaluation($model, $post);
             if($model->save() && $model->student->save()) {
+                echo "<pre>";
+                var_dump($model);exit();
+                echo "</pre>";
+                exit();
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -212,36 +217,69 @@ class SchoolReportController extends Controller
             }
         }
         foreach ($post['StudyProcess'] as $studyProcess) {
-            $newStudyProcess = new StudyProcess();
-            $newStudyProcess->fromYear = $studyProcess['fromYear'];
-            $newStudyProcess->toYear = $studyProcess['toYear'];
-            $newStudyProcess->class = $studyProcess['class'];
-            $newStudyProcess->schoolID = $studyProcess['schoolID'];
-            $newStudyProcess->principalName = $studyProcess['principalName'];
-            $newStudyProcess->schoolReportID = $model->id;
-            $newStudyProcess->save();
-            // echo "<pre>";
-            // var_dump($model->schoolID);exit();
-            // echo "</pre>";
-            // exit();
+                $newStudyProcess = new StudyProcess();
+                $newStudyProcess->fromYear = $studyProcess['fromYear'];
+                $newStudyProcess->toYear = $studyProcess['toYear'];
+                $newStudyProcess->class = $studyProcess['class'];
+                $newStudyProcess->schoolID = $studyProcess['schoolID'];
+                // $newStudyProcess->principalName = $studyProcess['principalName'];
+                $newStudyProcess->principalName = 'fake';
+                $newStudyProcess->schoolReportID = $model->id;
+                $newStudyProcess->save();   
         }
         return true;
     }
 
-    public function actionCreateYearForm() {
-        $index = Yii::$app->request->post('index');
-        $id = Yii::$app->request->post('id');
-        $initForm = Yii::$app->request->post('initForm');
-        $model = $this->findModel($id);
-        $studyProcess_model = new StudyProcess();
-        $yearEvaluation = new YearEvaluation();
-        return $this->renderAjax('_yearForm',[
-            'model' => $model, 
-            'i' => $index,
-            'studyProcess_model' => $studyProcess_model,
-            'yearEvaluation' => $yearEvaluation,
-            'initForm' => $initForm,
-        ]);
+    protected function saveYearEvaluation($model, $post) {
+        // $this->delRelatedYearEvaluation($model);
+        foreach ($post['YearEvaluation'] as $index => $yearEvaluation) {
+            $newYearEvaluation = new YearEvaluation($yearEvaluation);
+            $newYearEvaluation->schoolReportID = $model->id;
+            $newYearEvaluation->class = $post['StudyProcess'][$index]['class'];
+            $newYearEvaluation->fromYear = $post['StudyProcess'][$index]['fromYear'];
+            $newYearEvaluation->toYear = $post['StudyProcess'][$index]['toYear'];
+            $newYearEvaluation->principalName = 'fake';
+            $newYearEvaluation->save();
+        }
+    }
+
+    protected function delRelatedYearEvaluation($sr) {
+        if($sr->yearEvaluations != null) {
+            foreach ($sr->yearEvaluations as $yearEvaluation) {
+                $this->delRelatedTermEvaluation($yearEvaluation);   
+                $this->delRelatedAchievement($yearEvaluation);
+                $sr->unlink('yearEvaluations', $yearEvaluation, true);
+            }
+        }
+        return true;
+    }
+
+    protected function delRelatedTermEvaluation($yearEvaluation) {
+        if($yearEvaluation->termEvaluations != null) {
+            foreach ($yearEvaluation->termEvaluations as $termEvaluation) {
+                $this->delRelatedSubjectScore($termEvaluation);
+                $yearEvaluation->unlink('termEvaluations', $termEvaluation, true);
+            }
+        }
+        return true;
+    }
+
+    protected function delRelatedAchievement($yearEvaluation) {
+        if($yearEvaluation->achievements != null) {
+            foreach ($yearEvaluation->achievements as $achievement) {
+                $yearEvaluation->unlink('achievements', $achievement, true);
+            }
+        }
+        return true;
+    }    
+
+    protected function delRelatedSubjectScore($termEvaluation) {
+        if($termEvaluation->subjectScores != null) {
+            foreach ($termEvaluation->subjectScores as $subjectScore) {
+                $termEvaluation->unlink('subjectScores', $subjectScore, true);
+            }
+        }
+        return true;
     }
     
     public function actionDelete($id)

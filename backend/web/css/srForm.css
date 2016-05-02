@@ -1,5 +1,5 @@
-#SR_form #page1 #std_info .required.has-error {
-	width: 25%;
+#SR_form #page1 #std_info .required.has-error, #SR_form .year_evaluation .required.has-error {
+	width: 30%;
 }
 
 #SR_form .col-sm-offset-1.col-sm-11 {
@@ -21,7 +21,7 @@
 }
 
 #SR_form #std_info .object .field-student-objects {
-	width: 800px;
+	width: 700px;
 }
 
 #SR_form #std_info .current_address .detailAddress {
@@ -34,7 +34,7 @@
 }
 
 #SR_form #std_info .current_address .detailAddress #detailAddress {
-	width: 700px;
+	width: 600px;
 }
 
 #SR_form #study_process {
@@ -71,18 +71,33 @@
 	margin-bottom: 100px;
 }
 
-#SR_form .year_evaluation .title {
-	text-align: center;
-	font-weight: bold;
-	font-size: 20px;
-}
-
 #SR_form .year_evaluation .info .class {
 	margin-left: 50px;
 }
 
-#SR_form .year_evaluation .year_table th {
+#SR_form .year_evaluation .year_table {
+	border-collapse: collapse;
+	border: 1px solid;
+}
+
+#SR_form .year_evaluation .title {
+	font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#SR_form .year_evaluation .year_table tr td , #SR_form .year_evaluation .year_table th {
 	text-align: center;
+	border: 1px solid;
+}
+
+#SR_form .year_evaluation .year_table th {
+	font-size: 16px;
+}
+
+#SR_form .year_evaluation .year_table .teacher_comment {
+	text-align: left;
 }
 
 #SR_form .year_evaluation .year_table .subject_row .required.has-error {
@@ -91,6 +106,24 @@
 
 #SR_form .year_evaluation .year_table .input {
 	margin-top: 10px;
+	width: 120px;
+}
+
+#SR_form .year_evaluation .year_table .teacher_name .input {
+	width: 150px;
+}
+
+#SR_form .year_evaluation .year_table .form-group {
+    vertical-align: top;
+    width: 150px;
+}
+
+#SR_form .year_evaluation .year_table .teacher_name .form-group {
+	width: 100%;
+}
+
+#SR_form .year_evaluation .year_table .comment .teacher_name .form-group{
+	width: 500px;
 }
 
 #SR_form .year_evaluation .year_table .comment .label1 {
@@ -101,12 +134,24 @@
 }
 
 #SR_form #page1 .year_evaluation .year_table .comment .required.has-error {
-	width: 25%;
+	width: 50%;
+}
+
+#SR_form #page1 .year_evaluation .conduct_capacity .required.has-error {
+	width: 100%;
+}
+
+#SR_form #page1 .year_evaluation .conduct_capacity .comment .required.has-error {
+	width: 50%;
 }
 
 #SR_form .year_evaluation .year_table .comment .teacher_comment .input {
 	height: 100px;
-    width: 1000px;
+    width: 800px;
+}
+
+#SR_form .year_evaluation .year_table .comment .teacher_name {
+	text-align: left;
 }
 
 #SR_form .year_evaluation .year_table .comment .label2 {
@@ -168,13 +213,36 @@
 	width: 300px;
 }
 
-#SR_form .conduct_capacity .add_info .achivement .title {
+#SR_form .conduct_capacity .add_info .achievement .title {
 	position: relative;
     top: 5px;
 }
 
-#SR_form .conduct_capacity .add_info .achivement .input {
-	width: 600px;
+#SR_form .conduct_capacity .add_info .achievement .form-group {
+	width: 620px;
+}
+
+#SR_form .conduct_capacity .add_info .achievement .add_Ach_button {
+	display: block;
+    left: 50px;
+    margin: 5px 0;
+    position: relative;
+}
+
+#SR_form .conduct_capacity .add_info .achievement .ach_form {
+	left: 50px;
+    margin-bottom: 10px;
+    position: relative;
+    top: 10px;
+}
+
+#SR_form .conduct_capacity .add_info .achievement .input {
+	margin-bottom: 5px;
+    width: 700px;
+}
+
+#SR_form .conduct_capacity .add_info .achievement .del_Ach_button {
+	
 }
 
 #SR_form .conduct_capacity .comment .teacher_comment {

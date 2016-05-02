@@ -181,7 +181,7 @@
 	text-align: center;
 }
 
-#SR #page1 #study_process .each .year_content, .class_content, .confirm_content {
+#SR #page1 #study_process .each .year_content, #SR #page1 #study_process .each .class_content, #SR #page1 #study_process .each .confirm_content {
 	text-align: center;
 }
 
@@ -219,7 +219,7 @@
 	width: 45%;
 }
 
-#SR #year_evaluation #part1 #year_table tr td, tr th {
+#SR #year_evaluation #part1 #year_table tr td, #SR #year_evaluation #part1 #year_table tr th {
 	border: 1px solid;
 	font-size: 18px;
 }
