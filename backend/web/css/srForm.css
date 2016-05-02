@@ -264,6 +264,11 @@
 	margin-left: 10px;
 }
 
+#SR_form .conduct_capacity .comment .principal_name .title3 {
+	font-weight: bold;
+	margin-left: 10px;
+}
+
 #SR_form .conduct_capacity .comment .principal_approval .content {
 	height: 100px;
     width: 900px;

@@ -11,7 +11,6 @@ class Student extends BaseStudent
 {
     const MALE = 1;
     const FEMALE = 2;
-    // public $objects;
 
     static $gender = [
         self::MALE => 'Nam',

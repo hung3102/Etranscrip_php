@@ -228,7 +228,6 @@ use kartik\form\ActiveForm;
             echo Yii::$app->view->render('_yearForm', [
                 'model' => $model, 
                 'i' => $i, 
-                'studyProcess_model' => $studyProcess_model,
                 'yearEvaluation' => $yearEvaluation,
                 'form' => $form,
             ]);

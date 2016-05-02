@@ -10,8 +10,11 @@ use common\models\District;
 use common\models\Address;
 use common\models\Object;
 use common\models\RelationStudentObject;
-use common\models\StudyProcess;
 use common\models\YearEvaluation;
+use common\models\Achievement;
+use common\models\TermEvaluation;
+use common\models\Subject;
+use common\models\SubjectScore;
 use yii\base\Exception;
 use common\models\search\SchoolReportSearch;
 use yii\web\Controller;
@@ -122,34 +125,30 @@ class SchoolReportController extends Controller
                 'nativeDistrict' => new District(),
                 'nativeAddress' => new Address(),
         ];
-        $studyProcess_model = new StudyProcess();
         $yearEvaluation = new YearEvaluation();
         $post = Yii::$app->request->post();
         if ($model->load($post) && $model->student->load($post)) {
-            // echo "<pre>";
-            // var_dump($post['StudyProcess']);exit();
-            // echo "</pre>";
-            // exit();
             $model->student->birthday = \DateTime::createFromFormat('d/m/Y', $post['Student']['birthday'])->format('Y-m-d');
             $model->date = \DateTime::createFromFormat('d/m/Y', $post['SchoolReport']['date'])
                 ->format('Y-m-d');
-            $this->saveCurrentAddress($model, $post);
-            $this->saveNativeAddres($model, $post);
-            $this->saveObject($model, $post);
-            $this->saveStudyProcess($model, $post);
-            $this->saveYearEvaluation($model, $post);
-            if($model->save() && $model->student->save()) {
-                echo "<pre>";
-                var_dump($model);exit();
-                echo "</pre>";
-                exit();
-                return $this->redirect(['view', 'id' => $model->id]);
+            $transaction = Yii::$app->db->beginTransaction();
+            try {
+                $this->saveCurrentAddress($model, $post);
+                $this->saveNativeAddres($model, $post);
+                $this->saveObject($model, $post);
+                $this->saveYearEvaluation($model, $post);
+                if($model->save() && $model->student->save()) {
+                    $transaction->commit();
+                    return $this->redirect(['student/view', 'id' => $model->id]);
+                }
+            } catch(Exception $e) {
+                $transaction->rollBack();
+                throw $e;
             }
         } else {
             return $this->render('update', [
                 'model' => $model,
                 'addresses' => $addresses,
-                'studyProcess_model' => $studyProcess_model,
                 'yearEvaluation' => $yearEvaluation,
             ]);
         }
@@ -168,7 +167,9 @@ class SchoolReportController extends Controller
             $model->student->currentAddressID = $address->id;
         } else {
             $address = new Address($params);
-            $address->save();
+            if(!$address->save()) {
+                throw new Exception("Error: Can not save current address ", 1);
+            }
             $model->student->currentAddressID = $address->id;
         }
         return true;
@@ -203,44 +204,30 @@ class SchoolReportController extends Controller
                 $relationObjStd = RelationStudentObject::findOne($params);
                 if($relationObjStd == null) {
                     $relationObjStd = new RelationStudentObject($params);
-                    $relationObjStd->save();
+                    if(!$relationObjStd->save()) {
+                        throw new Exception("Error: Can not save object", 1);
+                    }
                 }
             }
         }
         return true;
     }
 
-    protected function saveStudyProcess($model, $post) {
-        if($model->studyProcesses != null) {
-            foreach ($model->studyProcesses as $studyProcess) {
-                $model->unlink('studyProcesses', $studyProcess, true);
+    protected function saveYearEvaluation($model, $post) {
+        $this->delRelatedYearEvaluation($model);
+        foreach ($post['YearEvaluation'] as $index => $yearEvaluation) {
+            $newYearEvaluation = new YearEvaluation($yearEvaluation);//to do
+            $newYearEvaluation->schoolReportID = $model->id;
+            $newYearEvaluation->studyDepartment = YearEvaluation::$department[$yearEvaluation['studyDepartment']];
+            \DateTime::createFromFormat('d/m/Y', $post['Student']['birthday'])->format('Y-m-d');
+            $newYearEvaluation->date = \DateTime::createFromFormat('d/m/Y', $newYearEvaluation->date)->format('Y-m-d');
+            if(!$newYearEvaluation->save()) {
+                throw new Exception("Error: Can not save year evaluation", 1);
             }
-        }
-        foreach ($post['StudyProcess'] as $studyProcess) {
-                $newStudyProcess = new StudyProcess();
-                $newStudyProcess->fromYear = $studyProcess['fromYear'];
-                $newStudyProcess->toYear = $studyProcess['toYear'];
-                $newStudyProcess->class = $studyProcess['class'];
-                $newStudyProcess->schoolID = $studyProcess['schoolID'];
-                // $newStudyProcess->principalName = $studyProcess['principalName'];
-                $newStudyProcess->principalName = 'fake';
-                $newStudyProcess->schoolReportID = $model->id;
-                $newStudyProcess->save();   
+            $this->saveAchievement($index, $newYearEvaluation, $post);
+            $this->saveTermEvaluation($index, $newYearEvaluation, $post);
         }
         return true;
-    }
-
-    protected function saveYearEvaluation($model, $post) {
-        // $this->delRelatedYearEvaluation($model);
-        foreach ($post['YearEvaluation'] as $index => $yearEvaluation) {
-            $newYearEvaluation = new YearEvaluation($yearEvaluation);
-            $newYearEvaluation->schoolReportID = $model->id;
-            $newYearEvaluation->class = $post['StudyProcess'][$index]['class'];
-            $newYearEvaluation->fromYear = $post['StudyProcess'][$index]['fromYear'];
-            $newYearEvaluation->toYear = $post['StudyProcess'][$index]['toYear'];
-            $newYearEvaluation->principalName = 'fake';
-            $newYearEvaluation->save();
-        }
     }
 
     protected function delRelatedYearEvaluation($sr) {
@@ -277,6 +264,49 @@ class SchoolReportController extends Controller
         if($termEvaluation->subjectScores != null) {
             foreach ($termEvaluation->subjectScores as $subjectScore) {
                 $termEvaluation->unlink('subjectScores', $subjectScore, true);
+            }
+        }
+        return true;
+    }
+
+    protected function saveAchievement($yearIndex, $yearEvaluation, $post) { //to do
+        foreach ($post['Achievement'][$yearIndex] as $achievement) {
+            if($achievement['name'] != null) {
+                $newAchievement = new Achievement($achievement);
+                $newAchievement->yearEvaluationID = $yearEvaluation->id;
+                if(!$newAchievement->save()) {
+                    throw new Exception("Error: Can not save Achievement", 1);
+                }
+            }
+        }
+        return true;
+    }
+
+    protected function saveTermEvaluation($yearIndex, $yearEvaluation, $post) {
+        foreach ($post['TermEvaluation'][$yearIndex] as $term=>$termEvaluation) {
+            $newTermEvaluation = new TermEvaluation($termEvaluation);
+            $newTermEvaluation->term = $term;
+            $newTermEvaluation->yearEvaluationID = $yearEvaluation->id;
+            if(!$newTermEvaluation->save()) {
+                throw new Exception("Error: Can not save term evaluation", 1);
+            }
+            $this->saveSubjectScore($yearIndex, $term, $newTermEvaluation, $post);
+        }
+        return true;
+    }
+
+    protected function saveSubjectScore($yearIndex, $term, $termEvaluation, $post) {
+        foreach ($post['SubjectScore'][$yearIndex][$term] as $subjectName => $score) {
+            $subject = Subject::findOne(['name' => $subjectName]);
+            if($subject == null) {
+                throw new Exception("Error: Not found subject ".$subjectName." in database", 1);
+            }
+            $newSubjectScore = new SubjectScore($score);
+            $newSubjectScore->termEvaluationID = $termEvaluation->id;
+            $newSubjectScore->subjectID = $subject->id;
+            $newSubjectScore->teacherName = $post['SubjectScore'][$yearIndex][$subjectName]['teacherName'];
+            if(!$newSubjectScore->save()) {
+                throw new Exception("Error: Can not save subject score", 1);
             }
         }
         return true;

@@ -11,22 +11,21 @@ use kartik\date\DatePicker;
 use common\models\SubjectScore;
 ?>
 <?php 
-$studyProcess = (isset($model->studyProcesses[$i]) && $model->studyProcesses[$i] != null) ? $model->studyProcesses[$i] : null;
 $yearE = isset($model->yearEvaluations[$i]) ? $model->yearEvaluations[$i] : null;
 ?>
 <div class="year_evaluation">
     <div class="title"><?= 'Đánh giá năm học'?></div>
     <div class="part1">
-        <div class="fromYear"><span class="fLabel">Từ năm</span> <?= $form->field($studyProcess_model, "[$i]fromYear")->textInput(['value' => $studyProcess != null ? $studyProcess->fromYear : null]) ?>
-        <span class="toYear"><span class="fLabel">đến năm</span> <?= $form->field($studyProcess_model, "[$i]toYear")->textInput(['value' => $studyProcess != null ? $studyProcess->toYear : null]) ?>
+        <div class="fromYear"><span class="fLabel">Từ năm</span> <?= $form->field($yearEvaluation, "[$i]fromYear")->textInput(['value' => $yearE != null ? $yearE->fromYear : null]) ?>
+        <span class="toYear"><span class="fLabel">đến năm</span> <?= $form->field($yearEvaluation, "[$i]toYear")->textInput(['value' => $yearE != null ? $yearE->toYear : null]) ?>
         </span>
         </div>
-        <div class="class"><span class="fLabel">Lớp</span> <?= $form->field($studyProcess_model, "[$i]class")->textInput(['value' => $studyProcess != null ? $studyProcess->class : null]) ?>
+        <div class="class"><span class="fLabel">Lớp</span> <?= $form->field($yearEvaluation, "[$i]class")->textInput(['value' => $yearE != null ? $yearE->class : null]) ?>
         <span class="school"><span class="fLabel">trường</span>
         <?php 
             $schools = ArrayHelper::map(School::find('')->orderBy('name')->all(), 'id', 'name');
-            $schoolID = isset($model->studyProcesses[$i]) ? $model->studyProcesses[$i]->schoolID : null;
-            echo $form->field($studyProcess_model, "[$i]schoolID")->dropDownList(
+            $schoolID = $yearE != null ? $yearE->schoolID : null;
+            echo $form->field($yearEvaluation, "[$i]schoolID")->dropDownList(
                 $schools, [
                     'prompt' => 'Select school', 
                     'class' => 'input',
@@ -39,9 +38,9 @@ $yearE = isset($model->yearEvaluations[$i]) ? $model->yearEvaluations[$i] : null
         <span class="department">
         <span class="fLabel">Ban </span>
             <?= $form->field($yearEvaluation, "[$i]studyDepartment")->dropDownList(
-                YearEvaluation::$department, [
+                    YearEvaluation::$department, [
                     'prompt' => 'Select study department',
-                    'options' => [$yearE != null ? $yearE->studyDepartment : null => ['Selected' => true]]
+                    'options' => [($yearE != null ? array_search($yearE->studyDepartment, YearEvaluation::$department) : null) => ['Selected' => true]]
                 ]) ?>
         </span>
         <table class="year_table">
@@ -200,7 +199,7 @@ $yearE = isset($model->yearEvaluations[$i]) ? $model->yearEvaluations[$i] : null
                     </div>
                     <div class="principal_name">
                         <div class="title3">Tên hiệu trưởng: </div>
-                        <?= $form->field($studyProcess_model, "[$i]principalName")->textInput(['class' => 'input', 'value' => $studyProcess != null ? $studyProcess->principalName : null]) ?>
+                        <?= $form->field($yearEvaluation, "[$i]principalName")->textInput(['class' => 'input', 'value' => $yearE != null ? $yearE->principalName : null]) ?>
                         </div>
                     <div class="date">
                     <?php 
