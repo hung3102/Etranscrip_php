@@ -127,31 +127,28 @@ class AddressController extends Controller
 
     public function actionLoadDistricts() {
         $provinceID = Yii::$app->request->post('provinceID');
-        $districts = District::findAll(['provinceID' => $provinceID]);
-        $data = [];
+        $districts = District::find()->where(['provinceID' => $provinceID])->orderBy('name')->all();
         $district_data = "<option value=''>Select district</option>";
         if($districts != null) {
             foreach ($districts as $district) {
                 $district_data .= '<option value=' . $district->id . '>' . $district->name . '</option>';
             }
         }
-        $data['districts'] = $district_data;
-        $data['communes'] = $this->actionLoadCommunes();
-        return Json::encode($data);
+        return Json::encode($district_data);
     }
 
     public function actionLoadCommunes() {
         $districtID = Yii::$app->request->post('districtID');
         $commune_data = "<option value=''>Select commune</option>";
         if($districtID != null) {
-            $communes = Commune::findAll(['districtID' => $districtID]);
+            $communes = Commune::find()->where(['districtID' => $districtID])->orderBy('name')->all();
             if($communes != null) {
                 foreach ($communes as $commune) {
-                    $commune_data .= '<option value="' . $commune->id . '">' 
+                    $commune_data .= '<option value=' . $commune->id . '>' 
                         . $commune->name . '</option>';
                 }
             }
         }
-        return $commune_data;
+        return Json::encode($commune_data);
     }
 }

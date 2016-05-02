@@ -274,6 +274,10 @@
     width: 900px;
 }
 
+#SR_form .conduct_capacity .comment .date {
+	margin-left: 10px;
+}
+
 #SR_form .conduct_capacity {
 	margin-bottom: 100px;
 }

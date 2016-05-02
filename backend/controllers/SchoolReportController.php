@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\SchoolReport;
+use common\models\Student;
 use common\models\Ethnic;
 use common\models\Province;
 use common\models\District;
@@ -63,55 +64,61 @@ class SchoolReportController extends Controller
             'model' => $model,
         ]);
  
-        // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([
             'filename' => 'Học bạ ' . $model->student->name . '.pdf',
-            // set to use core fonts only
             'mode' => Pdf::MODE_UTF8, 
-            // A4 paper format
             'format' => Pdf::FORMAT_A4, 
-            // portrait orientation
             'orientation' => Pdf::ORIENT_PORTRAIT, 
-            // stream to browser inline
             'destination' => Pdf::DEST_BROWSER, 
-            // your html content input
             'content' => $content,  
-            // format content from your own css file if needed or use the
-            // enhanced bootstrap css built by Krajee for mPDF formatting 
             'cssFile' => 'css/school-report.css',
-            // any css to be embedded if required
-            // 'cssInline' => '.kv-heading-1{font-size:18px}', 
-             // set mPDF properties on the fly
             'options' => [
                 'title' => 'Học bạ ' . $model->student->name,
                 'author' => 'Đào Văn Hùng',
                 'creator' => 'Đào Văn Hùng',
             ],
-             // call mPDF methods on the fly
             'methods' => [ 
-                // 'SetHeader'=>['Krajee Report Header'], 
                 'SetFooter'=>['{PAGENO}'],
             ]
         ]);
-     
-        // return the pdf output as per the destination setting
         return $pdf->render(); 
     }
 
     public function actionCreate()
     {
         $model = new SchoolReport();
-        $model->student = new Student();
-        $model->student->ethnic = new Ethnic();
-        $model->student->nativeAddress = new Address();
-        $model->student->currentAddress = new Address();
+        $student = new Student();
+        $addresses = [
+                'currentDistrict' => new District(),
+                'currentAddress' => new Address(),
+                'nativeDistrict' => new District(),
+                'nativeAddress' => new Address(),
+        ];
+        $yearEvaluation = new YearEvaluation();
 
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $post = Yii::$app->request->post();
+        if ($model->load($post)) {
+            $transaction = Yii::$app->db->beginTransaction();
+            try {
+                $student->currentAddressID = $this->saveCurrentAddress($post)->id;
+                $student->nativeAddressID = $this->getNativeAddress($post)->id;
+                $this->saveStudent($student, $post);
+                $model->studentID = $student->id;
+                $this->saveSchoolReport($model, $post);
+                $this->saveObject($model, $post);
+                $this->saveYearEvaluation($model, $post);
+                $transaction->commit();
+                return $this->redirect(['student/view', 'id' => $model->id]);
+            } catch(Exception $e) {
+                $transaction->rollBack();
+                throw $e;
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'student' => $student,
+                'addresses' => $addresses,
+                'yearEvaluation' => $yearEvaluation,
             ]);
         }
     }
@@ -133,8 +140,8 @@ class SchoolReportController extends Controller
                 ->format('Y-m-d');
             $transaction = Yii::$app->db->beginTransaction();
             try {
-                $this->saveCurrentAddress($model, $post);
-                $this->saveNativeAddres($model, $post);
+                $model->student->currentAddressID = $this->saveCurrentAddress($post)->id;
+                $model->student->nativeAddressID = $this->getNativeAddress($post)->id;
                 $this->saveObject($model, $post);
                 $this->saveYearEvaluation($model, $post);
                 if($model->save() && $model->student->save()) {
@@ -154,7 +161,25 @@ class SchoolReportController extends Controller
         }
     }
 
-    protected function saveCurrentAddress($model, $post) {
+    protected function saveSchoolReport($model, $post) {
+        $model->date = \DateTime::createFromFormat('d/m/Y', $post['SchoolReport']['date'])
+                ->format('Y-m-d');
+        if(!$model->save()) {
+            throw new Exception("Error: Can not save school report", 1);
+        }
+        return true;
+    }
+
+    protected function saveStudent($student_model, $post) {
+        $student_model->load($post);
+        $student_model->birthday = \DateTime::createFromFormat('d/m/Y', $post['Student']['birthday'])->format('Y-m-d');
+        if(!$student_model->save()) {
+            throw new Exception("Error: Can not save student", 1);
+        }
+        return true;
+    }
+
+    protected function saveCurrentAddress($post) {
         $params = ['districtID' => $post['Address']['currentAddress']['districtID']];
         if($post['Address']['communeID'] != null ) {
             $params['communeID'] = $post['Address']['communeID'];
@@ -163,26 +188,21 @@ class SchoolReportController extends Controller
             $params['detailAddress'] = $post['Address']['detailAddress'];
         }
         $address = Address::findOne($params);
-        if($address != null) {
-            $model->student->currentAddressID = $address->id;
-        } else {
+        if($address == null) {
             $address = new Address($params);
             if(!$address->save()) {
                 throw new Exception("Error: Can not save current address ", 1);
             }
-            $model->student->currentAddressID = $address->id;
         }
-        return true;
+        return $address;
     }
 
-    protected function saveNativeAddres($model, $post) {
+    protected function getNativeAddress($post) {
         $address = Address::findOne(['districtID' => $post['Address']['nativeAddress']['districtID']]);
-        if($address != null) {
-            $model->student->nativeAddressID = $address->id;
-        } else {
+        if($address == null) {
             throw new Exception("Error: Native Address not found with district and province given", 1);
         }
-        return true;
+        return $address;
     }
 
     protected function saveObject($model, $post) {

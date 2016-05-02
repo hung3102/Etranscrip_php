@@ -24,6 +24,9 @@ use kartik\form\ActiveForm;
         'type' => ActiveForm::TYPE_INLINE,
         'formConfig' => ['labelSpan' => 1, 'deviceSize' => ActiveForm::SIZE_SMALL, 'showErrors' => true]
     ]); 
+    if(!isset($student)) {
+        $student = $model->student;
+    }
     ?>
     <div class=" sr_number">
         <span class="fLabel">Số học bạ: </span> 
@@ -34,15 +37,15 @@ use kartik\form\ActiveForm;
             <div class="image"></div>
             <div class="name">
                 <span class="fLabel">Họ và tên: </span> 
-                <?= $form->field($model->student, 'name')->textInput(['maxlength' => true])?>
+                <?= $form->field($student, 'name')->textInput(['maxlength' => true])?>
                 <span class="fLabel">Giới tính: </span>
-                <?= $form->field($model->student, 'gender')->dropDownList(Student::$gender,
+                <?= $form->field($student, 'gender')->dropDownList(Student::$gender,
                     ['prompt' => 'Choose gender']) ?>
             </div>
             <div class="field birthday">
                 <span class="title_bold">Ngày sinh:</span> 
-                <?php $model->student->birthday = date('d/m/Y', strtotime($model->student->birthday));
-                    echo $form->field($model->student, 'birthday')->widget(DatePicker::className(), [
+                <?php $student->birthday = date('d/m/Y', strtotime($student->birthday));
+                    echo $form->field($student, 'birthday')->widget(DatePicker::className(), [
                         'type' => DatePicker::TYPE_COMPONENT_APPEND,
                         'options' => ['placeholder' => 'Enter birthday'],
                         'pluginOptions' => [
@@ -56,8 +59,8 @@ use kartik\form\ActiveForm;
                 <span class="fLabel">Nơi sinh: </span>
                 <?php 
                     $provinces = ArrayHelper::map(Province::find('')->orderBy('name')->all(), 'id', 'name');
-                    if($model->student->nativeAddress->district != null) { 
-                        $districts = ArrayHelper::map(District::find()->where(['provinceID' => $model->student->nativeAddress->district->provinceID])->orderBy('name')->all(), 'id', 'name');
+                    if($student->nativeAddressID != null) { 
+                        $districts = ArrayHelper::map(District::find()->where(['provinceID' => $student->nativeAddress->district->provinceID])->orderBy('name')->all(), 'id', 'name');
                     } else {
                         $districts = ArrayHelper::map(District::find('')->orderBy('name')->all(), 'id', 'name');
                     }
@@ -66,7 +69,7 @@ use kartik\form\ActiveForm;
                             'prompt'=>'Select province',
                             'id' => 'nprovince',
                             'options' => [
-                                $model->student->nativeAddress->district->provinceID => ['Selected' => true],
+                                $student->nativeAddressID != null ? $student->nativeAddress->district->provinceID : null => ['Selected' => true],
                             ],
                             'onchange'=>'
                                 if($(this).val() >= 1) {
@@ -83,8 +86,9 @@ use kartik\form\ActiveForm;
                         ->dropDownList($districts,[
                                 'prompt'=>'Select district',
                                 'id' => 'ndistrict',
+                                'disabled' => $student->nativeAddressID == null ? true : false,
                                 'options' => [
-                                    $model->student->nativeAddress->districtID => ['Selected' => true]
+                                    $student->nativeAddressID != null ? $student->nativeAddress->districtID : null => ['Selected' => true]
                                 ],
                             ]);
                 ?>
@@ -92,13 +96,13 @@ use kartik\form\ActiveForm;
             <div class="ethnic">
             <?php 
                 $ethnics = ArrayHelper::map(Ethnic::find('')->orderBy('name')->all(), 'id', 'name');
-                echo '<span class="fLabel">Dân tộc: </span>' . $form->field($model->student, 'ethnicID')->dropDownList($ethnics,['prompt' => 'Select ethnic']);
+                echo '<span class="fLabel">Dân tộc: </span>' . $form->field($student, 'ethnicID')->dropDownList($ethnics,['prompt' => 'Select ethnic']);
             ?>
             </div>    
             <div class="object">
             <?php
                 $objects = ArrayHelper::map(Object::find('')->orderBy('content')->all(), 'id', 'content');
-                echo '<span class="fLabel">Thuộc đối tượng chính sách: </span>' . $form->field($model->student, 'objects')
+                echo '<span class="fLabel">Thuộc đối tượng chính sách: </span>' . $form->field($student, 'objects')
                 ->widget(Select2::classname(), [
                     'data' => $objects,
                     'language' => 'en',
@@ -113,21 +117,21 @@ use kartik\form\ActiveForm;
             </div>
             <div class="field current_address"><span class="fLabel">Chỗ ở hiện tại:</span> 
             <?php 
-                if($model->student->currentAddress->district != null) { 
-                    $districts = ArrayHelper::map(District::find()->where(['provinceID' => $model->student->currentAddress->district->provinceID])->orderBy('name')->all(), 'id', 'name');
-                    $communes = ArrayHelper::map(Commune::find()->where(['districtID' => $model->student->currentAddress->districtID])->orderBy('name')->all(), 'id', 'name');
+                if($student->currentAddressID != null) { 
+                    $districts = ArrayHelper::map(District::find()->where(['provinceID' => $student->currentAddress->district->provinceID])->orderBy('name')->all(), 'id', 'name');
+                    $communes = ArrayHelper::map(Commune::find()->where(['districtID' => $student->currentAddress->districtID])->orderBy('name')->all(), 'id', 'name');
                 } else {
                     $districts = ArrayHelper::map(District::find('')->orderBy('name')->all(), 'id', 'name');
-                    $communes = ArrayHelper::map(Commune::find('')->orderBy('name')->all(), 'id', 'name');
+                    $communes = [];
                 }
-                $district_disabled = $model->student->currentAddress->district == null ? true : false;
-                $commune_disabled = $model->student->currentAddress->district == null ? true : false;
+                $district_disabled = $student->currentAddressID == null ? true : false;
+                $commune_disabled = $student->currentAddressID == null ? true : false;
                 echo $form->field($addresses['currentDistrict'], '[currentDistrict]provinceID')
                     ->dropDownList($provinces, [
                         'prompt'=>'Select province',
                         'id' => 'cprovince',
                         'options' => [
-                            $model->student->currentAddress->district->provinceID => ['Selected' => true],
+                            $student->currentAddressID != null ? $student->currentAddress->district->provinceID : null => ['Selected' => true],
                         ],
                         'onchange'=>'{
                             $( "#detailAddress" ).val("");
@@ -142,8 +146,7 @@ use kartik\form\ActiveForm;
                             { provinceID: $(this).val() } )
                             .done(function( data ) {
                                 var data = JSON.parse(data);
-                                $( "select#cdistrict" ).html( data["districts"] );
-                                $( "select#ccommune" ).html( data["communes"] );
+                                $( "select#cdistrict" ).html( data );
                             });}'
                     ]); 
                  echo $form->field($addresses['currentAddress'], '[currentAddress]districtID')
@@ -152,7 +155,7 @@ use kartik\form\ActiveForm;
                             'prompt'=>'Select district',
                             'id' => 'cdistrict',
                             'options' => [
-                                $model->student->currentAddress->districtID => ['Selected' => true]
+                                $student->currentAddressID != null ? $student->currentAddress->districtID : null=> ['Selected' => true]
                             ],
                             'onchange'=>'
                             $( "#detailAddress" ).val("");
@@ -169,36 +172,38 @@ use kartik\form\ActiveForm;
                                     $( "select#ccommune" ).html( data );
                                 });'
                         ]);
-                echo $form->field($model->student->currentAddress, 'communeID')->dropDownList($communes,
+                echo $form->field($addresses['currentAddress'], 'communeID')->dropDownList($communes,
                     [
                         'prompt' => 'Select commune',
-                        'id' => 'ccommune'
+                        'id' => 'ccommune',
+                        'disabled' => $commune_disabled,
+                        'options' => [$student->currentAddressID != null ? $student->currentAddress->communeID : null => ['Selected' => true]]
                     ]);
-                echo '<div class="detailAddress"><span class="title"> địa chỉ nhà </span>' . $form->field($model->student->currentAddress, 'detailAddress')->textInput(['id' => 'detailAddress']) . '</div>';
+                echo '<div class="detailAddress"><span class="title"> địa chỉ nhà </span>' . $form->field($addresses['currentAddress'], 'detailAddress')->textInput(['id' => 'detailAddress', 'value' => $student->currentAddressID != null ? $student->currentAddress->detailAddress : null]) . '</div>';
             ?>
             </div>
             <div class="father">
                 <div class="name"><span class="fLabel">Họ và tên cha:</span> 
-                <?= $form->field($model->student, 'fatherName')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($student, 'fatherName')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="job"><span class="fLabel">Nghề nghiệp: </span>
-                <?= $form->field($model->student, 'fatherJob')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($student, 'fatherJob')->textInput(['maxlength' => true]) ?>
                 </div>
             </div>
             <div class="mother">
                 <div class="name"><span class="fLabel">Họ và tên mẹ: </span>
-                <?= $form->field($model->student, 'motherName')->textInput(['maxlength' => true])?>
+                <?= $form->field($student, 'motherName')->textInput(['maxlength' => true])?>
                 </div>
                 <div class="job"><span class="fLabel">Nghề nghiệp: </span>
-                <?= $form->field($model->student, 'motherJob')->textInput(['maxlength' => true])?>
+                <?= $form->field($student, 'motherJob')->textInput(['maxlength' => true])?>
                 </div>
             </div>
             <div class="tutor">
                 <div class="name"><span class="fLabel">Họ và tên người giám hộ: </span>
-                <?= $form->field($model->student, 'tutorName')->textInput(['maxlength' => true])?>
+                <?= $form->field($student, 'tutorName')->textInput(['maxlength' => true])?>
                 </div>
                 <div class="job"><span class="fLabel">Nghề nghiệp: </span>
-                <?= $form->field($model->student, 'tutorJob')->textInput(['maxlength' => true])?>
+                <?= $form->field($student, 'tutorJob')->textInput(['maxlength' => true])?>
                 </div>
             </div>
         </div>
@@ -223,8 +228,7 @@ use kartik\form\ActiveForm;
 <!-- year evaluation here -->
     <hr class="horizon_line" />
     <?php 
-    if($model->yearEvaluations != null) {
-        for($i = 0; $i < sizeof($model->yearEvaluations); $i++) {  
+        for($i = 0; $i < 3; $i++) {  
             echo Yii::$app->view->render('_yearForm', [
                 'model' => $model, 
                 'i' => $i, 
@@ -232,7 +236,6 @@ use kartik\form\ActiveForm;
                 'form' => $form,
             ]);
         }
-    }
     ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
