@@ -8,6 +8,9 @@ use common\models\search\AddressSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use common\models\District;
+use common\models\Commune;
+use yii\helpers\Json;
 
 /**
  * AddressController implements the CRUD actions for Address model.
@@ -120,5 +123,32 @@ class AddressController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public function actionLoadDistricts() {
+        $provinceID = Yii::$app->request->post('provinceID');
+        $districts = District::find()->where(['provinceID' => $provinceID])->orderBy('name')->all();
+        $district_data = "<option value=''>Select district</option>";
+        if($districts != null) {
+            foreach ($districts as $district) {
+                $district_data .= '<option value=' . $district->id . '>' . $district->name . '</option>';
+            }
+        }
+        return Json::encode($district_data);
+    }
+
+    public function actionLoadCommunes() {
+        $districtID = Yii::$app->request->post('districtID');
+        $commune_data = "<option value=''>Select commune</option>";
+        if($districtID != null) {
+            $communes = Commune::find()->where(['districtID' => $districtID])->orderBy('name')->all();
+            if($communes != null) {
+                foreach ($communes as $commune) {
+                    $commune_data .= '<option value=' . $commune->id . '>' 
+                        . $commune->name . '</option>';
+                }
+            }
+        }
+        return Json::encode($commune_data);
     }
 }

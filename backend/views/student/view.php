@@ -15,7 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('View as pdf', ['school-report/view-pdf', 'id' => $model->schoolReport->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update', ['school-report/update', 'id' => $model->schoolReport->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -36,7 +37,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'currentAddressID',
             'nativeAddressID',
             'ethnicID',
-            'religionID',
             'fatherName',
             'fatherJob',
             'motherName',

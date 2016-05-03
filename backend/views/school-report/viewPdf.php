@@ -85,7 +85,7 @@ use common\models\Subject;
 		</div>
 		<div id="principal">
 			<div class="constant">HIỆU TRƯỞNG</div>
-			<div class="name"><?= $model->yearEvaluations[0]->principalName ?></div>
+			<div class="name"><?= $model->principalName ?></div>
 		</div>
 
 		<div id="study_process">
@@ -98,13 +98,13 @@ use common\models\Subject;
 					<td class="principal_confirm">Xác nhận của hiệu trưởng</td>
 				</tr>
 				<?php 
-				if($model->studyProcesses != null) {
-					foreach ($model->studyProcesses as $studyProcess) { ?>
+				if($model->yearEvaluations != null) {
+					foreach ($model->yearEvaluations as $yearEvaluation) { ?>
 				<tr class="each">
-					<td class="year_content"><?= $studyProcess->fromYear.'/'.$studyProcess->toYear ?></td>
-					<td class="class_content"><?= $studyProcess->class ?></td>
-					<td class="school_content"><?= $studyProcess->school->name.' - '.$studyProcess->school->address->district->name.', '.$studyProcess->school->address->district->province->name ?></td>
-					<td class="confirm_content"><?= $studyProcess->principalName ?></td>
+					<td class="year_content"><?= $yearEvaluation->fromYear.'/'.$yearEvaluation->toYear ?></td>
+					<td class="class_content"><?= $yearEvaluation->class ?></td>
+					<td class="school_content"><?= $yearEvaluation->school->name.' - '.$yearEvaluation->school->address->district->name.', '.$yearEvaluation->school->address->district->province->name ?></td>
+					<td class="confirm_content"><?= $yearEvaluation->principalName ?></td>
 				</tr>
 				<?php	}
 				}else { ?>
@@ -134,8 +134,8 @@ use common\models\Subject;
 				<table>
 					<tr>
 						<td colspan="5"><?= '<span style="font-weight:bold">Họ và tên: </span>'.$model->student->name ?></td>
-						<td class="class" colspan="3"><?= '<span style="font-weight:bold">Lớp </span>'.$model->studyProcesses[$i]->class ?></td>
-						<td class="year" colspan="5"><?= '<span style="font-weight:bold">năm học </span>'.$model->studyProcesses[$i]->fromYear.' - '.$model->studyProcesses[$i]->toYear ?></td>
+						<td class="class" colspan="3"><?= '<span style="font-weight:bold">Lớp </span>'.$model->yearEvaluations[$i]->class ?></td>
+						<td class="year" colspan="5"><?= '<span style="font-weight:bold">năm học </span>'.$model->yearEvaluations[$i]->fromYear.' - '.$model->yearEvaluations[$i]->toYear ?></td>
 					</tr>
 					<tr>
 						<td colspan="3"><?= '<span style="font-weight:bold">Ban:  </span>'.$model->yearEvaluations[$i]->studyDepartment ?></td>
@@ -240,7 +240,7 @@ use common\models\Subject;
 						<td><?= $model->yearEvaluations[$i]->teacherName ?></td>
 					</tr>
 					<tr class="comment">
-						<td colspan="6"><?= $model->yearEvaluations[$i]->note ?>
+						<td colspan="6"><?= nl2br($model->yearEvaluations[$i]->note) ?>
 						</td>
 					</tr>
 					<tr class="confirm">
@@ -334,7 +334,7 @@ use common\models\Subject;
 				<td colspan="4" class="empty"></td>
 				<td colspan="3" class="date" style="height: 10px;">
 				<?php $timestamp = strtotime($model->yearEvaluations[$i]->date);
-						echo $model->studyProcesses[$i]->school->address->district->name.', ngày '.date('d', $timestamp).' tháng '.date('m', $timestamp).' năm '.date('Y', $timestamp); ?>
+						echo $model->yearEvaluations[$i]->school->address->district->name.', ngày '.date('d', $timestamp).' tháng '.date('m', $timestamp).' năm '.date('Y', $timestamp); ?>
 				</td>
 			</tr>
 			<tr id="principal_approval">

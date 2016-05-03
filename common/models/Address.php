@@ -17,7 +17,7 @@ class Address extends BaseAddress
     public function rules()
     {
         return [
-            [['detailAddress', 'districtID'], 'required'],
+            [['districtID'], 'required'],
             [['communeID', 'districtID'], 'integer'],
             [['detailAddress', 'districtID', 'created_time', 'updated_time'], 'safe'],
             [['detailAddress'], 'string', 'max' => 255],
@@ -62,6 +62,10 @@ class Address extends BaseAddress
 
     public function getDistrict() {
         return $this->hasOne(District::className(), ['id' => 'districtID']);
+    }
+
+    public function getCommune() {
+        return $this->hasOne(Commune::className(), ['id' => 'communeID']);
     }
 
     public function getDistrictName() {

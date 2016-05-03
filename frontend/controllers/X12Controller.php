@@ -79,9 +79,8 @@ class X12Controller extends Controller
         $cfSTD->addChild("CA", "CA");
         $cfSTD->addChild("NA", "NA");
         $cfSTD->addChild("OJ", "OJ");
-        $cfSP = $cfSR->addChild("SP", "SP");
-        $cfSP->addChild("SCH", "SCH");
         $cfYE = $cfSR->addChild("YE", "YE");
+        $cfYE->addChild("SCH", "SCH");
         $cfYE->addChild("ACV", "ACV");
         $cfTE = $cfYE->addChild("TE", "TE");
         $cfTE->addChild("SS", "SS");

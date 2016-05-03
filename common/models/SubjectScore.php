@@ -19,7 +19,7 @@ class SubjectScore extends BaseSubjectScore
         return [
             [['termEvaluationID', 'subjectID', 'score', 'teacherName'], 'required'],
             [['termEvaluationID', 'subjectID'], 'integer'],
-            [['score'], 'number'],
+            [['score'], 'number', 'max'=>10, 'min'=>0],
             [['termEvaluationID', 'subjectID', 'score', 'teacherName', 'created_time', 'updated_time'], 'safe'],
             [['teacherName'], 'string', 'max' => 100],
         ];

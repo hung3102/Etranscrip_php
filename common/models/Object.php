@@ -9,7 +9,7 @@ use common\models\Student;
 
 class Object extends BaseObject
 {
-
+    
     public static function tableName()
     {
         return '{{%object}}';

@@ -145,6 +145,8 @@ class X12Controller extends Controller
             } else {
                 print_r($response);
             }
+        } else {
+            throw new Exception("Error: Can not send file", 1);
         }
         return false;
     }

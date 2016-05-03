@@ -11,6 +11,7 @@ use Yii;
  * @property string $number
  * @property integer $studentID
  * @property string $date
+ * @property string $principalName
  * @property string $created_time
  * @property string $updated_time
  */
@@ -30,10 +31,11 @@ class BaseSchoolReport extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['number', 'studentID', 'date', 'created_time', 'updated_time'], 'required'],
+            [['number', 'studentID', 'date', 'created_time', 'updated_time'], 'required'], 
             [['studentID'], 'integer'],
             [['date', 'created_time', 'updated_time'], 'safe'],
-            [['number'], 'string', 'max' => 50],
+            [['number', 'principalName'], 'string', 'max' => 50],
+            [['studentID'], 'unique'],
             [['studentID'], 'unique'],
         ];
     }
@@ -48,6 +50,7 @@ class BaseSchoolReport extends \yii\db\ActiveRecord
             'number' => 'Number',
             'studentID' => 'Student ID',
             'date' => 'Date',
+            'principalName' => 'Principal Name',
             'created_time' => 'Created Time',
             'updated_time' => 'Updated Time',
         ];
