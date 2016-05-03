@@ -16,7 +16,7 @@ class StudentSearch extends Student
     public function rules()
     {
         return [
-            [['id', 'gender', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'religionID'], 'integer'],
+            [['id', 'gender', 'currentAddressID', 'nativeAddressID', 'ethnicID'], 'integer'],
             [['name', 'imageURL', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time', 'schoolReport', 'currentAddress', 'nativeAddress'], 'safe'],
         ];
     }
@@ -69,7 +69,6 @@ class StudentSearch extends Student
             'currentAddressID' => $this->currentAddressID,
             'nativeAddressID' => $this->nativeAddressID,
             'ethnicID' => $this->ethnicID,
-            'religionID' => $this->religionID,
             'created_time' => $this->created_time,
             'updated_time' => $this->updated_time,
         ]);

@@ -12,7 +12,6 @@ use common\models\Commune;
 use common\models\Ethnic;
 use common\models\Religion;
 use common\models\School;
-use common\models\StudyProcess;
 use common\models\YearEvaluation;
 use common\models\TermEvaluation;
 use common\models\Subject;
@@ -38,15 +37,15 @@ class X12Integration {
 	        		$schoolReport = new SchoolReport();
 	        		$schoolReport->number = $srLoop->getSegment(0)->getElement(1);
 	        		$schoolReport->date = $srLoop->getSegment(0)->getElement(2);
+	        		$schoolReport->principalName = $srLoop->getSegment(0)->getElement(3);
 	        		$schoolReport->studentID = $this->createStudentModel($srLoop)->id;
 	        		$schoolReport->save();
-	        		$this->createStudyProcessModel($srLoop, $schoolReport);
 	        		$this->createYearEvaluationModel($srLoop, $schoolReport);
 	        	} else {
 	        		$schoolReport->date = $srLoop->getSegment(0)->getElement(2);
+	        		$schoolReport->principalName = $srLoop->getSegment(0)->getElement(3);
 	        		$schoolReport->studentID = $this->createStudentModel($srLoop, $schoolReport, true)->id;
 	        		$schoolReport->save();
-	        		$this->createStudyProcessModel($srLoop, $schoolReport, true);
 	        		$this->createYearEvaluationModel($srLoop, $schoolReport, true);
 	        	}
 	        }
@@ -70,16 +69,15 @@ class X12Integration {
 			'name' => $stdLoop->getSegment(0)->getElement(1),
 			'gender' => array_search($stdLoop->getSegment(0)->getElement(2), Student::$gender),
 			'birthday' => $stdLoop->getSegment(0)->getElement(3),
-			'fatherName' => $stdLoop->getSegment(0)->getElement(6),
-			'fatherJob' => $stdLoop->getSegment(0)->getElement(7),
-			'motherName' => $stdLoop->getSegment(0)->getElement(8),
-			'motherJob' => $stdLoop->getSegment(0)->getElement(9),
-			'tutorName' => $stdLoop->getSegment(0)->getElement(10),
-			'tutorJob' => $stdLoop->getSegment(0)->getElement(11),
+			'fatherName' => $stdLoop->getSegment(0)->getElement(5),
+			'fatherJob' => $stdLoop->getSegment(0)->getElement(6),
+			'motherName' => $stdLoop->getSegment(0)->getElement(7),
+			'motherJob' => $stdLoop->getSegment(0)->getElement(8),
+			'tutorName' => $stdLoop->getSegment(0)->getElement(9),
+			'tutorJob' => $stdLoop->getSegment(0)->getElement(10),
 			'currentAddressID' => $this->createCurrentAddressModel($stdLoop)->id,
 			'nativeAddressID' => $this->createNativeAddressModel($stdLoop)->id,
 			'ethnicID' => $this->getEthnic($stdLoop->getSegment(0)->getElement(4))->id,
-			'religionID' => $this->getReligion($stdLoop->getSegment(0)->getElement(5))->id,
 		];
 		if($SR_EXIST == false) {
 			$student = Student::findOne($attributes);
@@ -217,50 +215,52 @@ class X12Integration {
 		return $ethnic;
 	}
 
-	private function getReligion($name) {
-		$religion = Religion::findOne(['name' => $name]);
-		if($religion == null) {
-			throw new Exception("Error : Not found religion ".$name, 1);
+	private function createYearEvaluationModel($srLoop, $schoolReport, $SR_EXIST = false) {
+		if($SR_EXIST == true) {
+			$this->removeRelatedYearEvaluation($schoolReport);
 		}
-		return $religion;
-	}
-
-	private function createStudyProcessModel($srLoop, $schoolReport, $SR_EXIST = false) {
-		if($SR_EXIST == true && $schoolReport->studyProcesses != null) {
-			foreach ($schoolReport->studyProcesses as $studyProcess) {
-				$schoolReport->unlink('studyProcesses', $studyProcess, true);
-			}
+		$yeLoops = $srLoop->findLoop("YE");
+		if($yeLoops == null) {
+			throw new Exception("Error : Year Evaluation must be exist in School Report", 1);
 		}
-		$spLoops = $srLoop->findLoop("SP");
-		if($spLoops == null) {
-			throw new Exception("Error: Study Process must exist in School Report", 1);
-		}
-		foreach ($spLoops as $spLoop) {
+		foreach ($yeLoops as $yeLoop) {
 			$attributes = [
-				'fromYear' => $spLoop->getSegment(0)->getElement(2),
-				'toYear' => $spLoop->getSegment(0)->getElement(3),
-				'class' => $spLoop->getSegment(0)->getElement(4),
-				'schoolID' => $this->getSchool($spLoop)->id,
-				'principalName' => $spLoop->getSegment(0)->getElement(5),
 				'schoolReportID' => $schoolReport->id,
+				'class' => $yeLoop->getSegment(0)->getElement(2),
+				'fromYear' => $yeLoop->getSegment(0)->getElement(3),
+				'toYear' => $yeLoop->getSegment(0)->getElement(4),
+				'schoolID' => $this->getSchool($yeLoop)->id,
+				'studyDepartment' => $yeLoop->getSegment(0)->getElement(5),
+				'note' => $yeLoop->getSegment(0)->getElement(6),
+				'teacherName' => $yeLoop->getSegment(0)->getElement(7),
+				'missedLesson' => $yeLoop->getSegment(0)->getElement(8),
+				'upGradeType' => $yeLoop->getSegment(0)->getElement(9),
+				'vocationalCertificate' => $yeLoop->getSegment(0)->getElement(10),
+				'vocationalCertificateLevel' => $yeLoop->getSegment(0)->getElement(11),
+				'teacherComment' => $yeLoop->getSegment(0)->getElement(12),
+				'principalApproval' => $yeLoop->getSegment(0)->getElement(13),
+				'principalName' => $yeLoop->getSegment(0)->getElement(14),
+				'date' => $yeLoop->getSegment(0)->getElement(15),
 			];
-			$studyProcess = studyProcess::findOne($attributes);
-			if($studyProcess == null) {
-				$studyProcess = new studyProcess($attributes);
-				$studyProcess->save();
+			$yearEvaluation = YearEvaluation::findOne($attributes);
+			if($yearEvaluation == null) {
+				$yearEvaluation = new YearEvaluation($attributes);
+				$yearEvaluation->save();
 			} else {
-				throw new Exception("Error : Detect Study Process duplicated in DB!", 1);
+				throw new Exception("Error : Detect Year Evaluation duplicated in DB!", 1);
 			}
+			$this->createAchievementModel($yeLoop, $yearEvaluation);
+			$this->createTermEvaluation($yeLoop, $yearEvaluation);
 		}
 		return true;
 	}
 
-	private function getSchool($spLoop) {
-		$schLoops = $spLoop->findLoop("SCH");
+	private function getSchool($yeLoop) {
+		$schLoops = $yeLoop->findLoop("SCH");
 		if($schLoops == null) {
-			throw new Exception("Error : School must be exist in Study Process", 1);
+			throw new Exception("Error : School must be exist in Year Evaluation", 1);
 		} else if(count($schLoops) != 1) {
-			throw new Exception("Error : School must be exist only one in Study Process", 1);
+			throw new Exception("Error : School must be exist only one in Year Evaluation", 1);
 		}
 		$schLoop = $schLoops[0];
 		$address = $this->createSchoolAddressModel($schLoop);
@@ -291,45 +291,6 @@ class X12Integration {
 			$address->save();
 		}
 		return $address;				
-	}
-
-	private function createYearEvaluationModel($srLoop, $schoolReport, $SR_EXIST = false) {
-		if($SR_EXIST == true) {
-			$this->removeRelatedYearEvaluation($schoolReport);
-		}
-		$yeLoops = $srLoop->findLoop("YE");
-		if($yeLoops == null) {
-			throw new Exception("Error : Year Evaluation must be exist in School Report", 1);
-		}
-		foreach ($yeLoops as $yeLoop) {
-			$attributes = [
-				'schoolReportID' => $schoolReport->id,
-				'class' => $yeLoop->getSegment(0)->getElement(2),
-				'fromYear' => $yeLoop->getSegment(0)->getElement(3),
-				'toYear' => $yeLoop->getSegment(0)->getElement(4),
-				'studyDepartment' => $yeLoop->getSegment(0)->getElement(5),
-				'note' => $yeLoop->getSegment(0)->getElement(6),
-				'teacherName' => $yeLoop->getSegment(0)->getElement(7),
-				'missedLesson' => $yeLoop->getSegment(0)->getElement(8),
-				'upGradeType' => $yeLoop->getSegment(0)->getElement(9),
-				'vocationalCertificate' => $yeLoop->getSegment(0)->getElement(10),
-				'vocationalCertificateLevel' => $yeLoop->getSegment(0)->getElement(11),
-				'teacherComment' => $yeLoop->getSegment(0)->getElement(12),
-				'principalApproval' => $yeLoop->getSegment(0)->getElement(13),
-				'principalName' => $yeLoop->getSegment(0)->getElement(14),
-				'date' => $yeLoop->getSegment(0)->getElement(15),
-			];
-			$yearEvaluation = YearEvaluation::findOne($attributes);
-			if($yearEvaluation == null) {
-				$yearEvaluation = new YearEvaluation($attributes);
-				$yearEvaluation->save();
-			} else {
-				throw new Exception("Error : Detect Year Evaluation duplicated in DB!", 1);
-			}
-			$this->createAchievementModel($yeLoop, $yearEvaluation);
-			$this->createTermEvaluation($yeLoop, $yearEvaluation);
-		}
-		return true;
 	}
 
 	private function createAchievementModel($yeLoop, $yearEvaluation) {

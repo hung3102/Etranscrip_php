@@ -10,6 +10,7 @@ use common\models\TermEvaluation;
 
 class YearEvaluation extends BaseYearEvaluation
 {
+    public static $department = ['KHTN', 'KHXH & NV', 'Cơ bản'];
 
     public static function tableName()
     {
@@ -19,9 +20,9 @@ class YearEvaluation extends BaseYearEvaluation
     public function rules()
     {
         return [
-            [['schoolReportID', 'class', 'fromYear', 'toYear', 'studyDepartment', 'note', 'teacherName', 'missedLesson', 'upGradeType', 'principalApproval', 'principalName', 'date'], 'required'],
-            [['schoolReportID', 'missedLesson'], 'integer'],
-            [['schoolReportID', 'class', 'fromYear', 'toYear', 'studyDepartment', 'note', 'teacherName', 'missedLesson', 'principalApproval', 'principalName', 'date', 'created_time', 'updated_time'], 'safe'],
+            [['schoolReportID', 'class', 'fromYear', 'toYear', 'schoolID', 'studyDepartment', 'note', 'teacherName', 'missedLesson', 'upGradeType', 'teacherComment', 'principalApproval', 'principalName', 'date'], 'required'],
+            [['schoolReportID', 'missedLesson', 'schoolID'], 'integer'],
+            [['schoolReportID', 'class', 'fromYear', 'toYear', 'schoolID', 'studyDepartment', 'note', 'teacherName', 'missedLesson', 'principalApproval', 'principalName', 'date', 'created_time', 'updated_time'], 'safe'],
             [['note', 'teacherComment', 'principalApproval'], 'string'],
             [['class'], 'string', 'max' => 20],
             [['studyDepartment'], 'string', 'max' => 10],
@@ -52,6 +53,7 @@ class YearEvaluation extends BaseYearEvaluation
             'class' => 'Class',
             'fromYear' => 'From Year',
             'toYear' => 'To Year',
+            'schoolID' => 'School ID',
             'studyDepartment' => 'Study Department',
             'note' => 'Note',
             'teacherName' => 'Teacher Name',
@@ -76,6 +78,10 @@ class YearEvaluation extends BaseYearEvaluation
         return $this->hasMany(TermEvaluation::className(), ['yearEvaluationID' => 'id']);
     }
 
+    public function getSchool() {
+        return $this->hasOne(School::className(), ['id' => 'schoolID']);
+    }
+    
     public function getAchievementString() {
         $achievements = $this->achievements;
         if($achievements == null) {
@@ -92,9 +98,9 @@ class YearEvaluation extends BaseYearEvaluation
         if($this->studyDepartment == 'KHTN') {
             return 'Toán, Lý, Hóa, Sinh';
         } else if($this->studyDepartment == 'Cơ bản') {
-            return 'Văn, Sử, Địa, Ngoại ngữ';
-        } else if($this->studyDepartment == 'KHXH & NV') {
             return null;
+        } else if($this->studyDepartment == 'KHXH & NV') {
+            return 'Văn, Sử, Địa, Ngoại ngữ';
         } else {
             throw new Exception("Error: Unknow study department ".$this->studyDepartment, 1);
         }

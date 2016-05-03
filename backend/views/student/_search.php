@@ -31,8 +31,6 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'ethnicID') ?>
 
-    <?php // echo $form->field($model, 'religionID') ?>
-
     <?php // echo $form->field($model, 'fatherName') ?>
 
     <?php // echo $form->field($model, 'fatherJob') ?>

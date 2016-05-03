@@ -19,6 +19,8 @@ class RelationStudentObject extends BaseRelationStudentObject
         return [
             [['studentID', 'objectID'], 'required'],
             [['studentID', 'objectID'], 'integer'],
+            [['studentID'], 'unique', 'targetAttribute' => ['studentID', 'objectID'], 
+                'message' => 'The combination of studentID and objectID has already been taken.'],
             [['studentID', 'objectID', 'created_time', 'updated_time'], 'safe'],
         ];
     }

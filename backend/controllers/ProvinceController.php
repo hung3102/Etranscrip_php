@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\District;
-use common\models\search\DistrictSearch;
+use common\models\Province;
+use common\models\search\ProvinceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * DistrictController implements the CRUD actions for District model.
+ * ProvinceController implements the CRUD actions for Province model.
  */
-class DistrictController extends Controller
+class ProvinceController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class DistrictController extends Controller
     }
 
     /**
-     * Lists all District models.
+     * Lists all Province models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new DistrictSearch();
+        $searchModel = new ProvinceSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class DistrictController extends Controller
     }
 
     /**
-     * Displays a single District model.
+     * Displays a single Province model.
      * @param integer $id
      * @return mixed
      */
@@ -57,13 +57,13 @@ class DistrictController extends Controller
     }
 
     /**
-     * Creates a new District model.
+     * Creates a new Province model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new District();
+        $model = new Province();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -75,7 +75,7 @@ class DistrictController extends Controller
     }
 
     /**
-     * Updates an existing District model.
+     * Updates an existing Province model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -94,7 +94,7 @@ class DistrictController extends Controller
     }
 
     /**
-     * Deletes an existing District model.
+     * Deletes an existing Province model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -107,15 +107,15 @@ class DistrictController extends Controller
     }
 
     /**
-     * Finds the District model based on its primary key value.
+     * Finds the Province model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return District the loaded model
+     * @return Province the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = District::findOne($id)) !== null) {
+        if (($model = Province::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
