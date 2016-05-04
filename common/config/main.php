@@ -6,4 +6,9 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
     ],
+
+    'bootstrap' => [
+        'log',
+        'common\components\Bootstrap',
+    ],
 ];

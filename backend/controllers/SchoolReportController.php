@@ -20,6 +20,7 @@ use yii\base\Exception;
 use common\models\search\SchoolReportSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
 use kartik\mpdf\Pdf;
 use kartik\form\ActiveForm;
@@ -53,6 +54,12 @@ class SchoolReportController extends Controller
     public function actionView($id)
     {
         return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    public function actionTest($id) {
+        return $this->render('viewPdf', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -108,7 +115,7 @@ class SchoolReportController extends Controller
                 $this->saveObject($model, $post);
                 $this->saveYearEvaluation($model, $post);
                 $transaction->commit();
-                return $this->redirect(['student/view', 'id' => $model->id]);
+                return $this->redirect(['student/view', 'id' => $model->student->id]);
             } catch(Exception $e) {
                 $transaction->rollBack();
                 throw $e;
@@ -135,6 +142,7 @@ class SchoolReportController extends Controller
         $yearEvaluation = new YearEvaluation();
         $post = Yii::$app->request->post();
         if ($model->load($post) && $model->student->load($post)) {
+            $this->saveImage($model->student);
             $model->student->birthday = \DateTime::createFromFormat('d/m/Y', $post['Student']['birthday'])->format('Y-m-d');
             $model->date = \DateTime::createFromFormat('d/m/Y', $post['SchoolReport']['date'])
                 ->format('Y-m-d');
@@ -146,7 +154,7 @@ class SchoolReportController extends Controller
                 $this->saveYearEvaluation($model, $post);
                 if($model->save() && $model->student->save()) {
                     $transaction->commit();
-                    return $this->redirect(['student/view', 'id' => $model->id]);
+                    return $this->redirect(['student/view', 'id' => $model->student->id]);
                 }
             } catch(Exception $e) {
                 $transaction->rollBack();
@@ -161,11 +169,22 @@ class SchoolReportController extends Controller
         }
     }
 
+    protected function saveImage($student) {
+        $image = UploadedFile::getInstance($student, 'imageFile');
+        if($image != null) {
+            $ext = end((explode(".", $image->name)));
+            $newImageName = $student->name.'_'.Yii::$app->security->generateRandomString().".{$ext}";
+            $image->saveAs(Yii::$app->params['imagePath'].$newImageName);
+            $student->image = $newImageName;
+        }
+        return true;
+    }
+
     protected function saveSchoolReport($model, $post) {
         $model->date = \DateTime::createFromFormat('d/m/Y', $post['SchoolReport']['date'])
                 ->format('Y-m-d');
         if(!$model->save()) {
-            throw new Exception("Error: Can not save school report", 1);
+            throw new Exception("Error save school report: ".reset($model->getErrors())[0], 1);
         }
         return true;
     }
@@ -173,8 +192,9 @@ class SchoolReportController extends Controller
     protected function saveStudent($student_model, $post) {
         $student_model->load($post);
         $student_model->birthday = \DateTime::createFromFormat('d/m/Y', $post['Student']['birthday'])->format('Y-m-d');
+        $this->saveImage($student_model);
         if(!$student_model->save()) {
-            throw new Exception("Error: Can not save student", 1);
+            throw new Exception("Error save student: ".reset($student_model->getErrors())[0], 1);
         }
         return true;
     }
@@ -191,7 +211,7 @@ class SchoolReportController extends Controller
         if($address == null) {
             $address = new Address($params);
             if(!$address->save()) {
-                throw new Exception("Error: Can not save current address ", 1);
+                throw new Exception("Error save current address: ".reset($address->getErrors())[0], 1);
             }
         }
         return $address;
@@ -225,7 +245,7 @@ class SchoolReportController extends Controller
                 if($relationObjStd == null) {
                     $relationObjStd = new RelationStudentObject($params);
                     if(!$relationObjStd->save()) {
-                        throw new Exception("Error: Can not save object", 1);
+                        throw new Exception("Error save object: ".reset($relationObjStd->getErrors())[0], 1);
                     }
                 }
             }
@@ -242,7 +262,7 @@ class SchoolReportController extends Controller
             \DateTime::createFromFormat('d/m/Y', $post['Student']['birthday'])->format('Y-m-d');
             $newYearEvaluation->date = \DateTime::createFromFormat('d/m/Y', $newYearEvaluation->date)->format('Y-m-d');
             if(!$newYearEvaluation->save()) {
-                throw new Exception("Error: Can not save year evaluation", 1);
+                throw new Exception("Error save yearEvaluation: ".reset($newYearEvaluation->getErrors())[0], 1);
             }
             $this->saveAchievement($index, $newYearEvaluation, $post);
             $this->saveTermEvaluation($index, $newYearEvaluation, $post);
@@ -295,7 +315,7 @@ class SchoolReportController extends Controller
                 $newAchievement = new Achievement($achievement);
                 $newAchievement->yearEvaluationID = $yearEvaluation->id;
                 if(!$newAchievement->save()) {
-                    throw new Exception("Error: Can not save Achievement", 1);
+                    throw new Exception("Error save achievement: ".reset($newAchievement->getErrors())[0], 1);
                 }
             }
         }
@@ -308,7 +328,7 @@ class SchoolReportController extends Controller
             $newTermEvaluation->term = $term;
             $newTermEvaluation->yearEvaluationID = $yearEvaluation->id;
             if(!$newTermEvaluation->save()) {
-                throw new Exception("Error: Can not save term evaluation", 1);
+                throw new Exception("Error save termEvaluation: ".reset($newTermEvaluation->getErrors())[0], 1);
             }
             $this->saveSubjectScore($yearIndex, $term, $newTermEvaluation, $post);
         }
@@ -326,7 +346,7 @@ class SchoolReportController extends Controller
             $newSubjectScore->subjectID = $subject->id;
             $newSubjectScore->teacherName = $post['SubjectScore'][$yearIndex][$subjectName]['teacherName'];
             if(!$newSubjectScore->save()) {
-                throw new Exception("Error: Can not save subject score", 1);
+                throw new Exception("Error save subjectScore: ".reset($newSubjectScore->getErrors())[0], 1);
             }
         }
         return true;

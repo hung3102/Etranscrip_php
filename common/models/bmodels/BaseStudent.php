@@ -9,7 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
- * @property string $imageURL
+ * @property string $image
  * @property integer $gender
  * @property string $birthday
  * @property integer $currentAddressID
@@ -44,7 +44,7 @@ class BaseStudent extends \yii\db\ActiveRecord
             [['gender', 'currentAddressID', 'nativeAddressID', 'ethnicID'], 'integer'],
             [['birthday', 'created_time', 'updated_time'], 'safe'],
             [['name'], 'string', 'max' => 200],
-            [['imageURL'], 'string', 'max' => 255],
+            [['image'], 'string', 'max' => 255],
             [['fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob'], 'string', 'max' => 100],
         ];
     }
@@ -57,7 +57,7 @@ class BaseStudent extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'imageURL' => 'Image Url',
+            'image' => 'Image',
             'gender' => 'Gender',
             'birthday' => 'Birthday',
             'currentAddressID' => 'Current Address ID',

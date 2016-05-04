@@ -102,23 +102,43 @@ class X12Controller extends Controller
         $x12Creator = new X12Creator();
         $data = $x12Creator->create($x12Model->schoolReportNumbers);
         if(isset($post['fileName']) && isset($post['serverUrl'])) {
-            file_put_contents(Yii::$app->basePath.'/x12resource/x12/'.$x12Model->fileName, $data);
-            $x12File = Yii::$app->basePath.'/x12resource/x12/'.$x12Model->fileName;
+            file_put_contents(Yii::$app->params['x12resource'].'/x12/'.$x12Model->fileName, $data);
+            $x12File = Yii::$app->params['x12resource'].'/x12/'.$x12Model->fileName;
             $serverUrl = $x12Model->serverUrl;
-            $fileName = $post['fileName'];
         } else {
-            file_put_contents(Yii::$app->basePath.'/x12resource/x12/data.edi', $data);
-            $x12File = Yii::$app->basePath.'/x12resource/x12/data.edi';
-            $serverUrl = 'http://172.17.0.2/Etranscript/frontend/web/student/receive-file';
-            $fileName = 'data.edi';
+            file_put_contents(Yii::$app->params['x12resource'].'/x12/data.edi', $data);
+            $x12File = Yii::$app->params['x12resource'].'/x12/data.edi';
+            $serverUrl = 'http://172.17.0.2/server/frontend/web/student/receive-file';
         }
-        if($this->sendFile($x12File, $fileName, $serverUrl, $x12Model->encryptType)) {
+        $sendData = $this->createSendData($x12File, $x12Model->encryptType, $x12Model->schoolReportNumbers);
+        if($this->send($sendData, $serverUrl)) {
             Yii::$app->session->setFlash('success', 'Send file successfully.');
             return $this->redirect(['student/index']);
         }
     }
 
-    protected function sendFile($filePath, $encryptedFileName, $serverUrl, $encryptType) {
+    protected function createSendData($filePath, $encryptType, $schoolReportNumbers) {
+        $fileSecure = new FileSecure();
+        $securedData = $fileSecure->createSecuredData($filePath, $encryptType);
+        $fileName = basename($filePath);
+        file_put_contents(Yii::$app->params['x12resource'].'/encryptedX12/'.$fileName, 
+            $securedData);
+        $sendData['sr'] = new \CurlFile(Yii::$app->params['x12resource'].'/encryptedX12/'.$fileName, 'text/edi', $fileName);
+        foreach ($schoolReportNumbers as $schoolReportNumber) {
+            $sr = SchoolReport::findOne(['number' => $schoolReportNumber]);
+            if($sr->student == null) {
+                throw new Exception("Error: Not found student with schoolReport number of ".$schoolReportNumber, 1);
+            }
+            $student = $sr->student;
+            if($student->image != null) {
+                $sendData["images[$student->image]"] = new \CurlFile(Yii::$app->params['imagePath']
+                    .$student->image, 'photo/image', $student->image);
+            }
+        }
+        return $sendData;
+    }
+
+    protected function send($sendData, $serverUrl) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_VERBOSE, 0);
@@ -127,14 +147,9 @@ class X12Controller extends Controller
         curl_setopt($ch, CURLOPT_URL, $serverUrl);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER,['Content-Type: multipart/form-data']);
 
-        $fileSecure = new FileSecure();
-        $securedData = $fileSecure->createSecuredData($filePath, $encryptType);
-        file_put_contents(Yii::$app->basePath.'/x12resource/encryptedX12/'.$encryptedFileName, 
-            $securedData);
-        $sendFile = Yii::$app->basePath.'/x12resource/encryptedX12/'.$encryptedFileName;
-        $post = ["file_box" => $sendFile];
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post); 
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $sendData);
         $response = curl_exec($ch);
         $curl_error = curl_errno($ch);
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
