@@ -226,11 +226,7 @@ class SchoolReportController extends Controller
     }
 
     protected function saveObject($model, $post) {
-        if($model->student->objects != null) {
-            foreach ($model->student->objects as $object) {
-                $model->student->unlink('objects', $object, true);
-            }
-        }
+        $this->delRelatedObject($model->student);
         if($post['Student']['objects'] != null) {
             foreach ($post['Student']['objects'] as $objectID) {
                 $object = Object::findOne($objectID);
@@ -354,9 +350,29 @@ class SchoolReportController extends Controller
     
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $sr = $this->findModel($id);
+        $this->delRelatedStudent($sr);
+        $this->delRelatedYearEvaluation($sr);
+        $sr->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['student/index']);
+    }
+
+    protected function delRelatedStudent($sr) {
+        if($sr->student != null) {
+            $this->delRelatedObject($sr->student);
+            $sr->student->delete();
+        }
+        return true;
+    }
+
+    protected function delRelatedObject($student) {
+        if($student->objects != null) {
+            foreach ($student->objects as $object) {
+                $student->unlink('objects', $object, true);
+            }
+        }
+        return true;
     }
 
     protected function findModel($id)

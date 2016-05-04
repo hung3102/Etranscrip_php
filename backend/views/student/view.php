@@ -31,12 +31,35 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'image',
-            'gender',
-            'birthday',
-            'currentAddressID',
-            'nativeAddressID',
-            'ethnicID',
+            [
+                'label' => 'School Report Number',
+                'value' => $model->schoolReport->number,
+            ],
+            [
+                'attribute' => 'image',
+                'value' => $model->image != null ? Yii::$app->params['imageUrl'].$model->image : null,
+                'format' => ['image', ['width' => '100']],
+            ],
+            [
+                'attribute' => 'gender',
+                'value' => $model->getGenderText(),
+            ],
+            [
+                'attribute' => 'birthday',
+                'value' => date('d/m/Y', strtotime($model->birthday)),
+            ],
+            [
+                'label' => 'Current Address',
+                'value' => $model->currentAddress->getFullAddress(),
+            ],
+            [
+                'label' => 'Native Address',
+                'value' => $model->nativeAddress->getFullAddress(),
+            ],
+            [
+                'label' => 'Ethnic',
+                'value' => $model->ethnic->name,
+            ],
             'fatherName',
             'fatherJob',
             'motherName',
