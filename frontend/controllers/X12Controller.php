@@ -47,7 +47,7 @@ class X12Controller extends Controller
             ->addRule(['fileName'], 'required');
         if($x12Model->load(Yii::$app->request->post())) {
             $fileName = UploadedFile::getInstance($x12Model, 'fileName');
-            $filePath = Yii::$app->basePath.'/x12resource/x12/'.$fileName;
+            $filePath = Yii::$app->params['x12resource'].'/x12/'.$fileName;
             $parser = new X12Parser($this->cf());
             $x12 = $parser->parse($filePath);
             $x12Integration = new X12Integration();
@@ -59,7 +59,7 @@ class X12Controller extends Controller
     }
 
     public function actionAutoSyn() {
-        $filePath = Yii::$app->basePath.'/x12resource/x12/data.edi';
+        $filePath = Yii::$app->params['x12resource'].'/x12/data.edi';
         $parser = new X12Parser($this->cf());
         $x12 = $parser->parse($filePath);
         $x12Integration = new X12Integration();

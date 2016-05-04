@@ -99,12 +99,6 @@ class StudentController extends Controller
         }
     }
 
-    /**
-     * Deletes an existing Student model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -113,19 +107,24 @@ class StudentController extends Controller
     }
 
     public function actionReceiveFile() {
-        $receivedFile = Yii::$app->request->post('file_box');
+        $this->saveImages();
+        $srFile = $_FILES['sr']['tmp_name'];
         $fileSecure = new FileSecure();
-        $decryptData = $fileSecure->decryptSecuredFile($receivedFile);
-        file_put_contents(Yii::$app->basePath.'/x12resource/x12/'.basename($receivedFile), $decryptData);
+        $decryptData = $fileSecure->decryptSecuredFile($srFile);
+        file_put_contents(Yii::$app->params['x12resource'].'/x12/'.$_FILES['sr']['name'], $decryptData);
     }
 
-    /**
-     * Finds the Student model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Student the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+    protected function saveImages() {
+        if($_FILES['images']) {
+            foreach($_FILES['images']['error'] as $key => $error) {
+                if ($error == UPLOAD_ERR_OK) {
+                    move_uploaded_file($_FILES['images']['tmp_name'][$key], Yii::$app->params['imagePath']
+                        .$_FILES["images"]["name"][$key]);
+                }
+            }
+        }
+    }
+
     protected function findModel($id)
     {
         if (($model = Student::findOne($id)) !== null) {

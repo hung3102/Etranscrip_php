@@ -80,7 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     }
                 }
             ],
-            // 'imageURL:url',
+            // 'image',
             [
                 'attribute' => 'gender',
                 'filter' => Student::$gender,

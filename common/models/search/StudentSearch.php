@@ -17,7 +17,7 @@ class StudentSearch extends Student
     {
         return [
             [['id', 'gender', 'currentAddressID', 'nativeAddressID', 'ethnicID'], 'integer'],
-            [['name', 'imageURL', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time', 'schoolReport', 'currentAddress', 'nativeAddress'], 'safe'],
+            [['name', 'image', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time', 'schoolReport', 'currentAddress', 'nativeAddress'], 'safe'],
         ];
     }
 
@@ -74,7 +74,6 @@ class StudentSearch extends Student
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'imageURL', $this->imageURL])
             ->andFilterWhere(['like', 'fatherName', $this->fatherName])
             ->andFilterWhere(['like', 'fatherJob', $this->fatherJob])
             ->andFilterWhere(['like', 'motherName', $this->motherName])

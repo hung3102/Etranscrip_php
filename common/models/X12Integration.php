@@ -75,6 +75,7 @@ class X12Integration {
 			'motherJob' => $stdLoop->getSegment(0)->getElement(8),
 			'tutorName' => $stdLoop->getSegment(0)->getElement(9),
 			'tutorJob' => $stdLoop->getSegment(0)->getElement(10),
+			'image' => $stdLoop->getSegment(0)->getElement(11),
 			'currentAddressID' => $this->createCurrentAddressModel($stdLoop)->id,
 			'nativeAddressID' => $this->createNativeAddressModel($stdLoop)->id,
 			'ethnicID' => $this->getEthnic($stdLoop->getSegment(0)->getElement(4))->id,

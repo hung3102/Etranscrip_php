@@ -1,5 +1,6 @@
 <?php
 use common\models\Subject;
+use yii\helpers\Html;
 ?>
 <div id="SR">
 	<div id="cover">
@@ -19,19 +20,26 @@ use common\models\Subject;
 	</div>
 
 	<div id="page1">
-		<div id="caption">
-			<div class="caption1">
-				<div class="caption1-1">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</div>
-				<div class="caption1-2"> Độc lập - Tự do - Hạnh phúc </div>
-				<div class="star_line">*****</div>
-			</div>
-			<div class="caption2">
-				<div class="caption2-1">HỌC BẠ</div>
-				<div class="caption2-2">TRUNG HỌC PHỔ THÔNG</div>
-			</div>
-		</div>
+		<table id="head">
+			<tr>
+				<td class="image" rowspan="5"><?= Html::img(Yii::$app->request->baseUrl.'/photos/image.jpg', ['class' => 'std_img', 'style' => 'height:150px']) ?>
+				</td>
+				<td class="caption1-1">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</td>
+			</tr>
+			<tr>
+				<td class="caption1-2"> Độc lập - Tự do - Hạnh phúc </td>
+			</tr>
+			<tr>
+				<td class="star_line">*****</td>
+			</tr>
+			<tr>
+				<td class="caption2-1">HỌC BẠ</td>
+			</tr>
+			<tr>
+				<td class="caption2-2">TRUNG HỌC PHỔ THÔNG</td>
+			</tr>
+		</table>
 		<div id="std_info">
-			<div class="image"></div>
 			<table> 
 			<tr>
 				<td class="name"> Họ và tên: <?= '<span class="text-bold">'.$model->student->name.'</span>' ?></td>
