@@ -77,21 +77,26 @@
 	margin-top: 100px;
 }
 
-#SR #page1 #caption .caption1 .caption1-1 {
+#SR #page1 #head .image {
+	width: 180px
+	
+}
+
+#SR #page1 #head .caption1-1 {
 	text-align: center;
 	font-size: 17px;
 }
 
-#SR #page1 #caption .caption1 .caption1-2 {
+#SR #page1 #head .caption1-2 {
 	text-align: center;
 }
 
-#SR #page1 #caption .caption1 .star_line {
+#SR #page1 #head .star_line {
 	text-align: center;
     letter-spacing: 5px;
 }
 
-#SR #page1 #caption .caption2 .caption2-1 {
+#SR #page1 #head .caption2-1 {
 	font-size: 42px;
     text-align: center;
     font-weight: bold;
@@ -100,7 +105,7 @@
     word-spacing: 3px;
 }
 
-#SR #page1 #caption .caption2 .caption2-2 {
+#SR #page1 #head .caption2-2 {
 	text-align: center;
     font-weight: bold;
 }

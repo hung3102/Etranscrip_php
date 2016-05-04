@@ -17,11 +17,13 @@ use kartik\date\DatePicker;
 use yii\helpers\ArrayHelper;
 use kartik\select2\Select2;
 use kartik\form\ActiveForm;
+use kartik\file\FileInput;
 ?>
 
 <div id="SR_form">
     <?php $form = ActiveForm::begin([
         'type' => ActiveForm::TYPE_INLINE,
+        'options'=>['enctype'=>'multipart/form-data'],
         'formConfig' => ['labelSpan' => 1, 'deviceSize' => ActiveForm::SIZE_SMALL, 'showErrors' => true]
     ]); 
     if(!isset($student)) {
@@ -54,6 +56,17 @@ use kartik\form\ActiveForm;
                         ]
                     ])
                  ?>
+            </div>
+            <div class="field image">
+                <span class="fLabel">Ảnh học bạ </span> 
+                <?= $form->field($student, 'imageFile')->widget(FileInput::className(), [
+                    'pluginOptions' => [
+                        'showUpload' => false,
+                        'initialPreview'=>[
+                            $student->image != null ? Html::img(Yii::$app->params['imageUrl'].$student->image, ['class'=>'file-preview-image']) : null,
+                        ],
+                    ]
+                ]); ?>
             </div>
             <div class="field native_address">
                 <span class="fLabel">Nơi sinh: </span>
