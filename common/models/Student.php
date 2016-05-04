@@ -16,6 +16,7 @@ class Student extends BaseStudent
         self::MALE => 'Nam',
         self::FEMALE => 'Nữ',
     ];
+    public $imageFile;
 
     public static function tableName()
     {
@@ -27,6 +28,7 @@ class Student extends BaseStudent
     {
         return [
             [['name', 'gender', 'birthday', 'currentAddressID', 'nativeAddressID', 'ethnicID'], 'required'],
+            ['imageFile', 'file', 'extensions' => 'png, jpg, jpeg'],
             [['gender', 'currentAddressID', 'nativeAddressID', 'ethnicID'], 'integer'],
             [['name', 'gender', 'birthday', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time'], 'safe'],
             [['name'], 'string', 'max' => 200],

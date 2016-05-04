@@ -125,12 +125,14 @@ class X12Controller extends Controller
             $securedData);
         $sendData['sr'] = new \CurlFile(Yii::$app->params['x12resource'].'/encryptedX12/'.$fileName, 'text/edi', $fileName);
         foreach ($schoolReportNumbers as $schoolReportNumber) {
-            $student = Student::findOne($schoolReportNumber);
-            if($student == null) {
+            $sr = SchoolReport::findOne(['number' => $schoolReportNumber]);
+            if($sr->student == null) {
                 throw new Exception("Error: Not found student with schoolReport number of ".$schoolReportNumber, 1);
             }
+            $student = $sr->student;
             if($student->image != null) {
-                $sendData["images[$student->image]"] = new \CurlFile(Yii::$app->params['imagePath'].$student->image, 'photo/image', $student->image)];
+                $sendData["images[$student->image]"] = new \CurlFile(Yii::$app->params['imagePath']
+                    .$student->image, 'photo/image', $student->image);
             }
         }
         return $sendData;
