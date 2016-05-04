@@ -84,7 +84,16 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $data->getGenderText();
                 }
             ],
-            'birthday',
+            [
+                'attribute' => 'birthday',
+                'value' => function($data) {
+                    return date('d/m/Y', strtotime($data->birthday));
+                },
+                'filterInputOptions' => [
+                    'class'       => 'form-control',
+                    'placeholder' => 'd/m/y'
+                 ]
+            ],
             [  
                 'label' => 'Current Address',
                 'value' => function($data) {
