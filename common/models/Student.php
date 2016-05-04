@@ -30,7 +30,7 @@ class Student extends BaseStudent
             [['gender', 'currentAddressID', 'nativeAddressID', 'ethnicID'], 'integer'],
             [['name', 'gender', 'birthday', 'currentAddressID', 'nativeAddressID', 'ethnicID', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time'], 'safe'],
             [['name'], 'string', 'max' => 200],
-            [['imageURL'], 'string', 'max' => 255],
+            [['image'], 'string', 'max' => 255],
             [['fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob'], 'string', 'max' => 100],
         ];
     }
@@ -53,7 +53,7 @@ class Student extends BaseStudent
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'imageURL' => 'Image Url',
+            'image' => 'Image',
             'gender' => 'Gender',
             'birthday' => 'Birthday',
             'currentAddressID' => 'Current Address ID',

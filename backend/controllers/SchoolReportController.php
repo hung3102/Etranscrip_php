@@ -57,6 +57,12 @@ class SchoolReportController extends Controller
         ]);
     }
 
+    public function actionTest($id) {
+        return $this->render('viewPdf', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
     public function actionViewPdf($id)
     {
         $model = $this->findModel($id);

@@ -44,7 +44,7 @@ use kartik\form\ActiveForm;
             </div>
             <div class="field birthday">
                 <span class="title_bold">Ngày sinh:</span> 
-                <?php $student->birthday = date('d/m/Y', strtotime($student->birthday));
+                <?php $student->birthday = $student->birthday != null ? date('d/m/Y', strtotime($student->birthday)) : null;
                     echo $form->field($student, 'birthday')->widget(DatePicker::className(), [
                         'type' => DatePicker::TYPE_COMPONENT_APPEND,
                         'options' => ['placeholder' => 'Enter birthday'],
@@ -209,7 +209,7 @@ use kartik\form\ActiveForm;
         </div>
         <div id="date">
         <?php 
-            $model->date = date('d/m/Y', strtotime($model->date));
+            $model->date = $model->date != null ? date('d/m/Y', strtotime($model->date)) : null;
             echo '<span class="fLabel">Ngày tạo học bạ </span>' . 
                 $form->field($model, 'date')->widget(DatePicker::className(), [
                     'type' => DatePicker::TYPE_COMPONENT_APPEND,

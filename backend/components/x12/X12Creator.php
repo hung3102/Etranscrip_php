@@ -87,8 +87,8 @@ class X12Creator {
 			. $student->birthday . $eSeparator . $student->ethnic->name . $eSeparator 
 			. $student->fatherName . $eSeparator . $student->fatherJob . $eSeparator 
 			. $student->motherName . $eSeparator . $student->motherJob . $eSeparator 
-			. $student->tutorName . $eSeparator . $student->tutorJob . $context->getSegmentSeparator() 
-			. "\n" . $this->createObjects($context, $student)
+			. $student->tutorName . $eSeparator . $student->tutorJob . $eSeparator . $student->image 
+			. $context->getSegmentSeparator() . "\n" . $this->createObjects($context, $student)
 			. $this->createCurrentAddress($context, $student->currentAddressID) . "\n"
 			. $this->createNativeAddress($context, $student->nativeAddressID);
 	}
@@ -132,24 +132,6 @@ class X12Creator {
 			. $eSeparator . $nativeAddress->district->getProvinceName() 
 			. $context->getSegmentSeparator();
 	}
-
-	// private function createStudyProcess($context, $schoolReportID) {
-	// 	$studyProcesses = StudyProcess::findAll(['schoolReportID' => $schoolReportID]);
-	// 	if($studyProcesses == null) {
-	// 		throw new Exception("StudyProcess is not found with schoolReportID ".$schoolReportID, 1);
-	// 	}
-	// 	$eSeparator = $context->getElementSeparator();
-	// 	$return = "";
-	// 	for ($i=0; $i < count($studyProcesses); $i++) {
-	// 		$this->transactionCount++;
-	// 		$return .= "SP" . $eSeparator . ($i+1) . $eSeparator  . $studyProcesses[$i]->fromYear 
-	// 			. $eSeparator . $studyProcesses[$i]->toYear . $eSeparator
-	// 			. $studyProcesses[$i]->class . $eSeparator . $studyProcesses[$i]->principalName 
-	// 			. $context->getSegmentSeparator() . "\n"
-	// 			. $this->createSchool($context, $studyProcesses[$i]->schoolID);
-	// 	}
-	// 	return $return;
-	// }
 
 	private function createYearEvaluation($context, $schoolReportID) {
 		$yearEvaluations = YearEvaluation::findAll(['schoolReportID' => $schoolReportID]);
