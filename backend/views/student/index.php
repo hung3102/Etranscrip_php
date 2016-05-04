@@ -70,7 +70,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     }
                 }
             ],
-            // 'image',
+            [
+                'attribute' => 'image',
+                'format' => 'html',
+                'value' => function($data) {
+                    return $data->image != null ? Html::img(Yii::$app->params['imageUrl'].$data->image, ['width' => '60px']) : null;
+                }
+            ],
             [
                 'attribute' => 'gender',
                 'filter' => Student::$gender,
@@ -79,12 +85,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             'birthday',
-            // [  
-            //     'label' => 'Current Address',
-            //     'value' => function($data) {
-            //         return $data->currentAddress->getFullAddress();
-            //     }
-            // ],
+            [  
+                'label' => 'Current Address',
+                'value' => function($data) {
+                    return $data->currentAddress->getFullAddress();
+                }
+            ],
             [  
                 'label' => 'Native Address',
                 'attribute' => 'nativeAddressID',
@@ -101,21 +107,10 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'tutorJob',
             // 'created_time',
             // 'updated_time',
-
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} {update} {delete}',
                 'buttons' => [
-                    // 'view' => function($url, $model) {
-                    //     return Html::a(
-                    //         '<span class="glyphicon glyphicon-eye-open"></span>',
-                    //         ['school-report/view', 'id' => $model->schoolReport->id],
-                    //         [
-                    //             'title' => 'View School Report',
-                    //             'data-pjax' => '0',
-                    //         ]
-                    //     );
-                    // },
                     'update' => function($url, $model) {
                         return Html::a(
                             '<span class="glyphicon glyphicon-pencil"></span>',
@@ -123,6 +118,17 @@ $this->params['breadcrumbs'][] = $this->title;
                             [
                                 'title' => 'Update School Report',
                                 'data-pjax' => '0',
+                            ]
+                        );
+                    },
+                    'delete' => function($url, $model) {
+                        return Html::a(
+                            '<span class="glyphicon glyphicon-trash"></span>',
+                            ['school-report/delete', 'id' => $model->schoolReport->id],
+                            [
+                                'title' => 'Delete school report of this student',
+                                'data-pjax' => '0',
+                                'data-confirm' => 'Are you sure to delete school report of this student?',
                             ]
                         );
                     }
