@@ -22,7 +22,10 @@ use yii\helpers\Html;
 	<div id="page1">
 		<table id="head">
 			<tr>
-				<td class="image" rowspan="5"><?= Html::img(Yii::$app->request->baseUrl.'/photos/image.jpg', ['class' => 'std_img', 'style' => 'height:150px']) ?>
+				<td class="image" rowspan="5">
+				<?php if($model->student->image != null) {
+					echo Html::img(Yii::$app->params['imageUrl'].$model->student->image, ['class' => 'std_img', 'style' => 'height:150px']);
+				}?>
 				</td>
 				<td class="caption1-1">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</td>
 			</tr>
