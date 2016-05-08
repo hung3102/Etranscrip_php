@@ -9,3 +9,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php
 #RewriteRule ^(.*)$ /index.php/$1 [L] 
 </IfModule>
+
+<IfModule mod_php5.c>
+php_value memory_limit 1024M
+php_value max_execution_time 300
+</IfModule>

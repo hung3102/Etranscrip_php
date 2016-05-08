@@ -1,4 +1,12 @@
 $(function() {
+	$("#checkAll").change(function() {
+		if(this.checked == true) {
+			$('#std_grid :checkbox').prop("checked", true);
+		} else {
+			$('#std_grid :checkbox').removeAttr('checked');
+		}
+	});
+
 	var baseUrl = window.location.origin;
 	$("#modalButton").click(function(e){
 	    e.preventDefault();
@@ -6,7 +14,8 @@ $(function() {
 	        type: "POST",
 	        url: baseUrl + '/Etranscript/backend/web/x12/render-modal',
 	        data: {
-	        	studentIDs : $("#std_grid").yiiGridView("getSelectedRows")
+	        	studentIDs : $("#std_grid").yiiGridView("getSelectedRows"),
+	        	allStd : $('#checkAll').is(':checked') ? true : false
 	        },
 	        success: function(content){
 	            $('#sendModal').find('#modalContent').html(content);
@@ -21,7 +30,8 @@ $(function() {
 	        type: "POST",
 	        url: baseUrl + '/Etranscript/backend/web/x12/render-modal-auto',
 	        data: {
-	        	studentIDs : $("#std_grid").yiiGridView("getSelectedRows")
+	        	studentIDs : $("#std_grid").yiiGridView("getSelectedRows"),
+	        	allStd : $('#checkAll').is(':checked') == true ? true : false
 	        },
 	        success: function(content){
 	            $('#autoSendModal').find('#autoModalContent').html(content);

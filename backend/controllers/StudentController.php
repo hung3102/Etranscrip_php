@@ -8,6 +8,7 @@ use common\models\search\StudentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\components\fakedata\FakeData;
 
 class StudentController extends Controller
 {

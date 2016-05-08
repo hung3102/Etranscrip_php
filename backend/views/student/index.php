@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
     );?>
     <?php 
         Modal::begin([
-            'header' => '<h3>Choose server url and encrypt type to send</h3>',
+            'header' => '<h3>Choose encrypt type to send</h3>',
             'id' => 'autoSendModal',
         ]);
         echo '<div id="autoModalContent"></div>';
@@ -48,6 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
         echo '<div id="modalContent"></div>';
         Modal::end();
     ?>
+    <?= '<div>'.Html::checkbox('all_std', false, ['label' => "Select all $dataProvider->totalCount student", 'id' => 'checkAll']).'</div>' ?>
 
     <?php Pjax::begin(); ?>
     <?= GridView::widget([

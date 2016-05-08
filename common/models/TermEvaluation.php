@@ -96,7 +96,7 @@ class TermEvaluation extends BaseTermEvaluation
             throw new Exception("Error: Unknow subject ".$subjectName, 1);
         }
         if($this->subjectScores == null) {
-            throw new Exception("Has not any subject score of this term evaluation", 1);
+            return null;
         }
         foreach ($this->subjectScores as $subjectScore) {
             if($subjectScore->subject->name == $subjectName) {
@@ -117,13 +117,21 @@ class TermEvaluation extends BaseTermEvaluation
         $count = 0;
         foreach ($this->subjectScores as $subjectScore) {
             if(in_array($subjectScore->subject->name, $advantageSubjects)) {
-                $total += ($subjectScore->score * 2);
-                $count += 2;
+                if($subjectScore->score != null) {
+                    $total += ($subjectScore->score * 2);
+                    $count += 2;
+                }
             } else {
-                $total += $subjectScore->score;
-                $count += 1;
+                if($subjectScore->score != null) {
+                    $total += $subjectScore->score;
+                    $count += 1;
+                }
             }
         }
-        return round($total/$count, 1);
+        if($count != 0) {
+            return round($total/$count, 1);
+        } else {
+            return null;
+        }
     }
 }

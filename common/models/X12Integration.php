@@ -340,23 +340,22 @@ class X12Integration {
 
 	private function createSubjectScoreModel($teLoop, $termEvaluation) {
 		$ssLoops = $teLoop->findLoop("SS");
-		if($ssLoops == null) {
-			throw new Exception("Error : Subject Score must be exist in Term Evaluation", 1);
-		}
-		foreach ($ssLoops as $ssLoop) {
-			$attributes = [
-				'termEvaluationID' => $termEvaluation->id,
-				'subjectID' => $this->getSubject($ssLoop)->id,
-				'score' => $ssLoop->getSegment(0)->getElement(3),
-				'teacherName' => $ssLoop->getSegment(0)->getElement(4),
-			];
-			$subjectScore = SubjectScore::findOne($attributes);
-			if($subjectScore == null) {
-				$subjectScore = new SubjectScore($attributes);
-				$subjectScore->save();
-			} else {
-				throw new Exception("Error : Detect Subject Score duplicated in DB!", 1);
-			}
+		if($ssLoops != null) {
+			foreach ($ssLoops as $ssLoop) {
+				$attributes = [
+					'termEvaluationID' => $termEvaluation->id,
+					'subjectID' => $this->getSubject($ssLoop)->id,
+					'score' => $ssLoop->getSegment(0)->getElement(3),
+					'teacherName' => $ssLoop->getSegment(0)->getElement(4),
+				];
+				$subjectScore = SubjectScore::findOne($attributes);
+				if($subjectScore == null) {
+					$subjectScore = new SubjectScore($attributes);
+					$subjectScore->save();
+				} else {
+					throw new Exception("Error : Detect Subject Score duplicated in DB!", 1);
+				}
+			}	
 		}
 		return true;
 	}

@@ -14,6 +14,7 @@ use common\models\SubjectScore;
 use common\models\School;
 use common\models\Achievement;
 use common\models\RelationStudentObject;
+use yii\base\Exception;
 
 class X12Creator {
 
@@ -209,17 +210,16 @@ class X12Creator {
 
 	private function createSubjectScore($context, $termEvaluationID) {
 		$subjectScores = SubjectScore::findAll(['termEvaluationID' => $termEvaluationID]);
-		if($subjectScores == null) {
-			throw new Exception("SubjectScore is not found with termEvaluationID ". $termEvaluationID, 1);
-		}
-		$eSeparator = $context->getElementSeparator();
 		$return = "";
-		$i = 1;
-		foreach ($subjectScores as $subjectScore) {
-			$this->transactionCount++;
-			$return .= "SS" . $eSeparator . $i++ . $eSeparator . $subjectScore->subject->name 
-				. $eSeparator . $subjectScore->score . $eSeparator 
-				. $subjectScore->teacherName . $context->getSegmentSeparator() . "\n";
+		if($subjectScores != null) {
+			$eSeparator = $context->getElementSeparator();
+			$i = 1;
+			foreach ($subjectScores as $subjectScore) {
+				$this->transactionCount++;
+				$return .= "SS" . $eSeparator . $i++ . $eSeparator . $subjectScore->subject->name 
+					. $eSeparator . $subjectScore->score . $eSeparator 
+					. $subjectScore->teacherName . $context->getSegmentSeparator() . "\n";
+			}	
 		}
 		return $return;
 	}
