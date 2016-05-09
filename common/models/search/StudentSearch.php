@@ -6,58 +6,64 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\Student;
+use common\models\SchoolReport;
+use common\models\Address;
+use yii\db\Query;
 
 class StudentSearch extends Student
 {
-    public $schoolReport;
+    public $schoolReportNumber;
     public $currentAddress;
-    public $nativeAddress;
 
     public function rules()
     {
         return [
-            [['id', 'gender', 'currentAddressID', 'nativeAddressID', 'ethnicID'], 'integer'],
-            [['name', 'image', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time', 'schoolReport', 'currentAddress', 'nativeAddress'], 'safe'],
+            [['id', 'gender', 'ethnicID'], 'integer'],
+            [['name', 'image', 'birthday', 'fatherName', 'fatherJob', 'motherName', 'motherJob', 'tutorName', 'tutorJob', 'created_time', 'updated_time', 'schoolReportNumber', 'currentAddress'], 'safe'],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function scenarios()
     {
-        // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
-     */
     public function search($params)
     {   
         $query = Student::find();
-
-        // add conditions that should always apply here
-        $query->joinWith(['schoolReport']);
+        $subQuery1 = SchoolReport::find()->select('studentID, number')->groupBy('studentID');
+        $q = new Query;
+        $subQuery2 = $q->select(['tbl_student.id as studentID', 'detailAddress', 'tbl_commune.name as communeName', 'tbl_district.name as districtName', 'tbl_province.name as provinceName'])
+            ->from(['tbl_address'])
+            ->leftJoin('tbl_student', 'tbl_student.currentAddressID = tbl_address.id')
+            ->leftJoin('tbl_commune', 'tbl_address.communeID = tbl_commune.id')
+            ->leftJoin('tbl_district', 'tbl_address.districtID = tbl_district.id')
+            ->leftJoin('tbl_province', 'tbl_district.provinceID = tbl_province.id')
+            ->groupBy('studentID');
+        $query->leftJoin(['srNumber' => $subQuery1], 'srNumber.studentID = id');
+        $query->leftJoin(['address' => $subQuery2], 'address.studentID = id');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
-        $dataProvider->sort->attributes['schoolReport'] = [
-            'asc' => ['tbl_school_report.number' => SORT_ASC],
-            'desc' => ['tbl_school_report.number' => SORT_DESC],
-        ];
+        $dataProvider->setSort([
+            'attributes' => [
+                'id', 'name', 'birthday',
+                'schoolReportNumber' => [
+                    'asc' => ['srNumber.number' => SORT_ASC],
+                    'desc' => ['srNumber.number' => SORT_DESC],
+                    'label' => 'School Report Number',
+                ],
+                'currentAddress'=>[
+                    'asc'=>['address.provinceName'=>SORT_ASC, 'address.districtName'=>SORT_ASC, 'address.communeName'=>SORT_ASC, 'address.detailAddress'=>SORT_ASC],
+                    'desc'=>['address.provinceName'=>SORT_DESC, 'address.districtName'=>SORT_DESC, 'address.communeName'=>SORT_DESC, 'address.detailAddress'=>SORT_DESC],
+                    'label'=>'Current Address',
+                ],
+            ]
+        ]);
 
-        $this->load($params);
-
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+        if(!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
 
@@ -65,12 +71,7 @@ class StudentSearch extends Student
         $query->andFilterWhere([
             'id' => $this->id,
             'gender' => $this->gender,
-            // 'birthday' => $this->birthday,
-            'currentAddressID' => $this->currentAddressID,
-            'nativeAddressID' => $this->nativeAddressID,
             'ethnicID' => $this->ethnicID,
-            'created_time' => $this->created_time,
-            'updated_time' => $this->updated_time,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
@@ -80,10 +81,13 @@ class StudentSearch extends Student
             ->andFilterWhere(['like', 'motherJob', $this->motherJob])
             ->andFilterWhere(['like', 'tutorName', $this->tutorName])
             ->andFilterWhere(['like', 'tutorJob', $this->tutorJob])
-            ->andFilterWhere(['like', 'birthday', $this->birthday])
-            ->andFilterWhere(['like', 'tbl_school_report.number', $this->schoolReport]);
+            ->andFilterWhere(['like', 'DATE_FORMAT(birthday, "%d/%m/%Y")', $this->birthday])
+            ->andFilterWhere(['like', 'srNumber.number', $this->schoolReportNumber]);
 
-        // $query->andFilterWhere(['like', 'currentAddressID', $this->currentAddress->getFullAddress()]);
+        $query->andWhere('address.detailAddress LIKE "%' . $this->currentAddress . '%" ' . 
+                'OR address.communeName LIKE "%' . $this->currentAddress . '%" ' . 
+                'OR address.districtName LIKE "%' . $this->currentAddress . '%" ' .
+                'OR address.provinceName LIKE "%' . $this->currentAddress . '%"');
 
         return $dataProvider;
     }

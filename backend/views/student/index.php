@@ -7,7 +7,6 @@ use yii\bootstrap\Modal;
 use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
 
-
 $this->title = 'Students';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -62,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             [
-                'attribute' => 'schoolReport',
+                'attribute' => 'schoolReportNumber',
                 'value' => function($data) {
                     if($data->schoolReport != null) {
                         return $data->schoolReport->number;
@@ -93,20 +92,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterInputOptions' => [
                     'class'       => 'form-control',
                     'placeholder' => 'd/m/y'
-                 ]
+                ]
             ],
             [  
-                'label' => 'Current Address',
+                'attribute' => 'currentAddress',
                 'value' => function($data) {
-                    return $data->currentAddress->getFullAddress();
+                    return $data->currentAddress->getFullReverseAddress();
                 }
-            ],
-            [  
-                'label' => 'Native Address',
-                'attribute' => 'nativeAddressID',
-                'value' => function($data) {
-                    return $data->nativeAddress->getFullAddress();
-                },
             ],
             // 'ethnicID',
             // 'fatherName',
