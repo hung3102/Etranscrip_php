@@ -786,7 +786,7 @@ class FakeData {
 			},
 			'created_time' => date('Y-m-d H:i:s'),
 		    'updated_time' => date('Y-m-d H:i:s'),
-		])->rowQuantity(count(TermEvaluation::find('')->all()));
+		])->rowQuantity(count(Subject::find('')->all()) * count(TermEvaluation::find('')->all()));
 
 		if($seeder->refill())
 			return true;

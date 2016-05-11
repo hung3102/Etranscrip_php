@@ -61,6 +61,10 @@ class X12Controller extends Controller
 
     private function checkSr() {
         $data = Yii::$app->request->post();
+        if($data['allStd'] == 'true') {
+            $schoolReportNumbers = ArrayHelper::getColumn(SchoolReport::find('')->all(), 'number');
+            return $schoolReportNumbers;
+        }
         if(!isset($data['studentIDs'])) {
             Yii::$app->session->setFlash('error', 'Error: Choose at least one student!');
             return $this->redirect(['student/index']);
@@ -120,7 +124,7 @@ class X12Controller extends Controller
     protected function createSendData($filePath, $encryptType, $schoolReportNumbers) {
         $fileSecure = new FileSecure();
         $securedData = $fileSecure->createSecuredData($filePath, $encryptType);
-        $fileName = basename($filePath);
+        $fileName = substr($filePath,strrpos($filePath,'/')+1);
         file_put_contents(Yii::$app->params['x12resource'].'/encryptedX12/'.$fileName, 
             $securedData);
         $sendData['sr'] = new \CurlFile(Yii::$app->params['x12resource'].'/encryptedX12/'.$fileName, 'text/edi', $fileName);
@@ -152,16 +156,17 @@ class X12Controller extends Controller
         curl_setopt($ch, CURLOPT_POSTFIELDS, $sendData);
         $response = curl_exec($ch);
         $curl_error = curl_errno($ch);
+        $error_text = curl_error($ch);
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         if(!$curl_error) {
             if($status_code == 200) {
                 return true;
             } else {
-                print_r($response);
+                print_r($error_text);
             }
         } else {
-            throw new Exception("Error: Can not send file", 1);
+            throw new Exception("Can not send file: ".$error_text, 1);
         }
         return false;
     }

@@ -94,4 +94,16 @@ class Address extends BaseAddress
         }
     }
 
+    public function getFullReverseAddress() {
+        $return = "";
+        $return .= $this->district->province->name . ", ". $this->district->name;
+        if($this->commune != null) {
+            $return .= ", " . $this->commune->name;
+        }
+        if($this->detailAddress != null) {
+            $return .= ", " . $this->detailAddress;
+        }
+        return $return;
+    }
+
 }

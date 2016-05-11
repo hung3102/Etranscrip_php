@@ -7,7 +7,6 @@ use yii\bootstrap\Modal;
 use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
 
-
 $this->title = 'Students';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -18,6 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Student', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     
+    <?= $this->render('_advanced_search_form') ?>
     <?= 'With selected:'?>
     <?=Html::button('Auto send x12 file to server', 
         [
@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
     );?>
     <?php 
         Modal::begin([
-            'header' => '<h3>Choose server url and encrypt type to send</h3>',
+            'header' => '<h3>Choose encrypt type to send</h3>',
             'id' => 'autoSendModal',
         ]);
         echo '<div id="autoModalContent"></div>';
@@ -48,6 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
         echo '<div id="modalContent"></div>';
         Modal::end();
     ?>
+    <?= '<div>'.Html::checkbox('all_std', false, ['label' => "Select all $dataProvider->totalCount student", 'id' => 'checkAll']).'</div>' ?>
 
     <?php Pjax::begin(); ?>
     <?= GridView::widget([
@@ -61,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             [
-                'attribute' => 'schoolReport',
+                'attribute' => 'schoolReportNumber',
                 'value' => function($data) {
                     if($data->schoolReport != null) {
                         return $data->schoolReport->number;
@@ -92,20 +93,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterInputOptions' => [
                     'class'       => 'form-control',
                     'placeholder' => 'd/m/y'
-                 ]
+                ]
             ],
             [  
-                'label' => 'Current Address',
+                'attribute' => 'currentAddress',
                 'value' => function($data) {
-                    return $data->currentAddress->getFullAddress();
+                    return $data->currentAddress->getFullReverseAddress();
                 }
-            ],
-            [  
-                'label' => 'Native Address',
-                'attribute' => 'nativeAddressID',
-                'value' => function($data) {
-                    return $data->nativeAddress->getFullAddress();
-                },
             ],
             // 'ethnicID',
             // 'fatherName',
