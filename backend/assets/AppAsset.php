@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
         'css/site.css',
         'css/school-report.css',
         'css/srForm.css',
+        'css/student.css',
     ];
     public $js = [
         'js/student.js',

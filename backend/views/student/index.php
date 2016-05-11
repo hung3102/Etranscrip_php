@@ -17,6 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Student', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     
+    <?= $this->render('_advanced_search_form') ?>
     <?= 'With selected:'?>
     <?=Html::button('Auto send x12 file to server', 
         [
