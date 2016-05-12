@@ -30,8 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'detailAddress',
-            'communeID',
-            'districtID',
+            [
+                'label' => 'Commune',
+                'value' => $model->commune->name,
+            ],
+            [
+                'label' => 'District',
+                'value' => $model->district->name,
+            ],
+            [
+                'label' => 'Province',
+                'value' => $model->district->province->name,
+            ],
             'created_time',
             'updated_time',
         ],
