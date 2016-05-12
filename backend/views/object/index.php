@@ -3,10 +3,6 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $searchModel common\models\search\ObjectSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
 $this->title = 'Objects';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -22,7 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'content:ntext',
