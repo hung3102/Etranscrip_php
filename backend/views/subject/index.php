@@ -3,15 +3,20 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-$this->title = 'Provinces';
+/* @var $this yii\web\View */
+/* @var $searchModel common\models\search\SubjectSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Subjects';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="province-index">
+<div class="subject-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Province', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Subject', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

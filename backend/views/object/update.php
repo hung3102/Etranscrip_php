@@ -3,21 +3,19 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\SchoolReport */
+/* @var $model common\models\Object */
 
-$this->title = 'Update School Report: ' . $model->student->name;
-$this->params['breadcrumbs'][] = ['label' => 'School Reports', 'url' => ['index']];
+$this->title = 'Update Object: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Objects', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="school-report-update">
+<div class="object-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,
-        'addresses' => $addresses,
-        'yearEvaluation' => $yearEvaluation,							
     ]) ?>
 
 </div>

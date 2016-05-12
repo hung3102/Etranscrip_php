@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 
 ?>
 
-<div class="province-form">
+<div class="ethnic-form">
 
     <?php $form = ActiveForm::begin(); ?>
 

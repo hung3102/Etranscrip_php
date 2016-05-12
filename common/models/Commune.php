@@ -57,4 +57,8 @@ class Commune extends BaseCommune
             'updated_time' => 'Updated Time',
         ];
     }
+
+    public function getDistrict() {
+        return $this->hasOne(District::className(), ['id' => 'districtID']);
+    }
 }

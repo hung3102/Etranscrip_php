@@ -1,11 +1,13 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
+use common\models\Province;
 
-/* @var $this yii\web\View */
-/* @var $model common\models\District */
-/* @var $form yii\widgets\ActiveForm */
+?>
+<?php 
+	$provinces = ArrayHelper::map(Province::find('')->orderBy('name')->all(), 'id', 'name');
 ?>
 
 <div class="district-form">
@@ -14,11 +16,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'provinceID')->textInput() ?>
-
-    <?= $form->field($model, 'created_time')->textInput() ?>
-
-    <?= $form->field($model, 'updated_time')->textInput() ?>
+    <?= $form->field($model, 'provinceID')->dropDownList($provinces, 
+    		[
+    			'prompt'=>'Select province',
+                'id' => 'province',
+                'options' => [
+                    $model->province != null ? $model->provinceID : null => ['Selected' => true],
+                ]
+            ])
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

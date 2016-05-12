@@ -28,14 +28,42 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'Etranscript',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Home', 'url' => ['/student/index']],
+        [
+            'label' => 'Address',
+            'items' => [
+                    ['label' => 'Province', 'url' => ['province/index']]    ,
+                    '<li class="divider"></li>',
+                    ['label' => 'District', 'url' => ['district/index']],
+                    '<li class="divider"></li>',
+                    ['label' => 'Commune', 'url' => ['commune/index']],
+                    '<li class="divider"></li>',
+                    ['label' => 'Address', 'url' => ['address/index']],
+            ],
+        ],
+        [
+            'label' => 'School',
+            'url' => ['school/index']
+        ],
+        [
+            'label' => 'Subject',
+            'url' => ['subject/index']
+        ],
+        [
+            'label' => 'Object',
+            'url' => ['object/index']
+        ],
+        [
+            'label' => 'Ethnic',
+            'url' => ['ethnic/index']
+        ],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -52,6 +80,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
+        // 'options' => ['class' =>'navbar-nav'],
     ]);
     NavBar::end();
     ?>
