@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\School;
 use common\models\search\SchoolSearch;
+use common\models\Address;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -46,8 +47,14 @@ class SchoolController extends Controller
     {
         $model = new School();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $post = Yii::$app->request->post();
+        if ($model->load($post)) {
+            $address_params = ['districtID' => $post['Address']['districtID']];
+            $address = Address::findOne($address_params);
+            $model->addressID = $address->id;
+            if($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -59,8 +66,14 @@ class SchoolController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $post = Yii::$app->request->post();
+        if ($model->load($post)) {
+            $address_params = ['districtID' => $post['Address']['districtID']];
+            $address = Address::findOne($address_params);
+            $model->addressID = $address->id;
+            if($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,

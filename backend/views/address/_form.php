@@ -37,7 +37,7 @@ use common\models\Commune;
                     { provinceID: $(this).val() } )
                     .done(function( data ) {
                         var data = JSON.parse(data);
-                        $( "select#cdistrict" ).html( data );
+                        $( "select#district" ).html( data );
                     });
                 }'
             ]);
