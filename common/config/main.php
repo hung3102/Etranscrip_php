@@ -11,5 +11,6 @@ return [
         'log',
         'common\components\Bootstrap',
     ],
+
     'homeUrl'=>array('student/index'),
 ];
