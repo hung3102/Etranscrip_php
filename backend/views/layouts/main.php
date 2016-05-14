@@ -64,6 +64,10 @@ AppAsset::register($this);
             'label' => 'Ethnic',
             'url' => ['ethnic/index']
         ],
+        [
+            'label' => 'User',
+            'url' => ['user/index']
+        ],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -80,7 +84,6 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
-        // 'options' => ['class' =>'navbar-nav'],
     ]);
     NavBar::end();
     ?>
@@ -96,7 +99,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Đào Văn Hùng - ĐHBK Hà nội <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

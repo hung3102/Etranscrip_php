@@ -37,6 +37,16 @@ class SchoolReportController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'only' => ['index', 'view', 'create', 'update', 'delete', 'view-pdf'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ], 
+            ],
         ];
     }
 
@@ -54,12 +64,6 @@ class SchoolReportController extends Controller
     public function actionView($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    public function actionTest($id) {
-        return $this->render('viewPdf', [
             'model' => $this->findModel($id),
         ]);
     }
