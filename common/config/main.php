@@ -13,4 +13,5 @@ return [
     ],
 
     'homeUrl'=>array('student/index'),
+    'defaultRoute' => 'student/index'
 ];

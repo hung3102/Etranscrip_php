@@ -9,6 +9,7 @@ use common\models\search\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use common\components\AccessRule;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -26,6 +27,19 @@ class UserController extends Controller
                 'actions' => [
                     'delete' => ['POST'],
                 ],
+            ],
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'ruleConfig' => [
+                    'class' => AccessRule::className(),
+                ],
+                'only' => ['index', 'view', 'create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['daovanhung'],
+                    ],
+                ], 
             ],
         ];
     }
@@ -70,11 +84,10 @@ class UserController extends Controller
             if($user = $model->signup()) {
                 return $this->redirect(['view', 'id' => $user->id]);
             }
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
         }
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -85,9 +98,7 @@ class UserController extends Controller
      */
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
-        $model->status = User::STATUS_DELETED;
-        $model->save();
+        $model = $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }

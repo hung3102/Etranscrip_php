@@ -64,6 +64,10 @@ AppAsset::register($this);
             'label' => 'Ethnic',
             'url' => ['ethnic/index']
         ],
+        [
+            'label' => 'User',
+            'url' => ['user/index']
+        ],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
