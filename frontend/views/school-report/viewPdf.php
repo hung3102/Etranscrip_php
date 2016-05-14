@@ -180,7 +180,7 @@ use yii\helpers\Html;
 							if($model->yearEvaluations[$i]->checkTermExist(1)){
 								$termEvaluation = $model->yearEvaluations[$i]->getTerm(1);
 								$subjectScore = $termEvaluation->getSubjectScore($subject->name);
-								$teacherName = $subjectScore->teacherName;
+								$teacherName = $subjectScore != null ? $subjectScore->teacherName : null;
 							} else {
 								$subjectScore = null;
 							}
@@ -192,7 +192,7 @@ use yii\helpers\Html;
 							if($model->yearEvaluations[$i]->checkTermExist(2)){
 								$termEvaluation = $model->yearEvaluations[$i]->getTerm(2);
 								$subjectScore = $termEvaluation->getSubjectScore($subject->name);
-								$teacherName = $subjectScore->teacherName;
+								$teacherName = $subjectScore != null ? $subjectScore->teacherName : null;
 							} else {
 								$subjectScore = null;
 							}
@@ -204,7 +204,7 @@ use yii\helpers\Html;
 							if($model->yearEvaluations[$i]->checkTermExist(0)){
 								$termEvaluation = $model->yearEvaluations[$i]->getTerm(0);
 								$subjectScore = $termEvaluation->getSubjectScore($subject->name);
-								$teacherName = $subjectScore->teacherName;
+								$teacherName = $subjectScore != null ? $subjectScore->teacherName : null;
 							} else {
 								$subjectScore = null;
 							}

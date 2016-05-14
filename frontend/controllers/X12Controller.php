@@ -20,14 +20,14 @@ class X12Controller extends Controller
     {
         return [
             'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['create'],
+                'class' => \yii\filters\AccessControl::className(),
+                'only' => ['parse', 'autoSyn'],
                 'rules' => [
                     [
-                        'actions' => ['create', 'error'],
                         'allow' => true,
+                        'roles' => ['@'],
                     ],
-                ],
+                ], 
             ],
         ];
     }

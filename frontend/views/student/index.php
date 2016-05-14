@@ -23,17 +23,16 @@ $this->params['breadcrumbs'][] = $this->title;
         echo Alert::widget();
     } ?>
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?= $this->render('_advanced_search_form') ?>
 
     <p>
-        <?= Html::a('Create Student', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Auto Synchronise', ['x12/auto-syn'], ['class' => 'btn btn-info']) ?>
+        <?= Html::a('Auto Synchronise', ['x12/auto-syn'], ['class' => 'btn btn-success']) ?>
         <!-- <?= Html::beginForm(['x12/parse'],'get');?> -->
         <?php Modal::begin([
             'header'=>'<h3>Choose x12 file to synchronise data</h3>',
             'toggleButton' => [
                 'label'=>'Synchronise data', 
-                'class'=>'btn btn-info'
+                'class'=>'btn btn-success'
             ],
         ]);
         $form1 = ActiveForm::begin([
@@ -49,19 +48,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ActiveForm::end();
         Modal::end(); ?>
     </p>
-    <?php
-    // echo FileInput::widget([
-    //     'name' => 'attachment_30',
-    //     'pluginOptions' => [
-    //         'showPreview' => false,
-    //         'showCaption' => false,
-    //         // 'elCaptionText' => '#customCaption',
-    //         'showUpload' => false,
-    //         'browseLabel' => 'Synchronise data',
-    //         'removeLabel' => '',
-    //     ]
-    // ]);
-    ?>
     
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -71,16 +57,22 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             [
-                'attribute' => 'schoolReport',
+                'attribute' => 'schoolReportNumber',
                 'value' => function($data) {
                     if($data->schoolReport != null) {
                         return $data->schoolReport->number;
                     } else {
-                        return 'No school report';
+                        return 'Not set';
                     }
                 }
             ],
-            // 'image',
+            [
+                'attribute' => 'image',
+                'format' => 'html',
+                'value' => function($data) {
+                    return $data->image != null ? Html::img(Yii::$app->params['imageUrl'].$data->image, ['width' => '60px']) : null;
+                }
+            ],
             [
                 'attribute' => 'gender',
                 'filter' => Student::$gender,
@@ -88,17 +80,20 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $data->getGenderText();
                 }
             ],
-            'birthday',
-            // [  
-            //     'label' => 'Current Address',
-            //     'value' => function($data) {
-            //         return $data->currentAddress->getFullAddress();
-            //     }
-            // ],
-            [  
-                'label' => 'Native Address',
+            [
+                'attribute' => 'birthday',
                 'value' => function($data) {
-                    return $data->nativeAddress->getFullAddress();
+                    return date('d/m/Y', strtotime($data->birthday));
+                },
+                'filterInputOptions' => [
+                    'class'       => 'form-control',
+                    'placeholder' => 'd/m/y'
+                ]
+            ],
+            [  
+                'attribute' => 'currentAddress',
+                'value' => function($data) {
+                    return $data->currentAddress->getFullReverseAddress();
                 }
             ],
             // 'ethnicID',
@@ -110,8 +105,10 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'tutorJob',
             // 'created_time',
             // 'updated_time',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view}',
+            ],
         ],
     ]); ?>
 
