@@ -28,19 +28,48 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'Etranscript Server',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Home', 'url' => ['/student/index']],
+        [
+            'label' => 'Address',
+            'items' => [
+                    ['label' => 'Province', 'url' => ['province/index']]    ,
+                    '<li class="divider"></li>',
+                    ['label' => 'District', 'url' => ['district/index']],
+                    '<li class="divider"></li>',
+                    ['label' => 'Commune', 'url' => ['commune/index']],
+                    '<li class="divider"></li>',
+                    ['label' => 'Address', 'url' => ['address/index']],
+            ],
+        ],
+        [
+            'label' => 'School',
+            'url' => ['school/index']
+        ],
+        [
+            'label' => 'Subject',
+            'url' => ['subject/index']
+        ],
+        [
+            'label' => 'Object',
+            'url' => ['object/index']
+        ],
+        [
+            'label' => 'Ethnic',
+            'url' => ['ethnic/index']
+        ],
+        [
+            'label' => 'User',
+            'url' => ['user/index']
+        ],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'

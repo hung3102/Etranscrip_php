@@ -1,0 +1,31 @@
+#std_advanced_search {
+    margin-top: 50px;
+}
+
+#std_advanced_search .submit_button {
+	margin-bottom: 30px;	
+}
+
+#std_advanced_search .title {
+	font-weight: bold;
+}
+
+#std_advanced_search #school_search {
+	margin-bottom: 10px;
+}
+
+#std_advanced_search #name_search {
+	margin-bottom: 10px;
+}
+
+#std_advanced_search #birthday_search {
+	margin-bottom: 10px;
+}
+
+#std_advanced_search #address_search {
+	margin-bottom: 10px;
+}
+
+#std_advanced_search #close_button, #open_button {
+	cursor: pointer;
+}

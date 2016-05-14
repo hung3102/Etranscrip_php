@@ -3,17 +3,20 @@
 namespace frontend\controllers;
 
 use Yii;
-use common\models\Student;
-use common\models\search\StudentSearch;
+use common\models\Ethnic;
+use common\models\search\EthnicSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\base\DynamicModel;
-use backend\components\FileSecure;
 
-class StudentController extends Controller
+/**
+ * EthnicController implements the CRUD actions for Ethnic model.
+ */
+class EthnicController extends Controller
 {
-    
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
@@ -36,36 +39,23 @@ class StudentController extends Controller
         ];
     }
 
-    public function beforeAction($action)
-    {            
-        if ($action->id == 'receive-file') {
-            $this->enableCsrfValidation = false;
-        }
-
-        return parent::beforeAction($action);
-    }
-
+    /**
+     * Lists all Ethnic models.
+     * @return mixed
+     */
     public function actionIndex()
     {
-        $searchModel = new StudentSearch();
-        if(Yii::$app->request->post('StudentSearch') != null) {
-            $dataProvider = $searchModel->search(Yii::$app->request->post());
-        } else {
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        }
-        $x12Model = new DynamicModel(['fileName']);
-        $x12Model->addRule(['fileName'], 'file')
-            ->addRule(['fileName'], 'required');
+        $searchModel = new EthnicSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'x12Model' => $x12Model,
         ]);
     }
 
     /**
-     * Displays a single Student model.
+     * Displays a single Ethnic model.
      * @param integer $id
      * @return mixed
      */
@@ -77,14 +67,14 @@ class StudentController extends Controller
     }
 
     /**
-     * Creates a new Student model.
+     * Creates a new Ethnic model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Student();
-        
+        $model = new Ethnic();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -95,7 +85,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Updates an existing Student model.
+     * Updates an existing Ethnic model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -113,6 +103,12 @@ class StudentController extends Controller
         }
     }
 
+    /**
+     * Deletes an existing Ethnic model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -120,28 +116,16 @@ class StudentController extends Controller
         return $this->redirect(['index']);
     }
 
-    public function actionReceiveFile() {
-        $this->saveImages();
-        $srFile = $_FILES['sr']['tmp_name'];
-        $fileSecure = new FileSecure();
-        $decryptData = $fileSecure->decryptSecuredFile($srFile);
-        file_put_contents(Yii::$app->params['x12resource'].'/x12/'.$_FILES['sr']['name'], $decryptData);
-    }
-
-    protected function saveImages() {
-        if($_FILES['images']) {
-            foreach($_FILES['images']['error'] as $key => $error) {
-                if ($error == UPLOAD_ERR_OK) {
-                    move_uploaded_file($_FILES['images']['tmp_name'][$key], Yii::$app->params['imagePath']
-                        .$_FILES["images"]["name"][$key]);
-                }
-            }
-        }
-    }
-
+    /**
+     * Finds the Ethnic model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Ethnic the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
     protected function findModel($id)
     {
-        if (($model = Student::findOne($id)) !== null) {
+        if (($model = Ethnic::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
