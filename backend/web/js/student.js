@@ -28,7 +28,7 @@ $(function() {
 	    e.preventDefault();
 	    $.ajax({
 	        type: "POST",
-	        url: baseUrl + '/Etranscript/backend/web/x12/render-modal-auto',
+	        url: autoUrl,
 	        data: {
 	        	studentIDs : $("#std_grid").yiiGridView("getSelectedRows"),
 	        	allStd : $('#checkAll').is(':checked') == true ? true : false

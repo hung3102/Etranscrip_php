@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 use common\models\Student;
 use yii\bootstrap\Modal;
@@ -9,10 +10,12 @@ use yii\widgets\Pjax;
 
 $this->title = 'Students';
 $this->params['breadcrumbs'][] = $this->title;
+$this->registerJs('var autoUrl = "'.Url::toRoute(['x12/render-modal-auto']).'";', \yii\web\View::POS_HEAD);
+$this->registerJs('var sendUrl = "'.Url::toRoute(['x12/render-modal']).'";', \yii\web\View::POS_HEAD);
 ?>
 <div class="student-index">
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    
     <p>
         <?= Html::a('Create new School Report', ['school-report/create'], ['class' => 'btn btn-success']) ?>
     </p>
