@@ -8,6 +8,7 @@ use backend\components\FileSecure;
 $form = ActiveForm::begin([
 	'method' => 'post',
 	'action' => ['x12/send-data'],
+	'id' => 'modal_form',
 ]);
 if($x12Model->scenario !== 'autoSyn') {
 	echo $form->field($x12Model, 'fileName')->textInput(['maxlength' => true]);
