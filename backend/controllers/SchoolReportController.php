@@ -156,10 +156,14 @@ class SchoolReportController extends Controller
                 $model->student->nativeAddressID = $this->getNativeAddress($post)->id;
                 $this->saveObject($model, $post);
                 $this->saveYearEvaluation($model, $post);
-                if($model->save() && $model->student->save()) {
-                    $transaction->commit();
-                    return $this->redirect(['student/view', 'id' => $model->student->id]);
+                if(!$model->save()) {
+                    throw new Exception("Error save school report: ".reset($model->getErrors())[0], 1);
                 }
+                if(!$model->student->save()) {
+                    throw new Exception("Error save student: ".reset($model->student->getErrors())[0], 1);
+                }
+                $transaction->commit();
+                return $this->redirect(['student/view', 'id' => $model->student->id]);
             } catch(Exception $e) {
                 $transaction->rollBack();
                 throw $e;

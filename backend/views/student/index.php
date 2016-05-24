@@ -135,6 +135,7 @@ $this->registerJs('var sendUrl = "'.Url::toRoute(['x12/render-modal']).'";', \yi
                                 'title' => 'Delete school report of this student',
                                 'data-pjax' => '0',
                                 'data-confirm' => 'Are you sure to delete school report of this student?',
+                                'data-method' => 'post',
                             ]
                         );
                     }

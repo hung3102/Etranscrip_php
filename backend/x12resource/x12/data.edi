@@ -1,727 +1,1850 @@
-ISA*00*          *00*          *ZZ*SENDERID      *12*RECEIVERID    *20160508*2058*U*00401*000000001*0*T*:~
-GS*1212*SENDERID*RECEIVERID*20160508*2058*000000001*X*00401~
+ISA*00*          *00*          *ZZ*SENDERID      *12*RECEIVERID    *20160520*1403*U*00401*000000001*0*T*:~
+GS*1212*SENDERID*RECEIVERID*20160520*1403*000000001*X*00401~
 ST*835*000000001~
-SR*9/2016*2016-05-01*Đào Hùng*~
-STD*Nguyễn Thị Hà*Nữ*1994-06-07*Kinh*Nguyễn Văn Dương*Nông dân*Hoàng Thị Thi*Nông dân***Nguyễn Thị Hà_59_4rfclwA8uyLdh4ywrYTxVNamvCX_5.jpg~
-OJ*Con liệt sỹ, thương binh, gia đình có công với cách mạng~
-OJ*Hộ nghèo~
-CA*Không biết chố nào*Xã Quỳnh Lộc*Thị xã Hoàng Mai*tỉnh Nghệ An~
-NA*Xóm 1*Phường Quỳnh Thiện*Thị xã Hoàng Mai*tỉnh Nghệ An~
-YE*1*10C*2000*2001*KHXH & NV*Ghi chú của giáo viên ở đây
-Test xuống dòng xem thế nào.*Nguyễn Chủ Nhiệm*5*Được lên lớp sau kiểm tra lại các môn học hoặc rèn luyện thêm về hạnh kiểm***Nhận xét của giáo viên chủ nhiệm ở đây.
-Test xuống dòng.*Phê duyệt của hiệu trưởng ở đây.
-Test xuống dòng.*Nguyễn Hiệu Trưởng*2016-05-02~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-TE*1*Cả năm*Khá*Khá~
-SS*1*Ngữ văn*8.1*Đào Văn Hùng~
-SS*2*Toán*8*Đào Văn Hùng~
-SS*3*Vật lý*8*Đào Văn Hùng~
-SS*4*Hóa học*8*Đào Văn Hùng~
-SS*5*Sinh học*8*Đào Văn Hùng~
-SS*6*Lịch sử*8*Đào Văn Hùng~
-SS*7*Địa lý*8*Đào Văn Hùng~
-SS*8*Công nghệ*8*Đào Văn Hùng~
-SS*9*Thể dục*8*Đào Văn Hùng~
-SS*10*Ngoại ngữ*8*Đào Văn Hùng~
-SS*11*Tin học*8*Đào Văn Hùng~
-SS*12*Giáo dục công dân*8*Đào Văn Hùng~
-SS*13*Giáo dục quốc phòng và an ninh*8*Đào Văn Hùng~
-TE*2*Học kỳ 1*Khá*Khá~
-SS*1*Ngữ văn*8.1*Đào Văn Hùng~
-SS*2*Toán*8*Đào Văn Hùng~
-SS*3*Vật lý*8*Đào Văn Hùng~
-SS*4*Hóa học*8*Đào Văn Hùng~
-SS*5*Sinh học*8*Đào Văn Hùng~
-SS*6*Lịch sử*8*Đào Văn Hùng~
-SS*7*Địa lý*8*Đào Văn Hùng~
-SS*8*Công nghệ*8*Đào Văn Hùng~
-SS*9*Thể dục*8*Đào Văn Hùng~
-SS*10*Ngoại ngữ*8*Đào Văn Hùng~
-SS*11*Tin học*8*Đào Văn Hùng~
-SS*12*Giáo dục công dân*8*Đào Văn Hùng~
-SS*13*Giáo dục quốc phòng và an ninh*8*Đào Văn Hùng~
-TE*3*Học kỳ 2*Khá*Khá~
-SS*1*Ngữ văn*8.1*Đào Văn Hùng~
-SS*2*Toán*8*Đào Văn Hùng~
-SS*3*Vật lý*8*Đào Văn Hùng~
-SS*4*Hóa học*8*Đào Văn Hùng~
-SS*5*Sinh học*8*Đào Văn Hùng~
-SS*6*Lịch sử*8*Đào Văn Hùng~
-SS*7*Địa lý*8*Đào Văn Hùng~
-SS*8*Công nghệ*8*Đào Văn Hùng~
-SS*9*Thể dục*8*Đào Văn Hùng~
-SS*10*Ngoại ngữ*8*Đào Văn Hùng~
-SS*11*Tin học*8*Đào Văn Hùng~
-SS*12*Giáo dục công dân*8*Đào Văn Hùng~
-SS*13*Giáo dục quốc phòng và an ninh*8*Đào Văn Hùng~
-YE*2*11C*2001*2002*KHTN*Ghi chú của giáo viên năm lớp 11.
-Test xuống dòng*Trần Chủ Nhiệm*4*Được lên lớp thẳng*nông nghiệp*Giỏi*Nhận xét của giáo viên chủ nhiệm năm lớp 11.
-Test xuống dòng.*Phê duyệt của hiệu trưởng năm lớp 11.
-Test xuống dòng.*Trần Hiệu Trưởng*2016-05-03~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-ACV*giải thưởng 1 năm 11~
-ACV*giải thưởng 2 năm 11~
-TE*1*Cả năm*Tốt*Tốt~
-SS*1*Ngữ văn*9.2*Nguyễn Thị Hà~
-SS*2*Toán*9*Nguyễn Thị Hà~
-SS*3*Vật lý*9*Nguyễn Thị Hà~
-SS*4*Hóa học*9*Nguyễn Thị Hà~
-SS*5*Sinh học*9*Nguyễn Thị Hà~
-SS*6*Lịch sử*9*Nguyễn Thị Hà~
-SS*7*Địa lý*9*Nguyễn Thị Hà~
-SS*8*Công nghệ*9*Nguyễn Thị Hà~
-SS*9*Thể dục*9*Nguyễn Thị Hà~
-SS*10*Ngoại ngữ*9*Nguyễn Thị Hà~
-SS*11*Tin học*9*Nguyễn Thị Hà~
-SS*12*Giáo dục công dân*9*Nguyễn Thị Hà~
-SS*13*Giáo dục quốc phòng và an ninh*9*Nguyễn Thị Hà~
-TE*2*Học kỳ 1*Tốt*Tốt~
-SS*1*Ngữ văn*9.2*Nguyễn Thị Hà~
-SS*2*Toán*9*Nguyễn Thị Hà~
-SS*3*Vật lý*9*Nguyễn Thị Hà~
-SS*4*Hóa học*9*Nguyễn Thị Hà~
-SS*5*Sinh học*9*Nguyễn Thị Hà~
-SS*6*Lịch sử*9*Nguyễn Thị Hà~
-SS*7*Địa lý*9*Nguyễn Thị Hà~
-SS*8*Công nghệ*9*Nguyễn Thị Hà~
-SS*9*Thể dục*9*Nguyễn Thị Hà~
-SS*10*Ngoại ngữ*9*Nguyễn Thị Hà~
-SS*11*Tin học*9*Nguyễn Thị Hà~
-SS*12*Giáo dục công dân*9*Nguyễn Thị Hà~
-SS*13*Giáo dục quốc phòng và an ninh*9*Nguyễn Thị Hà~
-TE*3*Học kỳ 2*Tốt*Tốt~
-SS*1*Ngữ văn*9.2*Nguyễn Thị Hà~
-SS*2*Toán*9*Nguyễn Thị Hà~
-SS*3*Vật lý*9*Nguyễn Thị Hà~
-SS*4*Hóa học*9*Nguyễn Thị Hà~
-SS*5*Sinh học*9*Nguyễn Thị Hà~
-SS*6*Lịch sử*9*Nguyễn Thị Hà~
-SS*7*Địa lý*9*Nguyễn Thị Hà~
-SS*8*Công nghệ*9*Nguyễn Thị Hà~
-SS*9*Thể dục*9*Nguyễn Thị Hà~
-SS*10*Ngoại ngữ*9*Nguyễn Thị Hà~
-SS*11*Tin học*9*Nguyễn Thị Hà~
-SS*12*Giáo dục công dân*9*Nguyễn Thị Hà~
-SS*13*Giáo dục quốc phòng và an ninh*9*Nguyễn Thị Hà~
-YE*3*12C*2002*2003*KHTN*Ghi chú giáo viên chủ nhiệm năm lớp 12.
-Test xuống dòng.*Tô Chủ Nhiệm*3*Được lên lớp thẳng***Nhận xét của giáo viên chủ nhiệm năm lớp 12
-Test xuống dòng.*Phê duyệt của hiệu trưởng năm 12.
-Test xuống dòng.*Tô Hiệu Trưởng*2016-05-04~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-ACV*giải thưởng 1 năm 12~
-ACV*giải thưởng 2 năm 12~
-ACV*giải thưởng 3 năm 12~
-TE*1*Cả năm*Trung bình*Trung bình~
-SS*1*Ngữ văn*7.3*Khuất Thu Yến~
-SS*2*Toán*7*Khuất Thu Yến~
-SS*3*Vật lý*7*Khuất Thu Yến~
-SS*4*Hóa học*7*Khuất Thu Yến~
-SS*5*Sinh học*7*Khuất Thu Yến~
-SS*6*Lịch sử*7*Khuất Thu Yến~
-SS*7*Địa lý*7*Khuất Thu Yến~
-SS*8*Công nghệ*7*Khuất Thu Yến~
-SS*9*Thể dục*7*Khuất Thu Yến~
-SS*10*Ngoại ngữ*7*Khuất Thu Yến~
-SS*11*Tin học*7*Khuất Thu Yến~
-SS*12*Giáo dục công dân*7*Khuất Thu Yến~
-SS*13*Giáo dục quốc phòng và an ninh*7*Khuất Thu Yến~
-TE*2*Học kỳ 1*Trung bình*Trung bình~
-SS*1*Ngữ văn*7.3*Khuất Thu Yến~
-SS*2*Toán*7*Khuất Thu Yến~
-SS*3*Vật lý*7*Khuất Thu Yến~
-SS*4*Hóa học*7*Khuất Thu Yến~
-SS*5*Sinh học*7*Khuất Thu Yến~
-SS*6*Lịch sử*7*Khuất Thu Yến~
-SS*7*Địa lý*7*Khuất Thu Yến~
-SS*8*Công nghệ*7*Khuất Thu Yến~
-SS*9*Thể dục*7*Khuất Thu Yến~
-SS*10*Ngoại ngữ*7*Khuất Thu Yến~
-SS*11*Tin học*7*Khuất Thu Yến~
-SS*12*Giáo dục công dân*7*Khuất Thu Yến~
-SS*13*Giáo dục quốc phòng và an ninh*7*Khuất Thu Yến~
-TE*3*Học kỳ 2*Trung bình*Trung bình~
-SS*1*Ngữ văn*7.3*Khuất Thu Yến~
-SS*2*Toán*7*Khuất Thu Yến~
-SS*3*Vật lý*7*Khuất Thu Yến~
-SS*4*Hóa học*7*Khuất Thu Yến~
-SS*5*Sinh học*7*Khuất Thu Yến~
-SS*6*Lịch sử*7*Khuất Thu Yến~
-SS*7*Địa lý*7*Khuất Thu Yến~
-SS*8*Công nghệ*7*Khuất Thu Yến~
-SS*9*Thể dục*7*Khuất Thu Yến~
-SS*10*Ngoại ngữ*7*Khuất Thu Yến~
-SS*11*Tin học*7*Khuất Thu Yến~
-SS*12*Giáo dục công dân*7*Khuất Thu Yến~
-SS*13*Giáo dục quốc phòng và an ninh*7*Khuất Thu Yến~
-SR*4/2016*2016-03-21*Nguyễn Văn Thục*~
-STD*Nguyễn Thị Hà*Nữ*1995-11-23*Kinh*Nguyễn Văn Quân*Lập trình viên*Phạm Thị Thủy*Giảng viên***image.jpg~
-OJ*Con liệt sỹ, thương binh, gia đình có công với cách mạng~
-CA*Xóm 10*Xã Quỳnh Lộc*Thị xã Hoàng Mai*tỉnh Nghệ An~
-NA*Xóm 1*Phường Quỳnh Thiện*Thị xã Hoàng Mai*tỉnh Nghệ An~
-YE*1*10E*2006*2007*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Hà Thị Bích*4*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
- Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2007-05-30~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-ACV*Học sinh giỏi cấp tỉnh môn toán~
-TE*1*Cả năm*Trung bình*Khá~
-SS*1*Ngữ văn*7.1*Nguyễn Thị Hoa~
-SS*2*Toán*8.1*Lê Thị Nghi~
-SS*3*Vật lý*6.9*Lê Thị Minh~
-SS*4*Hóa học*6.1*Nguyễn Phúc Tuấn~
-SS*5*Sinh học*8.3*Trần Hải Khôi~
-SS*6*Lịch sử*7*Trần Lan Vy~
-SS*7*Địa lý*7.9*Trần Thị An~
-SS*8*Công nghệ*8.7*Đào Văn Bách~
-SS*9*Thể dục*7.4*Phạm Thị Nhung~
-SS*10*Ngoại ngữ*6.2*Nguyễn Thị Điệp~
-SS*11*Tin học*9.5*Lê Lan Mai~
-SS*12*Giáo dục công dân*9.3*Nguyễn Thị Anh~
-SS*13*Giáo dục quốc phòng và an ninh*6.8*Hoàng Thu Nhiên~
-TE*2*Học kỳ 1*Giỏi*Tốt~
-SS*1*Ngữ văn*6.7*Nguyễn Thị Hoa~
-SS*2*Toán*7.5*Lê Thị Nghi~
-SS*3*Vật lý*8.5*Lê Thị Minh~
-SS*4*Hóa học*6.4*Nguyễn Phúc Tuấn~
-SS*5*Sinh học*7.6*Trần Hải Khôi~
-SS*6*Lịch sử*7.9*Trần Lan Vy~
-SS*7*Địa lý*6*Trần Thị An~
-SS*8*Công nghệ*6*Đào Văn Bách~
-SS*9*Thể dục*8.6*Phạm Thị Nhung~
-SS*10*Ngoại ngữ*6.7*Nguyễn Thị Điệp~
-SS*11*Tin học*8.1*Lê Lan Mai~
-SS*12*Giáo dục công dân*6.5*Nguyễn Thị Anh~
-SS*13*Giáo dục quốc phòng và an ninh*8.3*Hoàng Thu Nhiên~
-TE*3*Học kỳ 2*Giỏi*Tốt~
-SS*1*Ngữ văn*9.2*Nguyễn Thị Hoa~
-SS*2*Toán*9.1*Lê Thị Nghi~
-SS*3*Vật lý*7.9*Lê Thị Minh~
-SS*4*Hóa học*7.3*Nguyễn Phúc Tuấn~
-SS*5*Sinh học*8.9*Trần Hải Khôi~
-SS*6*Lịch sử*6.3*Trần Lan Vy~
-SS*7*Địa lý*9.4*Trần Thị An~
-SS*8*Công nghệ*7.8*Đào Văn Bách~
-SS*9*Thể dục*7.7*Phạm Thị Nhung~
-SS*10*Ngoại ngữ*8.9*Nguyễn Thị Điệp~
-SS*11*Tin học*7.6*Lê Lan Mai~
-SS*12*Giáo dục công dân*6.9*Nguyễn Thị Anh~
-SS*13*Giáo dục quốc phòng và an ninh*7.3*Hoàng Thu Nhiên~
-YE*2*11E*2007*2008*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Trần Văn Hoàng*0*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
- Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2008-05-30~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-ACV*Học sinh giỏi cấp tỉnh môn Toán~
-ACV*Học sinh giỏi cấp tỉnh môn vật lý~
-TE*1*Cả năm*Giỏi*Tốt~
-SS*1*Ngữ văn*7.1*Nguyễn Bá Tùng~
-SS*2*Toán*9*Nguyễn Xuân Khoa~
-SS*3*Vật lý*8.7*Nguyễn Lan Châu~
-SS*4*Hóa học*6*Nguyễn Thị Hoa~
-SS*5*Sinh học*7.7*Phạm Trường Thành~
-SS*6*Lịch sử*6.1*Lê Thị Yến~
-SS*7*Địa lý*7.8*Trần Trường Quân~
-SS*8*Công nghệ*7.3*Phan Thị Lan~
-SS*9*Thể dục*6.5*Nguyễn Văn Khải~
-SS*10*Ngoại ngữ*6.7*Nguyễn Văn Hùng~
-SS*11*Tin học*7.3*Trần Thị Nhiên~
-SS*12*Giáo dục công dân*6.7*Nguyễn Trường Công~
-SS*13*Giáo dục quốc phòng và an ninh*6.9*Trần Văn Bách~
-TE*2*Học kỳ 1*Trung bình*Khá~
-SS*1*Ngữ văn*8.4*Nguyễn Bá Tùng~
-SS*2*Toán*9.3*Nguyễn Xuân Khoa~
-SS*3*Vật lý*6.3*Nguyễn Lan Châu~
-SS*4*Hóa học*6.1*Nguyễn Thị Hoa~
-SS*5*Sinh học*6.7*Phạm Trường Thành~
-SS*6*Lịch sử*7*Lê Thị Yến~
-SS*7*Địa lý*7.2*Trần Trường Quân~
-SS*8*Công nghệ*8.9*Phan Thị Lan~
-SS*9*Thể dục*6.1*Nguyễn Văn Khải~
-SS*10*Ngoại ngữ*6.3*Nguyễn Văn Hùng~
-SS*11*Tin học*6.8*Trần Thị Nhiên~
-SS*12*Giáo dục công dân*9.1*Nguyễn Trường Công~
-SS*13*Giáo dục quốc phòng và an ninh*8.8*Trần Văn Bách~
-TE*3*Học kỳ 2*Khá*Tốt~
-SS*1*Ngữ văn*7.9*Nguyễn Bá Tùng~
-SS*2*Toán*9.5*Nguyễn Xuân Khoa~
-SS*3*Vật lý*8.7*Nguyễn Lan Châu~
-SS*4*Hóa học*6.9*Nguyễn Thị Hoa~
-SS*5*Sinh học*8.9*Phạm Trường Thành~
-SS*6*Lịch sử*8.6*Lê Thị Yến~
-SS*7*Địa lý*9.5*Trần Trường Quân~
-SS*8*Công nghệ*6.6*Phan Thị Lan~
-SS*9*Thể dục*8.4*Nguyễn Văn Khải~
-SS*10*Ngoại ngữ*6.1*Nguyễn Văn Hùng~
-SS*11*Tin học*8*Trần Thị Nhiên~
-SS*12*Giáo dục công dân*9.3*Nguyễn Trường Công~
-SS*13*Giáo dục quốc phòng và an ninh*9.5*Trần Văn Bách~
-YE*3*12E*2008*2009*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thị Hà*3*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
- Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-TE*1*Cả năm*Trung bình*Tốt~
-SS*1*Ngữ văn*8.7*Phùng Bá Quốc~
-SS*2*Toán*6.7*Bùi Thị Lan~
-SS*3*Vật lý*8.6*Phạm Thu Như~
-SS*4*Hóa học*6.4*Dương Thị Uyên~
-SS*5*Sinh học*7.2*Nguyễn Thị Thư~
-SS*6*Lịch sử*6.6*Phan Thị Điệp~
-SS*7*Địa lý*7.8*Lê Văn Dương~
-SS*8*Công nghệ*7*Nguyễn Thị Vy~
-SS*9*Thể dục*7.3*Trần Lan Bích~
-SS*10*Ngoại ngữ*6.1*Hoàng Văn Phúc~
-SS*11*Tin học*7.9*Phạm Văn Đức~
-SS*12*Giáo dục công dân*7.5*Khuất Thị Loan~
-SS*13*Giáo dục quốc phòng và an ninh*6.4*Phạm Thị Chi~
-TE*2*Học kỳ 1*Giỏi*Tốt~
-SS*1*Ngữ văn*6.6*Phùng Bá Quốc~
-SS*2*Toán*6.2*Bùi Thị Lan~
-SS*3*Vật lý*6.6*Phạm Thu Như~
-SS*4*Hóa học*8.9*Dương Thị Uyên~
-SS*5*Sinh học*7*Nguyễn Thị Thư~
-SS*6*Lịch sử*8.4*Phan Thị Điệp~
-SS*7*Địa lý*7.5*Lê Văn Dương~
-SS*8*Công nghệ*7.1*Nguyễn Thị Vy~
-SS*9*Thể dục*8.1*Trần Lan Bích~
-SS*10*Ngoại ngữ*8.4*Hoàng Văn Phúc~
-SS*11*Tin học*8.5*Phạm Văn Đức~
-SS*12*Giáo dục công dân*8.4*Khuất Thị Loan~
-SS*13*Giáo dục quốc phòng và an ninh*8.6*Phạm Thị Chi~
-TE*3*Học kỳ 2*Giỏi*Tốt~
-SS*1*Ngữ văn*8.7*Phùng Bá Quốc~
-SS*2*Toán*6.9*Bùi Thị Lan~
-SS*3*Vật lý*8.5*Phạm Thu Như~
-SS*4*Hóa học*8.5*Dương Thị Uyên~
-SS*5*Sinh học*6.4*Nguyễn Thị Thư~
-SS*6*Lịch sử*6.2*Phan Thị Điệp~
-SS*7*Địa lý*6.2*Lê Văn Dương~
-SS*8*Công nghệ*6.5*Nguyễn Thị Vy~
-SS*9*Thể dục*9.2*Trần Lan Bích~
-SS*10*Ngoại ngữ*6.8*Hoàng Văn Phúc~
-SS*11*Tin học*7.3*Phạm Văn Đức~
-SS*12*Giáo dục công dân*7.4*Khuất Thị Loan~
-SS*13*Giáo dục quốc phòng và an ninh*9.5*Phạm Thị Chi~
-SR*5/2016*2016-03-21*Đào Văn Hùng*~
-STD*Nguyễn Thu Xuân*Nữ*1991-09-10*Kinh*Nguyễn Văn Khang*Bán hàng tạp phẩm*Nguyễn Lan Dung*Giáo viên***~
-CA*Xóm 3*Xã Nghĩa Yên*Huyện Nghĩa Đàn*tỉnh Nghệ An~
-NA*Xóm 3*Xã Nghĩa Yên*Huyện Nghĩa Đàn*tỉnh Nghệ An~
-YE*1*10C*2013*2014*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Lê Xuân Hùng*2*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+SR*14/2016*2016-03-21*Lại Thế Quang*~
+STD*Bùi Văn Hoàng*Nam*1999-07-14*Kinh*Bùi Văn Đạt*Nhân viên pha cà phê*Phan Thu Hạnh*Thư ký***image.jpg~
+CA*Xóm 10*Xã Quỳnh Lâm*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 10*Xã Quỳnh Lâm*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10E*2013*2014*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Vũ Xuân Uy*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
  Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2014-05-30~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-TE*1*Cả năm*Trung bình*Tốt~
-SS*1*Ngữ văn*6*Trần Văn Duy~
-SS*2*Toán*9*Nguyễn Văn Dương~
-SS*3*Vật lý*9*Hoàng Văn Phúc~
-SS*4*Hóa học*9.1*Bùi Thị Thư~
-SS*5*Sinh học*6.4*Đặng Xuân Thịnh~
-SS*6*Lịch sử*9.1*Nguyễn Thị Quỳnh~
-SS*7*Địa lý*8.5*Nguyễn Thu Hạ~
-SS*8*Công nghệ*6.8*Hoàng Thị Như~
-SS*9*Thể dục*8.9*Hoàng Văn Đức~
-SS*10*Ngoại ngữ*7.2*Đặng Văn Lâm~
-SS*11*Tin học*8*Lý Văn Uy~
-SS*12*Giáo dục công dân*8.5*Phan Trường Uy~
-SS*13*Giáo dục quốc phòng và an ninh*7.5*Vũ Thị Thi~
-TE*2*Học kỳ 1*Giỏi*Tốt~
-SS*1*Ngữ văn*8.9*Vũ Lan Anh~
-SS*2*Toán*8.5*Lý Văn Duy~
-SS*3*Vật lý*9.3*Nguyễn Văn Công~
-SS*4*Hóa học*6.1*Nguyễn Văn Tuấn~
-SS*5*Sinh học*7.7*Đỗ Văn Duy~
-SS*6*Lịch sử*6.8*Lý Thị Hân~
-SS*7*Địa lý*9.4*Nguyễn Lan Nga~
-SS*8*Công nghệ*6.7*Hoàng Văn Nghĩa~
-SS*9*Thể dục*9.2*Vũ Thị Nhi~
-SS*10*Ngoại ngữ*9*Hoàng Văn Sơn~
-SS*11*Tin học*8*Nguyễn Thị Dung~
-SS*12*Giáo dục công dân*6.8*Vũ Thị Ngân~
-SS*13*Giáo dục quốc phòng và an ninh*6.1*Nguyễn Hải Thái~
-TE*3*Học kỳ 2*Trung bình*Khá~
-SS*1*Ngữ văn*8.5*Nguyễn Văn Long~
-SS*2*Toán*8.7*Lê Bá Minh~
-SS*3*Vật lý*6.2*Đặng Văn Ngọc~
-SS*4*Hóa học*8.6*Nguyễn Văn Quang~
-SS*5*Sinh học*7.5*Nguyễn Thu Chi~
-SS*6*Lịch sử*9.1*Nguyễn Văn Lâm~
-SS*7*Địa lý*9.3*Đoàn Thị Dung~
-SS*8*Công nghệ*7.3*Trần Thị Mai~
-SS*9*Thể dục*9.4*Bùi Thị Tâm~
-SS*10*Ngoại ngữ*7.4*Nguyễn Văn Gia~
-SS*11*Tin học*8.7*Nguyễn Văn Hùng~
-SS*12*Giáo dục công dân*7*Lê Văn Công~
-SS*13*Giáo dục quốc phòng và an ninh*6.1*Lý Văn Lộc~
-YE*2*11C*2014*2015*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Đạt*0*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
- Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2015-05-30~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-TE*1*Cả năm*Trung bình*Tốt~
-SS*1*Ngữ văn*7.2*Lê Lan Mi~
-SS*2*Toán*6.4*Bùi Văn Quân~
-SS*3*Vật lý*6.2*Nguyễn Thị Như~
-SS*4*Hóa học*7.6*Phan Thị Anh~
-SS*5*Sinh học*8.8*Vũ Thu Đoan~
-SS*6*Lịch sử*7.7*Nguyễn Thị Vân~
-SS*7*Địa lý*6.2*Đào Văn Nam~
-SS*8*Công nghệ*7.2*Phan Thị Sương~
-SS*9*Thể dục*7.5*Đỗ Văn Phi~
-SS*10*Ngoại ngữ*7.5*Trần Thị Ngân~
-SS*11*Tin học*7.5*Nguyễn Thị Thi~
-SS*12*Giáo dục công dân*7.4*Lê Thị Khánh~
-SS*13*Giáo dục quốc phòng và an ninh*7.6*Nguyễn Thị Hân~
-TE*2*Học kỳ 1*Giỏi*Tốt~
-SS*1*Ngữ văn*9.5*Phan Thị Châu~
-SS*2*Toán*7.2*Nguyễn Văn Việt~
-SS*3*Vật lý*7.6*Nguyễn Văn Long~
-SS*4*Hóa học*8.7*Vũ Thị Hà~
-SS*5*Sinh học*8.7*Trần Xuân Hải~
-SS*6*Lịch sử*7.6*Đoàn Thu Loan~
-SS*7*Địa lý*8.3*Nguyễn Văn Thiên~
-SS*8*Công nghệ*6.6*Nguyễn Thị Quỳnh~
-SS*9*Thể dục*6.8*Nguyễn Thị Hà~
-SS*10*Ngoại ngữ*7.9*Nguyễn Phúc Việt~
-SS*11*Tin học*6.9*Nguyễn Hải Ngọc~
-SS*12*Giáo dục công dân*8*Lê Văn Khánh~
-SS*13*Giáo dục quốc phòng và an ninh*9.3*Phạm Bá Kiên~
-TE*3*Học kỳ 2*Khá*Tốt~
-SS*1*Ngữ văn*7.5*Nguyễn Văn Phúc~
-SS*2*Toán*9*Hoàng Thị Nghi~
-SS*3*Vật lý*9*Ngô Văn Tâm~
-SS*4*Hóa học*8.8*Dương Văn Trung~
-SS*5*Sinh học*7.6*Nguyễn Thị Diệp~
-SS*6*Lịch sử*7.5*Nguyễn Lan Xuân~
-SS*7*Địa lý*8.3*Nguyễn Trường Dương~
-SS*8*Công nghệ*9*Nguyễn Thị Nhiên~
-SS*9*Thể dục*8.4*Nguyễn Phúc Hải~
-SS*10*Ngoại ngữ*8.8*Trần Văn Khôi~
-SS*11*Tin học*6.9*Nguyễn Văn Công~
-SS*12*Giáo dục công dân*6.7*Nguyễn Thị Thảo~
-SS*13*Giáo dục quốc phòng và an ninh*9.4*Nguyễn Phúc Trung~
-YE*3*12C*2015*2016*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Lê Văn Tuấn*2*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
- Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2016-05-30~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-TE*1*Cả năm*Khá*Tốt~
-SS*1*Ngữ văn*8*Nguyễn Văn Vinh~
-SS*2*Toán*7.8*Nguyễn Thị Quyên~
-SS*3*Vật lý*9.3*Nguyễn Văn Nam~
-SS*4*Hóa học*8.1*Phạm Thị Thư~
-SS*5*Sinh học*8.5*Nguyễn Thị Hà~
-SS*6*Lịch sử*9.1*Đặng Thị Như~
-SS*7*Địa lý*6.1*Hoàng Văn Hoàng~
-SS*8*Công nghệ*8.3*Nguyễn Thị Như~
-SS*9*Thể dục*9.3*Hoàng Xuân Nhiên~
-SS*10*Ngoại ngữ*6.8*Trần Thị Minh~
-SS*11*Tin học*6.8*Tạ Lan Bích~
-SS*12*Giáo dục công dân*6.6*Hoàng Văn Anh~
-SS*13*Giáo dục quốc phòng và an ninh*7*Nguyễn Văn Khánh~
-TE*2*Học kỳ 1*Khá*Khá~
-SS*1*Ngữ văn*9.2*Tô Thu Trang~
-SS*2*Toán*9*Nguyễn Văn Minh~
-SS*3*Vật lý*8.4*Trần Văn Gia~
-SS*4*Hóa học*9.5*Nguyễn Văn Phi~
-SS*5*Sinh học*9.3*Nguyễn Thị Hạ~
-SS*6*Lịch sử*8.2*Đoàn Thị Hoa~
-SS*7*Địa lý*6.5*Tô Thu Ngân~
-SS*8*Công nghệ*8.8*Lê Thu Như~
-SS*9*Thể dục*6.3*Phan Thị Nhi~
-SS*10*Ngoại ngữ*9.3*Nguyễn Thị Thư~
-SS*11*Tin học*8.6*Trần Văn Lâm~
-SS*12*Giáo dục công dân*8.4*Trần Thị Quyên~
-SS*13*Giáo dục quốc phòng và an ninh*8.4*Lê Thị Trang~
-TE*3*Học kỳ 2*Khá*Tốt~
-SS*1*Ngữ văn*6.2*Đặng Văn Hoàng~
-SS*2*Toán*7.4*Đặng Xuân Hương~
-SS*3*Vật lý*7.3*Đào Văn Đức~
-SS*4*Hóa học*8.4*Nguyễn Xuân Duy~
-SS*5*Sinh học*8.1*Đào Xuân Khuê~
-SS*6*Lịch sử*7.9*Nguyễn Thị Lan~
-SS*7*Địa lý*9.1*Đỗ Văn Thái~
-SS*8*Công nghệ*6.3*Lê Văn Đạt~
-SS*9*Thể dục*9*Nguyễn Văn Phúc~
-SS*10*Ngoại ngữ*7.2*Lý Văn Lộc~
-SS*11*Tin học*6.2*Nguyễn Văn Công~
-SS*12*Giáo dục công dân*8.2*Đặng Văn Ngọc~
-SS*13*Giáo dục quốc phòng và an ninh*6.5*Vũ Thị Hân~
-SR*6/2016*2016-03-21*Đào Văn Hùng*~
-STD*Nguyễn Văn Nghĩa*Nam*1997-06-13*Kinh*Nguyễn Văn Uy*Công chứng viên*Vũ Thị Thảo*Thư ký***image.jpg~
-CA*Xóm 11*Xã Nghĩa Bình*Huyện Nghĩa Đàn*tỉnh Nghệ An~
-NA*Xóm 11*Xã Nghĩa Bình*Huyện Nghĩa Đàn*tỉnh Nghệ An~
-YE*1*10A1*2013*2014*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Tạ Văn Khánh*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
- Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2014-05-30~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-TE*1*Cả năm*Khá*Tốt~
-SS*1*Ngữ văn*6*Lê Văn Hoàng~
-SS*2*Toán*8.1*Phạm Thu Dung~
-SS*3*Vật lý*9.1*Đặng Văn Huy~
-SS*4*Hóa học*9.4*Đặng Thị An~
-SS*5*Sinh học*9.1*Nguyễn Văn Hiếu~
-SS*6*Lịch sử*6.7*Trần Văn Dũng~
-SS*7*Địa lý*7.3*Lê Văn Dũng~
-SS*8*Công nghệ*9*Nguyễn Văn Huy~
-SS*9*Thể dục*6.7*Nguyễn Văn Đạt~
-SS*10*Ngoại ngữ*8.3*Lý Thị Thu~
-SS*11*Tin học*9.1*Nguyễn Văn Lâm~
-SS*12*Giáo dục công dân*7.6*Phan Văn Thịnh~
-SS*13*Giáo dục quốc phòng và an ninh*9.2*Nguyễn Văn Cường~
-TE*2*Học kỳ 1*Khá*Tốt~
-SS*1*Ngữ văn*7.8*Nguyễn Thị Ngân~
-SS*2*Toán*9.1*Nguyễn Thị Tâm~
-SS*3*Vật lý*9.2*Nguyễn Thị Quyên~
-SS*4*Hóa học*8.7*Nguyễn Thị Chi~
-SS*5*Sinh học*7*Trần Thị Vy~
-SS*6*Lịch sử*7.8*Mai Văn Hiếu~
-SS*7*Địa lý*7.2*Trịnh Phúc Anh~
-SS*8*Công nghệ*7.5*Phan Thị Chi~
-SS*9*Thể dục*7.5*Vương Thu An~
-SS*10*Ngoại ngữ*8*Phạm Phúc Hải~
-SS*11*Tin học*8.4*Nguyễn Văn Cường~
-SS*12*Giáo dục công dân*6.5*Trần Thị Loan~
-SS*13*Giáo dục quốc phòng và an ninh*8.3*Hoàng Văn Bảo~
-TE*3*Học kỳ 2*Trung bình*Tốt~
-SS*1*Ngữ văn*8.5*Lê Thị Thảo~
-SS*2*Toán*8.3*Trần Thị Nhiên~
-SS*3*Vật lý*7.4*Nguyễn Văn Vinh~
-SS*4*Hóa học*7.1*Nguyễn Thị Trà~
-SS*5*Sinh học*6.6*Lê Thị Thu~
-SS*6*Lịch sử*9.4*Nguyễn Bá Thái~
-SS*7*Địa lý*7*Đặng Văn Tâm~
-SS*8*Công nghệ*7.8*Phạm Thị Chi~
-SS*9*Thể dục*6.7*Nguyễn Văn Hoàng~
-SS*10*Ngoại ngữ*6.7*Tô Thị Dung~
-SS*11*Tin học*8.9*Ngô Văn Bảo~
-SS*12*Giáo dục công dân*8.2*Nguyễn Văn Tùng~
-SS*13*Giáo dục quốc phòng và an ninh*6.3*Nguyễn Văn Uy~
-YE*2*11A1*2014*2015*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Phạm Thị Hân*2*Được lên lớp thẳng*Tin văn phòng*Giỏi*Học tốt nhưng hơi trầm.
- Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2015-05-30~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-TE*1*Cả năm*Khá*Khá~
-SS*1*Ngữ văn*7.2*Nguyễn Thu Ngân~
-SS*2*Toán*7.1*Vũ Hải Thái~
-SS*3*Vật lý*6.3*Nguyễn Lan Dung~
-SS*4*Hóa học*6.3*Phí Văn Dương~
-SS*5*Sinh học*8.4*Mai Văn Huy~
-SS*6*Lịch sử*7*Nguyễn Thị Hạ~
-SS*7*Địa lý*6.8*Vương Thị Loan~
-SS*8*Công nghệ*7.5*Đào Thị Nhiên~
-SS*9*Thể dục*8.4*Trần Văn Phong~
-SS*10*Ngoại ngữ*8*Hồ Văn Dũng~
-SS*11*Tin học*9.5*Trần Văn Nguyên~
-SS*12*Giáo dục công dân*8.8*Trần Văn Tùng~
-SS*13*Giáo dục quốc phòng và an ninh*8.2*Vương Hải Phi~
-TE*2*Học kỳ 1*Trung bình*Tốt~
-SS*1*Ngữ văn*7.7*Phạm Trường Quốc~
-SS*2*Toán*9.3*Nguyễn Thị Thảo~
-SS*3*Vật lý*6.9*Hoàng Lan Khuê~
-SS*4*Hóa học*7.6*Hoàng Thị Dung~
-SS*5*Sinh học*6.4*Lê Văn Sơn~
-SS*6*Lịch sử*7.3*Nguyễn Thu Hà~
-SS*7*Địa lý*6.9*Lê Văn Quang~
-SS*8*Công nghệ*6.9*Trần Thị Bích~
-SS*9*Thể dục*6.6*Mai Thị Thảo~
-SS*10*Ngoại ngữ*7*Phan Văn Việt~
-SS*11*Tin học*9.2*Nguyễn Văn Việt~
-SS*12*Giáo dục công dân*9.4*Phan Lan Ngọc~
-SS*13*Giáo dục quốc phòng và an ninh*9.3*Vũ Văn Hiếu~
-TE*3*Học kỳ 2*Giỏi*Khá~
-SS*1*Ngữ văn*7.7*Nguyễn Thị Anh~
-SS*2*Toán*6.4*Phạm Văn Vinh~
-SS*3*Vật lý*7.3*Nguyễn Văn Hùng~
-SS*4*Hóa học*6.7*Trần Thị Mai~
-SS*5*Sinh học*7.3*Nguyễn Văn Huy~
-SS*6*Lịch sử*8.8*Phan Văn Lâm~
-SS*7*Địa lý*9.4*Nguyễn Bá Vinh~
-SS*8*Công nghệ*6.7*Nguyễn Văn Duy~
-SS*9*Thể dục*6.1*Phạm Phúc Hùng~
-SS*10*Ngoại ngữ*9.3*Nguyễn Thị Thu~
-SS*11*Tin học*8.7*Tô Thị Thư~
-SS*12*Giáo dục công dân*7*Đỗ Thị Khánh~
-SS*13*Giáo dục quốc phòng và an ninh*7*Nguyễn Thị Yên~
-YE*3*12A1*2015*2016*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Tô Thị Nghi*3*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
- Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2016-05-30~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-TE*1*Cả năm*Khá*Tốt~
-SS*1*Ngữ văn*6.1*Lê Thị Mi~
-SS*2*Toán*9*Lê Văn Lâm~
-SS*3*Vật lý*7.9*Phạm Bá Bảo~
-SS*4*Hóa học*9.3*Bùi Thị Nhiên~
-SS*5*Sinh học*7.1*Trịnh Trường Thiên~
-SS*6*Lịch sử*9.4*Phạm Xuân Khang~
-SS*7*Địa lý*7.2*Đinh Thị Dung~
-SS*8*Công nghệ*7.4*Lê Thị Nghi~
-SS*9*Thể dục*6.1*Phạm Thị Hạ~
-SS*10*Ngoại ngữ*8.4*Ngô Thị Nhiên~
-SS*11*Tin học*7.6*Hoàng Thị Vy~
-SS*12*Giáo dục công dân*7.7*Nguyễn Văn Thiên~
-SS*13*Giáo dục quốc phòng và an ninh*8*Nguyễn Xuân Hiếu~
-TE*2*Học kỳ 1*Trung bình*Tốt~
-SS*1*Ngữ văn*7.1*Nguyễn Thị Chi~
-SS*2*Toán*9.2*Nguyễn Xuân Sương~
-SS*3*Vật lý*6*Mai Thị Khánh~
-SS*4*Hóa học*6.3*Trần Thị Thư~
-SS*5*Sinh học*6.1*Nguyễn Trường Khôi~
-SS*6*Lịch sử*9.4*Phan Văn Nam~
-SS*7*Địa lý*7.3*Trần Văn Khang~
-SS*8*Công nghệ*8*Nguyễn Thu Uyên~
-SS*9*Thể dục*6.3*Vũ Thị Thu~
-SS*10*Ngoại ngữ*6.3*Phạm Bá Quang~
-SS*11*Tin học*7.4*Nguyễn Thị Yến~
-SS*12*Giáo dục công dân*7.9*Nguyễn Văn Hải~
-SS*13*Giáo dục quốc phòng và an ninh*8*Trần Lan Khuê~
-TE*3*Học kỳ 2*Giỏi*Khá~
-SS*1*Ngữ văn*8.7*Đinh Thị Ngân~
-SS*2*Toán*8.9*Trần Văn Dương~
-SS*3*Vật lý*6.7*Nguyễn Thị Hà~
-SS*4*Hóa học*6.2*Vũ Văn Phúc~
-SS*5*Sinh học*8.6*Nguyễn Thị Anh~
-SS*6*Lịch sử*7.1*Hoàng Văn Khải~
-SS*7*Địa lý*6*Lâm Văn Long~
-SS*8*Công nghệ*7.6*Phạm Thị Khuê~
-SS*9*Thể dục*8.7*Nguyễn Văn Việt~
-SS*10*Ngoại ngữ*6.8*Nguyễn Văn Hùng~
-SS*11*Tin học*9.2*Nguyễn Thị Nga~
-SS*12*Giáo dục công dân*6.2*Bùi Văn Bách~
-SS*13*Giáo dục quốc phòng và an ninh*6.5*Lê Thị Thảo~
-SR*1/2016*2016-05-03*Nguyễn Văn Thục*~
-STD*Đào Văn Hùng*Nam*1992-07-02*Kinh*Đào Văn Dương*Đánh cá*Hoàng Thị Thi*Nghề phụ***image.jpg~
-OJ*Con liệt sỹ, thương binh, gia đình có công với cách mạng~
-OJ*Hộ nghèo~
-CA*Xóm 2*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-NA*Xóm 1*Thị trấn Cầu Giát*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-YE*1*10A2*2008*2009*KHTN*Trong bảng này không sửa ở chỗ nào.*Nguyễn Thị Hằng*3*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
-Hay giúp đỡ bạn bè trong lớp.*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2016-05-03~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-ACV*Giải thưởng 1 năm lớp 10~
-ACV*Giải thưởng 2 năm lớp 10~
-TE*1*Cả năm*Giỏi*Tốt~
-SS*1*Ngữ văn*8.2*Hoàng Văn Nam~
-SS*2*Toán*8.2*Hoàng Văn Nam~
-SS*3*Vật lý*8.2*Hoàng Văn Nam~
-SS*4*Hóa học*8.2*Hoàng Văn Nam~
-SS*5*Sinh học*8.2*Hoàng Văn Nam~
-SS*6*Lịch sử*8.2*Hoàng Văn Nam~
-SS*7*Địa lý*8.2*Hoàng Văn Nam~
-SS*8*Công nghệ*8.2*Hoàng Văn Nam~
-SS*9*Thể dục*8.2*Hoàng Văn Nam~
-SS*10*Ngoại ngữ*8.2*Hoàng Văn Nam~
-SS*11*Tin học*8.2*Hoàng Văn Nam~
-SS*12*Giáo dục công dân*8.2*Hoàng Văn Nam~
-SS*13*Giáo dục quốc phòng và an ninh*8.2*Hoàng Văn Nam~
-TE*2*Học kỳ 1*Giỏi*Tốt~
-SS*1*Ngữ văn*8.2*Hoàng Văn Nam~
-SS*2*Toán*8.2*Hoàng Văn Nam~
-SS*3*Vật lý*8.2*Hoàng Văn Nam~
-SS*4*Hóa học*8.2*Hoàng Văn Nam~
-SS*5*Sinh học*8.2*Hoàng Văn Nam~
-SS*6*Lịch sử*8.2*Hoàng Văn Nam~
-SS*7*Địa lý*8.2*Hoàng Văn Nam~
-SS*8*Công nghệ*8.2*Hoàng Văn Nam~
-SS*9*Thể dục*8.2*Hoàng Văn Nam~
-SS*10*Ngoại ngữ*8.2*Hoàng Văn Nam~
-SS*11*Tin học*8.2*Hoàng Văn Nam~
-SS*12*Giáo dục công dân*8.2*Hoàng Văn Nam~
-SS*13*Giáo dục quốc phòng và an ninh*8.2*Hoàng Văn Nam~
-TE*3*Học kỳ 2*Giỏi*Tốt~
-SS*1*Ngữ văn*8.2*Hoàng Văn Nam~
-SS*2*Toán*8.2*Hoàng Văn Nam~
-SS*3*Vật lý*8.2*Hoàng Văn Nam~
-SS*4*Hóa học*8.2*Hoàng Văn Nam~
-SS*5*Sinh học*8.2*Hoàng Văn Nam~
-SS*6*Lịch sử*8.2*Hoàng Văn Nam~
-SS*7*Địa lý*8.2*Hoàng Văn Nam~
-SS*8*Công nghệ*8.2*Hoàng Văn Nam~
-SS*9*Thể dục*8.2*Hoàng Văn Nam~
-SS*10*Ngoại ngữ*8.2*Hoàng Văn Nam~
-SS*11*Tin học*8.2*Hoàng Văn Nam~
-SS*12*Giáo dục công dân*8.2*Hoàng Văn Nam~
-SS*13*Giáo dục quốc phòng và an ninh*8.2*Hoàng Văn Nam~
-YE*2*11A2*2009*2010*KHXH & NV*Trong bảng này có sửa ở 1 chỗ.
-Sửa ở điểm môn toán.*Hoàng Văn Nam*2*Được lên lớp sau kiểm tra lại các môn học hoặc rèn luyện thêm về hạnh kiểm*Tin văn phòng*Giỏi*Chăm chỉ, hiền lành, ít nói.
-Tham gia mọi hoạt động của lớp.*Đồng ý với ý kiến của giáo viên chủ nhiệm*Lại Thế Quang*2016-05-04~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-TE*1*Cả năm*Khá*Khá~
-SS*1*Ngữ văn*9.1*Trần Văn Năm~
-SS*2*Toán*9.1*Trần Văn Năm~
-SS*3*Vật lý*9.1*Trần Văn Năm~
-SS*4*Hóa học*9.1*Trần Văn Năm~
-SS*5*Sinh học*9.1*Trần Văn Năm~
-SS*6*Lịch sử*9.1*Trần Văn Năm~
-SS*7*Địa lý*9.1*Trần Văn Năm~
-SS*8*Công nghệ*9.1*Trần Văn Năm~
-SS*9*Thể dục*9.1*Trần Văn Năm~
-SS*10*Ngoại ngữ*9.1*Trần Văn Năm~
-SS*11*Tin học*9.1*Trần Văn Năm~
-SS*12*Giáo dục công dân*9.1*Trần Văn Năm~
-SS*13*Giáo dục quốc phòng và an ninh*9.1*Trần Văn Năm~
-TE*2*Học kỳ 1*Khá*Khá~
-SS*1*Ngữ văn*9.1*Trần Văn Năm~
-SS*2*Toán*9.1*Trần Văn Năm~
-SS*3*Vật lý*9.1*Trần Văn Năm~
-SS*4*Hóa học*9.1*Trần Văn Năm~
-SS*5*Sinh học*9.1*Trần Văn Năm~
-SS*6*Lịch sử*9.1*Trần Văn Năm~
-SS*7*Địa lý*9.1*Trần Văn Năm~
-SS*8*Công nghệ*9.1*Trần Văn Năm~
-SS*9*Thể dục*9.1*Trần Văn Năm~
-SS*10*Ngoại ngữ*9.1*Trần Văn Năm~
-SS*11*Tin học*9.1*Trần Văn Năm~
-SS*12*Giáo dục công dân*9.1*Trần Văn Năm~
-SS*13*Giáo dục quốc phòng và an ninh*9.1*Trần Văn Năm~
-TE*3*Học kỳ 2*Khá*Khá~
-SS*1*Ngữ văn*9.1*Trần Văn Năm~
-SS*2*Toán*9.1*Trần Văn Năm~
-SS*3*Vật lý*9.1*Trần Văn Năm~
-SS*4*Hóa học*9.1*Trần Văn Năm~
-SS*5*Sinh học*9.1*Trần Văn Năm~
-SS*6*Lịch sử*9.1*Trần Văn Năm~
-SS*7*Địa lý*9.1*Trần Văn Năm~
-SS*8*Công nghệ*9.1*Trần Văn Năm~
-SS*9*Thể dục*9.1*Trần Văn Năm~
-SS*10*Ngoại ngữ*9.1*Trần Văn Năm~
-SS*11*Tin học*9.1*Trần Văn Năm~
-SS*12*Giáo dục công dân*9.1*Trần Văn Năm~
-SS*13*Giáo dục quốc phòng và an ninh*9.1*Trần Văn Năm~
-YE*3*12A2*2010*2011*Cơ bản*Trong bảng này không sửa chỗ nào.*Bùi Văn Long*1*Được lên lớp thẳng***Học giỏi, nhanh nhẹn, tháo vát.
-Là lớp trưởng gương mẫu.
-Luôn chấp hành nội quy của nhà trường.*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2016-05-05~
-SCH*THPT Nguyễn Đức Mậu*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
-ACV*Giải thưởng 1 năm 12~
-ACV*Giải thưởng 2 năm 12~
-ACV*Giải thưởng 3 năm 12~
+SCH*THPT Thái Hoà*Xóm 13*Xã Nghĩa Trung*Huyện Nghĩa Đàn*tỉnh Nghệ An~
 TE*1*Cả năm*Giỏi*Khá~
-SS*1*Ngữ văn*8.5*Trần Thị Trúc~
-SS*2*Toán*8.5*Trần Thị Trúc~
-SS*3*Vật lý*8.5*Trần Thị Trúc~
-SS*4*Hóa học*8.5*Trần Thị Trúc~
-SS*5*Sinh học*8.5*Trần Thị Trúc~
-SS*6*Lịch sử*8.5*Trần Thị Trúc~
-SS*7*Địa lý*8.5*Trần Thị Trúc~
-SS*8*Công nghệ*8.5*Trần Thị Trúc~
-SS*9*Thể dục*8.5*Trần Thị Trúc~
-SS*10*Ngoại ngữ*8.5*Trần Thị Trúc~
-SS*11*Tin học*8.5*Trần Thị Trúc~
-SS*12*Giáo dục công dân*8.5*Trần Thị Trúc~
-SS*13*Giáo dục quốc phòng và an ninh*8.5*Trần Thị Trúc~
-TE*2*Học kỳ 1*Giỏi*Khá~
-SS*1*Ngữ văn*8.5*Trần Thị Trúc~
-SS*2*Toán*8.5*Trần Thị Trúc~
-SS*3*Vật lý*8.5*Trần Thị Trúc~
-SS*4*Hóa học*8.5*Trần Thị Trúc~
-SS*5*Sinh học*8.5*Trần Thị Trúc~
-SS*6*Lịch sử*8.5*Trần Thị Trúc~
-SS*7*Địa lý*8.5*Trần Thị Trúc~
-SS*8*Công nghệ*8.5*Trần Thị Trúc~
-SS*9*Thể dục*8.5*Trần Thị Trúc~
-SS*10*Ngoại ngữ*8.5*Trần Thị Trúc~
-SS*11*Tin học*8.5*Trần Thị Trúc~
-SS*12*Giáo dục công dân*8.5*Trần Thị Trúc~
-SS*13*Giáo dục quốc phòng và an ninh*8.5*Trần Thị Trúc~
+SS*1*Ngữ văn*6.4*Nguyễn Văn Dương~
+SS*2*Toán*8.8*Phan Thị Quỳnh~
+SS*3*Vật lý*7.1*Lê Văn Dũng~
+SS*4*Hóa học*7.4*Nguyễn Bá Hoàng~
+SS*5*Sinh học*7.2*Phạm Thu Lan~
+SS*6*Lịch sử*7.1*Vũ Văn Quang~
+SS*7*Địa lý*8.6*Nguyễn Văn Kiên~
+SS*8*Công nghệ*7.3*Trần Thị Diệp~
+SS*9*Thể dục*6.4*Trần Trường Hoàng~
+SS*10*Ngoại ngữ*8.2*Trần Văn Quang~
+SS*11*Tin học*8.5*Trần Trường Bảo~
+SS*12*Giáo dục công dân*8.7*Lê Thu Quyên~
+SS*13*Giáo dục quốc phòng và an ninh*6.8*Hồ Văn Hải~
+TE*2*Học kỳ 1*Khá*Khá~
+SS*1*Ngữ văn*6.9*Phan Văn Bách~
+SS*2*Toán*7.1*Nguyễn Văn Phi~
+SS*3*Vật lý*8.2*Nguyễn Hải Tuấn~
+SS*4*Hóa học*8.6*Đào Thị Thư~
+SS*5*Sinh học*8.7*Hoàng Thị Khuê~
+SS*6*Lịch sử*8.4*Bùi Văn Hoàng~
+SS*7*Địa lý*9.5*Nguyễn Văn Khải~
+SS*8*Công nghệ*7.2*Vũ Văn Phi~
+SS*9*Thể dục*7.4*Phan Văn Khải~
+SS*10*Ngoại ngữ*8.2*Nguyễn Hải Bảo~
+SS*11*Tin học*9.4*Khuất Văn Lâm~
+SS*12*Giáo dục công dân*7.2*Phùng Văn Dương~
+SS*13*Giáo dục quốc phòng và an ninh*6.8*Nguyễn Phúc Tuấn~
+TE*3*Học kỳ 2*Trung bình*Tốt~
+SS*1*Ngữ văn*8.2*Mai Thị Lan~
+SS*2*Toán*8.1*Lê Thị Nghi~
+SS*3*Vật lý*9.1*Nguyễn Thị Nga~
+SS*4*Hóa học*6.3*Vũ Văn Nhân~
+SS*5*Sinh học*6.8*Mai Văn Nguyên~
+SS*6*Lịch sử*6.4*Vũ Văn Sơn~
+SS*7*Địa lý*8.4*Đặng Phúc Khánh~
+SS*8*Công nghệ*6.6*Nguyễn Văn Nghĩa~
+SS*9*Thể dục*8.5*Lê Thu Nhiên~
+SS*10*Ngoại ngữ*6.1*Phạm Thị Uyên~
+SS*11*Tin học*6.8*Nguyễn Văn Dương~
+SS*12*Giáo dục công dân*9.3*Lê Xuân Quân~
+SS*13*Giáo dục quốc phòng và an ninh*7.8*Phan Văn An~
+YE*2*11E*2014*2015*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Hoàng Hải Duy*3*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2015-05-30~
+SCH*THPT DL Lê Doãn Nhã*Xóm 12*Thị trấn Yên Thành*Huyện Yên Thành*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+SS*1*Ngữ văn*6.3*Vũ Phúc Hiếu~
+SS*2*Toán*7.8*Nguyễn Văn Lộc~
+SS*3*Vật lý*6.7*Nguyễn Thị Uyên~
+SS*4*Hóa học*9.2*Tô Thị Hương~
+SS*5*Sinh học*8.2*Lê Thị Xuân~
+SS*6*Lịch sử*8.7*Bùi Thị Hạnh~
+SS*7*Địa lý*7.6*Trần Thị Yến~
+SS*8*Công nghệ*8.4*Nguyễn Lan Diệp~
+SS*9*Thể dục*7.8*Nguyễn Thị Ngọc~
+SS*10*Ngoại ngữ*9.2*Nguyễn Thị Châu~
+SS*11*Tin học*7.9*Đặng Văn Hiếu~
+SS*12*Giáo dục công dân*8.7*Lý Thị Minh~
+SS*13*Giáo dục quốc phòng và an ninh*6.4*Nguyễn Văn Duy~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+SS*1*Ngữ văn*6.9*Nguyễn Thị Vân~
+SS*2*Toán*6.4*Nguyễn Thị Loan~
+SS*3*Vật lý*8.1*Trần Trường Anh~
+SS*4*Hóa học*6.6*Nguyễn Thị Bích~
+SS*5*Sinh học*6.8*Hoàng Văn Trung~
+SS*6*Lịch sử*7.2*Nguyễn Thị Linh~
+SS*7*Địa lý*7.3*Nguyễn Văn Đức~
+SS*8*Công nghệ*6.3*Lâm Thị Điệp~
+SS*9*Thể dục*7.2*Nguyễn Văn Anh~
+SS*10*Ngoại ngữ*7.4*Vũ Thị Nghi~
+SS*11*Tin học*8.9*Đào Thị Nhi~
+SS*12*Giáo dục công dân*8.6*Lê Thị Anh~
+SS*13*Giáo dục quốc phòng và an ninh*9.3*Trần Phúc Phi~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*8.2*Nguyễn Văn Nhân~
+SS*2*Toán*7.1*Phạm Thị Quỳnh~
+SS*3*Vật lý*8.3*Hoàng Xuân Phong~
+SS*4*Hóa học*6.6*Lê Văn Quân~
+SS*5*Sinh học*6.2*Lê Thị Tâm~
+SS*6*Lịch sử*8*Tô Thị Nhung~
+SS*7*Địa lý*8.2*Lý Thị Hà~
+SS*8*Công nghệ*7.7*Nguyễn Trường Tâm~
+SS*9*Thể dục*8.9*Dương Thị Dung~
+SS*10*Ngoại ngữ*7.8*Trần Thị Thi~
+SS*11*Tin học*6.3*Lê Bá Phi~
+SS*12*Giáo dục công dân*6.9*Nguyễn Bá Hải~
+SS*13*Giáo dục quốc phòng và an ninh*8.9*Vương Thị Oanh~
+YE*3*12E*2015*2016*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Trần Phúc Hiếu*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2016-05-30~
+SCH*THPT Phan Đăng Lưu*Xóm 13*Thị trấn Yên Thành*Huyện Yên Thành*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Tốt~
+SS*1*Ngữ văn*8.5*Phan Thị Ngọc~
+SS*2*Toán*6*Tạ Thị Mi~
+SS*3*Vật lý*7.5*Lê Thị Quyên~
+SS*4*Hóa học*6.2*Lê Phúc Bách~
+SS*5*Sinh học*7.1*Tạ Văn Cường~
+SS*6*Lịch sử*7.2*Vũ Văn Đạt~
+SS*7*Địa lý*9*Đỗ Văn Khôi~
+SS*8*Công nghệ*7.3*Nguyễn Thị Thu~
+SS*9*Thể dục*8.4*Trần Thị Khuê~
+SS*10*Ngoại ngữ*6.5*Hoàng Văn Phong~
+SS*11*Tin học*8.6*Đặng Văn Cường~
+SS*12*Giáo dục công dân*9.2*Nguyễn Văn Quang~
+SS*13*Giáo dục quốc phòng và an ninh*7.7*Nguyễn Thị Diệp~
+TE*2*Học kỳ 1*Trung bình*Khá~
+SS*1*Ngữ văn*6.7*Lâm Văn Việt~
+SS*2*Toán*6.1*Vương Thị Mai~
+SS*3*Vật lý*7.5*Nguyễn Thị Thủy~
+SS*4*Hóa học*6.3*Nguyễn Văn Hoàng~
+SS*5*Sinh học*7.9*Nguyễn Lan Hà~
+SS*6*Lịch sử*8*Nguyễn Xuân Châu~
+SS*7*Địa lý*7.5*Nguyễn Văn Hải~
+SS*8*Công nghệ*6.8*Khuất Văn Lâm~
+SS*9*Thể dục*7.5*Trần Thị Hân~
+SS*10*Ngoại ngữ*6.7*Trần Xuân Mi~
+SS*11*Tin học*8.6*Nguyễn Văn Lâm~
+SS*12*Giáo dục công dân*7.1*Nguyễn Văn Duy~
+SS*13*Giáo dục quốc phòng và an ninh*6.2*Nguyễn Thị Khuê~
+TE*3*Học kỳ 2*Khá*Tốt~
+SS*1*Ngữ văn*7.7*Vũ Thị Tâm~
+SS*2*Toán*6.8*Nguyễn Thị Linh~
+SS*3*Vật lý*7.9*Lâm Thị Lan~
+SS*4*Hóa học*7.4*Trần Thị Nhi~
+SS*5*Sinh học*9.2*Tạ Lan Khánh~
+SS*6*Lịch sử*6.7*Nguyễn Thị Khánh~
+SS*7*Địa lý*8.3*Trịnh Thu Loan~
+SS*8*Công nghệ*8.2*Nguyễn Lan Hoa~
+SS*9*Thể dục*8.6*Nguyễn Văn Khôi~
+SS*10*Ngoại ngữ*7.9*Nguyễn Văn Nam~
+SS*11*Tin học*8.6*Nguyễn Lan Thư~
+SS*12*Giáo dục công dân*8.4*Vũ Thị Lan~
+SS*13*Giáo dục quốc phòng và an ninh*6.3*Nguyễn Thị Châu~
+SR*16/2016*2016-03-21*Lại Thế Quang*~
+STD*Đặng Văn Nguyên*Nam*1997-09-18*Kinh*Đặng Văn Khoa*Lập trình viên*Tạ Thị Châu*Phóng viên truyền hình***image.jpg~
+CA*Xóm 2*Xã Quỳnh Bảng*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 2*Xã Quỳnh Bảng*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A*2011*2012*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Phạm Thu Chi*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2012-05-30~
+SCH*THPT Nghi Lộc 3*Xóm 11*Xã Nghi Xuân*Huyện Nghi Lộc*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+SS*1*Ngữ văn*7.2*Trần Văn Đức~
+SS*2*Toán*7.6*Tô Thị Yến~
+SS*3*Vật lý*8.8*Lê Văn Khải~
+SS*4*Hóa học*8.8*Hoàng Văn Kiên~
+SS*5*Sinh học*7.5*Trần Thị Vy~
+SS*6*Lịch sử*8.5*Phí Văn Thành~
+SS*7*Địa lý*6.1*Khuất Văn Quân~
+SS*8*Công nghệ*6.4*Nguyễn Thị Quỳnh~
+SS*9*Thể dục*6.7*Nguyễn Thị Ngọc~
+SS*10*Ngoại ngữ*7.2*Trịnh Lan Hạ~
+SS*11*Tin học*7.2*Nguyễn Phúc Long~
+SS*12*Giáo dục công dân*9.5*Tạ Thị Lan~
+SS*13*Giáo dục quốc phòng và an ninh*8.8*Lê Thị Linh~
+TE*2*Học kỳ 1*Khá*Khá~
+SS*1*Ngữ văn*8.2*Nguyễn Văn Phúc~
+SS*2*Toán*6.6*Đỗ Văn Dũng~
+SS*3*Vật lý*6.4*Nguyễn Văn Thái~
+SS*4*Hóa học*8.1*Trần Hải Uy~
+SS*5*Sinh học*7*Hoàng Thị Khánh~
+SS*6*Lịch sử*8.8*Hoàng Văn Khang~
+SS*7*Địa lý*6.2*Trần Thị Nga~
+SS*8*Công nghệ*6.4*Lê Văn Phúc~
+SS*9*Thể dục*8.4*Phan Văn Thành~
+SS*10*Ngoại ngữ*7.8*Nguyễn Thị Oanh~
+SS*11*Tin học*6.3*Phạm Văn Thành~
+SS*12*Giáo dục công dân*9.3*Nguyễn Lan Nhiên~
+SS*13*Giáo dục quốc phòng và an ninh*7.7*Nguyễn Lan Vy~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*8.6*Nguyễn Văn An~
+SS*2*Toán*6.1*Nguyễn Thị Uyên~
+SS*3*Vật lý*9.1*Trần Văn Gia~
+SS*4*Hóa học*6.3*Lê Văn Thiên~
+SS*5*Sinh học*7*Trần Xuân Hân~
+SS*6*Lịch sử*9.4*Lâm Thị Thủy~
+SS*7*Địa lý*9.1*Phí Thu Giang~
+SS*8*Công nghệ*9.1*Nguyễn Văn Anh~
+SS*9*Thể dục*6.1*Nguyễn Thị Thủy~
+SS*10*Ngoại ngữ*7.9*Đào Thị Hân~
+SS*11*Tin học*8.5*Đoàn Văn Quốc~
+SS*12*Giáo dục công dân*6.5*Phạm Văn Gia~
+SS*13*Giáo dục quốc phòng và an ninh*7.6*Nguyễn Lan Dung~
+YE*2*11A*2012*2013*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Hoàng Văn Minh*2*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2013-05-30~
+SCH*THPT DL Lê Doãn Nhã*Xóm 12*Thị trấn Yên Thành*Huyện Yên Thành*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Khá~
+SS*1*Ngữ văn*8.3*Nguyễn Văn Lâm~
+SS*2*Toán*8*Nguyễn Thị Xuân~
+SS*3*Vật lý*6.7*Nguyễn Thị Trang~
+SS*4*Hóa học*8.7*Nguyễn Văn Khánh~
+SS*5*Sinh học*7.8*Lê Thị Mi~
+SS*6*Lịch sử*6.4*Nguyễn Văn Kiên~
+SS*7*Địa lý*6.3*Lý Văn Cường~
+SS*8*Công nghệ*7.1*Bùi Lan Thu~
+SS*9*Thể dục*8.7*Lê Thị Yên~
+SS*10*Ngoại ngữ*7.4*Nguyễn Thị Thu~
+SS*11*Tin học*7.5*Nguyễn Văn Tuấn~
+SS*12*Giáo dục công dân*8.9*Trịnh Bá Trung~
+SS*13*Giáo dục quốc phòng và an ninh*7.3*Nguyễn Văn Khải~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+SS*1*Ngữ văn*7*Nguyễn Thị Anh~
+SS*2*Toán*6*Trương Lan Minh~
+SS*3*Vật lý*7.6*Nguyễn Văn Khoa~
+SS*4*Hóa học*6.9*Dương Thu Ngọc~
+SS*5*Sinh học*7.2*Nguyễn Văn Dương~
+SS*6*Lịch sử*7.5*Nguyễn Hải Sơn~
+SS*7*Địa lý*7.7*Lý Văn Thái~
+SS*8*Công nghệ*9.2*Lê Lan Trà~
+SS*9*Thể dục*9.5*Nguyễn Văn Phi~
+SS*10*Ngoại ngữ*8.2*Nguyễn Văn Nghĩa~
+SS*11*Tin học*9.2*Đào Thị Dung~
+SS*12*Giáo dục công dân*6.1*Nguyễn Văn Khoa~
+SS*13*Giáo dục quốc phòng và an ninh*6.9*Phan Thu Loan~
 TE*3*Học kỳ 2*Giỏi*Khá~
-SS*1*Ngữ văn*8.5*Trần Thị Trúc~
-SS*2*Toán*8.5*Trần Thị Trúc~
-SS*3*Vật lý*8.5*Trần Thị Trúc~
-SS*4*Hóa học*8.5*Trần Thị Trúc~
-SS*5*Sinh học*8.5*Trần Thị Trúc~
-SS*6*Lịch sử*8.5*Trần Thị Trúc~
-SS*7*Địa lý*8.5*Trần Thị Trúc~
-SS*8*Công nghệ*8.5*Trần Thị Trúc~
-SS*9*Thể dục*8.5*Trần Thị Trúc~
-SS*10*Ngoại ngữ*8.5*Trần Thị Trúc~
-SS*11*Tin học*8.5*Trần Thị Trúc~
-SS*12*Giáo dục công dân*8.5*Trần Thị Trúc~
-SS*13*Giáo dục quốc phòng và an ninh*8.5*Trần Thị Trúc~
-SE*701*000000001~
+SS*1*Ngữ văn*7.8*Nguyễn Trường Thiên~
+SS*2*Toán*6.2*Nguyễn Thị Yến~
+SS*3*Vật lý*8.6*Nguyễn Lan Loan~
+SS*4*Hóa học*8.9*Nguyễn Văn Uy~
+SS*5*Sinh học*7.5*Trần Thị Uyên~
+SS*6*Lịch sử*8.8*Lê Xuân Diệp~
+SS*7*Địa lý*9.2*Nguyễn Văn Anh~
+SS*8*Công nghệ*9.4*Nguyễn Văn Long~
+SS*9*Thể dục*6*Trần Thị Vy~
+SS*10*Ngoại ngữ*8.9*Phùng Văn Quốc~
+SS*11*Tin học*9.3*Trần Trường Duy~
+SS*12*Giáo dục công dân*7.3*Nguyễn Văn Nhân~
+SS*13*Giáo dục quốc phòng và an ninh*7.1*Phạm Thị Uyên~
+YE*3*12A*2013*2014*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Hoàng*4*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2014-05-30~
+SCH*THPT DL Lê Quí Đôn*Xóm 2*Phường Quang Trung*Thành phố Vinh*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Khá~
+SS*1*Ngữ văn*8.3*Nguyễn Lan Xuân~
+SS*2*Toán*8.8*Trương Thị Quỳnh~
+SS*3*Vật lý*8.9*Đỗ Thị Hương~
+SS*4*Hóa học*6.2*Trần Thu Nghi~
+SS*5*Sinh học*8.2*Khuất Văn Nam~
+SS*6*Lịch sử*7.5*Trần Thị Nhi~
+SS*7*Địa lý*6.7*Nguyễn Trường Lâm~
+SS*8*Công nghệ*6.3*Tạ Phúc Phong~
+SS*9*Thể dục*8.4*Lê Xuân Giang~
+SS*10*Ngoại ngữ*8.9*Đinh Thị Ngân~
+SS*11*Tin học*7.6*Phan Thị Giang~
+SS*12*Giáo dục công dân*6.9*Đặng Thị Linh~
+SS*13*Giáo dục quốc phòng và an ninh*7.2*Lê Thị Đoan~
+TE*2*Học kỳ 1*Giỏi*Tốt~
+SS*1*Ngữ văn*7.5*Nguyễn Thị Giang~
+SS*2*Toán*9.1*Khuất Văn Thái~
+SS*3*Vật lý*9.4*Nguyễn Lan Nghi~
+SS*4*Hóa học*6.2*Phan Văn Khoa~
+SS*5*Sinh học*8.2*Lê Bá Hiếu~
+SS*6*Lịch sử*7.3*Trần Thị Điệp~
+SS*7*Địa lý*8.7*Phan Văn Hùng~
+SS*8*Công nghệ*9.1*Nguyễn Thị Hà~
+SS*9*Thể dục*6.4*Nguyễn Lan Trà~
+SS*10*Ngoại ngữ*8*Nguyễn Thị Vy~
+SS*11*Tin học*8.5*Nguyễn Lan Mai~
+SS*12*Giáo dục công dân*7.6*Nguyễn Thị Hạ~
+SS*13*Giáo dục quốc phòng và an ninh*7.6*Nguyễn Thị Nga~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*8.3*Nguyễn Văn Tùng~
+SS*2*Toán*7.6*Vũ Văn Lộc~
+SS*3*Vật lý*8.2*Nguyễn Phúc Khải~
+SS*4*Hóa học*9.3*Nguyễn Lan Trà~
+SS*5*Sinh học*8.4*Trần Thu Mi~
+SS*6*Lịch sử*8.3*Nguyễn Văn Phi~
+SS*7*Địa lý*8*Hoàng Thu Nhiên~
+SS*8*Công nghệ*8.1*Hoàng Văn Thái~
+SS*9*Thể dục*6.6*Dương Thị Uyên~
+SS*10*Ngoại ngữ*6.7*Lê Văn Hải~
+SS*11*Tin học*7.3*Hồ Văn Dương~
+SS*12*Giáo dục công dân*7*Hoàng Văn Kiên~
+SS*13*Giáo dục quốc phòng và an ninh*7*Nguyễn Thị Thảo~
+SR*21/2016*2016-03-21*Lại Thế Quang*~
+STD*Nguyễn Thị Yên*Nữ*2000-07-09*Kinh*Nguyễn Văn Lộc*Tổng thầu xây dựng*Đỗ Xuân Quyên*Thủ thư***image.jpg~
+CA*Xóm 5*Xã Quỳnh Tân*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 5*Xã Quỳnh Tân*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A2*2007*2008*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thị Linh*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2008-05-30~
+SCH*THPT Đô Lương 1*Xóm 8*Xã Đà Sơn*Huyện Đô Lương*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+SS*1*Ngữ văn*8.5*Hồ Văn Phúc~
+SS*2*Toán*8.9*Mai Thị Mi~
+SS*3*Vật lý*6.4*Đặng Thị Vy~
+SS*4*Hóa học*7.8*Trần Thị Bích~
+SS*5*Sinh học*8.5*Nguyễn Văn Cường~
+SS*6*Lịch sử*6.1*Trần Thị Yên~
+SS*7*Địa lý*7.4*Nguyễn Thị Hà~
+SS*8*Công nghệ*9.1*Nguyễn Bá Lộc~
+SS*9*Thể dục*7.7*Nguyễn Thị Giang~
+SS*10*Ngoại ngữ*6.7*Hà Thị Thu~
+SS*11*Tin học*6*Mai Văn Bảo~
+SS*12*Giáo dục công dân*6.2*Trương Văn Long~
+SS*13*Giáo dục quốc phòng và an ninh*9.2*Nguyễn Thị Chi~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+SS*1*Ngữ văn*6.9*Nguyễn Thị Nhiên~
+SS*2*Toán*8.9*Nguyễn Bá Duy~
+SS*3*Vật lý*9*Đinh Xuân Long~
+SS*4*Hóa học*8.5*Trần Thị Yên~
+SS*5*Sinh học*6.6*Trần Văn Phi~
+SS*6*Lịch sử*8.7*Đặng Lan Nhiên~
+SS*7*Địa lý*8.7*Phạm Văn Dương~
+SS*8*Công nghệ*6.6*Lê Thu Thu~
+SS*9*Thể dục*8.7*Nguyễn Văn Khánh~
+SS*10*Ngoại ngữ*7.8*Nguyễn Văn Nghĩa~
+SS*11*Tin học*6.2*Hoàng Văn Minh~
+SS*12*Giáo dục công dân*7.1*Nguyễn Xuân Hoàng~
+SS*13*Giáo dục quốc phòng và an ninh*9.4*Lê Thị Quỳnh~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*8.6*Nguyễn Xuân Điệp~
+SS*2*Toán*6.4*Trần Văn Tâm~
+SS*3*Vật lý*8.8*Nguyễn Thị Quyên~
+SS*4*Hóa học*8.6*Ngô Thị Mi~
+SS*5*Sinh học*7.3*Hoàng Thị Thủy~
+SS*6*Lịch sử*9.5*Hoàng Thị Hạ~
+SS*7*Địa lý*7.3*Phùng Trường Nguyên~
+SS*8*Công nghệ*6.2*Hoàng Thị Yến~
+SS*9*Thể dục*7.6*Phạm Trường Dương~
+SS*10*Ngoại ngữ*7.1*Nguyễn Văn Quang~
+SS*11*Tin học*8*Trần Thị Hạnh~
+SS*12*Giáo dục công dân*6.8*Phùng Hải Thái~
+SS*13*Giáo dục quốc phòng và an ninh*6.6*Nguyễn Phúc Uy~
+YE*2*11A2*2008*2009*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Lê Bá Gia*1*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
+SCH*THPT DL Sông Hiếu*Xóm 3*Xã Nghĩa Hiếu*Huyện Nghĩa Đàn*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*6.9*Vũ Thị Thu~
+SS*2*Toán*8.9*Trần Phúc Long~
+SS*3*Vật lý*9.1*Đặng Văn An~
+SS*4*Hóa học*6.5*Phạm Thị Nghi~
+SS*5*Sinh học*6.7*Hồ Văn Huy~
+SS*6*Lịch sử*6.5*Trần Văn Quân~
+SS*7*Địa lý*6*Lê Thị Hà~
+SS*8*Công nghệ*7.2*Phạm Lan Nghi~
+SS*9*Thể dục*6.3*Mai Thị Khuê~
+SS*10*Ngoại ngữ*9.4*Nguyễn Văn Thành~
+SS*11*Tin học*8.9*Nguyễn Thị Trà~
+SS*12*Giáo dục công dân*7.2*Nguyễn Thị Chi~
+SS*13*Giáo dục quốc phòng và an ninh*6.2*Phạm Thị Nghi~
+TE*2*Học kỳ 1*Khá*Tốt~
+SS*1*Ngữ văn*7.9*Nguyễn Thị Thu~
+SS*2*Toán*8.3*Phan Văn Khải~
+SS*3*Vật lý*9.2*Nguyễn Văn Thịnh~
+SS*4*Hóa học*9.3*Nguyễn Thị Giang~
+SS*5*Sinh học*7.1*Lê Lan Loan~
+SS*6*Lịch sử*6.1*Nguyễn Văn Đạt~
+SS*7*Địa lý*7.2*Nguyễn Thị Nga~
+SS*8*Công nghệ*9.1*Lê Văn Cường~
+SS*9*Thể dục*9.3*Nguyễn Văn Khải~
+SS*10*Ngoại ngữ*6.4*Nguyễn Văn Trung~
+SS*11*Tin học*7.5*Đỗ Thị Vân~
+SS*12*Giáo dục công dân*6.8*Nguyễn Văn Khang~
+SS*13*Giáo dục quốc phòng và an ninh*6.7*Nguyễn Thị Lan~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*8.7*Lê Văn Thiên~
+SS*2*Toán*8.2*Nguyễn Xuân Khải~
+SS*3*Vật lý*8.3*Nguyễn Hải Khoa~
+SS*4*Hóa học*6.8*Nguyễn Văn Khải~
+SS*5*Sinh học*9.5*Nguyễn Phúc Thái~
+SS*6*Lịch sử*8.6*Hoàng Phúc Nghĩa~
+SS*7*Địa lý*6*Bùi Lan Điệp~
+SS*8*Công nghệ*8.2*Trần Văn Bách~
+SS*9*Thể dục*8.6*Nguyễn Thị Ngân~
+SS*10*Ngoại ngữ*7.8*Lý Văn Khải~
+SS*11*Tin học*6.7*Phạm Thị Như~
+SS*12*Giáo dục công dân*7.5*Dương Văn Hùng~
+SS*13*Giáo dục quốc phòng và an ninh*7.5*Nguyễn Bá Nguyên~
+YE*3*12A2*2009*2010*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Trung*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2010-05-30~
+SCH*THPT Quỳnh Lưu 2*Xóm 13*Xã Quỳnh Văn*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Tốt~
+SS*1*Ngữ văn*6.3*Trần Hải Ngọc~
+SS*2*Toán*9.3*Đào Văn Khoa~
+SS*3*Vật lý*6.7*Đỗ Văn Nhân~
+SS*4*Hóa học*7.1*Phạm Văn Phúc~
+SS*5*Sinh học*7.4*Nguyễn Thị Diệp~
+SS*6*Lịch sử*9.3*Khuất Thị An~
+SS*7*Địa lý*8.2*Nguyễn Thị Anh~
+SS*8*Công nghệ*9.1*Trần Thị Vân~
+SS*9*Thể dục*8.8*Nguyễn Thu Châu~
+SS*10*Ngoại ngữ*9*Nguyễn Thị Sương~
+SS*11*Tin học*6*Đỗ Thị Quyên~
+SS*12*Giáo dục công dân*9.3*Nguyễn Văn Quang~
+SS*13*Giáo dục quốc phòng và an ninh*6.8*Nguyễn Lan Nhiên~
+TE*2*Học kỳ 1*Khá*Khá~
+SS*1*Ngữ văn*9*Nguyễn Thị Quỳnh~
+SS*2*Toán*8.4*Nguyễn Lan Loan~
+SS*3*Vật lý*8.2*Trần Thu Dung~
+SS*4*Hóa học*6.8*Tô Thị Linh~
+SS*5*Sinh học*8.9*Nguyễn Thị Khuê~
+SS*6*Lịch sử*7*Nguyễn Văn Trung~
+SS*7*Địa lý*8.2*Dương Thị Hà~
+SS*8*Công nghệ*7.9*Vũ Phúc Bách~
+SS*9*Thể dục*6.5*Hoàng Văn Khang~
+SS*10*Ngoại ngữ*8.9*Nguyễn Thị Diệp~
+SS*11*Tin học*7.8*Phan Lan Thư~
+SS*12*Giáo dục công dân*6.3*Nguyễn Văn Việt~
+SS*13*Giáo dục quốc phòng và an ninh*9.2*Phan Thị Nhi~
+TE*3*Học kỳ 2*Giỏi*Khá~
+SS*1*Ngữ văn*9.4*Nguyễn Văn Cường~
+SS*2*Toán*6.2*Lê Lan Loan~
+SS*3*Vật lý*9.3*Nguyễn Thị Khánh~
+SS*4*Hóa học*7.2*Đinh Thị Hạnh~
+SS*5*Sinh học*8.5*Nguyễn Văn Khải~
+SS*6*Lịch sử*6.8*Nguyễn Thị Linh~
+SS*7*Địa lý*8.6*Hoàng Thị Nhiên~
+SS*8*Công nghệ*8.8*Trần Thị Ngân~
+SS*9*Thể dục*9*Nguyễn Văn Hùng~
+SS*10*Ngoại ngữ*7.3*Đoàn Văn Long~
+SS*11*Tin học*6.5*Phạm Bá Quốc~
+SS*12*Giáo dục công dân*9.5*Trần Thị Như~
+SS*13*Giáo dục quốc phòng và an ninh*8.8*Lê Thị Nhung~
+SR*49/2016*2016-03-21*Lại Thế Quang*~
+STD*Phạm Thu Tâm*Nữ*1996-09-06*Kinh*Phạm Văn Công*Thợ máy*Đỗ Thị Yên*Lao công***image.jpg~
+CA*Xóm 12*Xã Quỳnh Giang*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 12*Xã Quỳnh Giang*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A2*2007*2008*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Lê Thị Nga*3*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2008-05-30~
+SCH*THPT Thái Hoà*Xóm 13*Xã Nghĩa Trung*Huyện Nghĩa Đàn*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Khá~
+SS*1*Ngữ văn*6.2*Nguyễn Thu Thảo~
+SS*2*Toán*8.4*Phan Văn Thiên~
+SS*3*Vật lý*9.2*Lê Văn Thành~
+SS*4*Hóa học*6.9*Tạ Xuân Khoa~
+SS*5*Sinh học*9.4*Lê Văn Hoàng~
+SS*6*Lịch sử*6.7*Vương Thị Tâm~
+SS*7*Địa lý*6.9*Nguyễn Thị Bích~
+SS*8*Công nghệ*6.1*Nguyễn Văn Đạt~
+SS*9*Thể dục*9.3*Lê Lan Hương~
+SS*10*Ngoại ngữ*7.2*Trần Thu Chi~
+SS*11*Tin học*9.2*Trần Văn Phi~
+SS*12*Giáo dục công dân*8.5*Phạm Thị Ngân~
+SS*13*Giáo dục quốc phòng và an ninh*7.2*Trần Thị Hạ~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+SS*1*Ngữ văn*7.1*Nguyễn Thị An~
+SS*2*Toán*8.5*Phan Thu Khánh~
+SS*3*Vật lý*8.4*Nguyễn Xuân Khuê~
+SS*4*Hóa học*8.6*Phan Thị Xuân~
+SS*5*Sinh học*8.4*Vũ Lan Mi~
+SS*6*Lịch sử*9.2*Nguyễn Thu Ngọc~
+SS*7*Địa lý*7.2*Nguyễn Văn Tùng~
+SS*8*Công nghệ*6.4*Trịnh Văn Sơn~
+SS*9*Thể dục*6.8*Vũ Thị Nghi~
+SS*10*Ngoại ngữ*6.3*Trần Thị Đoan~
+SS*11*Tin học*7.2*Phùng Thu Mi~
+SS*12*Giáo dục công dân*7.4*Nguyễn Văn Dũng~
+SS*13*Giáo dục quốc phòng và an ninh*8.2*Phạm Thị Quỳnh~
+TE*3*Học kỳ 2*Trung bình*Khá~
+SS*1*Ngữ văn*7.8*Nguyễn Xuân Thi~
+SS*2*Toán*6.1*Nguyễn Thị Sương~
+SS*3*Vật lý*8.9*Ngô Lan Thảo~
+SS*4*Hóa học*9.5*Nguyễn Thị Tâm~
+SS*5*Sinh học*8.5*Vũ Văn Vinh~
+SS*6*Lịch sử*9.2*Mai Văn Duy~
+SS*7*Địa lý*8.3*Nguyễn Văn Khoa~
+SS*8*Công nghệ*9.1*Nguyễn Thị Nhi~
+SS*9*Thể dục*9.3*Trần Thị Giang~
+SS*10*Ngoại ngữ*6.7*Vũ Thị Quỳnh~
+SS*11*Tin học*7.7*Nguyễn Văn Vinh~
+SS*12*Giáo dục công dân*6*Trần Văn Phi~
+SS*13*Giáo dục quốc phòng và an ninh*8.2*Hoàng Lan Khuê~
+YE*2*11A2*2008*2009*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Duy*2*Được lên lớp thẳng*Tin văn phòng*Giỏi*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
+SCH*THPT Quỳnh Lưu 1*Xóm 1*Thị trấn Cầu Giát*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+SS*1*Ngữ văn*6.8*Nguyễn Thị Mi~
+SS*2*Toán*7.6*Trịnh Thị Trà~
+SS*3*Vật lý*8.4*Tạ Thị Giang~
+SS*4*Hóa học*6.9*Nguyễn Văn Khánh~
+SS*5*Sinh học*6.1*Trần Văn Khang~
+SS*6*Lịch sử*9.5*Nguyễn Xuân Tuấn~
+SS*7*Địa lý*8.7*Phạm Thị Hạ~
+SS*8*Công nghệ*6.1*Nguyễn Văn Hoàng~
+SS*9*Thể dục*6.2*Nguyễn Thị Hà~
+SS*10*Ngoại ngữ*6.8*Hoàng Văn Ngọc~
+SS*11*Tin học*6.2*Phạm Xuân Vân~
+SS*12*Giáo dục công dân*9.4*Nguyễn Văn Tuấn~
+SS*13*Giáo dục quốc phòng và an ninh*9.2*Lê Thị Sương~
+TE*2*Học kỳ 1*Khá*Khá~
+SS*1*Ngữ văn*7.8*Nguyễn Thu Mi~
+SS*2*Toán*7.6*Nguyễn Thị Châu~
+SS*3*Vật lý*7.4*Lý Văn Phi~
+SS*4*Hóa học*9.4*Đinh Thị Hạ~
+SS*5*Sinh học*8*Đoàn Phúc Phong~
+SS*6*Lịch sử*7.4*Lê Thị Hân~
+SS*7*Địa lý*8.7*Mai Bá Uy~
+SS*8*Công nghệ*7.4*Lê Trường Long~
+SS*9*Thể dục*8.2*Đỗ Thị Trang~
+SS*10*Ngoại ngữ*7.7*Phạm Xuân Thành~
+SS*11*Tin học*9*Phí Thị Hà~
+SS*12*Giáo dục công dân*7.9*Đặng Văn Anh~
+SS*13*Giáo dục quốc phòng và an ninh*6.1*Trần Thị Trà~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*7.3*Nguyễn Văn Sơn~
+SS*2*Toán*8.9*Lý Thị Anh~
+SS*3*Vật lý*8.4*Trần Hải Minh~
+SS*4*Hóa học*6.9*Lê Văn Sơn~
+SS*5*Sinh học*8.6*Nguyễn Lan Thu~
+SS*6*Lịch sử*6.3*Phạm Thị Nhi~
+SS*7*Địa lý*7.6*Hà Thị Thủy~
+SS*8*Công nghệ*9.2*Nguyễn Thị Hạnh~
+SS*9*Thể dục*7.4*Trần Văn Tâm~
+SS*10*Ngoại ngữ*9.2*Đinh Bá Hoàng~
+SS*11*Tin học*9*Tạ Văn Phúc~
+SS*12*Giáo dục công dân*8.7*Nguyễn Văn Nam~
+SS*13*Giáo dục quốc phòng và an ninh*8.9*Trần Thị Nhiên~
+YE*3*12A2*2009*2010*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Vũ Lan Điệp*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2010-05-30~
+SCH*THPT Thanh Chương 1*Xóm 2*Thị trấn Thanh Chương*Huyện Thanh Chương*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Tốt~
+SS*1*Ngữ văn*8.8*Trần Xuân Quang~
+SS*2*Toán*6.1*Tô Thị Tâm~
+SS*3*Vật lý*8.5*Nguyễn Thị Hoa~
+SS*4*Hóa học*8.3*Trần Lan Quỳnh~
+SS*5*Sinh học*7.4*Lê Lan Yến~
+SS*6*Lịch sử*7*Nguyễn Văn Quân~
+SS*7*Địa lý*7.3*Bùi Văn Ngọc~
+SS*8*Công nghệ*7.9*Trần Lan Loan~
+SS*9*Thể dục*6.6*Trịnh Văn Phong~
+SS*10*Ngoại ngữ*6.6*Nguyễn Phúc Long~
+SS*11*Tin học*9.5*Nguyễn Văn Dũng~
+SS*12*Giáo dục công dân*6*Lê Thị Diệp~
+SS*13*Giáo dục quốc phòng và an ninh*6.9*Nguyễn Văn Duy~
+TE*2*Học kỳ 1*Giỏi*Khá~
+SS*1*Ngữ văn*8.7*Nguyễn Thị Nga~
+SS*2*Toán*8.1*Nguyễn Văn Công~
+SS*3*Vật lý*7.1*Trần Thị Minh~
+SS*4*Hóa học*6*Nguyễn Văn Nam~
+SS*5*Sinh học*6*Nguyễn Thị Quỳnh~
+SS*6*Lịch sử*9.3*Phạm Thị Mi~
+SS*7*Địa lý*7.6*Hà Văn Duy~
+SS*8*Công nghệ*7.6*Nguyễn Văn Vinh~
+SS*9*Thể dục*7.2*Lý Thị Trà~
+SS*10*Ngoại ngữ*7.2*Vương Thị Lan~
+SS*11*Tin học*7.6*Đinh Văn Lộc~
+SS*12*Giáo dục công dân*8.2*Trần Xuân Tuấn~
+SS*13*Giáo dục quốc phòng và an ninh*9.2*Nguyễn Thị Linh~
+TE*3*Học kỳ 2*Giỏi*Tốt~
+SS*1*Ngữ văn*7.1*Phan Văn Tuấn~
+SS*2*Toán*8.5*Vũ Thị Quyên~
+SS*3*Vật lý*8.2*Trần Thu Lan~
+SS*4*Hóa học*8.8*Dương Thu Mi~
+SS*5*Sinh học*7.3*Đoàn Bá Nam~
+SS*6*Lịch sử*8.8*Nguyễn Xuân Như~
+SS*7*Địa lý*8.1*Phùng Văn Thành~
+SS*8*Công nghệ*9*Phan Trường Nhân~
+SS*9*Thể dục*7.3*Lê Trường Quốc~
+SS*10*Ngoại ngữ*9.3*Phan Thị Khánh~
+SS*11*Tin học*6.6*Hoàng Văn Vinh~
+SS*12*Giáo dục công dân*6.8*Phan Lan Thi~
+SS*13*Giáo dục quốc phòng và an ninh*7.1*Tạ Văn Khang~
+SR*58/2016*2016-03-21*Lại Thế Quang*~
+STD*Nguyễn Thu An*Nữ*1990-01-11*Kinh*Nguyễn Phúc Gia*Thợ máy*Hoàng Thu Anh*Tiếp viên hàng không***image.jpg~
+CA*Xóm 5*Xã Quỳnh Châu*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 5*Xã Quỳnh Châu*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A*2012*2013*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Vũ Thị Khánh*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2013-05-30~
+SCH*THPT Yên Thành 3*Xóm 2*Xã Quang Thành*Huyện Yên Thành*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*6.5*Vương Thị Khánh~
+SS*2*Toán*8.5*Nguyễn Phúc Cường~
+SS*3*Vật lý*8.8*Phan Thị Giang~
+SS*4*Hóa học*7.1*Nguyễn Văn Huy~
+SS*5*Sinh học*9.5*Lê Văn Dũng~
+SS*6*Lịch sử*7*Phạm Thị Mai~
+SS*7*Địa lý*8.4*Đinh Văn Sơn~
+SS*8*Công nghệ*6.9*Nguyễn Văn Thiên~
+SS*9*Thể dục*7.5*Hoàng Văn Nghĩa~
+SS*10*Ngoại ngữ*9*Dương Văn Bách~
+SS*11*Tin học*6.6*Lê Thị Hạnh~
+SS*12*Giáo dục công dân*8.3*Nguyễn Thị Hân~
+SS*13*Giáo dục quốc phòng và an ninh*8.4*Hoàng Thị Ngân~
+TE*2*Học kỳ 1*Giỏi*Khá~
+SS*1*Ngữ văn*8.8*Nguyễn Thị Hoa~
+SS*2*Toán*7.2*Trần Văn Tuấn~
+SS*3*Vật lý*7.9*Nguyễn Xuân Đoan~
+SS*4*Hóa học*6.2*Lê Văn Minh~
+SS*5*Sinh học*6*Trần Văn Lâm~
+SS*6*Lịch sử*9.4*Nguyễn Thị Khuê~
+SS*7*Địa lý*7.1*Nguyễn Thị Diệp~
+SS*8*Công nghệ*7.8*Trần Thu Hạnh~
+SS*9*Thể dục*6.9*Hồ Văn Bảo~
+SS*10*Ngoại ngữ*9.5*Nguyễn Trường Uy~
+SS*11*Tin học*8.9*Nguyễn Thị Nhi~
+SS*12*Giáo dục công dân*8.2*Nguyễn Bá Tùng~
+SS*13*Giáo dục quốc phòng và an ninh*8.2*Trần Văn Tùng~
+TE*3*Học kỳ 2*Khá*Tốt~
+SS*1*Ngữ văn*8*Vương Văn Huy~
+SS*2*Toán*6.5*Vũ Văn Lộc~
+SS*3*Vật lý*9*Lý Xuân Ngân~
+SS*4*Hóa học*9.1*Nguyễn Thu Chi~
+SS*5*Sinh học*8.1*Nguyễn Thị Nhiên~
+SS*6*Lịch sử*6.5*Ngô Trường Khang~
+SS*7*Địa lý*8.6*Vũ Văn Dũng~
+SS*8*Công nghệ*6.2*Nguyễn Thị Thủy~
+SS*9*Thể dục*9.1*Bùi Thị Thư~
+SS*10*Ngoại ngữ*7.1*Phan Thị Như~
+SS*11*Tin học*8.8*Nguyễn Thị Trang~
+SS*12*Giáo dục công dân*9*Nguyễn Văn Thái~
+SS*13*Giáo dục quốc phòng và an ninh*8.4*Khuất Văn Công~
+YE*2*11A*2013*2014*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thị Quyên*4*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2014-05-30~
+SCH*THPT Nam Đàn 1*Xóm 4*Thị trấn Nam Đàn*Huyện Nam Đàn*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Tốt~
+SS*1*Ngữ văn*8.5*Dương Lan Khuê~
+SS*2*Toán*6*Đinh Văn Kiên~
+SS*3*Vật lý*8.5*Nguyễn Thị Nghi~
+SS*4*Hóa học*7.1*Đào Văn Khải~
+SS*5*Sinh học*9.4*Phạm Thị Yên~
+SS*6*Lịch sử*7.4*Nguyễn Văn Tùng~
+SS*7*Địa lý*9.1*Phạm Thu Thư~
+SS*8*Công nghệ*9.5*Nguyễn Thu Thủy~
+SS*9*Thể dục*8.5*Hoàng Thị Chi~
+SS*10*Ngoại ngữ*6.6*Trần Văn Phong~
+SS*11*Tin học*8.9*Nguyễn Bá Nguyên~
+SS*12*Giáo dục công dân*6.8*Nguyễn Thị Thư~
+SS*13*Giáo dục quốc phòng và an ninh*9.4*Trần Văn Sơn~
+TE*2*Học kỳ 1*Trung bình*Khá~
+SS*1*Ngữ văn*8.2*Bùi Thị Đoan~
+SS*2*Toán*8.2*Nguyễn Văn Long~
+SS*3*Vật lý*8.8*Lâm Bá Cường~
+SS*4*Hóa học*9.5*Nguyễn Xuân Minh~
+SS*5*Sinh học*7.2*Trần Văn Khoa~
+SS*6*Lịch sử*8.4*Nguyễn Văn Thịnh~
+SS*7*Địa lý*9*Phan Thị Vy~
+SS*8*Công nghệ*9.1*Nguyễn Văn Nam~
+SS*9*Thể dục*8.7*Hoàng Xuân Nga~
+SS*10*Ngoại ngữ*8.7*Nguyễn Thị Hà~
+SS*11*Tin học*8.7*Trần Văn Tâm~
+SS*12*Giáo dục công dân*8.8*Nguyễn Thị Hân~
+SS*13*Giáo dục quốc phòng và an ninh*9.1*Nguyễn Thị Nhung~
+TE*3*Học kỳ 2*Khá*Tốt~
+SS*1*Ngữ văn*6.6*Đoàn Văn Nam~
+SS*2*Toán*7.5*Trần Văn Sơn~
+SS*3*Vật lý*9.3*Phạm Lan Thảo~
+SS*4*Hóa học*9*Trịnh Lan Dung~
+SS*5*Sinh học*8.4*Nguyễn Văn Dũng~
+SS*6*Lịch sử*7*Nguyễn Thị Giang~
+SS*7*Địa lý*8.7*Hoàng Thị Giang~
+SS*8*Công nghệ*6.7*Trần Văn Dương~
+SS*9*Thể dục*7.2*Nguyễn Thị Thư~
+SS*10*Ngoại ngữ*8.7*Vũ Thị Bích~
+SS*11*Tin học*9.3*Nguyễn Văn Bảo~
+SS*12*Giáo dục công dân*6.8*Phạm Văn Thành~
+SS*13*Giáo dục quốc phòng và an ninh*8.9*Lê Văn Tâm~
+YE*3*12A*2014*2015*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Dương Thị Anh*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2015-05-30~
+SCH*THPT DL Nguyễn Trường Tộ*Xóm 3*Phường Hà Huy Tập*Thành phố Vinh*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*8*Phạm Thu Hà~
+SS*2*Toán*8*Dương Văn Hoàng~
+SS*3*Vật lý*9.4*Nguyễn Lan An~
+SS*4*Hóa học*7.1*Nguyễn Văn Lộc~
+SS*5*Sinh học*8.9*Lê Văn Công~
+SS*6*Lịch sử*6*Lê Văn Thiên~
+SS*7*Địa lý*7.6*Đặng Thị Nga~
+SS*8*Công nghệ*6*Phan Thị Nhung~
+SS*9*Thể dục*9.5*Nguyễn Thị Khánh~
+SS*10*Ngoại ngữ*6.6*Phạm Thị Chi~
+SS*11*Tin học*6.4*Nguyễn Văn Minh~
+SS*12*Giáo dục công dân*7.5*Dương Thị An~
+SS*13*Giáo dục quốc phòng và an ninh*8.4*Đào Văn Nam~
+TE*2*Học kỳ 1*Giỏi*Tốt~
+SS*1*Ngữ văn*6.9*Hoàng Thị Minh~
+SS*2*Toán*7.7*Nguyễn Văn Gia~
+SS*3*Vật lý*6.6*Lê Văn Khoa~
+SS*4*Hóa học*6.6*Trần Văn Tùng~
+SS*5*Sinh học*6.1*Vũ Thị Bích~
+SS*6*Lịch sử*7.9*Nguyễn Trường Ngọc~
+SS*7*Địa lý*6.6*Nguyễn Văn Thành~
+SS*8*Công nghệ*8.2*Nguyễn Bá Lộc~
+SS*9*Thể dục*7*Lý Thị Nhiên~
+SS*10*Ngoại ngữ*6.9*Nguyễn Thị Loan~
+SS*11*Tin học*9.5*Nguyễn Thị Thư~
+SS*12*Giáo dục công dân*6.5*Bùi Văn Huy~
+SS*13*Giáo dục quốc phòng và an ninh*7.3*Phạm Thị Mi~
+TE*3*Học kỳ 2*Giỏi*Khá~
+SS*1*Ngữ văn*7.4*Bùi Văn Tuấn~
+SS*2*Toán*7.1*Bùi Thị Ngọc~
+SS*3*Vật lý*7.4*Lê Văn Dương~
+SS*4*Hóa học*9.2*Vương Hải Đạt~
+SS*5*Sinh học*8.4*Lê Văn Nam~
+SS*6*Lịch sử*8.9*Nguyễn Xuân Loan~
+SS*7*Địa lý*8.1*Lê Lan Hoa~
+SS*8*Công nghệ*7.6*Nguyễn Thị Vy~
+SS*9*Thể dục*8.1*Trần Thị Diệp~
+SS*10*Ngoại ngữ*8*Lê Văn An~
+SS*11*Tin học*8.7*Nguyễn Văn Phi~
+SS*12*Giáo dục công dân*8.6*Lê Văn Lâm~
+SS*13*Giáo dục quốc phòng và an ninh*9.4*Nguyễn Trường Tuấn~
+SR*71/2016*2016-03-21*Lại Thế Quang*~
+STD*Đỗ Văn Hiếu*Nam*1998-08-05*Kinh*Đỗ Văn An*Đạo diễn phim*Lê Thị Trà*Người mẫu quảng cáo***image.jpg~
+CA*Xóm 4*Xã Quỳnh Bá*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 4*Xã Quỳnh Bá*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A2*2010*2011*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Vũ Thị Như*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2011-05-30~
+SCH*TTGDTX Quế Phong*Xóm 7*Thị trấn Kim Sơn*Huyện Quế Phong*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+SS*1*Ngữ văn*9.3*Nguyễn Văn Lâm~
+SS*2*Toán*6.1*Nguyễn Xuân Cường~
+SS*3*Vật lý*7*Vũ Thị Hạ~
+SS*4*Hóa học*8.3*Hoàng Văn Việt~
+SS*5*Sinh học*6*Nguyễn Lan Trang~
+SS*6*Lịch sử*8*Nguyễn Thị Thư~
+SS*7*Địa lý*9.2*Nguyễn Thị Trang~
+SS*8*Công nghệ*8*Nguyễn Văn Phúc~
+SS*9*Thể dục*7.1*Lê Văn Đức~
+SS*10*Ngoại ngữ*8.7*Lê Thị Nhung~
+SS*11*Tin học*7.7*Nguyễn Trường Công~
+SS*12*Giáo dục công dân*9.5*Đinh Văn Dũng~
+SS*13*Giáo dục quốc phòng và an ninh*8.5*Nguyễn Trường Anh~
+TE*2*Học kỳ 1*Giỏi*Khá~
+SS*1*Ngữ văn*7*Mai Thị Nhi~
+SS*2*Toán*6.5*Phùng Thị Vy~
+SS*3*Vật lý*7.8*Nguyễn Thu Hạ~
+SS*4*Hóa học*9.2*Nguyễn Văn Hiếu~
+SS*5*Sinh học*7.3*Phạm Xuân Thu~
+SS*6*Lịch sử*8.8*Nguyễn Xuân Minh~
+SS*7*Địa lý*6.4*Nguyễn Văn Cường~
+SS*8*Công nghệ*8.3*Trịnh Văn Gia~
+SS*9*Thể dục*9*Bùi Văn Quang~
+SS*10*Ngoại ngữ*6.1*Lâm Thị Như~
+SS*11*Tin học*6.7*Nguyễn Văn Sơn~
+SS*12*Giáo dục công dân*6.2*Dương Thị Minh~
+SS*13*Giáo dục quốc phòng và an ninh*7.1*Phạm Xuân Huy~
+TE*3*Học kỳ 2*Trung bình*Tốt~
+SS*1*Ngữ văn*8.5*Lê Văn Phong~
+SS*2*Toán*8.8*Đặng Văn Khôi~
+SS*3*Vật lý*7.8*Nguyễn Thị Quỳnh~
+SS*4*Hóa học*9.3*Nguyễn Thị Nghi~
+SS*5*Sinh học*6.2*Nguyễn Hải Khôi~
+SS*6*Lịch sử*8.3*Hoàng Văn Phi~
+SS*7*Địa lý*9.4*Phan Thị Ngọc~
+SS*8*Công nghệ*7.3*Nguyễn Văn Sơn~
+SS*9*Thể dục*7.5*Lê Thị Điệp~
+SS*10*Ngoại ngữ*6.9*Bùi Thị Vân~
+SS*11*Tin học*7.1*Nguyễn Phúc Khải~
+SS*12*Giáo dục công dân*8.3*Phạm Văn Khôi~
+SS*13*Giáo dục quốc phòng và an ninh*6.8*Trần Văn Thái~
+YE*2*11A2*2011*2012*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Khang*3*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2012-05-30~
+SCH*THPT Mường Quạ*Xóm 11*Xã Môn Sơn*Huyện Con Cuông*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+SS*1*Ngữ văn*9.4*Nguyễn Bá Bách~
+SS*2*Toán*9.3*Đoàn Thị Đoan~
+SS*3*Vật lý*7*Phùng Văn Đức~
+SS*4*Hóa học*6.7*Trần Văn Kiên~
+SS*5*Sinh học*6*Phan Văn Lộc~
+SS*6*Lịch sử*8.1*Nguyễn Thị Như~
+SS*7*Địa lý*7.5*Hoàng Thị Bích~
+SS*8*Công nghệ*8.6*Phan Thu Sương~
+SS*9*Thể dục*9.1*Khuất Thu Thu~
+SS*10*Ngoại ngữ*6.4*Nguyễn Xuân Dương~
+SS*11*Tin học*7.6*Nguyễn Thị Dung~
+SS*12*Giáo dục công dân*8.7*Nguyễn Lan Nghi~
+SS*13*Giáo dục quốc phòng và an ninh*8.5*Nguyễn Văn Bách~
+TE*2*Học kỳ 1*Trung bình*Khá~
+SS*1*Ngữ văn*9.1*Nguyễn Văn Đức~
+SS*2*Toán*8.8*Nguyễn Văn Lâm~
+SS*3*Vật lý*6.9*Nguyễn Trường Nghĩa~
+SS*4*Hóa học*8.9*Nguyễn Văn Sơn~
+SS*5*Sinh học*6.4*Nguyễn Thị Chi~
+SS*6*Lịch sử*6.9*Nguyễn Lan Nhiên~
+SS*7*Địa lý*6.4*Tạ Văn Hoàng~
+SS*8*Công nghệ*6.3*Hoàng Văn Khánh~
+SS*9*Thể dục*6.5*Lê Thị Khuê~
+SS*10*Ngoại ngữ*6.2*Hoàng Văn Dương~
+SS*11*Tin học*8.1*Nguyễn Văn Hoàng~
+SS*12*Giáo dục công dân*6.8*Nguyễn Thu Hạnh~
+SS*13*Giáo dục quốc phòng và an ninh*8.3*Trần Văn Phúc~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*8.7*Phan Thị An~
+SS*2*Toán*6.3*Lê Thị Yên~
+SS*3*Vật lý*9.2*Nguyễn Thị Thu~
+SS*4*Hóa học*7.1*Khuất Văn Thịnh~
+SS*5*Sinh học*7*Bùi Thị An~
+SS*6*Lịch sử*6.3*Trần Văn Phi~
+SS*7*Địa lý*6.4*Trần Văn Tâm~
+SS*8*Công nghệ*7.4*Trần Thị Nhi~
+SS*9*Thể dục*7.2*Nguyễn Thị Loan~
+SS*10*Ngoại ngữ*9.5*Lê Thị Hân~
+SS*11*Tin học*7.4*Phùng Văn Nhân~
+SS*12*Giáo dục công dân*9.4*Phạm Xuân Thịnh~
+SS*13*Giáo dục quốc phòng và an ninh*7*Nguyễn Thị Linh~
+YE*3*12A2*2012*2013*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thị Nhung*2*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2013-05-30~
+SCH*THPT DTNT Quỳ Hợp*Xóm 7*Xã Châu Quang*Huyện Quỳ Hợp*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*8.2*Trần Thị Bích~
+SS*2*Toán*6.5*Hoàng Văn Gia~
+SS*3*Vật lý*9.5*Hà Văn Việt~
+SS*4*Hóa học*9.2*Nguyễn Thị Anh~
+SS*5*Sinh học*6.6*Nguyễn Thu Ngân~
+SS*6*Lịch sử*9.4*Đỗ Bá Phúc~
+SS*7*Địa lý*9.4*Trần Thị Nhung~
+SS*8*Công nghệ*7.9*Tô Thị Vy~
+SS*9*Thể dục*6.7*Lâm Văn Quang~
+SS*10*Ngoại ngữ*9.1*Trần Văn Đức~
+SS*11*Tin học*7.5*Phan Văn Công~
+SS*12*Giáo dục công dân*6.7*Lê Phúc Nam~
+SS*13*Giáo dục quốc phòng và an ninh*6.7*Nguyễn Thị Linh~
+TE*2*Học kỳ 1*Khá*Tốt~
+SS*1*Ngữ văn*7.1*Vũ Văn Quốc~
+SS*2*Toán*8.3*Hoàng Thị Thảo~
+SS*3*Vật lý*7.5*Phan Thị Hạnh~
+SS*4*Hóa học*9.2*Đặng Thị Châu~
+SS*5*Sinh học*9.4*Ngô Thị Thảo~
+SS*6*Lịch sử*7.3*Khuất Thị Điệp~
+SS*7*Địa lý*6.1*Nguyễn Lan Yến~
+SS*8*Công nghệ*9.5*Vương Văn Cường~
+SS*9*Thể dục*8.2*Lý Văn Minh~
+SS*10*Ngoại ngữ*6.4*Trần Trường Khoa~
+SS*11*Tin học*7.7*Nguyễn Lan Vy~
+SS*12*Giáo dục công dân*6.2*Hoàng Thị Khuê~
+SS*13*Giáo dục quốc phòng và an ninh*8.8*Nguyễn Văn Việt~
+TE*3*Học kỳ 2*Trung bình*Tốt~
+SS*1*Ngữ văn*7.1*Trần Xuân Quân~
+SS*2*Toán*7.8*Đặng Thị Giang~
+SS*3*Vật lý*7.1*Trần Thị Mai~
+SS*4*Hóa học*9*Nguyễn Văn Nam~
+SS*5*Sinh học*6.8*Nguyễn Văn Hùng~
+SS*6*Lịch sử*8.2*Trần Thị Thi~
+SS*7*Địa lý*7.3*Đặng Văn Kiên~
+SS*8*Công nghệ*7.7*Nguyễn Văn Quân~
+SS*9*Thể dục*7.6*Nguyễn Thị Khánh~
+SS*10*Ngoại ngữ*8.3*Lê Thị Vy~
+SS*11*Tin học*6.4*Nguyễn Văn Bách~
+SS*12*Giáo dục công dân*7.7*Vũ Thị Vy~
+SS*13*Giáo dục quốc phòng và an ninh*7.7*Nguyễn Văn Đức~
+SR*76/2016*2016-03-21*Lại Thế Quang*~
+STD*Nguyễn Phúc Hoàng*Nam*1993-11-16*Kinh*Nguyễn Phúc Vinh*Công nhân*Nguyễn Thị Tâm*Điều dưỡng viên***image.jpg~
+CA*Xóm 9*Xã An Hòa*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 9*Xã An Hòa*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A1*2008*2009*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Lê Thị Trang*3*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
+SCH*TTGDTX Anh Sơn*Xóm 5*Thị trấn Anh Sơn*Huyện Anh Sơn*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*7.5*Vũ Văn Khang~
+SS*2*Toán*8.3*Phan Xuân Phong~
+SS*3*Vật lý*8.1*Nguyễn Văn Khánh~
+SS*4*Hóa học*6.3*Nguyễn Văn Nghĩa~
+SS*5*Sinh học*8.3*Trần Thị Yến~
+SS*6*Lịch sử*8.4*Nguyễn Thị Oanh~
+SS*7*Địa lý*8.9*Hoàng Văn Đức~
+SS*8*Công nghệ*6.1*Lê Văn Anh~
+SS*9*Thể dục*6.8*Trần Văn Tâm~
+SS*10*Ngoại ngữ*8.7*Nguyễn Văn Việt~
+SS*11*Tin học*8.7*Bùi Thị Tâm~
+SS*12*Giáo dục công dân*8.9*Lê Thị Thư~
+SS*13*Giáo dục quốc phòng và an ninh*6.7*Nguyễn Thị Mai~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+SS*1*Ngữ văn*8.1*Lê Thị Trang~
+SS*2*Toán*6.1*Nguyễn Văn Hiếu~
+SS*3*Vật lý*9.5*Nguyễn Văn Quốc~
+SS*4*Hóa học*9.4*Lê Thu Trà~
+SS*5*Sinh học*9.5*Lâm Thị Ngọc~
+SS*6*Lịch sử*7.9*Vũ Văn Anh~
+SS*7*Địa lý*6.4*Khuất Văn Nhân~
+SS*8*Công nghệ*8.9*Phan Thị Thu~
+SS*9*Thể dục*9.5*Đặng Xuân Trà~
+SS*10*Ngoại ngữ*7.9*Lê Bá Phúc~
+SS*11*Tin học*7.3*Nguyễn Phúc Khang~
+SS*12*Giáo dục công dân*9*Lê Lan Ngọc~
+SS*13*Giáo dục quốc phòng và an ninh*8*Ngô Thị Loan~
+TE*3*Học kỳ 2*Khá*Tốt~
+SS*1*Ngữ văn*7.6*Nguyễn Văn Hiếu~
+SS*2*Toán*9.2*Nguyễn Văn Khang~
+SS*3*Vật lý*9.5*Lê Văn Khánh~
+SS*4*Hóa học*6.8*Lê Thị Hạ~
+SS*5*Sinh học*9.1*Nguyễn Phúc An~
+SS*6*Lịch sử*8.3*Phan Thị Ngọc~
+SS*7*Địa lý*6.5*Đinh Thị Đoan~
+SS*8*Công nghệ*6.7*Nguyễn Văn Tùng~
+SS*9*Thể dục*8.4*Nguyễn Bá Trung~
+SS*10*Ngoại ngữ*7.9*Đặng Văn Uy~
+SS*11*Tin học*6.1*Trần Thị Khuê~
+SS*12*Giáo dục công dân*7.3*Nguyễn Thu Hương~
+SS*13*Giáo dục quốc phòng và an ninh*9.1*Nguyễn Văn Nam~
+YE*2*11A1*2009*2010*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Hải Minh*2*Được lên lớp thẳng*Tin văn phòng*Giỏi*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2010-05-30~
+SCH*THPT Nam Đàn 2*Xóm 13*Xã Nam Trung*Huyện Nam Đàn*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*7.1*Phạm Văn Quân~
+SS*2*Toán*6.8*Nguyễn Văn Vinh~
+SS*3*Vật lý*6.8*Nguyễn Thị Thủy~
+SS*4*Hóa học*8*Nguyễn Văn Khôi~
+SS*5*Sinh học*9.3*Lâm Bá Sơn~
+SS*6*Lịch sử*7.7*Trần Văn Vinh~
+SS*7*Địa lý*6.4*Tạ Thu Thảo~
+SS*8*Công nghệ*8.4*Tô Thị Oanh~
+SS*9*Thể dục*9.3*Nguyễn Phúc Tuấn~
+SS*10*Ngoại ngữ*6*Nguyễn Lan Châu~
+SS*11*Tin học*8.7*Trần Văn Trung~
+SS*12*Giáo dục công dân*7.1*Nguyễn Văn Quốc~
+SS*13*Giáo dục quốc phòng và an ninh*6*Phạm Thị Nhiên~
+TE*2*Học kỳ 1*Giỏi*Khá~
+SS*1*Ngữ văn*7.1*Hoàng Thị Quỳnh~
+SS*2*Toán*8.4*Nguyễn Văn Long~
+SS*3*Vật lý*8.9*Lâm Thu Uyên~
+SS*4*Hóa học*9.1*Phạm Thị Xuân~
+SS*5*Sinh học*7.1*Đặng Thị Nhi~
+SS*6*Lịch sử*8.1*Trần Văn Vinh~
+SS*7*Địa lý*9.2*Đoàn Văn An~
+SS*8*Công nghệ*8*Nguyễn Văn Hoàng~
+SS*9*Thể dục*8.2*Nguyễn Văn Long~
+SS*10*Ngoại ngữ*6*Nguyễn Văn Dương~
+SS*11*Tin học*6.8*Hoàng Thị Trà~
+SS*12*Giáo dục công dân*6.8*Lâm Thị Linh~
+SS*13*Giáo dục quốc phòng và an ninh*9.2*Lê Thị Điệp~
+TE*3*Học kỳ 2*Giỏi*Khá~
+SS*1*Ngữ văn*7.8*Nguyễn Văn An~
+SS*2*Toán*8.3*Trần Văn Trung~
+SS*3*Vật lý*9.4*Nguyễn Thị Mai~
+SS*4*Hóa học*7.7*Trần Văn Lộc~
+SS*5*Sinh học*6.8*Nguyễn Văn Cường~
+SS*6*Lịch sử*7.8*Phan Văn Thịnh~
+SS*7*Địa lý*9*Nguyễn Thu Hạ~
+SS*8*Công nghệ*6.8*Lê Thị Oanh~
+SS*9*Thể dục*7.4*Trần Lan Uyên~
+SS*10*Ngoại ngữ*9.1*Nguyễn Văn Khánh~
+SS*11*Tin học*9*Bùi Văn Nhân~
+SS*12*Giáo dục công dân*9.3*Phan Thị Nghi~
+SS*13*Giáo dục quốc phòng và an ninh*8*Nguyễn Văn Quân~
+YE*3*12A1*2010*2011*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Mai Thị Vân*3*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2011-05-30~
+SCH*THPT BC Thanh Chương + TTGDTX Thanh Chương*Xóm 1*Thị trấn Thanh Chương*Huyện Thanh Chương*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Tốt~
+SS*1*Ngữ văn*7.8*Phạm Lan Đoan~
+SS*2*Toán*8.4*Đinh Lan Thư~
+SS*3*Vật lý*9.3*Trịnh Văn Đạt~
+SS*4*Hóa học*7.5*Phạm Thu Uyên~
+SS*5*Sinh học*7.9*Trương Thị Trà~
+SS*6*Lịch sử*8.8*Nguyễn Văn Thịnh~
+SS*7*Địa lý*7.1*Vũ Thị Hà~
+SS*8*Công nghệ*9.2*Tô Thị Oanh~
+SS*9*Thể dục*8.7*Vũ Thị Hạ~
+SS*10*Ngoại ngữ*9.3*Nguyễn Văn Khôi~
+SS*11*Tin học*9.3*Trần Văn Gia~
+SS*12*Giáo dục công dân*6.8*Trần Thị An~
+SS*13*Giáo dục quốc phòng và an ninh*6.8*Vương Thu Ngân~
+TE*2*Học kỳ 1*Trung bình*Khá~
+SS*1*Ngữ văn*7.3*Lê Thị Thi~
+SS*2*Toán*6.7*Nguyễn Bá Khánh~
+SS*3*Vật lý*9.3*Nguyễn Văn Tâm~
+SS*4*Hóa học*6.5*Nguyễn Văn Quang~
+SS*5*Sinh học*9.1*Trịnh Thu Nhiên~
+SS*6*Lịch sử*8.3*Trần Thị Xuân~
+SS*7*Địa lý*6.1*Phạm Thị An~
+SS*8*Công nghệ*7.4*Nguyễn Thị Hạ~
+SS*9*Thể dục*8.4*Hoàng Văn Nguyên~
+SS*10*Ngoại ngữ*7.6*Phạm Thị Nga~
+SS*11*Tin học*7.2*Nguyễn Văn Hải~
+SS*12*Giáo dục công dân*9.3*Nguyễn Xuân Hà~
+SS*13*Giáo dục quốc phòng và an ninh*6.5*Đoàn Văn Bảo~
+TE*3*Học kỳ 2*Giỏi*Tốt~
+SS*1*Ngữ văn*9.2*Phí Văn Nguyên~
+SS*2*Toán*6.4*Tô Thị Oanh~
+SS*3*Vật lý*8*Phạm Văn Quân~
+SS*4*Hóa học*6.2*Nguyễn Thu Thủy~
+SS*5*Sinh học*7.1*Phan Hải Tâm~
+SS*6*Lịch sử*9.4*Nguyễn Thị Mi~
+SS*7*Địa lý*7*Phạm Thị Vy~
+SS*8*Công nghệ*6.9*Đặng Trường Công~
+SS*9*Thể dục*7.6*Nguyễn Thị Yến~
+SS*10*Ngoại ngữ*6.2*Lê Xuân Minh~
+SS*11*Tin học*7.2*Đào Văn Sơn~
+SS*12*Giáo dục công dân*8.3*Phạm Văn Trung~
+SS*13*Giáo dục quốc phòng và an ninh*6.1*Phạm Văn Hùng~
+SR*78/2016*2016-03-21*Lại Thế Quang*~
+STD*Trần Thị Minh*Nữ*1999-10-30*Kinh*Trần Văn Gia*Người mẫu quảng cáo*Lê Thị Thi*Thư ký***image.jpg~
+CA*Xóm 1*Xã Quỳnh Thọ*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 1*Xã Quỳnh Thọ*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10E*2006*2007*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Lê Lan Yến*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2007-05-30~
+SCH*THPT Lê Viết Thuật*Xóm 8*Phường Trường Thi*Thành phố Vinh*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+SS*1*Ngữ văn*8.8*Vương Thị Châu~
+SS*2*Toán*6.8*Đoàn Phúc Hùng~
+SS*3*Vật lý*8.1*Phạm Văn Tùng~
+SS*4*Hóa học*9.1*Hà Thị Đoan~
+SS*5*Sinh học*6*Trần Lan Oanh~
+SS*6*Lịch sử*6.2*Đinh Thị Diệp~
+SS*7*Địa lý*9.3*Phùng Văn Hải~
+SS*8*Công nghệ*6*Phan Hải Duy~
+SS*9*Thể dục*6.1*Nguyễn Thị Oanh~
+SS*10*Ngoại ngữ*6.9*Phạm Lan Quyên~
+SS*11*Tin học*8.7*Trần Văn Thịnh~
+SS*12*Giáo dục công dân*6.4*Lê Văn Quang~
+SS*13*Giáo dục quốc phòng và an ninh*8.4*Nguyễn Thị Trang~
+TE*2*Học kỳ 1*Giỏi*Khá~
+SS*1*Ngữ văn*6.4*Phùng Phúc Nam~
+SS*2*Toán*8.8*Lê Thị Chi~
+SS*3*Vật lý*6.8*Nguyễn Văn Quốc~
+SS*4*Hóa học*7.3*Lê Văn Phúc~
+SS*5*Sinh học*9.5*Trần Văn Khang~
+SS*6*Lịch sử*8.6*Trần Hải Vinh~
+SS*7*Địa lý*7.4*Nguyễn Thị Đoan~
+SS*8*Công nghệ*9*Nguyễn Văn Thiên~
+SS*9*Thể dục*6.8*Nguyễn Thị Thư~
+SS*10*Ngoại ngữ*6.1*Nguyễn Lan Diệp~
+SS*11*Tin học*9.5*Phạm Thị Ngọc~
+SS*12*Giáo dục công dân*9.4*Hoàng Trường Phong~
+SS*13*Giáo dục quốc phòng và an ninh*8.2*Nguyễn Lan Giang~
+TE*3*Học kỳ 2*Trung bình*Tốt~
+SS*1*Ngữ văn*7.5*Nguyễn Thị Dung~
+SS*2*Toán*6.5*Đặng Thị Lan~
+SS*3*Vật lý*8.1*Nguyễn Thị Đoan~
+SS*4*Hóa học*7.5*Vũ Thu Hân~
+SS*5*Sinh học*7.1*Trần Thị Linh~
+SS*6*Lịch sử*6.2*Nguyễn Thị Ngân~
+SS*7*Địa lý*7.4*Nguyễn Thị Lan~
+SS*8*Công nghệ*7.5*Nguyễn Thị Khuê~
+SS*9*Thể dục*7.8*Phí Thị Tâm~
+SS*10*Ngoại ngữ*6*Lê Văn Hoàng~
+SS*11*Tin học*8.8*Nguyễn Xuân Anh~
+SS*12*Giáo dục công dân*8.3*Phạm Văn Nhân~
+SS*13*Giáo dục quốc phòng và an ninh*6.4*Trần Văn An~
+YE*2*11E*2007*2008*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Lê Thị Loan*2*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2008-05-30~
+SCH*THPT Lê Hồng Phong*Xóm 12*Xã Hưng Thông*Huyện Hưng Nguyên*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+SS*1*Ngữ văn*8.3*Nguyễn Văn Thiên~
+SS*2*Toán*6.8*Nguyễn Văn Huy~
+SS*3*Vật lý*6.2*Nguyễn Hải Duy~
+SS*4*Hóa học*7.2*Bùi Văn Nghĩa~
+SS*5*Sinh học*9.1*Lê Văn Khôi~
+SS*6*Lịch sử*7.7*Trịnh Thu Lan~
+SS*7*Địa lý*6.6*Phan Văn Khải~
+SS*8*Công nghệ*7.9*Phạm Thị Đoan~
+SS*9*Thể dục*9.3*Phạm Thị Sương~
+SS*10*Ngoại ngữ*9*Nguyễn Thị Chi~
+SS*11*Tin học*8.8*Trần Thị Mai~
+SS*12*Giáo dục công dân*9.1*Trần Thị Hoa~
+SS*13*Giáo dục quốc phòng và an ninh*8.7*Trần Thị Nga~
+TE*2*Học kỳ 1*Giỏi*Tốt~
+SS*1*Ngữ văn*7*Trịnh Xuân Nhi~
+SS*2*Toán*6.4*Nguyễn Văn Quân~
+SS*3*Vật lý*8.6*Nguyễn Thị Vy~
+SS*4*Hóa học*9.2*Nguyễn Văn Hiếu~
+SS*5*Sinh học*6*Lê Văn Nam~
+SS*6*Lịch sử*6.9*Lê Văn Sơn~
+SS*7*Địa lý*7.2*Phạm Thị Nhi~
+SS*8*Công nghệ*6.6*Phạm Văn Thiên~
+SS*9*Thể dục*7.2*Lê Văn Khang~
+SS*10*Ngoại ngữ*7.7*Trần Văn Thịnh~
+SS*11*Tin học*8.6*Nguyễn Thị Hạnh~
+SS*12*Giáo dục công dân*9.2*Lê Thị Thủy~
+SS*13*Giáo dục quốc phòng và an ninh*7.8*Trần Xuân Bích~
+TE*3*Học kỳ 2*Giỏi*Tốt~
+SS*1*Ngữ văn*9.4*Trần Văn Nam~
+SS*2*Toán*6.9*Lê Xuân Ngân~
+SS*3*Vật lý*9.3*Khuất Văn Sơn~
+SS*4*Hóa học*9*Phạm Xuân Khánh~
+SS*5*Sinh học*9.1*Vương Văn Minh~
+SS*6*Lịch sử*8.5*Nguyễn Thị Châu~
+SS*7*Địa lý*7.3*Nguyễn Xuân Nguyên~
+SS*8*Công nghệ*9.2*Lê Văn Trung~
+SS*9*Thể dục*6.2*Nguyễn Văn Thành~
+SS*10*Ngoại ngữ*6.3*Phùng Thu Điệp~
+SS*11*Tin học*7.1*Nguyễn Lan Bích~
+SS*12*Giáo dục công dân*8.7*Nguyễn Thị Yến~
+SS*13*Giáo dục quốc phòng và an ninh*6.2*Nguyễn Bá Hiếu~
+YE*3*12E*2008*2009*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Phi*4*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
+SCH*THPT Tương Dương 2*Xóm 13*Xã Tam Quang*Huyện Tương Dương*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*7.8*Trần Thị Như~
+SS*2*Toán*6.9*Phạm Trường Phong~
+SS*3*Vật lý*9.3*Khuất Phúc Khoa~
+SS*4*Hóa học*8.1*Nguyễn Thị Châu~
+SS*5*Sinh học*6.1*Phùng Thị Khánh~
+SS*6*Lịch sử*8.6*Hoàng Xuân Nhi~
+SS*7*Địa lý*6.8*Nguyễn Thị Hoa~
+SS*8*Công nghệ*9*Lê Lan Thu~
+SS*9*Thể dục*6.5*Bùi Văn Dương~
+SS*10*Ngoại ngữ*6.7*Nguyễn Thị Thảo~
+SS*11*Tin học*6.8*Lê Thị Hoa~
+SS*12*Giáo dục công dân*9.1*Nguyễn Thị Anh~
+SS*13*Giáo dục quốc phòng và an ninh*8*Hoàng Thị Nga~
+TE*2*Học kỳ 1*Trung bình*Khá~
+SS*1*Ngữ văn*8.9*Nguyễn Bá Thái~
+SS*2*Toán*7.4*Hoàng Văn Long~
+SS*3*Vật lý*7.8*Khuất Lan Nhiên~
+SS*4*Hóa học*6.2*Nguyễn Xuân Thư~
+SS*5*Sinh học*8*Lê Văn Dũng~
+SS*6*Lịch sử*9.1*Nguyễn Thị Đoan~
+SS*7*Địa lý*8.1*Nguyễn Văn Nghĩa~
+SS*8*Công nghệ*9.4*Trương Hải Huy~
+SS*9*Thể dục*7.4*Nguyễn Xuân Trung~
+SS*10*Ngoại ngữ*8.9*Trần Văn Uy~
+SS*11*Tin học*6.5*Trần Văn Khôi~
+SS*12*Giáo dục công dân*7.9*Nguyễn Thị Vy~
+SS*13*Giáo dục quốc phòng và an ninh*6.9*Nguyễn Văn Đức~
+TE*3*Học kỳ 2*Trung bình*Khá~
+SS*1*Ngữ văn*8.3*Trần Văn An~
+SS*2*Toán*8.5*Nguyễn Thu Loan~
+SS*3*Vật lý*6*Đoàn Thị Quyên~
+SS*4*Hóa học*9.1*Nguyễn Thị Hoa~
+SS*5*Sinh học*8.1*Đoàn Thị Mi~
+SS*6*Lịch sử*8.9*Phan Xuân Loan~
+SS*7*Địa lý*8.9*Bùi Thị Đoan~
+SS*8*Công nghệ*8.9*Nguyễn Thị Thủy~
+SS*9*Thể dục*7.9*Lê Thị Khuê~
+SS*10*Ngoại ngữ*6.7*Đoàn Văn Ngọc~
+SS*11*Tin học*6.6*Trần Thị Quyên~
+SS*12*Giáo dục công dân*8.9*Phạm Lan Thư~
+SS*13*Giáo dục quốc phòng và an ninh*6.1*Nguyễn Văn Nam~
+SR*90/2016*2016-03-21*Lại Thế Quang*~
+STD*Vương Bá Minh*Nam*1990-03-10*Kinh*Vương Bá Anh*Thợ xây*Nguyễn Thị Thu*Công nhân***image.jpg~
+CA*Xóm 2*Xã Quỳnh Diện*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 2*Xã Quỳnh Diện*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A3*2011*2012*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Uy*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2012-05-30~
+SCH*THPT Bắc Yên Thành*Xóm 13*Xã Lăng Thành*Huyện Yên Thành*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Tốt~
+SS*1*Ngữ văn*7*Lê Phúc Vinh~
+SS*2*Toán*6.8*Hồ Văn Tùng~
+SS*3*Vật lý*8.2*Trần Xuân Tuấn~
+SS*4*Hóa học*6*Nguyễn Thị Anh~
+SS*5*Sinh học*6.4*Trần Văn Uy~
+SS*6*Lịch sử*7.4*Nguyễn Văn Lâm~
+SS*7*Địa lý*9.3*Lê Thị Đoan~
+SS*8*Công nghệ*7.9*Trần Thị Thư~
+SS*9*Thể dục*7.3*Hà Lan Yến~
+SS*10*Ngoại ngữ*9.1*Phạm Thị Nhung~
+SS*11*Tin học*8.2*Khuất Văn Gia~
+SS*12*Giáo dục công dân*9.5*Trần Xuân Thịnh~
+SS*13*Giáo dục quốc phòng và an ninh*9.3*Trần Văn Long~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+SS*1*Ngữ văn*8.4*Lê Lan Như~
+SS*2*Toán*7.8*Trần Thu Trang~
+SS*3*Vật lý*6.6*Nguyễn Văn Gia~
+SS*4*Hóa học*8.3*Đào Thị Tâm~
+SS*5*Sinh học*7.1*Tạ Thị Chi~
+SS*6*Lịch sử*9.4*Trần Văn Đạt~
+SS*7*Địa lý*8.3*Phùng Văn Bảo~
+SS*8*Công nghệ*8*Vũ Thị Vân~
+SS*9*Thể dục*8.1*Lâm Văn An~
+SS*10*Ngoại ngữ*6.6*Lâm Văn Đức~
+SS*11*Tin học*8.3*Nguyễn Văn Việt~
+SS*12*Giáo dục công dân*6.5*Nguyễn Thị Hà~
+SS*13*Giáo dục quốc phòng và an ninh*7*Trần Văn Kiên~
+TE*3*Học kỳ 2*Trung bình*Khá~
+SS*1*Ngữ văn*7.9*Nguyễn Xuân Thủy~
+SS*2*Toán*6.1*Tạ Thị Nghi~
+SS*3*Vật lý*6*Đỗ Văn Gia~
+SS*4*Hóa học*9.4*Phạm Lan Hà~
+SS*5*Sinh học*8*Đỗ Văn Thái~
+SS*6*Lịch sử*6*Nguyễn Thị Hạ~
+SS*7*Địa lý*7.8*Nguyễn Văn Hùng~
+SS*8*Công nghệ*9.1*Nguyễn Thị Tâm~
+SS*9*Thể dục*8.7*Phí Thị Thư~
+SS*10*Ngoại ngữ*6.3*Trần Xuân Nhi~
+SS*11*Tin học*8.1*Vũ Trường Việt~
+SS*12*Giáo dục công dân*8*Lâm Bá Sơn~
+SS*13*Giáo dục quốc phòng và an ninh*6.6*Phùng Bá Thành~
+YE*2*11A3*2012*2013*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Đinh Văn Thái*1*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2013-05-30~
+SCH*TTGDTX Nghi Lộc*Xóm 7*Thị trấn Quán Hành*Huyện Nghi Lộc*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Khá~
+SS*1*Ngữ văn*6.4*Nguyễn Văn Kiên~
+SS*2*Toán*9.2*Nguyễn Văn Đạt~
+SS*3*Vật lý*6.5*Vũ Thị Minh~
+SS*4*Hóa học*7.5*Đỗ Văn Kiên~
+SS*5*Sinh học*7.8*Hoàng Văn Việt~
+SS*6*Lịch sử*6.7*Vương Thị Vân~
+SS*7*Địa lý*8.1*Trần Thị Anh~
+SS*8*Công nghệ*9*Lê Thị Mi~
+SS*9*Thể dục*8.4*Nguyễn Văn Huy~
+SS*10*Ngoại ngữ*8.5*Trần Lan Hà~
+SS*11*Tin học*9*Phạm Văn Hoàng~
+SS*12*Giáo dục công dân*8*Nguyễn Thị Ngọc~
+SS*13*Giáo dục quốc phòng và an ninh*6.4*Lê Xuân Tùng~
+TE*2*Học kỳ 1*Khá*Tốt~
+SS*1*Ngữ văn*8.2*Nguyễn Văn Khang~
+SS*2*Toán*9.4*Nguyễn Văn Hiếu~
+SS*3*Vật lý*7.3*Nguyễn Thị Trà~
+SS*4*Hóa học*8.6*Nguyễn Thị Tâm~
+SS*5*Sinh học*6.8*Nguyễn Thị Trang~
+SS*6*Lịch sử*6.1*Phí Lan Chi~
+SS*7*Địa lý*7.3*Nguyễn Văn Hải~
+SS*8*Công nghệ*7.7*Phan Thị Mai~
+SS*9*Thể dục*9.4*Nguyễn Văn Duy~
+SS*10*Ngoại ngữ*6.3*Bùi Lan Ngọc~
+SS*11*Tin học*7.9*Nguyễn Văn Bách~
+SS*12*Giáo dục công dân*6.3*Hoàng Thị Khánh~
+SS*13*Giáo dục quốc phòng và an ninh*8.7*Trần Văn Trung~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*8.6*Trần Văn Gia~
+SS*2*Toán*8.9*Trần Văn Long~
+SS*3*Vật lý*8.3*Nguyễn Văn Hiếu~
+SS*4*Hóa học*9*Phạm Trường Quang~
+SS*5*Sinh học*8.3*Lê Trường Dương~
+SS*6*Lịch sử*9*Lê Văn Sơn~
+SS*7*Địa lý*7.3*Nguyễn Văn Lộc~
+SS*8*Công nghệ*7.8*Đinh Thị Nhung~
+SS*9*Thể dục*7.4*Đặng Thu Chi~
+SS*10*Ngoại ngữ*6.2*Nguyễn Thị Quỳnh~
+SS*11*Tin học*8.9*Đoàn Văn Phong~
+SS*12*Giáo dục công dân*6.2*Vũ Văn Nam~
+SS*13*Giáo dục quốc phòng và an ninh*8.4*Phạm Thị Quỳnh~
+YE*3*12A3*2013*2014*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Trần Lan Châu*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2014-05-30~
+SCH*THPT Anh Sơn 3*Xóm 7*Xã Đỉnh Sơn*Huyện Anh Sơn*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Khá~
+SS*1*Ngữ văn*8*Vũ Văn Duy~
+SS*2*Toán*9.5*Hồ Thị Thu~
+SS*3*Vật lý*7.1*Nguyễn Thu Thư~
+SS*4*Hóa học*8*Mai Thị Hà~
+SS*5*Sinh học*8.8*Lý Văn Quốc~
+SS*6*Lịch sử*8.3*Mai Lan Thảo~
+SS*7*Địa lý*6.6*Nguyễn Thị Giang~
+SS*8*Công nghệ*7.1*Tạ Thị Minh~
+SS*9*Thể dục*8.6*Nguyễn Văn Nguyên~
+SS*10*Ngoại ngữ*6*Nguyễn Thị Như~
+SS*11*Tin học*7.8*Hoàng Thị Khánh~
+SS*12*Giáo dục công dân*7.5*Tạ Văn Gia~
+SS*13*Giáo dục quốc phòng và an ninh*8.5*Nguyễn Lan Nga~
+TE*2*Học kỳ 1*Khá*Tốt~
+SS*1*Ngữ văn*7.9*Hoàng Văn Hải~
+SS*2*Toán*6.4*Nguyễn Thị Giang~
+SS*3*Vật lý*8.2*Nguyễn Văn Nghĩa~
+SS*4*Hóa học*7*Phạm Thị Khuê~
+SS*5*Sinh học*9.2*Nguyễn Hải Sơn~
+SS*6*Lịch sử*8.2*Khuất Văn Quốc~
+SS*7*Địa lý*9.2*Nguyễn Thị Thi~
+SS*8*Công nghệ*7.1*Trần Thu Bích~
+SS*9*Thể dục*8.3*Nguyễn Văn Hải~
+SS*10*Ngoại ngữ*8.4*Nguyễn Văn Tùng~
+SS*11*Tin học*7.5*Trần Văn Huy~
+SS*12*Giáo dục công dân*7.1*Lê Xuân Hải~
+SS*13*Giáo dục quốc phòng và an ninh*7*Phùng Văn Thái~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*8.4*Lê Thị Hương~
+SS*2*Toán*7.9*Lê Thị Nhi~
+SS*3*Vật lý*8.8*Phạm Văn Nhân~
+SS*4*Hóa học*7.7*Đỗ Văn Thái~
+SS*5*Sinh học*6.4*Trịnh Văn Long~
+SS*6*Lịch sử*6.5*Phan Thu Hương~
+SS*7*Địa lý*7.8*Tạ Thị Yến~
+SS*8*Công nghệ*7*Đỗ Thị Hạ~
+SS*9*Thể dục*7.4*Lê Thị Nga~
+SS*10*Ngoại ngữ*6.7*Đặng Văn Hùng~
+SS*11*Tin học*8.1*Lê Văn Thiên~
+SS*12*Giáo dục công dân*9.5*Vũ Thị Thu~
+SS*13*Giáo dục quốc phòng và an ninh*6.3*Phạm Văn Duy~
+SR*92/2016*2016-03-21*Lại Thế Quang*~
+STD*Trần Văn Dương*Nam*2000-08-29*Kinh*Trần Văn Quân*Điêu khắc đá*Phan Thị Mi*Giáo viên***image.jpg~
+CA*Xóm 2*Xã Quỳnh Thắng*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 2*Xã Quỳnh Thắng*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A1*2007*2008*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Đặng Văn Nam*2*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2008-05-30~
+SCH*THPT DTNT Tân Kỳ*Xóm 11*Xã Nghĩa Thái*Huyện Tân Kỳ*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Tốt~
+SS*1*Ngữ văn*7.8*Hoàng Văn Quân~
+SS*2*Toán*9.3*Lâm Thị Thủy~
+SS*3*Vật lý*7.5*Nguyễn Xuân Hoa~
+SS*4*Hóa học*6.3*Trần Xuân Hân~
+SS*5*Sinh học*7*Phan Văn Nghĩa~
+SS*6*Lịch sử*6.2*Nguyễn Văn Kiên~
+SS*7*Địa lý*8.7*Lý Văn Long~
+SS*8*Công nghệ*8*Nguyễn Xuân Phi~
+SS*9*Thể dục*9.4*Lê Thị Trà~
+SS*10*Ngoại ngữ*8.8*Trần Văn Khánh~
+SS*11*Tin học*8.5*Trần Lan Xuân~
+SS*12*Giáo dục công dân*9.5*Nguyễn Văn Khang~
+SS*13*Giáo dục quốc phòng và an ninh*8.4*Đặng Văn Nam~
+TE*2*Học kỳ 1*Khá*Tốt~
+SS*1*Ngữ văn*9.5*Mai Văn Dũng~
+SS*2*Toán*7.5*Lê Văn Bảo~
+SS*3*Vật lý*7.8*Trần Văn Thịnh~
+SS*4*Hóa học*7.8*Nguyễn Văn Khang~
+SS*5*Sinh học*7.3*Lê Thị Bích~
+SS*6*Lịch sử*7.5*Khuất Thị Thư~
+SS*7*Địa lý*7.8*Đỗ Văn Minh~
+SS*8*Công nghệ*9.5*Phạm Thị Hạnh~
+SS*9*Thể dục*8.4*Nguyễn Xuân Tuấn~
+SS*10*Ngoại ngữ*6.5*Nguyễn Thị Nghi~
+SS*11*Tin học*8.5*Trần Thị Vy~
+SS*12*Giáo dục công dân*7.9*Đào Thị Uyên~
+SS*13*Giáo dục quốc phòng và an ninh*8.4*Nguyễn Văn Long~
+TE*3*Học kỳ 2*Khá*Tốt~
+SS*1*Ngữ văn*8.1*Trần Văn Uy~
+SS*2*Toán*8.3*Nguyễn Thị Yến~
+SS*3*Vật lý*9.3*Phạm Văn Hiếu~
+SS*4*Hóa học*6.5*Bùi Lan Hạ~
+SS*5*Sinh học*8.7*Đinh Văn Phúc~
+SS*6*Lịch sử*8.9*Phan Văn Thái~
+SS*7*Địa lý*6.8*Nguyễn Phúc Phúc~
+SS*8*Công nghệ*6.9*Lê Văn Gia~
+SS*9*Thể dục*7.9*Nguyễn Văn Long~
+SS*10*Ngoại ngữ*8.1*Trần Phúc Việt~
+SS*11*Tin học*8.5*Nguyễn Văn Thành~
+SS*12*Giáo dục công dân*8.9*Nguyễn Văn Khải~
+SS*13*Giáo dục quốc phòng và an ninh*9.2*Hồ Thị Loan~
+YE*2*11A1*2008*2009*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thu Quỳnh*3*Được lên lớp thẳng*Tin văn phòng*Giỏi*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
+SCH*THPT Tư thục Mai Hắc Đế*Xóm 11*Xã Hùng Tiến*Huyện Nam Đàn*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Tốt~
+SS*1*Ngữ văn*7.6*Nguyễn Thị Nhung~
+SS*2*Toán*7.4*Trần Thị Xuân~
+SS*3*Vật lý*7.8*Phạm Văn Nghĩa~
+SS*4*Hóa học*7.8*Nguyễn Thị Bích~
+SS*5*Sinh học*8.5*Nguyễn Thị Vân~
+SS*6*Lịch sử*6.4*Dương Văn Trung~
+SS*7*Địa lý*7.5*Vũ Trường Bảo~
+SS*8*Công nghệ*7.3*Đoàn Thị Loan~
+SS*9*Thể dục*9*Lê Văn Ngọc~
+SS*10*Ngoại ngữ*6.2*Nguyễn Thị Bích~
+SS*11*Tin học*6.7*Phan Thị Anh~
+SS*12*Giáo dục công dân*8.2*Lê Văn Đức~
+SS*13*Giáo dục quốc phòng và an ninh*7.3*Nguyễn Lan Loan~
+TE*2*Học kỳ 1*Trung bình*Khá~
+SS*1*Ngữ văn*7*Đinh Trường Nhân~
+SS*2*Toán*8*Lê Văn Lâm~
+SS*3*Vật lý*7.4*Phạm Thị Đoan~
+SS*4*Hóa học*6.1*Phan Thị An~
+SS*5*Sinh học*8.3*Lê Văn Quốc~
+SS*6*Lịch sử*9.1*Ngô Thị Diệp~
+SS*7*Địa lý*7.4*Nguyễn Lan Khuê~
+SS*8*Công nghệ*9*Phan Lan Yến~
+SS*9*Thể dục*6.6*Phí Lan Thảo~
+SS*10*Ngoại ngữ*6*Nguyễn Thu Hoa~
+SS*11*Tin học*7.2*Phan Văn Hải~
+SS*12*Giáo dục công dân*7.6*Bùi Thị Lan~
+SS*13*Giáo dục quốc phòng và an ninh*9.3*Nguyễn Thị An~
+TE*3*Học kỳ 2*Giỏi*Tốt~
+SS*1*Ngữ văn*8.3*Trương Văn Kiên~
+SS*2*Toán*9.2*Nguyễn Thị Linh~
+SS*3*Vật lý*6*Nguyễn Lan Ngân~
+SS*4*Hóa học*7.9*Phí Thị Ngân~
+SS*5*Sinh học*6.4*Nguyễn Thu Yến~
+SS*6*Lịch sử*8.1*Hoàng Thị An~
+SS*7*Địa lý*8.5*Nguyễn Thu Vy~
+SS*8*Công nghệ*7.6*Lê Thị Hương~
+SS*9*Thể dục*9.1*Nguyễn Thu Diệp~
+SS*10*Ngoại ngữ*8.1*Vũ Thị Uyên~
+SS*11*Tin học*6.9*Phạm Thị Nghi~
+SS*12*Giáo dục công dân*8*Trần Văn Vinh~
+SS*13*Giáo dục quốc phòng và an ninh*7.3*Lê Xuân Nhi~
+YE*3*12A1*2009*2010*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Trương Thị Thư*4*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2010-05-30~
+SCH*THPT DL Quang Trung*Xóm 12*Xã Diễn Kỷ*Huyện Diễn Châu*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+SS*1*Ngữ văn*6.5*Trần Thị Tâm~
+SS*2*Toán*9*Trần Văn Việt~
+SS*3*Vật lý*6.5*Nguyễn Văn Tùng~
+SS*4*Hóa học*6.5*Lâm Thu Hoa~
+SS*5*Sinh học*9.3*Nguyễn Văn Nghĩa~
+SS*6*Lịch sử*9*Nguyễn Văn Công~
+SS*7*Địa lý*6.7*Nguyễn Văn Nam~
+SS*8*Công nghệ*8.8*Phạm Thị Hạnh~
+SS*9*Thể dục*8*Phan Văn Lâm~
+SS*10*Ngoại ngữ*8.3*Nguyễn Thị Đoan~
+SS*11*Tin học*8.1*Trần Lan Hoa~
+SS*12*Giáo dục công dân*9.4*Phan Xuân Thu~
+SS*13*Giáo dục quốc phòng và an ninh*8.8*Trương Thị Giang~
+TE*2*Học kỳ 1*Trung bình*Khá~
+SS*1*Ngữ văn*7*Nguyễn Thị Hương~
+SS*2*Toán*8.6*Phạm Bá Long~
+SS*3*Vật lý*6.7*Trần Văn Nghĩa~
+SS*4*Hóa học*7.8*Lê Lan Xuân~
+SS*5*Sinh học*8*Trần Thị Hương~
+SS*6*Lịch sử*7.9*Nguyễn Văn Nam~
+SS*7*Địa lý*8.2*Nguyễn Văn Hải~
+SS*8*Công nghệ*7.2*Nguyễn Thị Vân~
+SS*9*Thể dục*8.8*Nguyễn Văn Nam~
+SS*10*Ngoại ngữ*8.8*Nguyễn Thị Yến~
+SS*11*Tin học*6.3*Hồ Lan Vân~
+SS*12*Giáo dục công dân*6.5*Nguyễn Văn Thiên~
+SS*13*Giáo dục quốc phòng và an ninh*9.2*Đoàn Thị Vy~
+TE*3*Học kỳ 2*Trung bình*Khá~
+SS*1*Ngữ văn*6.4*Phạm Trường Gia~
+SS*2*Toán*7.9*Trần Văn Kiên~
+SS*3*Vật lý*9.4*Nguyễn Xuân Trang~
+SS*4*Hóa học*6.7*Hoàng Bá Quân~
+SS*5*Sinh học*8.1*Vũ Văn Minh~
+SS*6*Lịch sử*8.1*Lê Thị Thư~
+SS*7*Địa lý*7.6*Nguyễn Thị Anh~
+SS*8*Công nghệ*7*Nguyễn Lan Lan~
+SS*9*Thể dục*8.4*Vương Thị Thư~
+SS*10*Ngoại ngữ*8.6*Tạ Bá Cường~
+SS*11*Tin học*8.4*Nguyễn Văn Uy~
+SS*12*Giáo dục công dân*8.9*Ngô Bá Minh~
+SS*13*Giáo dục quốc phòng và an ninh*8.2*Nguyễn Thị Trà~
+SR*96/2016*2016-03-21*Lại Thế Quang*~
+STD*Hoàng Văn Vinh*Nam*1993-07-28*Kinh*Hoàng Văn Tùng*Quản lý xây dựng*Bùi Thị Tâm*Tổng thầu xây dựng***image.jpg~
+CA*Xóm 6*Xã Quỳnh Hoa*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 6*Xã Quỳnh Hoa*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A*2006*2007*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Lâm Văn Hùng*4*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2007-05-30~
+SCH*THPT Nghi Lộc 2*Xóm 6*Xã Nghi Mỹ*Huyện Nghi Lộc*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*7.4*Nguyễn Văn Phi~
+SS*2*Toán*9.1*Nguyễn Thị Anh~
+SS*3*Vật lý*7.4*Nguyễn Xuân Như~
+SS*4*Hóa học*9.4*Nguyễn Thị Chi~
+SS*5*Sinh học*8.4*Nguyễn Thị Diệp~
+SS*6*Lịch sử*9.4*Nguyễn Thị Yên~
+SS*7*Địa lý*6.4*Trần Thị Giang~
+SS*8*Công nghệ*6.1*Nguyễn Văn Thiên~
+SS*9*Thể dục*6.7*Lê Thị Đoan~
+SS*10*Ngoại ngữ*6.3*Hà Phúc An~
+SS*11*Tin học*6.2*Lâm Bá Nghĩa~
+SS*12*Giáo dục công dân*6.1*Nguyễn Văn Hoàng~
+SS*13*Giáo dục quốc phòng và an ninh*7*Đào Thị Xuân~
+TE*2*Học kỳ 1*Giỏi*Tốt~
+SS*1*Ngữ văn*8.1*Nguyễn Lan Nhiên~
+SS*2*Toán*9.2*Trần Bá Minh~
+SS*3*Vật lý*8.3*Nguyễn Xuân Bảo~
+SS*4*Hóa học*6.8*Trần Văn Uy~
+SS*5*Sinh học*8.4*Mai Lan Hà~
+SS*6*Lịch sử*7.8*Trần Văn Khoa~
+SS*7*Địa lý*6.1*Nguyễn Xuân Châu~
+SS*8*Công nghệ*9.2*Lê Văn Minh~
+SS*9*Thể dục*6.3*Khuất Thu Hạnh~
+SS*10*Ngoại ngữ*6.2*Nguyễn Hải Minh~
+SS*11*Tin học*7*Nguyễn Văn Sơn~
+SS*12*Giáo dục công dân*7.6*Nguyễn Thu Tâm~
+SS*13*Giáo dục quốc phòng và an ninh*8*Nguyễn Thị Hoa~
+TE*3*Học kỳ 2*Trung bình*Khá~
+SS*1*Ngữ văn*7.2*Trần Thị Chi~
+SS*2*Toán*6*Nguyễn Thị Hà~
+SS*3*Vật lý*7.1*Hoàng Văn Nghĩa~
+SS*4*Hóa học*6.6*Vũ Thị Giang~
+SS*5*Sinh học*8.4*Tô Thị Thủy~
+SS*6*Lịch sử*8.4*Đặng Văn Hoàng~
+SS*7*Địa lý*6.2*Nguyễn Văn Đạt~
+SS*8*Công nghệ*6.6*Nguyễn Lan Ngọc~
+SS*9*Thể dục*7.4*Phạm Thị Giang~
+SS*10*Ngoại ngữ*6.6*Nguyễn Văn Phúc~
+SS*11*Tin học*7.1*Lê Thị Minh~
+SS*12*Giáo dục công dân*7.3*Phí Thị Vân~
+SS*13*Giáo dục quốc phòng và an ninh*6.5*Nguyễn Văn Tâm~
+YE*2*11A*2007*2008*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thị Nga*3*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2008-05-30~
+SCH*THPT Bắc Yên Thành*Xóm 13*Xã Lăng Thành*Huyện Yên Thành*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Tốt~
+SS*1*Ngữ văn*7.8*Trần Thu Châu~
+SS*2*Toán*9.1*Nguyễn Thị Ngân~
+SS*3*Vật lý*7.6*Nguyễn Thị Quỳnh~
+SS*4*Hóa học*7.6*Nguyễn Văn Phong~
+SS*5*Sinh học*8.6*Nguyễn Thị Nhiên~
+SS*6*Lịch sử*9.1*Phạm Văn Khang~
+SS*7*Địa lý*7.1*Nguyễn Xuân Nga~
+SS*8*Công nghệ*7.2*Trần Thị Như~
+SS*9*Thể dục*9.4*Trần Văn Hoàng~
+SS*10*Ngoại ngữ*6.2*Trần Thị Anh~
+SS*11*Tin học*6.4*Phạm Thị An~
+SS*12*Giáo dục công dân*6.7*Nguyễn Xuân Long~
+SS*13*Giáo dục quốc phòng và an ninh*8.6*Trần Văn Thiên~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+SS*1*Ngữ văn*6.2*Nguyễn Thị An~
+SS*2*Toán*6.3*Hoàng Văn Sơn~
+SS*3*Vật lý*8.8*Trần Thị An~
+SS*4*Hóa học*7.4*Nguyễn Thị Yên~
+SS*5*Sinh học*8.1*Nguyễn Trường Tâm~
+SS*6*Lịch sử*7.2*Nguyễn Văn Tùng~
+SS*7*Địa lý*6.7*Phạm Văn Minh~
+SS*8*Công nghệ*8.3*Tạ Thị Giang~
+SS*9*Thể dục*9.2*Phí Xuân Tuấn~
+SS*10*Ngoại ngữ*9.1*Phan Lan Anh~
+SS*11*Tin học*8.5*Trần Thị Mai~
+SS*12*Giáo dục công dân*6.6*Phạm Văn Khang~
+SS*13*Giáo dục quốc phòng và an ninh*7.9*Hoàng Thị Đoan~
+TE*3*Học kỳ 2*Trung bình*Tốt~
+SS*1*Ngữ văn*6.7*Vũ Thị Điệp~
+SS*2*Toán*9.3*Nguyễn Xuân Khoa~
+SS*3*Vật lý*6.4*Nguyễn Thị Như~
+SS*4*Hóa học*6.5*Nguyễn Thị Khánh~
+SS*5*Sinh học*7.9*Trần Thị Dung~
+SS*6*Lịch sử*9*Hồ Thu Vân~
+SS*7*Địa lý*9.5*Vũ Thị Vân~
+SS*8*Công nghệ*9.2*Nguyễn Thị Minh~
+SS*9*Thể dục*7.5*Nguyễn Văn Đức~
+SS*10*Ngoại ngữ*8.7*Hoàng Thị Hân~
+SS*11*Tin học*6*Tạ Văn Nhân~
+SS*12*Giáo dục công dân*6.5*Nguyễn Văn Thịnh~
+SS*13*Giáo dục quốc phòng và an ninh*6.9*Phạm Thu Thảo~
+YE*3*12A*2008*2009*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Hoàng Văn Kiên*2*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
+SCH*THPT Nam Yên Thành*Xóm 6*Xã Bảo Thành*Huyện Yên Thành*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*8.6*Trần Văn An~
+SS*2*Toán*6.2*Nguyễn Xuân Hoàng~
+SS*3*Vật lý*9.3*Trần Xuân Hải~
+SS*4*Hóa học*8.2*Ngô Thị Chi~
+SS*5*Sinh học*9*Nguyễn Văn Thành~
+SS*6*Lịch sử*7.5*Nguyễn Thu Nga~
+SS*7*Địa lý*8.9*Phạm Trường Dũng~
+SS*8*Công nghệ*8.1*Lê Văn Nguyên~
+SS*9*Thể dục*9.1*Tạ Thị Hạnh~
+SS*10*Ngoại ngữ*6.8*Tạ Thị Nghi~
+SS*11*Tin học*6.2*Lê Thu Nhiên~
+SS*12*Giáo dục công dân*7.2*Lê Thị Nhi~
+SS*13*Giáo dục quốc phòng và an ninh*6*Nguyễn Phúc Phúc~
+TE*2*Học kỳ 1*Trung bình*Khá~
+SS*1*Ngữ văn*9.3*Trần Văn Công~
+SS*2*Toán*6*Nguyễn Trường Kiên~
+SS*3*Vật lý*7.9*Nguyễn Văn Phúc~
+SS*4*Hóa học*6.2*Phạm Văn Hoàng~
+SS*5*Sinh học*8.2*Nguyễn Thị Tâm~
+SS*6*Lịch sử*8.8*Hồ Lan Thu~
+SS*7*Địa lý*8.4*Nguyễn Văn Lộc~
+SS*8*Công nghệ*6.8*Bùi Văn Lộc~
+SS*9*Thể dục*6.9*Nguyễn Văn An~
+SS*10*Ngoại ngữ*8.5*Nguyễn Trường Bách~
+SS*11*Tin học*7.5*Phùng Thị Xuân~
+SS*12*Giáo dục công dân*8.3*Hoàng Thị Thi~
+SS*13*Giáo dục quốc phòng và an ninh*7.5*Vương Văn Gia~
+TE*3*Học kỳ 2*Trung bình*Khá~
+SS*1*Ngữ văn*7.4*Nguyễn Lan Hương~
+SS*2*Toán*8.9*Nguyễn Văn Thái~
+SS*3*Vật lý*7.1*Nguyễn Thị Trà~
+SS*4*Hóa học*6.7*Đặng Thị Nhung~
+SS*5*Sinh học*8.6*Nguyễn Thị Hoa~
+SS*6*Lịch sử*9.2*Trần Xuân Mai~
+SS*7*Địa lý*8.5*Nguyễn Bá Kiên~
+SS*8*Công nghệ*8*Lâm Thị Quỳnh~
+SS*9*Thể dục*8.6*Nguyễn Văn Phúc~
+SS*10*Ngoại ngữ*6.2*Phạm Văn Gia~
+SS*11*Tin học*6.7*Nguyễn Thị An~
+SS*12*Giáo dục công dân*7.2*Ngô Văn Bảo~
+SS*13*Giáo dục quốc phòng và an ninh*6.9*Nguyễn Thị Nghi~
+SR*101/2016*2016-03-21*Lại Thế Quang*~
+STD*Nguyễn Thị Minh*Nữ*1993-06-18*Kinh*Nguyễn Văn Sơn*Công tố viên*Nguyễn Thị Châu*Công nhân***image.jpg~
+CA*Xóm 6*Xã Quỳnh Tam*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 6*Xã Quỳnh Tam*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A3*2010*2011*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Hoàng Thu Điệp*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2011-05-30~
+SCH*THPT DTNT Tân Kỳ*Xóm 11*Xã Nghĩa Thái*Huyện Tân Kỳ*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Khá~
+SS*1*Ngữ văn*7.2*Nguyễn Xuân Phúc~
+SS*2*Toán*6*Trương Văn Minh~
+SS*3*Vật lý*8.6*Lê Thị Khánh~
+SS*4*Hóa học*8*Nguyễn Văn Kiên~
+SS*5*Sinh học*6.4*Lý Văn Phúc~
+SS*6*Lịch sử*9.1*Phan Thị Trang~
+SS*7*Địa lý*7.4*Nguyễn Thị Nhiên~
+SS*8*Công nghệ*8.9*Vương Thị Vân~
+SS*9*Thể dục*7.5*Đoàn Văn Nghĩa~
+SS*10*Ngoại ngữ*6.8*Hoàng Thị Nga~
+SS*11*Tin học*6.4*Vũ Văn Nam~
+SS*12*Giáo dục công dân*7.5*Nguyễn Thị Loan~
+SS*13*Giáo dục quốc phòng và an ninh*6.4*Nguyễn Thị Diệp~
+TE*2*Học kỳ 1*Khá*Tốt~
+SS*1*Ngữ văn*8.4*Hoàng Văn An~
+SS*2*Toán*7.1*Trịnh Văn Phi~
+SS*3*Vật lý*7.8*Đào Thị Oanh~
+SS*4*Hóa học*9.1*Phạm Văn Hải~
+SS*5*Sinh học*8.1*Nguyễn Trường Dũng~
+SS*6*Lịch sử*8.1*Nguyễn Văn Trung~
+SS*7*Địa lý*8.1*Nguyễn Thị Ngân~
+SS*8*Công nghệ*6.1*Khuất Thị Thi~
+SS*9*Thể dục*8.3*Lê Văn Nhân~
+SS*10*Ngoại ngữ*6.6*Phan Văn Dương~
+SS*11*Tin học*9.5*Nguyễn Văn Quân~
+SS*12*Giáo dục công dân*7.2*Đỗ Thị Thu~
+SS*13*Giáo dục quốc phòng và an ninh*8.5*Lê Văn Lâm~
+TE*3*Học kỳ 2*Khá*Khá~
+SS*1*Ngữ văn*6.1*Nguyễn Thị Thảo~
+SS*2*Toán*8.9*Nguyễn Thị Hạ~
+SS*3*Vật lý*9*Phạm Thị Hương~
+SS*4*Hóa học*8.8*Phan Thị Oanh~
+SS*5*Sinh học*7.5*Nguyễn Văn Sơn~
+SS*6*Lịch sử*6.2*Nguyễn Xuân Quyên~
+SS*7*Địa lý*8.1*Trần Thị Quyên~
+SS*8*Công nghệ*6.6*Nguyễn Văn Thiên~
+SS*9*Thể dục*8.1*Nguyễn Phúc Thành~
+SS*10*Ngoại ngữ*8.3*Trần Văn Anh~
+SS*11*Tin học*6*Nguyễn Thị Anh~
+SS*12*Giáo dục công dân*7*Tô Văn An~
+SS*13*Giáo dục quốc phòng và an ninh*8.3*Hoàng Văn Phúc~
+YE*2*11A3*2011*2012*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Dương Thị Giang*0*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2012-05-30~
+SCH*THPT DL Trần Đình Phong*Xóm 10*Xã Thọ Thành*Huyện Yên Thành*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+SS*1*Ngữ văn*7.7*Nguyễn Văn Nghĩa~
+SS*2*Toán*8.4*Nguyễn Thị Ngân~
+SS*3*Vật lý*8.9*Lê Văn Quang~
+SS*4*Hóa học*7.9*Nguyễn Thị Khánh~
+SS*5*Sinh học*8.5*Đặng Thị Thủy~
+SS*6*Lịch sử*8*Trần Lan Đoan~
+SS*7*Địa lý*7.2*Nguyễn Thị Thủy~
+SS*8*Công nghệ*8.8*Hoàng Văn Lộc~
+SS*9*Thể dục*6.6*Đỗ Thị Thu~
+SS*10*Ngoại ngữ*8*Phạm Văn Bảo~
+SS*11*Tin học*9.3*Bùi Phúc Lộc~
+SS*12*Giáo dục công dân*8.2*Nguyễn Trường Hùng~
+SS*13*Giáo dục quốc phòng và an ninh*7.6*Hồ Văn Thành~
+TE*2*Học kỳ 1*Giỏi*Tốt~
+SS*1*Ngữ văn*9.2*Hoàng Văn Thành~
+SS*2*Toán*8.1*Nguyễn Văn Đạt~
+SS*3*Vật lý*9*Phan Thu Anh~
+SS*4*Hóa học*6.8*Lê Thị Oanh~
+SS*5*Sinh học*6.1*Lê Văn Nam~
+SS*6*Lịch sử*9.3*Nguyễn Văn Quang~
+SS*7*Địa lý*6.6*Bùi Văn Tùng~
+SS*8*Công nghệ*8.2*Nguyễn Văn Sơn~
+SS*9*Thể dục*7.1*Phạm Thị Hân~
+SS*10*Ngoại ngữ*8.4*Trịnh Văn Hiếu~
+SS*11*Tin học*8*Hoàng Văn Nam~
+SS*12*Giáo dục công dân*6.8*Nguyễn Văn Hiếu~
+SS*13*Giáo dục quốc phòng và an ninh*8.7*Trần Thị Linh~
+TE*3*Học kỳ 2*Khá*Tốt~
+SS*1*Ngữ văn*7*Dương Bá Công~
+SS*2*Toán*8.8*Hồ Thu Thư~
+SS*3*Vật lý*6.3*Nguyễn Văn Hiếu~
+SS*4*Hóa học*7.2*Trần Thị Oanh~
+SS*5*Sinh học*6.1*Hoàng Văn Nguyên~
+SS*6*Lịch sử*9.4*Nguyễn Thị Loan~
+SS*7*Địa lý*7.8*Phạm Thị Châu~
+SS*8*Công nghệ*8.5*Đặng Bá Ngọc~
+SS*9*Thể dục*8*Hoàng Thị Như~
+SS*10*Ngoại ngữ*9.3*Nguyễn Thu Anh~
+SS*11*Tin học*8.9*Nguyễn Hải Lộc~
+SS*12*Giáo dục công dân*9.3*Nguyễn Văn Thái~
+SS*13*Giáo dục quốc phòng và an ninh*8.6*Trần Thị Xuân~
+YE*3*12A3*2012*2013*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thị Thảo*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2013-05-30~
+SCH*THPT Thái Lão*Xóm 3*Thị trấn Hưng Nguyên*Huyện Hưng Nguyên*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+SS*1*Ngữ văn*8.1*Nguyễn Văn Thiên~
+SS*2*Toán*9.5*Nguyễn Thị Hương~
+SS*3*Vật lý*6.6*Đào Văn Thái~
+SS*4*Hóa học*8.6*Trần Thị Như~
+SS*5*Sinh học*6.4*Trần Thị Khánh~
+SS*6*Lịch sử*9.4*Trần Hải Phi~
+SS*7*Địa lý*8*Nguyễn Xuân Lan~
+SS*8*Công nghệ*9.1*Nguyễn Thị Nhiên~
+SS*9*Thể dục*7.1*Đặng Văn Ngọc~
+SS*10*Ngoại ngữ*8*Nguyễn Thị Đoan~
+SS*11*Tin học*9.3*Tô Văn Bách~
+SS*12*Giáo dục công dân*7*Trần Văn Phong~
+SS*13*Giáo dục quốc phòng và an ninh*6.3*Lê Văn Bách~
+TE*2*Học kỳ 1*Khá*Tốt~
+SS*1*Ngữ văn*8.2*Mai Văn Khoa~
+SS*2*Toán*7.6*Nguyễn Văn Đạt~
+SS*3*Vật lý*9.4*Trần Thị Như~
+SS*4*Hóa học*7.6*Nguyễn Thị Hạ~
+SS*5*Sinh học*8*Lê Thị Vy~
+SS*6*Lịch sử*9*Nguyễn Văn Vinh~
+SS*7*Địa lý*6.3*Trần Văn Nguyên~
+SS*8*Công nghệ*8.9*Nguyễn Thu Trang~
+SS*9*Thể dục*7*Hoàng Thị Ngọc~
+SS*10*Ngoại ngữ*6.9*Nguyễn Bá Kiên~
+SS*11*Tin học*7*Nguyễn Xuân Thi~
+SS*12*Giáo dục công dân*7*Nguyễn Thị Khuê~
+SS*13*Giáo dục quốc phòng và an ninh*6.1*Hoàng Thị Thu~
+TE*3*Học kỳ 2*Giỏi*Khá~
+SS*1*Ngữ văn*6.9*Nguyễn Văn Hoàng~
+SS*2*Toán*6.4*Nguyễn Thị Hương~
+SS*3*Vật lý*8.9*Trần Văn Khánh~
+SS*4*Hóa học*9.3*Nguyễn Văn Vinh~
+SS*5*Sinh học*6.1*Phạm Thị Dung~
+SS*6*Lịch sử*9.5*Đào Phúc Ngọc~
+SS*7*Địa lý*8.3*Dương Thị Hạ~
+SS*8*Công nghệ*6.4*Lý Hải Thịnh~
+SS*9*Thể dục*6.6*Trịnh Văn Đức~
+SS*10*Ngoại ngữ*7.1*Nguyễn Thị Sương~
+SS*11*Tin học*6.9*Trần Thị Tâm~
+SS*12*Giáo dục công dân*8.2*Ngô Xuân Nga~
+SS*13*Giáo dục quốc phòng và an ninh*7.5*Nguyễn Văn Công~
+SR*131/2016*2016-03-21*Lại Thế Quang*~
+STD*Hoàng Văn Hoàng*Nam*2000-08-14*Kinh*Hoàng Văn Bách*Thám tử tư*Hoàng Thị Châu*Lập trình viên***image.jpg~
+CA*Xóm 2*Xã Quỳnh Bá*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 2*Xã Quỳnh Bá*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10D*2013*2014*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Lan Loan*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2014-05-30~
+SCH*THPT Nguyễn Sỹ Sách*Xóm 2*Xã Thanh Dương*Huyện Thanh Chương*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+TE*2*Học kỳ 1*Giỏi*Tốt~
+TE*3*Học kỳ 2*Khá*Khá~
+YE*2*11D*2014*2015*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Phan Văn Khải*2*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2015-05-30~
+SCH*TTGDTX Thanh Chương*Xóm 13*Thị trấn Thanh Chương*Huyện Thanh Chương*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+TE*3*Học kỳ 2*Trung bình*Tốt~
+YE*3*12D*2015*2016*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thị Loan*4*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2016-05-30~
+SCH*TTGDTX Diễn Châu*Xóm 1*Thị trấn Diễn Châu*Huyện Diễn Châu*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+TE*2*Học kỳ 1*Giỏi*Tốt~
+TE*3*Học kỳ 2*Trung bình*Khá~
+SR*138/2016*2016-03-21*Lại Thế Quang*~
+STD*Nguyễn Trường Nguyên*Nam*1990-11-05*Kinh*Nguyễn Trường Duy*Bảo mẫu*Nguyễn Lan Quỳnh*Thợ máy***image.jpg~
+CA*Xóm 1*Xã Quỳnh Diện*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 1*Xã Quỳnh Diện*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A3*2010*2011*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Phạm Văn Công*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2011-05-30~
+SCH*THPT Diễn Châu 2*Xóm 12*Xã Diễn Hồng*Huyện Diễn Châu*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Tốt~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+TE*3*Học kỳ 2*Trung bình*Tốt~
+YE*2*11A3*2011*2012*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Trần Văn Phúc*2*Được lên lớp thẳng*Tin văn phòng*Giỏi*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2012-05-30~
+SCH*THPT DL Hữu Nghị*Xóm 4*Phường Quang Trung*Thành phố Vinh*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Tốt~
+TE*2*Học kỳ 1*Khá*Tốt~
+TE*3*Học kỳ 2*Giỏi*Khá~
+YE*3*12A3*2012*2013*Cơ bản*Trong bảng này không sửa chữa ở chỗ nào*Lê Văn Khang*3*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2013-05-30~
+SCH*THPT Kỳ Sơn*Xóm 1*Thị trấn Mường Xén*Huyện Kỳ Sơn*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+TE*2*Học kỳ 1*Trung bình*Khá~
+TE*3*Học kỳ 2*Khá*Khá~
+SR*199/2016*2016-03-21*Lại Thế Quang*~
+STD*Nguyễn Thị Dung*Nữ*1999-04-24*Kinh*Nguyễn Văn Bách*Nhân viên pha cà phê*Phan Thị Uyên*Thợ mộc***image.jpg~
+CA*Xóm 11*Xã Quỳnh Ngọc*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 11*Xã Quỳnh Ngọc*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10D*2010*2011*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thị Thủy*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2011-05-30~
+SCH*THPT DTNT Tỉnh*Xóm 9*Phường Hưng Bình*Thành phố Vinh*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Khá~
+TE*2*Học kỳ 1*Khá*Tốt~
+TE*3*Học kỳ 2*Giỏi*Tốt~
+YE*2*11D*2011*2012*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Ngô Xuân Tuấn*0*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2012-05-30~
+SCH*THPT DL Đô Lương 2*Xóm 10*Xã Tân Sơn*Huyện Đô Lương*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+TE*2*Học kỳ 1*Giỏi*Khá~
+TE*3*Học kỳ 2*Khá*Tốt~
+YE*3*12D*2012*2013*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Bá Tùng*2*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2013-05-30~
+SCH*THPT Nguyễn Xuân Ôn*Xóm 9*Thị trấn Diễn Châu*Huyện Diễn Châu*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+TE*2*Học kỳ 1*Giỏi*Khá~
+TE*3*Học kỳ 2*Khá*Tốt~
+SR*205/2016*2016-03-21*Lại Thế Quang*~
+STD*Khuất Văn Uy*Nam*1993-09-28*Kinh*Khuất Văn Nam*Đầu bếp*Lê Thu Loan*Tổng thầu xây dựng***image.jpg~
+CA*Xóm 13*Xã Quỳnh Thắng*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 13*Xã Quỳnh Thắng*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10C*2007*2008*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Phúc Hiếu*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2008-05-30~
+SCH*THPT Đông Hiếu*Xóm 2*Xã Nghĩa Thuận*Thị xã Thái Hòa*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+TE*3*Học kỳ 2*Giỏi*Khá~
+YE*2*11C*2008*2009*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Đào Thị Quỳnh*1*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
+SCH*THPT Đô Lương 4*Xóm 6*Xã Hiến Sơn*Huyện Đô Lương*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+TE*2*Học kỳ 1*Khá*Khá~
+TE*3*Học kỳ 2*Trung bình*Khá~
+YE*3*12C*2009*2010*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Kiên*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2010-05-30~
+SCH*THPT Anh Sơn 2*Xóm 3*Xã Lĩnh Sơn*Huyện Anh Sơn*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Tốt~
+TE*2*Học kỳ 1*Giỏi*Khá~
+TE*3*Học kỳ 2*Giỏi*Khá~
+SR*208/2016*2016-03-21*Lại Thế Quang*~
+STD*Nguyễn Văn Phúc*Nam*1992-04-03*Kinh*Nguyễn Văn Nam*Bà vú*Nguyễn Thị Quyên*Vận động viên***image.jpg~
+CA*Xóm 10*Xã Quỳnh Thắng*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 10*Xã Quỳnh Thắng*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A2*2013*2014*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thị Trang*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2014-05-30~
+SCH*TTGDTX Kỳ Sơn*Xóm 13*Thị trấn Mường Xén*Huyện Kỳ Sơn*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+TE*2*Học kỳ 1*Giỏi*Khá~
+TE*3*Học kỳ 2*Khá*Khá~
+YE*2*11A2*2014*2015*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Lê Thị Hương*3*Được lên lớp thẳng*Tin văn phòng*Giỏi*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2015-05-30~
+SCH*THPT Quỳ Hợp 2*Xóm 8*Xã Tam Hợp*Huyện Quỳ Hợp*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+TE*2*Học kỳ 1*Giỏi*Khá~
+TE*3*Học kỳ 2*Giỏi*Khá~
+YE*3*12A2*2015*2016*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Thu Đoan*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2016-05-30~
+SCH*THPT Quỳ Hợp 1*Xóm 11*Thị trấn Quỳ Hợp*Huyện Quỳ Hợp*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+TE*2*Học kỳ 1*Trung bình*Khá~
+TE*3*Học kỳ 2*Trung bình*Khá~
+SR*235/2016*2016-03-21*Lại Thế Quang*~
+STD*Nguyễn Văn Sơn*Nam*1993-01-24*Kinh*Nguyễn Văn Trung*Diễn viên võ thuật*Lâm Thu Tâm*Quản lý xây dựng***image.jpg~
+CA*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 3*Xã Sơn Hải*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A2*2006*2007*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Hoàng Bá Đạt*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2007-05-30~
+SCH*THPT Nghi Lộc 1*Xóm 4*Thị trấn Quán Hành*Huyện Nghi Lộc*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+TE*2*Học kỳ 1*Giỏi*Khá~
+TE*3*Học kỳ 2*Khá*Tốt~
+YE*2*11A2*2007*2008*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Vương Thị Quỳnh*3*Được lên lớp thẳng*Tin văn phòng*Giỏi*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2008-05-30~
+SCH*THPT Cờ Đỏ*Xóm 13*Xã Nghĩa Hồng*Huyện Nghĩa Đàn*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Tốt~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+TE*3*Học kỳ 2*Trung bình*Tốt~
+YE*3*12A2*2008*2009*KHXH & NV*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Lộc*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
+SCH*THPT Đông Hiếu*Xóm 2*Xã Nghĩa Thuận*Thị xã Thái Hòa*tỉnh Nghệ An~
+TE*1*Cả năm*Giỏi*Khá~
+TE*2*Học kỳ 1*Khá*Tốt~
+TE*3*Học kỳ 2*Giỏi*Khá~
+SR*241/2016*2016-03-21*Lại Thế Quang*~
+STD*Phan Bá Khoa*Nam*1995-08-16*Kinh*Phan Bá Khoa*Kỹ sư tư vấn giám sát*Nguyễn Thị Thi*Bà vú***image.jpg~
+CA*Xóm 6*Xã Quỳnh Thọ*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 6*Xã Quỳnh Thọ*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10C*2012*2013*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Thiên*2*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2013-05-30~
+SCH*THPT Diễn Châu 4*Xóm 10*Xã Diễn Mỹ*Huyện Diễn Châu*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Khá~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+TE*3*Học kỳ 2*Giỏi*Khá~
+YE*2*11C*2013*2014*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Văn Quân*0*Được lên lớp thẳng*Tin văn phòng*Giỏi*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2014-05-30~
+SCH*THPT Kỳ Sơn*Xóm 1*Thị trấn Mường Xén*Huyện Kỳ Sơn*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Tốt~
+TE*2*Học kỳ 1*Giỏi*Khá~
+TE*3*Học kỳ 2*Khá*Khá~
+YE*3*12C*2014*2015*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Lê Văn Khôi*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2015-05-30~
+SCH*THPT DL Hữu Nghị*Xóm 4*Phường Quang Trung*Thành phố Vinh*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Tốt~
+TE*2*Học kỳ 1*Khá*Tốt~
+TE*3*Học kỳ 2*Giỏi*Tốt~
+SR*247/2016*2016-03-21*Lại Thế Quang*~
+STD*Nguyễn Xuân Long*Nam*2000-10-26*Kinh*Nguyễn Xuân Phi*Nhiếp ảnh gia*Đặng Thị Khuê*Kỹ sư tư vấn giám sát***image.jpg~
+CA*Xóm 11*Xã Quỳnh Hoa*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+NA*Xóm 11*Xã Quỳnh Hoa*Huyện Quỳnh Lưu*tỉnh Nghệ An~
+YE*1*10A2*2008*2009*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Nguyễn Phúc Khang*1*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2009-05-30~
+SCH*TTGDTX Diễn Châu*Xóm 1*Thị trấn Diễn Châu*Huyện Diễn Châu*tỉnh Nghệ An~
+TE*1*Cả năm*Trung bình*Khá~
+TE*2*Học kỳ 1*Trung bình*Khá~
+TE*3*Học kỳ 2*Giỏi*Tốt~
+YE*2*11A2*2009*2010*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Lê Văn Vinh*4*Được lên lớp thẳng*Tin văn phòng*Khá*Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2010-05-30~
+SCH*THPT Tương Dương 1*Xóm 4*Thị trấn Hòa Bình*Huyện Tương Dương*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Tốt~
+TE*2*Học kỳ 1*Trung bình*Tốt~
+TE*3*Học kỳ 2*Giỏi*Khá~
+YE*3*12A2*2010*2011*KHTN*Trong bảng này không sửa chữa ở chỗ nào*Lê Văn Khải*0*Được lên lớp thẳng***Học tốt nhưng hơi trầm.
+ Nhiệt tình trong công việc của lớp*Đồng ý với đánh giá của giáo viên chủ nhiệm*Lại Thế Quang*2011-05-30~
+SCH*TTGDTX Quỳ Hợp*Xóm 12*Thị trấn Quỳ Hợp*Huyện Quỳ Hợp*tỉnh Nghệ An~
+TE*1*Cả năm*Khá*Tốt~
+TE*2*Học kỳ 1*Trung bình*Khá~
+TE*3*Học kỳ 2*Giỏi*Khá~
+SE*1787*000000001~
 GE*1*000000001~
 IEA*1*000000001~

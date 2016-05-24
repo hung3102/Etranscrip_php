@@ -112,7 +112,7 @@ class X12Controller extends Controller
         } else {
             file_put_contents(Yii::$app->params['x12resource'].'/x12/data.edi', $data);
             $x12File = Yii::$app->params['x12resource'].'/x12/data.edi';
-            $serverUrl = 'http://172.17.0.3/server/frontend/web/student/receive-file';
+            $serverUrl = 'http://172.17.0.2/server/frontend/web/student/receive-file';
         }
         $sendData = $this->createSendData($x12File, $x12Model->encryptType, $x12Model->schoolReportNumbers);
         if($this->send($sendData, $serverUrl)) {
